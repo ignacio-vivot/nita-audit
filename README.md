@@ -87,4 +87,6 @@ For accessibility findings, include the relevant WCAG success criterion when it 
 
 See [`docs/project-overview.md`](docs/project-overview.md) for the full proposal, scope, methodology, deliverables, assumptions, and timeline.
 
+See [`docs/transit-system-context.md`](docs/transit-system-context.md) for a short explanation of NITA, CTA, Metra, Pace, and the websites covered by the audit.
+
 See [`docs/audit/authoring-guide.md`](docs/audit/authoring-guide.md) for the shared writing style, section structure, finding format, evidence standards, and review checklist.

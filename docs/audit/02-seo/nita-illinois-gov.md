@@ -3,24 +3,22 @@
 ## Assessment Scope
 
 - **Website:** nita.illinois.gov
-- **Review date:** _To be recorded_
+- **Review date:** _To be recorded when the audit begins_
 - **Pages, templates, or journeys reviewed:** _To be recorded_
+- **Methods and tools:** _To be recorded_
+
+## Summary
+
+_Audit not started._
 
 ## Findings
 
 _No findings documented yet._
 
-### Finding Template
+## Positive Observations
 
-Use this template for each finding:
+_To be recorded during the audit, if applicable._
 
-```markdown
-### [Short finding title]
+## Limitations
 
-- **Page or component:**
-- **Priority:** Critical / High / Medium / Low
-- **Evidence:**
-- **Impact:**
-- **Recommendation:**
-- **Implementation complexity:** Low / Medium / High
-```
+The agreed scope is limited to information publicly available by visiting the websites and reviewing public search results. Search Console, analytics, and other authenticated or private data are excluded.
