@@ -41,6 +41,8 @@ Organize the audit **by section, with a separate subsection or file for each web
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 02-seo/
+│       │   ├── seo-audit-plan.md
+│       │   ├── seo-review-matrix.md
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 03-aeo/

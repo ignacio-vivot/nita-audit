@@ -1,9 +1,9 @@
 # My Transit Benefit crawl — 2026-11-16
 
 - **Starting URL:** `https://www.mytransitbenefit.com/` (confirmed in `internal_all.csv`)
-- **Crawl completion and URL totals:** Not recorded; no dashboard screenshot or crawl summary was provided.
+- **Crawl completion and site size:** The user confirmed on 2026-11-19 that the site has four pages and the crawl is complete. Dashboard totals were not recorded; no dashboard screenshot or crawl summary was provided.
 - **Rendering and user agent:** Not recorded.
-- **Free crawl limit:** 500 URLs; whether the crawl completed below the limit cannot be confirmed from the exports alone.
+- **Free crawl limit:** 500 URLs; based on the user's confirmation that the four-page site crawl is complete, the crawl did not stop at the 500-URL cap. Exact dashboard totals were not recorded.
 
 ## Files
 
