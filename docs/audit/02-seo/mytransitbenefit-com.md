@@ -5,7 +5,7 @@
 - **Website:** [mytransitbenefit.com](https://www.mytransitbenefit.com/)
 - **Review date:** 2026-11-19
 - **Pages, templates, or journeys reviewed:** Complete four-page scope confirmed by the user on 2026-11-19: [homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), and [Employers](https://www.mytransitbenefit.com/employers); plus the `/404` URL listed in the sitemap. Manual review is in progress.
-- **Methods and tools:** Screaming Frog SEO Spider exports dated 2026-11-16 (configuration not recorded); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public sitemap and `robots.txt`; public browser review; Google Search Central guidance.
+- **Methods and tools:** Screaming Frog SEO Spider 25.1 free version, full Spider crawl with default configuration on 2026-11-19 ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public sitemap and `robots.txt`; public browser review; Google Search Central guidance.
 - **Control checklist:** [SEO review matrix](seo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
@@ -30,7 +30,7 @@
 - **Finding ID:** SEO-MTB-002
 - **Page or component:** `<title>` of all four pages (website template or CMS title field).
 - **Priority:** Medium
-- **Evidence:** On 2026-11-19 the HTML source titles were “Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program” (homepage), “How Much Can You Save with NITA… | NITA Transit Benefit Program,” “Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program,” and “A Smart Move: NITA Transit Benefits… | NITA Transit Benefit Program.” The ellipsis character is in the source, not added by a tool. Screaming Frog measured the titles at 606–653 px, above the roughly 580 px that commonly displays on desktop results. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`page_titles_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-16/page_titles_all.csv).
+- **Evidence:** On 2026-11-19 the HTML source titles were “Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program” (homepage), “How Much Can You Save with NITA… | NITA Transit Benefit Program,” “Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program,” and “A Smart Move: NITA Transit Benefits… | NITA Transit Benefit Program.” The ellipsis character is in the source, not added by a tool. Screaming Frog measured the titles at 606–653 px, above the roughly 580 px that commonly displays on desktop results. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`page_titles_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/page_titles_all.csv).
 - **Impact:** The titles stop mid-phrase, before stating the page topic (for example, “pre-tax transit benefits for employees”). A search result or browser tab shows an incomplete sentence, and the most descriptive words are missing. Google may rewrite title links that it considers unhelpful.
 - **Recommendation:** Write complete, concise titles that state each page's topic and audience first and the brand second (for example, a title for the Employees page that names pre-tax transit and parking benefits for employees). Check whether the CMS or SEO plugin applies a character limit that inserts the ellipsis.
 - **Implementation complexity:** Low
@@ -39,17 +39,18 @@
 ## Observations under review
 
 - **H1 headings:** the H1s are campaign slogans (“Your Tax Savings Starts Here!”, “Save Money, Go Green, and Attract Talent!”, “A Deep Dive into The Heart of Our Program.”). Only the homepage H1 names the program. The Employees page also has a second H1, “Login.” Assess in Step 3 together with on-page topic language; coordinate with the accessibility section on heading structure.
+- **Legacy and third-party links:** the 2026-11-19 crawl shows links to `rtachicago.org` blog posts that redirect, and a script loaded from `unpkg.com` with the floating `@latest` version, which redirects on every page. Review in Step 2.
 - **Structured data:** the homepage JSON-LD `WebSite` graph references `https://nita.illinois.gov#identity` as author and copyright holder. This may be intentional (NITA operates the program) or a copied configuration; confirm the intended publisher identity before recording a finding.
 
 ## Positive Observations
 
 - On 2026-11-19, `http://www.mytransitbenefit.com/` and `https://mytransitbenefit.com/` each returned a single 301 redirect to `https://www.mytransitbenefit.com/`. Only the homepage was tested.
-- The four HTML records in the 2026-11-16 crawl have distinct meta descriptions and self-referencing canonicals. See [`meta_description_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-16/meta_description_all.csv) and [`canonicals_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-16/canonicals_all.csv).
+- The four HTML pages in the 2026-11-19 crawl have distinct meta descriptions and self-referencing canonicals, and none of the 31 crawled images is missing alternative text. See [`meta_description_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/meta_description_all.csv), [`canonicals_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/canonicals_all.csv), and [`crawl_overview.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/crawl_overview.csv).
 - The pages communicate distinct audiences (employees and employers) and calls to action. Full enrollment journeys were not tested.
 
 ## Limitations
 
-- The user confirmed on 2026-11-19 that the website has four pages and the crawl is complete. The crawl's rendering mode, user agent, and extraction settings were not recorded; its structured-data export reports no markup although markup exists, so a re-crawl with documented settings is planned.
+- The 2026-11-19 crawl (default configuration, Text Only) replaces the undocumented 2026-11-16 crawl and confirms the four-page scope. The free Screaming Frog version does not extract structured data, so markup is validated manually.
 - The public spot checks did not submit forms, follow authenticated flows, or verify transaction completion.
 - Public crawl data cannot establish Google index coverage, rankings, queries, traffic, click-through rate, or conversions. Search Console and analytics are outside the agreed scope.
 - Performance/Core Web Vitals, mobile, internal linking, image alternative text, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.

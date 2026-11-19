@@ -48,3 +48,7 @@ See `sitemap-crawl-comparison.csv` for URL-level results and source sitemap file
 - `/blog`, `/blog/p2`, and `/blog/p3` all return 200, link to the next page with standard anchors, and declare `https://nita.illinois.gov/blog` as canonical.
 - `https://www.mytransitbenefit.com/404` returns 200 with the homepage title, `robots: all`, and a self-referencing canonical; a nonexistent URL on the same website correctly returns 404.
 - Both homepages contain one JSON-LD block (`WebSite` graph). The 2026-11-16 Screaming Frog `Structured Data` exports report zero types, so they should not be used as evidence of absent markup.
+
+## Superseded comparison
+
+`sitemap-crawl-comparison.csv` compares the sitemap with the 2026-11-16 Screaming Frog crawl, which did not reach deep pagination. It is retained unchanged as a record but superseded for coverage questions by [`url-inventory.csv`](../../crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv), which shows that only 6 of the 1,286 NITA sitemap URLs are not reached through internal links.

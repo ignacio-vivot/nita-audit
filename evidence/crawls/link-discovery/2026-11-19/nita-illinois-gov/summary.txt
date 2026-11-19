@@ -1,0 +1,10 @@
+start=https://nita.illinois.gov/
+finished=2026-11-19T16:54:41-0300
+pages_requested=1730
+queue_remaining=0
+max_depth=66
+internal_resources=1004
+external_links=2184
+delay_seconds=0.4
+user_agent=Mozilla/5.0 (compatible; seo-audit-link-discovery/1.0)
+max_pages=4000

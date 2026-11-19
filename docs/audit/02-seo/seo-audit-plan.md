@@ -23,7 +23,7 @@ The SEO work is organized in four **steps** (Step 1–4). They are internal to t
 
 The audit is limited to publicly accessible pages, resources, public search results, and open testing tools. Per the project decision, do not use Search Console, analytics, CMS, source code, hosting, or server access. This means actual search queries, rankings, impressions, clicks, click-through rate, conversions, and comprehensive index coverage cannot be measured. Mark these items **Not verifiable in public scope**; do not treat a public `site:` search or crawler output as a substitute for first-party reporting.
 
-The proposal notes that access to analytics data may be requested if needed to support specific findings. Read-only Search Console access would resolve the open index-coverage questions (sitemap-only URLs, HTTP/HTTPS duplicates, pagination). Raise this with DHD as an option; do not assume it will be granted.
+The proposal notes that access to analytics data may be requested if needed. On 2026-11-19 the team decided not to request Search Console or analytics access from DHD at this stage; index-coverage questions remain **Not verifiable in public scope** unless that decision changes.
 
 Page performance can be sampled with public PageSpeed Insights/Lighthouse. Report lab observations separately from field Core Web Vitals data; field data may be unavailable for a page or origin. Publicly observed content and technical characteristics can support qualitative opportunities, but cannot establish organic performance improvements.
 
@@ -48,33 +48,52 @@ The matrix is the single place for coverage detail and caveats. Site reports car
 
 ### Step 1 — Reconcile scope and establish coverage (closed 2026-11-19)
 
-Completed: proposal scope mapped to matrix controls; crawl inventories documented; the user-confirmed four-page My Transit Benefit scope and agreed NITA 12+3 sample recorded; robots files and all sitemap XML files retrieved and compared with the crawl exports.
+1. Keep the proposal's ten SEO areas as the checklist; do not silently add new client commitments.
+2. Produce a valid crawl baseline for both websites, with the configuration recorded in each crawl README. See [Crawl baseline: method](#crawl-baseline-method).
+3. Compare discovered crawl URLs with public sitemap URLs and public navigation. Document likely gaps without expanding the agreed manual page scope.
+4. Use the four user-confirmed My Transit Benefit URLs and the agreed 15 NITA URLs in the matrix as the page-level analysis scope.
+5. Update each matrix control with current status and evidence; keep unknowns open rather than inferring a pass.
 
-Results and open questions carried into Step 2:
+**Output:** verified crawl baseline, URL/template inventory, confirmed page-level scopes, and initial matrix statuses.
 
-- **NITA sitemap/crawl gap.** The sitemap index lists 1,286 unique URLs; 83 match the 2026-11-16 crawl and 1,203 do not. See the [evidence README](../../../evidence/public-technical/2026-11-19/README.md).
-- **Probable crawl-configuration cause.** No crawled NITA page is deeper than crawl depth 2, yet `/blog/p2` links to `/blog/p3` with a standard anchor in the raw HTML, and `/blog/p3` returns 200 (see [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)). A text-only crawl without a depth limit should have followed that link. The gap may therefore come from a crawl depth limit rather than from the website. Confirm the configuration before interpreting the gap.
-- **Structured-data exports are not usable as evidence of absence.** Both 2026-11-16 exports report zero structured-data types, but both homepages contain a JSON-LD block. Screaming Frog does not extract structured data unless it is enabled.
-- **Image alternative text is not in the exports.** `images_all.csv` contains size and inlink data only.
-- **My Transit Benefit** coverage is user-confirmed (four pages). Its crawl configuration was not recorded.
+**Status — 2026-11-19: closed.** Scope mapping, page-level scopes, and the robots/sitemap download were completed first. The crawl baseline was then redone because the 2026-11-16 crawls could not support coverage conclusions (no page deeper than crawl depth 2, structured-data and alt-text exports unusable, and an undocumented My Transit Benefit configuration). The 2026-11-16 crawl folders stay in the repository unchanged but are **superseded**; analysis and findings now cite the 2026-11-19 baseline.
 
-### Step 2 — Re-crawl and complete automated technical checks
+Baseline results:
 
-1. **Confirm and correct the crawl configuration.** Check the Spider limits (crawl depth, folder depth, max URLs) used on 2026-11-16. Enable JSON-LD, Microdata, and RDFa extraction with validation, and the image alt-text export. Record all settings in the new crawl README.
-2. **Resolve the 500-URL limit before re-crawling NITA.** An unrestricted crawl of NITA is expected to exceed 500 URLs (the sitemap alone lists 1,286). Choose one documented approach and record it in the matrix:
-   - **Option A (recommended within current scope):** crawl NITA with images, CSS, JS, and external links excluded from storage so the 500-URL budget is spent on internal HTML; then crawl representative sitemap samples in List mode (for example, the five category URLs, a systematic sample of news and press-release URLs, and the 19 general-page sitemap URLs not found in the original crawl).
-   - **Option B:** run separate subfolder crawls (`/blog/`, `/about-rta/press-releases/`, other sections) and record each one's coverage.
-   - **Option C:** use a licensed Screaming Frog seat. The proposal excludes paid tools unless agreed, so this requires DHD's agreement.
-3. Re-crawl My Transit Benefit with the same documented configuration (small cost; replaces the undocumented crawl and the invalid structured-data export).
-4. Store new exports in new dated folders. Do not edit or overwrite the 2026-11-16 snapshots.
-5. Analyze crawlability, status codes, redirect destinations/chains, HTTP/HTTPS consistency, soft 404 responses, blocked resources, internal broken links, canonicals, indexability directives, pagination, and URL patterns.
-6. Review titles, meta descriptions, and heading structure; group template-level patterns and inspect affected page purpose before treating alerts as findings.
-7. Review internal link pathways and sitemap inclusion/discovery against the new crawl. Sample representative sitemap-only URLs per group, including historical press releases.
-8. Validate structured data with the Rich Results Test or Schema.org Validator and compare it with visible content, including the identity values in the My Transit Benefit `WebSite` graph.
-9. Review image alternative text from the new export and representative rendered pages; classify each gap as SEO-related, accessibility-related, or both, and coordinate with the accessibility section to avoid duplicate findings.
-10. Treat external-link 403 responses from transit operators (for example metra.com, ventrachicago.com) as likely bot blocking until confirmed in a browser; do not report them as broken links without that check.
+- **NITA:** 1,736 URLs = the 1,286 sitemap URLs plus 1,730 HTML URLs reached through internal links ([B1 README](../../../evidence/crawls/link-discovery/2026-11-19/README.md), [B2 README](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/README.md)). Only 6 sitemap URLs are not reached through links (`/404`, `/blog/uncategorized`, `/regsitehub`, `/ridersurvey26`, `/saveada`, `/take-action`); the earlier 1,203-URL gap was a crawl artifact. 450 linked HTML URLs are not in the sitemap (mainly tag archives and paginated listings). Maximum link depth is 66.
+- **My Transit Benefit:** full crawl of the four-page website, 64 URLs ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)).
+- **Findings re-pointed:** `SEO-NITA-001`, `002`, `004`, `005`, and `SEO-MTB-002` now cite the new baseline; their counts were updated (for example, 155 tag archive URLs instead of 7, and 141 legacy document links instead of 61).
 
-**Output:** documented crawl configuration, dated technical evidence, completed automated baseline, matrix statuses, and validated technical findings.
+The team decided on 2026-11-19 to use the free Screaming Frog version (no paid license). The method below works within the free version's limits.
+
+#### Crawl baseline: method
+
+The free Screaming Frog version runs headless from the command line but cannot load configuration files, so Include/Exclude rules and crawl options cannot be changed in a scripted run. A default spider crawl of NITA on 2026-11-19 stopped at the 500-URL limit while still at crawl depth 2, because images, PDFs, and external links fill the budget before the deep pagination is reached. The baseline therefore combines three runs, each documented in its own evidence README:
+
+| Run | Website | Tool and mode | Purpose |
+| --- | --- | --- | --- |
+| B1 — Link discovery | NITA | Python link-discovery script ([`link_discovery.py`](../../../evidence/crawls/link-discovery/2026-11-19/link_discovery.py)): follows internal `<a href>` links from the homepage with no depth limit, fetches HTML only, respects `robots.txt`, checks internal documents/images with HEAD, and records external links without requesting them. | Which URLs are reachable through internal links, at what depth, and from which page; HTTP-scheme links; internal resource status. |
+| B2 — Technical data | NITA | Screaming Frog 25.1, List mode, headless, default configuration, in batches below 500 URLs. Input: the union of sitemap URLs and B1-discovered HTML URLs. | Status, indexability, titles, descriptions, headings, canonicals, and directives for every known HTML URL. List mode crawls only the listed URLs. |
+| B3 — Full spider | My Transit Benefit | Screaming Frog 25.1, Spider mode, headless, default configuration. | Complete crawl of the four-page website with resources and external links ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)). |
+
+Then rebuild the sitemap/crawl comparison against B1 and B2 in a new dated evidence folder; it replaces the 2026-11-19 comparison. A sitemap URL that B1 did not reach is a candidate for a discovery-path check, not yet an orphan finding.
+
+Free-version limits that remain: no JavaScript rendering, no structured-data extraction, and no image alt-text detail for NITA pages (B2 List mode does not crawl images). Structured data and JavaScript-dependent content are validated on the page-level sample in Step 2 and Step 3; image alternative text is reviewed on the sample and coordinated with the accessibility section.
+
+### Step 2 — Complete automated technical checks
+
+Uses the 2026-11-19 crawl baseline from Step 1: [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv), the B1 link-discovery files, and the My Transit Benefit crawl.
+
+1. Analyze crawlability, status codes, redirect destinations/chains, HTTP/HTTPS consistency, soft 404 responses, blocked resources, internal broken links, canonicals, indexability directives, pagination, and URL patterns.
+2. Review titles, meta descriptions, and heading structure; group template-level patterns and inspect affected page purpose before treating alerts as findings.
+3. Review internal link pathways and sitemap inclusion/discovery using the rebuilt sitemap comparison. Sample representative sitemap-only URLs per group, including historical press releases.
+4. Validate structured data with the Rich Results Test or Schema.org Validator and compare it with visible content, including the identity values in the My Transit Benefit `WebSite` graph.
+5. Review image alternative text from the new export and representative rendered pages; classify each gap as SEO-related, accessibility-related, or both, and coordinate with the accessibility section to avoid duplicate findings.
+6. Treat external-link 403 responses from transit operators (for example metra.com, ventrachicago.com) as likely bot blocking until confirmed in a browser.
+7. Analyze the 50 internal URLs returning 404 and the 2 malformed links (403) recorded by link discovery, separating links on current pages from links in historical posts and press releases.
+8. Check the signals found on 2026-11-19 (curl): NITA `/404` returns 200 and is listed in the sitemap; out-of-range pagination such as `/blog/p100` and `/news/press-releases/p100` returns 200; the news sitemap lists a post dated 1970-01-01 (`/blog/1970/01/01/take-rta-survey`). Confirm each before recording findings.
+
+**Output:** dated technical evidence, completed automated baseline, matrix statuses, and validated technical findings.
 
 ### Step 3 — Manually assess representative pages and mobile/performance
 
@@ -109,6 +128,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-19
 
-- Step 1 is closed. Step 2 starts with crawl-configuration confirmation and the 500-URL decision above.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 (automated technical checks) is next.
 - Draft findings: `SEO-NITA-001` to `SEO-NITA-005` and `SEO-MTB-001` to `SEO-MTB-002`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
-- Open decisions for the team: crawl approach for NITA (Option A, B, or C) and whether to ask DHD for read-only Search Console access.
+- Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.
