@@ -1,0 +1,84 @@
+# Live HTTP checks — captured 2026-11-19T17:36Z with curl 8.7.1
+# Raw response headers (curl -sI / -sIL) and grepped HTML snippets. Not edited after capture.
+
+## HEAD http://nita.illinois.gov/
+HTTP/1.1 200 OK
+
+## HEAD http://nita.illinois.gov/riders
+HTTP/1.1 200 OK
+
+## HEAD https://nita.illinois.gov/
+HTTP/1.1 200 OK
+
+## HEAD http://www.mytransitbenefit.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.mytransitbenefit.com/
+
+## HEAD https://mytransitbenefit.com/
+HTTP/1.1 301 Moved Permanently
+Location: https://www.mytransitbenefit.com/
+
+## GET http://nita.illinois.gov/ canonical
+<link href="https://nita.illinois.gov/" rel="canonical">
+
+## Redirect chain: legacy PDF
+HTTP/1.1 301 Moved Permanently
+Location: http://nita.illinois.gov/uploads/files/general/Drupal-Old/documents/aboutus/Spanish-Title-VI-Notice-to-Public.pdf
+HTTP/1.1 200 OK
+
+## https://nita.illinois.gov/blog status + canonical + pagination links
+200
+<a href="https://nita.illinois.gov/blog/p2" class="font-heading text-xl">
+<link href="https://nita.illinois.gov/blog" rel="canonical">
+
+## https://nita.illinois.gov/blog/p2 status + canonical + pagination links
+200
+<a href="https://nita.illinois.gov/blog/p3" class="font-heading text-xl">
+<link href="https://nita.illinois.gov/blog" rel="canonical">
+
+## https://nita.illinois.gov/blog/p3 status + canonical + pagination links
+200
+<a href="https://nita.illinois.gov/blog/p2" class="font-heading text-xl">
+<a href="https://nita.illinois.gov/blog/p4" class="font-heading text-xl">
+<link href="https://nita.illinois.gov/blog" rel="canonical">
+
+## https://nita.illinois.gov/blog/tags/how-to-use-transit canonical
+<link href="https://nita.illinois.gov/blog/tags/how-to-use-transit" rel="canonical">
+
+## https://nita.illinois.gov/about-rta/press-releases status
+404
+
+## https://nita.illinois.gov/news/press-releases status
+200
+
+## JSON-LD presence (count of application/ld+json blocks) and first 300 chars
+https://nita.illinois.gov/: 1
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","author":{"@id":"https://nita.illinois.gov#identity"},"copyrightHolder":{"@id":"https://nita.illinois.gov#identity"},"copyrightYear":"2022","creator":{"@id":"https://nita.illinois.gov#creator"},"dateCreated":"2022-05-13T13:38:57-05:00","d
+https://www.mytransitbenefit.com/: 1
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","author":{"@id":"https://nita.illinois.gov#identity"},"copyrightHolder":{"@id":"https://nita.illinois.gov#identity"},"copyrightYear":"2023","creator":{"@id":"https://nita.illinois.gov#creator"},"dateCreated":"2023-04-11T14:35:22-05:00","d
+
+## https://www.mytransitbenefit.com/404 status, title, robots
+200
+<title>Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program</title>
+<meta name="robots" content="all">
+<link href="https://www.mytransitbenefit.com/404" rel="canonical">
+
+## https://www.mytransitbenefit.com/this-page-does-not-exist-audit-check status
+404
+
+## https://www.mytransitbenefit.com/ title + h1
+<title>Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program</title>
+<h1 class="font-headingbold text-4xl lg:text-6xl">NITA Pre-Tax Transit Benefits Program. 
+
+## https://www.mytransitbenefit.com/behind-the-benefits title + h1
+<title>How Much Can You Save with NITA… | NITA Transit Benefit Program</title>
+<h1 class="font-headingbold text-4xl lg:text-6xl text-white">A Deep Dive into 
+
+## https://www.mytransitbenefit.com/employees title + h1
+<title>Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program</title>
+<h1 class="font-headingbold text-4xl lg:text-6xl">Your 
+<h1>
+
+## https://www.mytransitbenefit.com/employers title + h1
+<title>A Smart Move: NITA Transit Benefits… | NITA Transit Benefit Program</title>
+<h1 class="font-headingbold text-4xl lg:text-6xl">Save Money, Go Green,

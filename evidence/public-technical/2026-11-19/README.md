@@ -38,3 +38,13 @@ NITA's sitemap inventory by child file:
 The four crawled sitemap URLs returning 302 lead to dashboards (ArcGIS), regional transit data (RTAMS), registration sites (ArcGIS), and the transit benefit fare program (My Transit Benefit). Review whether the sitemap should list these redirecting URLs or their destinations and whether internal links point directly to the destinations. The crawl also contains eight 200 HTML blog pagination/tag URLs absent from the sitemap; this difference needs intent/indexability review. The comparison is an inventory aid, not a finding by itself.
 
 See `sitemap-crawl-comparison.csv` for URL-level results and source sitemap filenames.
+
+## Live HTTP checks
+
+`live-http-checks.txt` records raw response headers and short HTML extracts captured with curl 8.7.1 on 2026-11-19 (17:36 UTC). It supports the protocol/redirect, pagination canonical, soft 404, title, and JSON-LD observations in the SEO reports. Highlights, all to be read with the limits of a single dated fetch:
+
+- `http://nita.illinois.gov/` and `http://nita.illinois.gov/riders` return 200 without redirecting to HTTPS; no `Strict-Transport-Security` header was returned on HTTPS. The HTTP homepage declares an HTTPS canonical.
+- A legacy `/sites/default/files/...` PDF returns 301 to an `http://` URL under `/uploads/files/general/Drupal-Old/`, which then returns 200 over HTTP.
+- `/blog`, `/blog/p2`, and `/blog/p3` all return 200, link to the next page with standard anchors, and declare `https://nita.illinois.gov/blog` as canonical.
+- `https://www.mytransitbenefit.com/404` returns 200 with the homepage title, `robots: all`, and a self-referencing canonical; a nonexistent URL on the same website correctly returns 404.
+- Both homepages contain one JSON-LD block (`WebSite` graph). The 2026-11-16 Screaming Frog `Structured Data` exports report zero types, so they should not be used as evidence of absent markup.
