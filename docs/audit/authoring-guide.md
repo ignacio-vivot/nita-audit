@@ -39,7 +39,34 @@ Describe material limits on the review, such as inaccessible flows, unavailable 
 
 Remove sections that genuinely do not apply, but do not omit scope, findings, or material limitations. Use `Not assessed` when an expected area was not reviewed; do not imply it passed.
 
-## 3. Finding format
+## 3. Review controls and coverage
+
+The audit is more than a list of findings. For each area included in the agreed scope, define the topics or controls to check and record what was reviewed, what the evidence showed, and what remains open. Keep this checklist or matrix separate from the findings register: a completed check with no issue is still part of the audit record, but it is not a finding.
+
+Use a section-specific review matrix when a workstream has several controls, evidence sources, or coverage limits. A single checklist is sufficient for a smaller review. Each review item should state, as appropriate:
+
+- The question or control being checked.
+- The agreed scope, including pages, templates, journeys, devices, or sample size.
+- The method and evidence used, with the review date.
+- The result and status, including a pass or no-issue result when supported.
+- Any limitation, manual validation, or follow-up needed.
+- Related finding IDs, if an issue or opportunity merits a finding.
+
+Use these statuses consistently across workstreams; add a justified section-specific status only when necessary:
+
+| Status | Meaning |
+| --- | --- |
+| **Not assessed** | Review has not started for this item. |
+| **In progress** | Some evidence has been reviewed, but the check is incomplete. |
+| **Needs manual validation** | An automated signal or incomplete evidence needs human confirmation before a conclusion. |
+| **Verified — no issue observed** | The documented checks found no issue within the stated scope and limits. This is a recorded result, not a guarantee beyond that scope. |
+| **Finding recorded** | A supported issue or opportunity is documented in the site report and linked by ID. |
+| **Not verifiable in public scope** | Required access, evidence, or testing is outside the agreed audit scope or unavailable; state why. |
+| **Not applicable** | The control does not apply; explain why. |
+
+Do not treat an empty findings list, a tool's lack of alerts, or an untested item as a pass. Report coverage and findings separately so readers can see both what was checked and what needs action.
+
+## 4. Finding format
 
 Give each finding a short, descriptive title. Keep one underlying issue per finding. Use this format:
 
@@ -66,7 +93,7 @@ Use stable IDs: `A11Y-NITA-001`, `SEO-MTB-001`, `AEO-NITA-001`, `GEO-MTB-001`, `
 - For automated results, name the tool and version when available, and manually verify the issue where practical.
 - Do not include personal data in evidence. Capture only what is needed to demonstrate the finding.
 
-## 4. Priority and complexity
+## 5. Priority and complexity
 
 Assign priority based on the severity and reach of the user impact, not on how easy the fix appears.
 
@@ -85,7 +112,7 @@ Implementation complexity is a separate estimate:
 
 These are audit estimates, not delivery commitments. State assumptions when complexity is uncertain.
 
-## 5. Section-specific guidance
+## 6. Section-specific guidance
 
 - **Accessibility & ADA:** Cite the applicable WCAG 2.1 Level AA success criterion when confidently identified. Note the tested browser, device, assistive technology, or automated tool when relevant. Frame ADA Title II observations as potential compliance risks; this audit is not a legal determination or certification.
 - **SEO:** Separate crawlability, indexability, metadata, content, structured data, and performance observations. Do not infer search ranking impact without supporting evidence.
@@ -93,7 +120,7 @@ These are audit estimates, not delivery commitments. State assumptions when comp
 - **GEO:** Assess discoverability, clarity, context, and machine-readable signals. Do not promise visibility, citation, or inclusion in generative answers.
 - **UX:** Describe the user goal, the steps or friction observed, and the effect on task completion or confidence. Avoid subjective design judgments without a user-centered reason.
 
-## 6. Language and formatting
+## 7. Language and formatting
 
 - Use sentence case for headings and labels.
 - Use **website** consistently; avoid switching between “site,” “platform,” and “property” unless the distinction matters.
@@ -103,11 +130,13 @@ These are audit estimates, not delivery commitments. State assumptions when comp
 - Use descriptive link text and Markdown links for URLs and repository evidence.
 - Keep recommendations actionable: start with a verb and identify the intended change.
 
-## 7. Review checklist
+## 8. Review checklist
 
 Before marking a section ready for consolidation, confirm:
 
 - Scope, review date, methods, and limitations are recorded.
+- Every in-scope area has a review-control/checklist status or an explicit reason it cannot be completed.
+- Verified controls and no-issue results remain visible even when no finding is created.
 - Every finding identifies the website and affected page or component.
 - Evidence supports the finding and is specific enough for another reviewer to reproduce or understand it.
 - Impact and recommendation are understandable without specialist knowledge.
