@@ -1,0 +1,75 @@
+# Step 2 part D live checks — captured 2026-11-20T15:01Z with curl 8.7.1
+# Status, redirect target, title, robots, canonical, H1, and count of listed post links. Not edited after capture.
+
+## https://nita.illinois.gov/blog/uncategorized -> 200 
+<title>Uncategorized | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/blog/uncategorized" rel="canonical">
+<h1 class="text-4xl lg:text-6xl font-heading"> Connections Blog 
+post links: 9
+
+## https://nita.illinois.gov/saveada -> 200 
+<title>Save Paratransit Now | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/saveada" rel="canonical">
+<h1 class="text-4xl lg:text-5xl font-heading"> Save Paratransit Now 
+<h1 class="mt-2 text-4xl md:text-5xl leading-20 font-heading">Read more about the fiscal cliff
+post links: 7
+
+## https://nita.illinois.gov/take-action -> 200 
+<title>Save Transit Now | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/take-action" rel="canonical">
+<h1 class="text-4xl lg:text-5xl font-heading"> Save Transit Now 
+<h1 class="mt-2 text-4xl md:text-5xl leading-20 font-heading">Read more about the fiscal cliff
+post links: 7
+
+## https://nita.illinois.gov/take-action/ -> 200 
+<title>Save Transit Now | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/take-action" rel="canonical">
+<h1 class="text-4xl lg:text-5xl font-heading"> Save Transit Now 
+<h1 class="mt-2 text-4xl md:text-5xl leading-20 font-heading">Read more about the fiscal cliff
+post links: 7
+
+## https://nita.illinois.gov/blog/1970/01/01/take-rta-survey -> 200 
+<title>Take RTA survey | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/blog/1970/01/01/take-rta-survey" rel="canonical">
+<h1 class="text-4xl font-heading"> Take RTA survey 
+post links: 9
+
+## https://nita.illinois.gov/regsitehub -> 302 https://sites.google.com/view/rtasitehub/home
+post links: 0
+
+## https://nita.illinois.gov/ridersurvey26 -> 302 https://www.research.net/r/ChiTransitFall2026
+post links: 0
+
+## https://nita.illinois.gov/404 -> 200 
+<title>404 | Northern Illinois Transit Authority</title>
+<meta name="robots" content="all"
+<link href="https://nita.illinois.gov/404" rel="canonical">
+<h1 class="text-4xl lg:text-5xl font-heading"> 404 
+post links: 4
+
+## Pages linking to /take-action/ (raw anchors on the homepage)
+
+## Representative historical press release (2016)
+https://nita.illinois.gov/about-rta/press-releases/regional-transportation-authority-rta-board-meeting-dates-for-2016 -> 200
+ Regional Transportation Authority (RTA) Board Meeting Dates for 2016 | Northern Illinois Transit Authority 
+ Regional Transportation Authority (RTA) Board Meeting Dates for 2016 October 15, 2015 <span class="block mt
+Mentions of RTA-period notice on the release page: 0
+
+## Press-release index: historical notice and first items
+
+## Blog index: historical notice
+
+## Press-release index: notice about RTA-period content (https://nita.illinois.gov/news/press-releases)
+irector, Announces Retirement September 2, 2026 Northern Illinois Transit Authority Begins New Era for Regional Transit September 1, 2026 With new funding from the Northern Illinois Transit Authority Act, transit agencies team up to make student fare policies more coordinated and affordable Augus
+
+## Blog index: notice about RTA-period content (https://nita.illinois.gov/blog)
+nd oversight Doing Business Investor relations Careers Contact On Track: A blog from NITA Blog posts published prior to September 1, 2026 were written by the RTA and are maintained here for historical purposes. Plan Move Invest Filter news by year: Select year 2026 2025 2024 2023 2022 2021 2020 2
+ness Investor relations Careers Contact On Track: A blog from NITA Blog posts published prior to September 1, 2026 were written by the RTA and are maintained here for historical purposes. Plan Move Invest Filter news by year: Select year 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 
+
+## Historical press release (2016 board dates): notice about RTA-period content (https://nita.illinois.gov/about-rta/press-releases/regional-transportation-authority-rta-board-meeting-dates-for-2016)
+No notice found (searched for 'September 1, 2026', 'historical purposes', 'written by the RTA').

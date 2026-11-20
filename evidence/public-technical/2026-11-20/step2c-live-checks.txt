@@ -1,0 +1,62 @@
+# Step 2 part C live checks — captured 2026-11-20T14:13Z with curl 8.7.1
+# <title>, meta description, and H1 elements extracted from raw HTML. Not edited after capture.
+
+## https://nita.illinois.gov/
+<title>Home | Northern Illinois Transit Authority</title>
+<meta name="description" content="Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats…"
+<h1 class="lg:mt-12 text-3xl md:text-5xl lg:text-6xl font-heading"> <span class="block">NITA Ride Safe App Launches</span> 
+<h1 class="lg:mt-12 text-3xl md:text-5xl lg:text-6xl font-heading"> <span class="block">Weigh in on NITA&#039;s draft regional budget</span> 
+<h1 class="lg:mt-12 text-3xl md:text-5xl lg:text-6xl font-heading"> <span class="block">Municipalities can apply for assistance in adhering to POPA</span> 
+
+## https://nita.illinois.gov/riders/paying-for-your-ride
+<title>Affordable and seamless payment | Northern Illinois Transit Authority</title>
+<meta name="description" content="By collaborating with the CTA, Metra, and Pace, NITA is striving to make riding easier and more affordable in their regional transit system."
+<h1 class="text-4xl lg:text-5xl font-heading"> Paying for your ride 
+
+## https://nita.illinois.gov/communities/community-planning
+<title>Keeping our communities accessible | Northern Illinois Transit Authority</title>
+<meta name="description" content="The NITA Community Planning Program is focused on providing sustainable, equitable, walkable, and transit-friendly communities in the Chicagoland area."
+<h1 class="text-4xl lg:text-5xl font-heading"> Community Planning 
+<h1 class="mt-2 text-4xl md:text-5xl leading-20 font-heading">Related Articles
+
+## https://nita.illinois.gov/riders/how-to-ride
+<title>Your guide to getting around town | Northern Illinois Transit Authority</title>
+<meta name="description" content="The Chicago transit system is the second largest in the U.S. Learn how to safely navigate the system’s buses and trains so you can have a smooth ride in…"
+<h1 class="text-4xl lg:text-5xl font-heading"> How to ride 
+
+## https://nita.illinois.gov/transit-funding/2024-regional-transit-budget
+<title>Budgeting with the RTA | Northern Illinois Transit Authority</title>
+<meta name="description" content="The RTA controls the operating budgets of the CTA, Metra, and Pace. The agency will be reviewing and adopting a new budget for 2023 this coming December."
+<h1 class="text-4xl lg:text-5xl font-heading"> 2024 Regional Transit Operating Budget and Capital Program 
+
+## https://nita.illinois.gov/blog/tags/cta
+<title>NITA | Northern Illinois Transit Authority</title>
+<meta name="description" content="Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats…"
+<h1 class="text-4xl lg:text-6xl font-heading text-white"> Connections Blog 
+
+## https://nita.illinois.gov/blog/2015/11/30/503
+<title>NITA | Northern Illinois Transit Authority</title>
+<meta name="description" content="Top-notch public transportation is a critical component of a city-centered living in Chicago and around our region and essential to our evolving regional…"
+<h1 class="text-4xl font-heading"> <p class="text-nitalinkblue-500 text-xl pt-10">November 30, 2015</p> 
+<h1>Good transportation system is critical to Chicago area <span class="lbl-comment"></span>
+
+## https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties
+<title>Northern Illinois Transit Authority’s first regional budget proposal expands service, creates jobs, and improves… | Northern Illinois Transit Authority</title>
+<meta name="description" content="2, 2026 — The Northern Illinois Transit Authority (NITA) has released the Proposed 2027 Regional Transit Operating Budget and Five-Year Capital Program…"
+<h1 class="text-4xl font-heading "> Northern Illinois Transit Authority’s first regional budget proposal expands service, creates jobs, and improves safety across six counties <p class="text-nitalinkblue-500 text-xl pt-10">November 2, 2026</p> 
+
+## https://nita.illinois.gov/contact
+<title>Contact | Northern Illinois Transit Authority</title>
+<meta name="description" content="Contact"
+<h1 class="text-4xl lg:text-6xl font-heading">Contact
+
+## https://www.mytransitbenefit.com/
+<title>Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program</title>
+<meta name="description" content="The Chicago NITA Transit Benefit Fare Program can cut employees&#039; monthly commute bills by up to 40%. Employers can save over 7% on payroll taxes. Here&#039;s…"
+<h1 class="font-headingbold text-4xl lg:text-6xl">NITA Pre-Tax Transit Benefits Program. <span class="text-nitalinkblue-500">Enroll Now and Save</span>.
+
+## https://www.mytransitbenefit.com/employees
+<title>Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program</title>
+<meta name="description" content="When you enroll in the NITA Transit Benefit Fare Program, you&#039;ll cut commuting costs and keep more of what you earn. Learn more now."
+<h1 class="font-headingbold text-4xl lg:text-6xl">Your <span class="text-nitalinkblue-500">Tax Savings </span>Starts Here!
+<h1>

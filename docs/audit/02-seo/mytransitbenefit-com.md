@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Two issues were found. A `/404` page listed in the sitemap returns 200 and is indexable, and all four page titles contain a literal ellipsis that cuts off the topic before the brand suffix. The H1s are campaign slogans rather than topic statements; this is under review as a content and keyword opportunity.
+**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Three issues were found. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; and the inner pages' H1s are campaign slogans that do not name the page topic.
 
 ## Findings
 
@@ -25,20 +25,39 @@
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors) and [build a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 
-### Page titles are truncated with a literal ellipsis
+### Page titles and the homepage description are truncated with a literal ellipsis
 
 - **Finding ID:** SEO-MTB-002
-- **Page or component:** `<title>` of all four pages (website template or CMS title field).
+- **Page or component:** `<title>` of all four pages and the homepage meta description (CMS SEO settings).
 - **Priority:** Medium
-- **Evidence:** On 2026-11-19 the HTML source titles were “Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program” (homepage), “How Much Can You Save with NITA… | NITA Transit Benefit Program,” “Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program,” and “A Smart Move: NITA Transit Benefits… | NITA Transit Benefit Program.” The ellipsis character is in the source, not added by a tool. Screaming Frog measured the titles at 606–653 px, above the roughly 580 px that commonly displays on desktop results. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`page_titles_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/page_titles_all.csv).
+- **Evidence:** On 2026-11-19 the HTML source titles were “Everybody Wins with Money-Saving NITA… | NITA Transit Benefit Program” (homepage), “How Much Can You Save with NITA… | NITA Transit Benefit Program,” “Want to Cut Your Monthly Commute Bill… | NITA Transit Benefit Program,” and “A Smart Move: NITA Transit Benefits… | NITA Transit Benefit Program.” The ellipsis character is in the source, not added by a tool. Screaming Frog measured the titles at 606–653 px, above the roughly 580 px that commonly displays on desktop results. The homepage meta description is also cut off: “The Chicago NITA Transit Benefit Fare Program can cut employees' monthly commute bills by up to 40%. Employers can save over 7% on payroll taxes. Here's…” (153 characters, confirmed on 2026-11-20). NITA's website shows the same truncation on 1,279 descriptions and 63 titles (`SEO-NITA-012`), which points to a shared CMS SEO setting. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt), [`step2c-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2c-live-checks.txt), and [`page_titles_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/page_titles_all.csv).
 - **Impact:** The titles stop mid-phrase, before stating the page topic (for example, “pre-tax transit benefits for employees”). A search result or browser tab shows an incomplete sentence, and the most descriptive words are missing. Google may rewrite title links that it considers unhelpful.
-- **Recommendation:** Write complete, concise titles that state each page's topic and audience first and the brand second (for example, a title for the Employees page that names pre-tax transit and parking benefits for employees). Check whether the CMS or SEO plugin applies a character limit that inserts the ellipsis.
+- **Recommendation:** Write complete, concise titles that state each page's topic and audience first and the brand second (for example, a title for the Employees page that names pre-tax transit and parking benefits for employees). Complete the homepage description. Change the CMS SEO setting that truncates titles and descriptions with an ellipsis, together with NITA's website.
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/appearance/title-link)
 
+### H1 headings are slogans that do not name the page topic
+
+- **Finding ID:** SEO-MTB-003
+- **Page or component:** H1 of the [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), and [Employers](https://www.mytransitbenefit.com/employers) pages.
+- **Priority:** Low
+- **Evidence:** In the 2026-11-19 crawl and the live source on 2026-11-20 ([`internal_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/internal_all.csv), [`step2c-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2c-live-checks.txt)):
+
+  | Page | H1 | Second H1 | First H2s |
+  | --- | --- | --- | --- |
+  | [Homepage](https://www.mytransitbenefit.com/) | NITA Pre-Tax Transit Benefits Program. Enroll Now and Save. | — | How the Program Works; I'm an Employer |
+  | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) | A Deep Dive into The Heart of Our Program. | — | About Transit Benefits; How the Program Works |
+  | [Employees](https://www.mytransitbenefit.com/employees) | Your Tax Savings Starts Here! | Login | Employees; How you save |
+  | [Employers](https://www.mytransitbenefit.com/employers) | Save Money, Go Green, and Attract Talent! | — | Employers; How you save |
+
+  Only the homepage H1 names the program. On the three inner pages the topic (“Employees”, “Employers”) appears only in an H2, and the Employees page marks the login box heading as an H1.
+- **Impact:** On a four-page website each H1 carries much of the page's topical signal. Slogans such as “Your Tax Savings Starts Here!” do not say that the page explains pre-tax transit and parking benefits for employees, which makes the page's purpose less clear to search engines and to screen-reader users who navigate by headings.
+- **Recommendation:** Make each inner page's H1 state its topic and audience (for example “Pre-tax transit benefits for employees” and “Commuter benefits for employers”), keep the slogan as a subheading or lead text, and change the “Login” heading to a lower heading level or a non-heading element. Coordinate heading changes with the accessibility section.
+- **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+
 ## Observations under review
 
-- **H1 headings:** the H1s are campaign slogans (“Your Tax Savings Starts Here!”, “Save Money, Go Green, and Attract Talent!”, “A Deep Dive into The Heart of Our Program.”). Only the homepage H1 names the program. The Employees page also has a second H1, “Login.” Assess in Step 3 together with on-page topic language; coordinate with the accessibility section on heading structure.
 - **Legacy and third-party links:** the 2026-11-19 crawl shows links to `rtachicago.org` blog posts that redirect, and a script loaded from `unpkg.com` with the floating `@latest` version, which redirects on every page. Review in Step 2.
 - **Structured data:** the homepage JSON-LD `WebSite` graph references `https://nita.illinois.gov#identity` as author and copyright holder. This may be intentional (NITA operates the program) or a copied configuration; confirm the intended publisher identity before recording a finding.
 
