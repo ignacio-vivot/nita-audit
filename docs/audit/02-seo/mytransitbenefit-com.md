@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Four issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; and the inner pages' H1s are campaign slogans that do not name the page topic.
+**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Five issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; and image `alt` text often repeats file names, with the footer logo labeled “RTA”.
 
 ## Findings
 
@@ -77,9 +77,32 @@
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 
+### Image alternative text repeats file names, and the footer logo is labeled “RTA”
+
+- **Finding ID:** SEO-MTB-005
+- **Page or component:** Image `alt` attributes on the four pages: the footer logo, navigation icons, and content images.
+- **Priority:** Low
+- **Evidence:** On 2026-11-20 every `<img>` on the four pages was extracted from the live HTML and each `alt` value was compared with its file name ([`image-alt-review.csv`](../../../evidence/public-technical/2026-11-20/image-alt-review.csv), classified with [`classify_image_alt.py`](../../../evidence/public-technical/2026-11-20/classify_image_alt.py)). All 72 images (29 unique files) have an `alt` attribute; 38 occurrences (21 unique images) equal the file name. Some of these are acceptable short labels that happen to match the file name (for example “Employees” or “Region”), but others contain file codes or suffixes:
+
+  | `alt` value | Image file | Page |
+  | --- | --- | --- |
+  | RTA | `/dist/img/nita-logo-badge.svg` | Footer logo linking to `/` on all four pages; the header logo uses “Northern Illinois Transit Authority Logo” |
+  | Getty Images 1502422361 tiny | `GettyImages-1502422361_tiny.jpeg` | [Employers](https://www.mytransitbenefit.com/employers) |
+  | Coworkers fn; Person on train fn | `coworkers-fn.jpg`; `person-on-train-fn.jpg` | [Homepage](https://www.mytransitbenefit.com/) |
+  | 221107 NITA 1574 X3; 22 NITA 1337 X3 | `221107-RTA-1574-X3.jpg`; `22-RTA-1337-X3.jpeg` | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits); [Employees](https://www.mytransitbenefit.com/employees). “RTA” in the file name appears as “NITA” in the `alt`, which suggests a text replacement on asset titles |
+  | NITA Transit Benefit Fare Program Cards COMBINED | `RTA-Transit-Benefit-Fare-Program-Cards-COMBINED.png` | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) |
+  | Transit Benefit Program rv; Community rv | `Transit-Benefit-Program-rv.svg`; `Community-rv.svg` | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) |
+  | Ventra iphone | `ventra-iphone.png` | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) |
+
+  Two news images on the homepage (`221107-RTA-1554.jpg` and `tbfp-blog-1110x545-1.jpg`) use the generic “News Image”. The home link in the header and footer has the screen-reader text “Regional Transportation Authority”.
+- **Impact:** On a four-page website, image `alt` text is one of the few on-page signals about the program's photos and illustrations. File codes and suffixes add no meaning, and the logo and home-link labels name the former agency. The same text is read aloud by screen readers; that impact is assessed in the accessibility section.
+- **Recommendation:** Change the footer logo `alt` and the home-link label to “NITA” or “Northern Illinois Transit Authority”, write short descriptions for the content photos (for example, coworkers commuting by train), give icons an empty `alt=""` where a visible label already names the item, and apply the same asset alternative-text field recommended for NITA's website (`SEO-NITA-017`).
+- **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: image SEO best practices](https://developers.google.com/search/docs/appearance/google-images#use-descriptive-alt-text); accessibility criteria are assessed in the accessibility section.
+
 ## Observations under review
 
-- **Legacy and third-party links:** the 2026-11-19 crawl shows links to `rtachicago.org` blog posts that redirect, and a script loaded from `unpkg.com` with the floating `@latest` version, which redirects on every page. Review in Step 2.
+- **Legacy and third-party links (reviewed in Step 2 part F):** no external link is confirmed broken. Two links to `rtachicago.org` blog posts 301-redirect to the matching NITA posts, which return 200; linking to the NITA URLs directly would remove the redirect and the RTA reference. A script is loaded from `unpkg.com` with the floating `@latest` version, which 302-redirects to a pinned version on every page; pinning the version is a maintenance and performance consideration to review in Step 3.
 
 ## Positive Observations
 
@@ -92,4 +115,4 @@
 - The 2026-11-19 crawl (default configuration, Text Only) replaces the undocumented 2026-11-16 crawl and confirms the four-page scope. The free Screaming Frog version does not extract structured data, so markup is validated manually.
 - The public spot checks did not submit forms, follow authenticated flows, or verify transaction completion.
 - Public crawl data cannot establish Google index coverage, rankings, queries, traffic, click-through rate, or conversions. Search Console and analytics are outside the agreed scope.
-- Performance/Core Web Vitals, mobile, internal linking, image alternative text, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.
+- Performance/Core Web Vitals, mobile, internal linking, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.
