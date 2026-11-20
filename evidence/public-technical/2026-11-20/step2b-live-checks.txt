@@ -1,0 +1,31 @@
+# Step 2 part B live checks — captured 2026-11-20T13:59Z with curl 8.7.1
+# Raw anchors and status codes. Not edited after capture.
+
+## Broken links on current pages: raw anchors in HTML
+### https://nita.illinois.gov/region
+<a href="https://nita.illinois.gov/data" class="inline-flex items-center justify-center py-4 px-8 border border-transparent text-base font-medium text-nitadarkblue-500 bg-nitaactiveblue-500 hover:bg-nitaactiveblue-300  md:text-lg" target="_blank"> The NITA Data Portal 
+### https://nita.illinois.gov/riders/paying-for-your-ride
+<a target="_blank" href="getaccess.org" rel="noreferrer noopener">NITA-issued Access card
+<a target="_blank" title="https://gcc02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fgetaccess.org%2F&amp;data=05%7C02%7CNatalie.Rzucidlo%40RTACHICAGO.ORG%7Cbc7c734a9b1f477d29b108dda9eb47bd%7Ca62b6cc678c04816a85c6b474f28b3b3%7C0%7C0%7C638853550231963459%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=mIfHYYk2T%2FNH48%2BSM4Q2mRa2QaDFF2zVOnfyHo%2BKgiE%3D&amp;reserved=0" href="getaccess.org" rel="noreferrer noopener">NITA-issued Access card;
+
+## Status of broken targets
+404  https://nita.illinois.gov/data
+404  https://nita.illinois.gov/riders/getaccess.org
+404  https://nita.illinois.gov/region/transformingtransit
+404  https://nita.illinois.gov/transit-funding/fiscalcliff
+404  https://nita.illinois.gov/index.php/plans-programs/community-planning
+404  https://nita.illinois.gov/index.php/home
+404  https://nita.illinois.gov/blog/2018/10/05/%5C
+404  https://nita.illinois.gov/about-rta/press-releases/massels@RTAchicago.org
+
+## Example backslash link (2022 post)
+<a href="%5C">RTA’s four-part Transportation Tuesday Series
+<a href="%5C">Read a recent report
+<a href="%5C">interactive story map 
+
+## Candidate current destinations
+302 https://experience.arcgis.com/experience/b1a29e850bf44bf087e01277eabfcaad/page/Home   https://nita.illinois.gov/dashboards
+200    https://nita.illinois.gov/region/how-system-working
+200    https://nita.illinois.gov/blog/tags/fiscal-cliff
+200    https://nita.illinois.gov/blog/tags/transforming-transit
+200    https://nita.illinois.gov/communities/community-planning

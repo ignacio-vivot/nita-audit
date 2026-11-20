@@ -82,13 +82,17 @@ Free-version limits that remain: no JavaScript rendering, no structured-data ext
 
 ### Step 2 — Complete automated technical checks
 
+Work in parts and review each with the team before the next: (A) crawlability and indexability, items 1 and 8; (B) broken and malformed internal links, item 7; (C) titles, descriptions, and headings, item 2; (D) sitemap and discovery, item 3; (E) structured data, item 4; (F) image alternative text and external links, items 5 and 6.
+
+Progress: part A completed 2026-11-20 (`SEO-NITA-006` and `SEO-NITA-007` added); part B completed 2026-11-20 (`SEO-NITA-008` and `SEO-NITA-009` added). See the matrix log.
+
 Uses the 2026-11-19 crawl baseline from Step 1: [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv), the B1 link-discovery files, and the My Transit Benefit crawl.
 
 1. Analyze crawlability, status codes, redirect destinations/chains, HTTP/HTTPS consistency, soft 404 responses, blocked resources, internal broken links, canonicals, indexability directives, pagination, and URL patterns.
 2. Review titles, meta descriptions, and heading structure; group template-level patterns and inspect affected page purpose before treating alerts as findings.
-3. Review internal link pathways and sitemap inclusion/discovery using the rebuilt sitemap comparison. Sample representative sitemap-only URLs per group, including historical press releases.
+3. Review internal link pathways and sitemap inclusion/discovery using `url-inventory.csv`: check all 6 sitemap URLs not reached through internal links, decide whether the 450 linked HTML URLs absent from the sitemap (mainly tag archives and pagination) should be listed, and review the sitemap URLs that redirect. Inspect a representative historical press release.
 4. Validate structured data with the Rich Results Test or Schema.org Validator and compare it with visible content, including the identity values in the My Transit Benefit `WebSite` graph.
-5. Review image alternative text from the new export and representative rendered pages; classify each gap as SEO-related, accessibility-related, or both, and coordinate with the accessibility section to avoid duplicate findings.
+5. Review image alternative text: for My Transit Benefit, use the 2026-11-19 Spider image exports; for NITA, review the rendered page-level sample, because List mode does not crawl images. Classify each gap as SEO-related, accessibility-related, or both, and coordinate with the accessibility section to avoid duplicate findings.
 6. Treat external-link 403 responses from transit operators (for example metra.com, ventrachicago.com) as likely bot blocking until confirmed in a browser.
 7. Analyze the 50 internal URLs returning 404 and the 2 malformed links (403) recorded by link discovery, separating links on current pages from links in historical posts and press releases.
 8. Check the signals found on 2026-11-19 (curl): NITA `/404` returns 200 and is listed in the sitemap; out-of-range pagination such as `/blog/p100` and `/news/press-releases/p100` returns 200; the news sitemap lists a post dated 1970-01-01 (`/blog/1970/01/01/take-rta-survey`). Confirm each before recording findings.
@@ -128,6 +132,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-19
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 (automated technical checks) is next.
-- Draft findings: `SEO-NITA-001` to `SEO-NITA-005` and `SEO-MTB-001` to `SEO-MTB-002`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is in progress: parts A and B are complete; part C (titles, descriptions, and headings) is next.
+- Draft findings: `SEO-NITA-001` to `SEO-NITA-009` and `SEO-MTB-001` to `SEO-MTB-002`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.

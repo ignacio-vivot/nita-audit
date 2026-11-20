@@ -91,7 +91,7 @@ Use stable IDs: `A11Y-NITA-001`, `SEO-MTB-001`, `AEO-NITA-001`, `GEO-MTB-001`, `
 - Link to the affected public URL. For screenshots or other artifacts, use a stable relative path in the repository, such as `evidence/accessibility/nita-homepage-menu.png`.
 - Describe the observed behavior, not only the tool's score or alert.
 - For automated results, name the tool and version when available, and manually verify the issue where practical.
-- Do not include personal data in evidence. Capture only what is needed to demonstrate the finding.
+- Information published on the audited websites, including staff names or email addresses that appear in public pages or their source code, may be quoted in evidence and findings when it helps locate or explain an issue (team decision, 2026-11-20; the report has limited distribution). Do not add personal data that is not publicly published, such as data from forms, accounts, or private communications.
 
 ## 5. Priority and complexity
 

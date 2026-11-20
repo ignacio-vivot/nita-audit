@@ -1,0 +1,68 @@
+# Step 2 part A live checks — captured 2026-11-20T12:25Z with curl 8.7.1
+# Raw status lines/headers and short HTML extracts. Not edited after capture.
+
+## HTTP (port 80) responses across templates — NITA
+200   http://nita.illinois.gov/
+200   http://nita.illinois.gov/riders/paying-for-your-ride
+200   http://nita.illinois.gov/communities/community-planning
+200   http://nita.illinois.gov/transit-funding/2027-regional-transit-budget
+200   http://nita.illinois.gov/blog
+200   http://nita.illinois.gov/blog/2026/10/01/nita-expanding-access-pilot-program-to-cta-and-pace-starting-october-1-offering-income-based-reduced-fare-transit-regionwide
+200   http://nita.illinois.gov/news/press-releases
+200   http://nita.illinois.gov/about-rta/press-releases/village-of-libertyville-starting-work-on-transit-oriented-development-plan
+200   http://nita.illinois.gov/blog/tags/cta
+200   http://nita.illinois.gov/uploads/files/general/NITA-English-System-Map-October-2026.pdf
+
+## http://www.nita.illinois.gov/ and https://www.nita.illinois.gov/
+301 https://nita.illinois.gov/  http://www.nita.illinois.gov/
+301 https://nita.illinois.gov/  https://www.nita.illinois.gov/
+
+## Coalition redirect chain
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/region/transit-is-the-answer/coalition
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/coalition
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/transit-funding/coalition
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/riders/coalition
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/communities/coalition
+HTTP/1.1 301 Moved Permanently
+Location: https://nita.illinois.gov/region/coalition
+HTTP/1.1 404 Not Found
+
+## Soft 404 candidates: status, title, robots, canonical, count of post links
+/404 -> HTTPSTATUS:200 | <title>404 | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/404" rel="canonical"> | items:4
+/blog/p66 -> HTTPSTATUS:200 | <title>On Track: A blog from NITA | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/blog" rel="canonical"> | items:7
+/blog/p67 -> HTTPSTATUS:200 | <title>On Track: A blog from NITA | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/blog" rel="canonical"> | items:7
+/blog/p100 -> HTTPSTATUS:200 | <title>On Track: A blog from NITA | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/blog" rel="canonical"> | items:7
+/news/press-releases/p35 -> HTTPSTATUS:200 | <title>Keeping riders informed | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/news/press-releases" rel="canonical"> | items:16
+/news/press-releases/p36 -> HTTPSTATUS:200 | <title>Keeping riders informed | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/news/press-releases" rel="canonical"> | items:16
+/news/press-releases/p100 -> HTTPSTATUS:200 | <title>Keeping riders informed | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/news/press-releases" rel="canonical"> | items:16
+/blog/tags/cta/p50 -> HTTPSTATUS:200 | <title>NITA | Northern Illinois Transit Authority</title> | <meta name="robots" content="all"> | <link href="https://nita.illinois.gov/blog/tags/cta" rel="canonical"> | items:15
+/this-page-does-not-exist-audit-check -> HTTPSTATUS:404 | <title>Upcoming public meetings on transit service | Northern Illinois Transit Authority</title> | <meta name="robots" content="none"> |  | items:4
+
+## Sitemap-only URLs
+302 https://sites.google.com/view/rtasitehub/home  https://nita.illinois.gov/regsitehub
+302 https://www.research.net/r/ChiTransitFall2026  https://nita.illinois.gov/ridersurvey26
+200   https://nita.illinois.gov/saveada
+200   https://nita.illinois.gov/take-action
+200   https://nita.illinois.gov/blog/uncategorized
+200   https://nita.illinois.gov/blog/1970/01/01/take-rta-survey
+
+## Trailing slash variants
+200   https://nita.illinois.gov/riders/free-and-reduced-fare-programs/
+200   https://nita.illinois.gov/take-action/
+200   https://nita.illinois.gov/riders/
+
+## Robots-blocked assets referenced on a page with a form (2027 budget page)
+href="https://nita.illinois.gov/cpresources/d42cfe8b/css/front-end/plugin/freeform.css?v=1794254544"
+src="https://nita.illinois.gov/cpresources/d42cfe8b/js/scripts/front-end/captchas/recaptcha/v3.js?v=1794254544"
+src="https://nita.illinois.gov/cpresources/d42cfe8b/js/scripts/front-end/integrations/gtm/gtm.js?v=1794254544"
+src="https://nita.illinois.gov/cpresources/d42cfe8b/js/scripts/front-end/plugin/freeform.js?v=1794254544"
+
+## MTB HTTP/non-www on inner pages
+301 https://www.mytransitbenefit.com/employers  http://www.mytransitbenefit.com/employers
+301 https://www.mytransitbenefit.com/employees  http://mytransitbenefit.com/employees
+301 https://www.mytransitbenefit.com/behind-the-benefits  https://mytransitbenefit.com/behind-the-benefits
