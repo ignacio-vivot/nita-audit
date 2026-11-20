@@ -1,0 +1,107 @@
+{
+ "url": "https://nita.illinois.gov/blog",
+ "captured": "2026-11-20",
+ "jsonld": [
+  {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "WebSite",
+     "author": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightHolder": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightYear": "2022",
+     "creator": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "dateCreated": "2022-08-16T15:19:42-05:00",
+     "dateModified": "2026-08-31T11:34:47-05:00",
+     "datePublished": "2022-08-16T15:19:00-05:00",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "headline": "On Track: A blog from NITA",
+     "image": {
+      "@type": "ImageObject",
+      "url": "https://nita.illinois.gov/uploads/images/general/_1200x630_fit_center-center_82_none/nita-seo.png?mtime=1788190862"
+     },
+     "inLanguage": "en-us",
+     "mainEntityOfPage": "https://nita.illinois.gov/blog",
+     "name": "On Track: A blog from NITA",
+     "publisher": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "url": "https://nita.illinois.gov/blog"
+    },
+    {
+     "@id": "https://nita.illinois.gov#identity",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "email": "website@nita.illinois.gov",
+     "image": {
+      "@type": "ImageObject",
+      "height": "76",
+      "url": "https://nita.illinois.gov/uploads/images/general/NITA-Badge-Outline-2.svg",
+      "width": "173"
+     },
+     "logo": {
+      "@type": "ImageObject",
+      "height": "264",
+      "width": "600"
+     },
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@id": "https://nita.illinois.gov#creator",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "description": "Breadcrumbs list",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/blog",
+       "name": "On Track: A blog from NITA",
+       "position": 2
+      }
+     ],
+     "name": "Breadcrumbs"
+    }
+   ]
+  }
+ ],
+ "microdata_attrs": 0,
+ "rdfa_attrs": 0
+}

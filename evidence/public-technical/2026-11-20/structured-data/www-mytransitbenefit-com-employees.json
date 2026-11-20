@@ -1,0 +1,133 @@
+{
+ "url": "https://www.mytransitbenefit.com/employees",
+ "captured": "2026-11-20",
+ "jsonld": [
+  {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "WebSite",
+     "author": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightHolder": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightYear": "2023",
+     "creator": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "dateCreated": "2023-10-20T12:17:14-05:00",
+     "dateModified": "2026-09-18T10:43:48-05:00",
+     "datePublished": "2023-10-20T12:17:00-05:00",
+     "description": "When you enroll in the NITA Transit Benefit Fare Program, you'll cut commuting costs and keep more of what you earn. Learn more now.",
+     "headline": "Want to Cut Your Monthly Commute Bill by up to 40%?",
+     "image": {
+      "@type": "ImageObject",
+      "url": "https://www.mytransitbenefit.com/uploads/images/general/_1200x630_crop_center-center_82_none/coworkers-fn.jpg?mtime=1701124951"
+     },
+     "inLanguage": "en-us",
+     "mainEntityOfPage": "https://www.mytransitbenefit.com/employees",
+     "name": "Want to Cut Your Monthly Commute Bill by up to 40%?",
+     "publisher": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "url": "https://www.mytransitbenefit.com/employees"
+    },
+    {
+     "@id": "https://nita.illinois.gov#identity",
+     "@type": "LocalBusiness",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "email": "webadmin@rtachicago.org",
+     "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.877930",
+      "longitude": "-87.628420"
+     },
+     "image": {
+      "@type": "ImageObject",
+      "height": "864",
+      "url": "https://www.mytransitbenefit.com/uploads/images/general/nita-seo.png",
+      "width": "1400"
+     },
+     "logo": {
+      "@type": "ImageObject",
+      "height": "370",
+      "url": "https://www.mytransitbenefit.com/uploads/images/general/_600x600_fit_center-center_82_none/nita-seo.png?mtime=1789746568",
+      "width": "600"
+     },
+     "name": "Northern Illinois Transportation Authority",
+     "priceRange": "$",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@id": "https://nita.illinois.gov#creator",
+     "@type": "LocalBusiness",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "email": "webadmin@rtachicago.org",
+     "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.877930",
+      "longitude": "-87.628420"
+     },
+     "image": {
+      "@type": "ImageObject",
+      "height": "864",
+      "url": "https://www.mytransitbenefit.com/uploads/images/general/nita-seo.png",
+      "width": "1400"
+     },
+     "logo": {
+      "@type": "ImageObject",
+      "height": "370",
+      "url": "https://www.mytransitbenefit.com/uploads/images/general/_600x600_fit_center-center_82_none/nita-seo.png?mtime=1789746568",
+      "width": "600"
+     },
+     "name": "Northern Illinois Transit Authority",
+     "priceRange": "$",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "description": "Breadcrumbs list",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://www.mytransitbenefit.com/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://www.mytransitbenefit.com/employees",
+       "name": "I'm an Employee",
+       "position": 2
+      }
+     ],
+     "name": "Breadcrumbs"
+    }
+   ]
+  }
+ ],
+ "microdata_attrs": 0,
+ "rdfa_attrs": 0
+}

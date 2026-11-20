@@ -84,7 +84,7 @@ Free-version limits that remain: no JavaScript rendering, no structured-data ext
 
 Work in parts and review each with the team before the next: (A) crawlability and indexability, items 1 and 8; (B) broken and malformed internal links, item 7; (C) titles, descriptions, and headings, item 2; (D) sitemap and discovery, item 3; (E) structured data, item 4; (F) image alternative text and external links, items 5 and 6.
 
-Progress: part A completed 2026-11-20 (`SEO-NITA-006` and `SEO-NITA-007` added); part B completed 2026-11-20 (`SEO-NITA-008` and `SEO-NITA-009` added); part C completed 2026-11-20 (`SEO-NITA-010` to `014` and `SEO-MTB-003` added); part D completed 2026-11-20 (`SEO-NITA-015` added). See the matrix log.
+Progress: part A completed 2026-11-20 (`SEO-NITA-006` and `SEO-NITA-007` added); part B completed 2026-11-20 (`SEO-NITA-008` and `SEO-NITA-009` added); part C completed 2026-11-20 (`SEO-NITA-010` to `014` and `SEO-MTB-003` added); part D completed 2026-11-20 (`SEO-NITA-015` added); part E completed 2026-11-20 (`SEO-NITA-016` and `SEO-MTB-004` added). See the matrix log.
 
 Uses the 2026-11-19 crawl baseline from Step 1: [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv), the B1 link-discovery files, and the My Transit Benefit crawl.
 
@@ -132,6 +132,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-19
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is in progress: parts A to D are complete; part E (structured data) is next.
-- Draft findings: `SEO-NITA-001` to `SEO-NITA-015` and `SEO-MTB-001` to `SEO-MTB-003`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is in progress: parts A to E are complete; part F (image alternative text and external links) is next.
+- Draft findings: `SEO-NITA-001` to `SEO-NITA-016` and `SEO-MTB-001` to `SEO-MTB-004`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.

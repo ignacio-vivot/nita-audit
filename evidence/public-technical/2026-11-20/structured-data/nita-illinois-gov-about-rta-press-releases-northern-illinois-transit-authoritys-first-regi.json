@@ -1,0 +1,107 @@
+{
+ "url": "https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties",
+ "captured": "2026-11-20",
+ "jsonld": [
+  {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "WebSite",
+     "author": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightHolder": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightYear": "2026",
+     "creator": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "dateCreated": "2026-11-02T11:40:23-06:00",
+     "dateModified": "2026-11-02T12:13:59-06:00",
+     "datePublished": "2026-11-02T12:30:00-06:00",
+     "description": "2, 2026 — The Northern Illinois Transit Authority (NITA) has released the Proposed 2027 Regional Transit Operating Budget and Five-Year Capital Program for public comment before consideration for approval by the NITA Board in December. It also details a 2027–2031 Five-Year Capital Program of $9.73 billion for investment in vehicles, stations, tracks, bridges, signals, facilities and technology — including $990 million in new funding from the NITA Act, as well as federal and state sources. In the coming year, more frequent service, better-coordinated schedules and transfers, expanded fare programs, and clearer customer information will move CTA, Metra and Pace toward a more integrated regional network. “NITA is ready to lead a more connected, more reliable, safer regional transit system, and this budget puts that commitment into action,” said NITA interim Executive Director Jamie Rhee. “We are bringing agencies together, setting regional priorities and holding ourselves and our operating agencies accountable for results that riders, frontline workers and the taxpayers can see and experience.” What we heard from riders NITA’s budget survey, “What Moves You?” available in English and Spanish, received 4,368 responses, helping prioritize issues facing NITA in 2027 and beyond. It also funds the NITA Ride Safe coordinated safety reporting app (launching later this month), the Transit Ambassador program (launching summer 2027) and more funding for health and human services support, among other public safety initiatives. The proposed 2027 NITA Regional Budget funds: Safer trips Includes funding for additional regional safety initiatives including Transit Ambassadors and the NITA Ride Safe app Coordinated law-enforcement and social-service response NITA to establish Office of Transit Safety and Experience New fare gates pilot to mitigate fare evasion More frequent, reliable service Expanded CTA Frequent Bus Network Six CTA bus routes added to Owl 24/7 Service New Sunday service on select Pace routes across suburbs Expanded service on Rock Island Line Improved rail slow zones across the system Affordable, connected travel across CTA, Metra and Pace No fare increase in 2027, free transfers between CTA and Pace Expanded Access Program and streamlined student fares made permanent, new Reduced Fare passes Progress on system-wide fare integration and more fare programs in years ahead Accessible trips, clearer information Accessible stations and replacement of paratransit vehicles Real-time arrival and elevator status signs and clearer wayfinding Better places to ride and work Increased cleaning and maintenance Bus shelters, benches and station improvements Operator restrooms, crew facilities and garage upgrades Sustainable transportation Over 200 electric buses or hybrid-electric buses for CTA and Pace First in the nation battery-electric trainsets on Metra Garage electrification to support zero-emission fleet Transit-Oriented Development Joint Development Program Transit Supportive Development Incentive Program NITA’s Five-Year 2027–2031 Regional Capital Program aims to deliver projects that reduce the region’s state of good repair backlog, improve accessibility, support the transition to zero emissions and advance expansions and upgrades as funding allows. Federal and state funding has supported progress toward capital goals, but the 2027–2031 program includes a new source of capital funding established by the NITA Act: a share of the interest earned on the state’s Road Fund and State Construction Account. The five-year capital program builds on these projects by better connecting the regional system, improving accessibility, returning assets to a state of good repair and continuing the transition to zero-emissions technologies. The program also funds regional enhancements including pilot phases of a NITA regional signage program, a regional Access to Transit program in collaboration with the Chicago Metropolitan Agency for Planning (CMAP) that provides for enhanced access to bus stops in collar counties, and a regional bus shelter p",
+     "headline": "Northern Illinois Transit Authority’s first regional budget proposal expands service, creates jobs, and improves safety across six counties",
+     "image": {
+      "@type": "ImageObject",
+      "url": "https://nita.illinois.gov/uploads/images/general/_1200x630_fit_center-center_82_none/nita-seo.png?mtime=1788190862"
+     },
+     "inLanguage": "en-us",
+     "mainEntityOfPage": "https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties",
+     "name": "Northern Illinois Transit Authority’s first regional budget proposal expands service, creates jobs, and improves safety across six counties",
+     "publisher": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "url": "https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties"
+    },
+    {
+     "@id": "https://nita.illinois.gov#identity",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "email": "website@nita.illinois.gov",
+     "image": {
+      "@type": "ImageObject",
+      "height": "76",
+      "url": "https://nita.illinois.gov/uploads/images/general/NITA-Badge-Outline-2.svg",
+      "width": "173"
+     },
+     "logo": {
+      "@type": "ImageObject",
+      "height": "264",
+      "width": "600"
+     },
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@id": "https://nita.illinois.gov#creator",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "description": "Breadcrumbs list",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties",
+       "name": "Northern Illinois Transit Authority’s first regional budget proposal expands service, creates jobs, and improves safety across six counties",
+       "position": 2
+      }
+     ],
+     "name": "Breadcrumbs"
+    }
+   ]
+  }
+ ],
+ "microdata_attrs": 0,
+ "rdfa_attrs": 0
+}

@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Three issues were found. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; and the inner pages' H1s are campaign slogans that do not name the page topic.
+**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Four issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; and the inner pages' H1s are campaign slogans that do not name the page topic.
 
 ## Findings
 
@@ -24,6 +24,27 @@
 - **Recommendation:** Exclude the `/404` entry from the sitemap and mark it `noindex`, or remove it as a public entry if the error template does not depend on it. Confirm with the CMS team how the error template is configured before changing it.
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors) and [build a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+
+### Structured data describes NITA as a business with the wrong name and an RTA email
+
+- **Finding ID:** SEO-MTB-004
+- **Page or component:** JSON-LD on all four pages (CMS SEO plugin settings).
+- **Priority:** Medium
+- **Evidence:** On 2026-11-20 each page contained a JSON-LD graph whose organization nodes reuse NITA's identifiers (`@id: "https://nita.illinois.gov#identity"` and `"#creator"`) but describe them differently from NITA's own website ([extracted JSON-LD](../../../evidence/public-technical/2026-11-20/structured-data/)). The Schema.org Validator (0 errors, 0 warnings) displays these values for the homepage, and Google's Rich Results Test reports the markup as valid ([results and screenshots](../../../evidence/public-technical/2026-11-20/structured-data/validation-results.md)), because the problem is the content of the values, not their syntax:
+
+  | Property | mytransitbenefit.com (`#identity`) | nita.illinois.gov (`#identity`) |
+  | --- | --- | --- |
+  | `@type` | `LocalBusiness` | `GovernmentOrganization` |
+  | `name` | Northern Illinois **Transportation** Authority | Northern Illinois **Transit** Authority |
+  | `email` | `webadmin@rtachicago.org` | `website@nita.illinois.gov` |
+  | `priceRange` | `$` | — |
+  | `geo` | 41.877930, -87.628420 | — |
+
+  The `#creator` node on My Transit Benefit is also a `LocalBusiness` with `priceRange: "$"` and the RTA email, but with the correct name. As on NITA's website, the page-level node is `@type: "WebSite"` on every page (`SEO-NITA-016`); its `headline` values hold the complete titles that the HTML `<title>` truncates (`SEO-MTB-002`).
+- **Impact:** Search engines and AI systems that read this markup receive a misspelled agency name, a former RTA email address, and a commercial business type with a price range for a public program, and the same identifier is described two different ways across NITA's two websites. This reduces the clarity and consistency of the machine-readable information about who runs the program.
+- **Recommendation:** Change the organization type to `GovernmentOrganization` (or reference NITA's entity without redefining it), correct the name to “Northern Illinois Transit Authority”, replace `webadmin@rtachicago.org` with a current NITA address, and remove `priceRange` and `geo` unless intended. Align these settings with NITA's website and validate with the Rich Results Test.
+- **Implementation complexity:** Low (plugin configuration)
+- **Related standard:** [Google Search Central: Organization structured data](https://developers.google.com/search/docs/appearance/structured-data/organization) and [schema.org/GovernmentOrganization](https://schema.org/GovernmentOrganization)
 
 ### Page titles and the homepage description are truncated with a literal ellipsis
 
@@ -59,7 +80,6 @@
 ## Observations under review
 
 - **Legacy and third-party links:** the 2026-11-19 crawl shows links to `rtachicago.org` blog posts that redirect, and a script loaded from `unpkg.com` with the floating `@latest` version, which redirects on every page. Review in Step 2.
-- **Structured data:** the homepage JSON-LD `WebSite` graph references `https://nita.illinois.gov#identity` as author and copyright holder. This may be intentional (NITA operates the program) or a copied configuration; confirm the intended publisher identity before recording a finding.
 
 ## Positive Observations
 

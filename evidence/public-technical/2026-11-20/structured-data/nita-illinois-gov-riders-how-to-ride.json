@@ -1,0 +1,112 @@
+{
+ "url": "https://nita.illinois.gov/riders/how-to-ride",
+ "captured": "2026-11-20",
+ "jsonld": [
+  {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "WebSite",
+     "author": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightHolder": {
+      "@id": "https://nita.illinois.gov#identity"
+     },
+     "copyrightYear": "2022",
+     "creator": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "dateModified": "2026-10-29T15:10:49-05:00",
+     "datePublished": "2022-05-13T14:19:00-05:00",
+     "description": "The Chicago transit system is the second largest in the U.S. Learn how to safely navigate the system’s buses and trains so you can have a smooth ride in and around the city.",
+     "headline": "Your guide to getting around town",
+     "image": {
+      "@type": "ImageObject",
+      "url": "https://nita.illinois.gov/uploads/images/general/Riders/_1200x630_crop_center-center_82_none/Plainfield-Park-N-Ride_People-waiting-on-bus_0411.jpg?mtime=1667848904"
+     },
+     "inLanguage": "en-us",
+     "mainEntityOfPage": "https://nita.illinois.gov/riders/how-to-ride",
+     "name": "Your guide to getting around town",
+     "publisher": {
+      "@id": "https://nita.illinois.gov#creator"
+     },
+     "url": "https://nita.illinois.gov/riders/how-to-ride"
+    },
+    {
+     "@id": "https://nita.illinois.gov#identity",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "email": "website@nita.illinois.gov",
+     "image": {
+      "@type": "ImageObject",
+      "height": "76",
+      "url": "https://nita.illinois.gov/uploads/images/general/NITA-Badge-Outline-2.svg",
+      "width": "173"
+     },
+     "logo": {
+      "@type": "ImageObject",
+      "height": "264",
+      "width": "600"
+     },
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@id": "https://nita.illinois.gov#creator",
+     "@type": "GovernmentOrganization",
+     "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60604",
+      "streetAddress": "175 W. Jackson Blvd, Suite 1550"
+     },
+     "alternateName": "NITA",
+     "description": "Committed to achieving a vision of safe, reliable, accessible public transportation that connects people to opportunity, advances equity, and combats climate change for the six counties of Northeastern Illinois.",
+     "name": "Northern Illinois Transit Authority",
+     "telephone": "312-913-3200",
+     "url": "https://nita.illinois.gov"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "description": "Breadcrumbs list",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/",
+       "name": "Home",
+       "position": 1
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/riders",
+       "name": "Riders",
+       "position": 2
+      },
+      {
+       "@type": "ListItem",
+       "item": "https://nita.illinois.gov/riders/how-to-ride",
+       "name": "How to ride",
+       "position": 3
+      }
+     ],
+     "name": "Breadcrumbs"
+    }
+   ]
+  }
+ ],
+ "microdata_attrs": 0,
+ "rdfa_attrs": 0
+}
