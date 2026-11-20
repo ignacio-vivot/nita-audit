@@ -84,7 +84,7 @@ Free-version limits that remain: no JavaScript rendering, no structured-data ext
 
 Work in parts and review each with the team before the next: (A) crawlability and indexability, items 1 and 8; (B) broken and malformed internal links, item 7; (C) titles, descriptions, and headings, item 2; (D) sitemap and discovery, item 3; (E) structured data, item 4; (F) image alternative text and external links, items 5 and 6.
 
-Progress: part A completed 2026-11-20 (`SEO-NITA-006` and `SEO-NITA-007` added); part B completed 2026-11-20 (`SEO-NITA-008` and `SEO-NITA-009` added); part C completed 2026-11-20 (`SEO-NITA-010` to `014` and `SEO-MTB-003` added); part D completed 2026-11-20 (`SEO-NITA-015` added); part E completed 2026-11-20 (`SEO-NITA-016` and `SEO-MTB-004` added); part F completed 2026-11-20 (`SEO-NITA-017`, `SEO-NITA-018`, and `SEO-MTB-005` added; 459 inconclusive external URLs left pending for validation by another method, by team decision). Step 2 is complete. See the matrix log.
+Progress: part A completed 2026-11-20 (`SEO-NITA-006` and `SEO-NITA-007` added); part B completed 2026-11-20 (`SEO-NITA-008` and `SEO-NITA-009` added); part C completed 2026-11-20 (`SEO-NITA-010` to `014` and `SEO-MTB-003` added); part D completed 2026-11-20 (`SEO-NITA-015` added); part E completed 2026-11-20 (`SEO-NITA-016` and `SEO-MTB-004` added); part F completed 2026-11-20 (`SEO-NITA-017`, `SEO-NITA-018`, and `SEO-MTB-005` added; 315 external URLs blocked or not loading from Argentina left pending for a US check). Step 2 is complete. See the matrix log.
 
 Uses the 2026-11-19 crawl baseline from Step 1: [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv), the B1 link-discovery files, and the My Transit Benefit crawl.
 
@@ -132,6 +132,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-20
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 (manual review of the sample, mobile and performance, and keyword opportunities) is next. Open item: validate the 459 external URLs in `nita-external-links-pending-validation.csv` by another method (for example a browser from a US connection).
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 (manual review of the sample, mobile and performance, and keyword opportunities) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
 - Draft findings: `SEO-NITA-001` to `SEO-NITA-018` and `SEO-MTB-001` to `SEO-MTB-005`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.

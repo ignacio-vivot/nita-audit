@@ -11,7 +11,10 @@ status 0 or >= 400, with the number of links and linking pages and a label:
   pending-validation    403, 400, 402, 429, 5xx, 999, timeouts, refused
                         connections, other TLS errors, and hosts that resolved on
                         recheck; these need validation by another method
-Usage: python3 -I classify_external_links.py <status_csv> <edges_csv> <output_csv>
+If a browser-check CSV (from apply_browser_check.py) is given, pending URLs take
+its result: "browser-<result>" for broken results (confirmed in a browser),
+"ok-in-browser" for pages that opened, and "pending-validation" otherwise.
+Usage: python3 -I classify_external_links.py <status_csv> <edges_csv> <output_csv> [browser_csv]
 """
 import csv
 import sys
@@ -44,6 +47,9 @@ def label(url, status, error):
 
 def main():
     status_csv, edges_csv, out = sys.argv[1:4]
+    browser = {}
+    if len(sys.argv) > 4:
+        browser = {r["url"]: r["browser_result"] for r in csv.DictReader(open(sys.argv[4]))}
     links, pages = defaultdict(int), defaultdict(set)
     for r in csv.DictReader(open(edges_csv)):
         links[r["target_url"]] += 1
@@ -56,8 +62,13 @@ def main():
             if s and s < 400:
                 continue
             u = r["url"]
+            c = label(u, r["status"], r["error"])
+            if c == "pending-validation" and u in browser:
+                b = browser[u]
+                c = ("confirmed-browser-" + b[len("broken-"):]) if b.startswith("broken-") else \
+                    "ok-in-browser" if b.startswith("ok") else c
             w.writerow([u, r["status"], r["error"][:80], r["final_url"],
-                        label(u, r["status"], r["error"]), links[u], len(pages[u]), r["first_found_on"]])
+                        c, links[u], len(pages[u]), r["first_found_on"]])
 
 
 if __name__ == "__main__":

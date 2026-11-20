@@ -1,0 +1,86 @@
+domain,urls,links,browser_result_from_argentina,sample_url
+www.rtams.org,49,104,"Redirects to datahub.nita.illinois.gov; CloudFront 403 ""Request blocked""",http://www.rtams.org/rtams/planningProgram.jsp?id=7
+rtams.org,44,74,"Redirects to datahub.nita.illinois.gov; CloudFront 403 ""Request blocked""",https://rtams.org/
+www.rtams.com,7,31,Navigation failed,http://www.rtams.com/rtams/planningStudy.jsp?id=310
+metrarail.com,21,30,CloudFront 504,https://metrarail.com/
+www.pacebus.com,28,29,"Pace ""Access denied"" (403)",https://www.pacebus.com/meeting/budget-public-hearing-virtual-2
+ilga.gov,19,26,Navigation not permitted in the audit browser,https://ilga.gov/legislation/billstatus.asp?DocNum=1342&GAID=17&GA=103&DocTypeID=HB&LegID=143493&SessionID=112
+www.ventrachicago.com,10,19,"403, empty page",http://www.ventrachicago.com/
+www.ilga.gov,9,10,Navigation not permitted in the audit browser,https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=984&ChapterID=15
+garfieldconservatory.org,4,9,Cloudflare challenge (403),https://garfieldconservatory.org/
+tinyurl.com,8,9,Navigation failed,https://tinyurl.com/lk3j4dv
+chicago.metromix.com,1,8,503 Service Temporarily Unavailable,http://chicago.metromix.com/
+fpdcc.com,7,8,Cloudflare challenge (403),https://fpdcc.com/places/locations/dan-ryan-woods/
+gcc02.safelinks.protection.outlook.com,5,7,Outlook Safe Links wrapper; not opened,https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Frtams.us3.list-manage.com%2Ftrack%2Fclick%3Fu%3D74f0b5efbfb69c449788d102b%26id%3Ddd7c9e9b5c%26e%3Dd9da1fb188&data=04%7C01%7Cmeyerm%40rtachicago.org%7C103b1125d1874ba31a4108d9fe02b389%7Ca62b6cc678c04816a85c6b474f28b3b3%7C0%7C0%7C637820109820274138%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=3YnrOnVqcEc8kcxJYUXiQIWKhyy2LBdWVSSRsoicfzc%3D&reserved=0
+activetrans.org,5,5,Cloudflare challenge (403),http://activetrans.org/
+pulse.pacebus.com,2,4,Navigation failed,https://pulse.pacebus.com/
+www.christkindlmarket.com,4,4,403 Forbidden,https://www.christkindlmarket.com/
+www.linkedin.com,4,4,LinkedIn sign-in wall,https://www.linkedin.com/in/adrian-diaz-835166b8/
+www.metrarail.com,2,4,CloudFront 504,http://www.metrarail.com/
+datahub.nita.illinois.gov,3,3,"CloudFront 403 ""Request blocked""",https://datahub.nita.illinois.gov/sites/default/files/documents/2026-08/RTA_RY_2019-2024_Modal_Trends_Report.pdf
+rosemont.com,2,3,Navigation failed,https://rosemont.com/allstate/
+www.activetrans.org,3,3,Cloudflare challenge (403),http://www.activetrans.org
+www.bart.gov,3,3,Cloudflare challenge (403),https://www.bart.gov/about/bod/legislative-advocacy
+www.nytimes.com,3,3,Site not allowed in the audit browser,https://www.nytimes.com/2017/07/03/opinion/rahm-emanuel-chicago-l-mass-transit.html?ref=opinion
+www.savetransitnow.org,2,3,Navigation failed,http://www.savetransitnow.org
+www.trb.org,3,3,Navigation failed,http://www.trb.org/Main/Blurbs/181941.aspx
+bikecommuterchallenge.org,1,2,Redirects to biketoworkchallenge.org; Cloudflare challenge,http://bikecommuterchallenge.org/
+ebidexchange.com,1,2,Navigation failed,https://ebidexchange.com/Default.aspx?cid=fea19256-6318-46d1-9c7a-d7e5a74935eb
+gispro2017.sched.com,1,2,Cloudflare challenge (403),https://gispro2017.sched.com/
+hpbrewfest.com,1,2,Navigation failed,http://hpbrewfest.com/
+metratracker.com,2,2,Navigation failed,https://metratracker.com/
+ridertools.metrarail.com,2,2,CloudFront 504,https://ridertools.metrarail.com/about-metra/metra-business
+savetransitnow.org,1,2,Not opened; www host failed,http://savetransitnow.org/
+uat.rtams.org,1,2,Redirects to uat-datahub.nita.illinois.gov; CloudFront error,https://uat.rtams.org/sites/default/files/digital_documents/Harvey%20Downtown%20TOD%20Report%20March%202022.pdf
+www.artic.edu,2,2,"Cloudflare ""Attention Required"" (403)",https://www.artic.edu/
+www.bloomberg.com,2,2,"Bloomberg ""Are you a robot?""",https://www.bloomberg.com/news/articles/2016-09-18/exec-most-lyft-rides-will-be-in-autonomous-cars-in-5-years
+www.ebidexchange.com,1,2,Not opened; apex host failed,https://www.ebidexchange.com/RegUser.aspx?cid=fea19256-6318-46d1-9c7a-d7e5a74935eb&uid=00000000-0000-0000-0000-000000000000
+www.lcfpd.org,2,2,Cloudflare challenge (403),https://www.lcfpd.org/fort-sheridan/
+www.transit.dot.gov,2,2,PDF; not opened to avoid a download; curl blocked (403),https://www.transit.dot.gov/sites/fta.dot.gov/files/2025-01/Third-Party-Contracting-Guidance-%28Circular-4220.1G%29.pdf
+www.transportation.gov,2,2,PDF; not opened to avoid a download; curl blocked (403),https://www.transportation.gov/sites/dot.gov/files/docs/BeyondTraffic_tagged_508_final.pdf
+aprpullmanportermuseum.org,1,1,Navigation failed,https://aprpullmanportermuseum.org/
+blockclubchicago.org,1,1,"""Checking your browser"" (403)",https://blockclubchicago.org/2024/08/08/elected-officials-advocates-blast-dusable-lake-shore-drive-redesign-plan-its-not-good-enough/
+brookfieldil.gov,1,1,403 Forbidden,http://brookfieldil.gov/departments/community-and-economic-development/zoning-modernization/
+chicagoreader.com,1,1,"""Checking your browser"" (403)",https://chicagoreader.com/news-politics/anatomy-of-an-intervention/
+forgeparks.com,1,1,403 Forbidden,https://forgeparks.com/
+getairsports.com,1,1,403 Forbidden,https://getairsports.com/desplaines
+hauntedtrailsburbank.com,1,1,Navigation failed,https://hauntedtrailsburbank.com/
+illinoisepi.files.wordpress.com,1,1,Redirects to illinoisupdate.com; file requires login (403),https://illinoisepi.files.wordpress.com/2018/05/passing-the-buck-capital-funding-needs-final.pdf
+journals.sagepub.com,1,1,Cloudflare challenge (403),https://journals.sagepub.com/doi/pdf/10.1177/03611981211017900
+maywood-il.org,1,1,Redirects to maywood-il.gov; 403 Forbidden,https://maywood-il.org/Departments/City-Clerk/Resolutions/2022/R-2022-16.aspx
+mlb.mlb.com,1,1,403,http://mlb.mlb.com/fan_forum/greeting_card.jsp?c_id=cws
+mysouthshoreline.com,1,1,"Sucuri firewall ""Access Denied"" (403)",http://mysouthshoreline.com
+roadtorock.org,1,1,Cloudflare challenge (403),https://roadtorock.org/upcoming-events/
+rules.house.gov,1,1,403,https://rules.house.gov/sites/democrats.rules.house.gov/files/BILLS-116HR133SA-RCP-116-68.pdf
+take.lyft.com,1,1,Navigation failed,http://take.lyft.com/friendswithtransit/
+tmweb.pacebus.com,1,1,Navigation failed,http://tmweb.pacebus.com/TMWebWatch/
+www.ahpd.org,1,1,403 Forbidden,https://www.ahpd.org/arlington-heights-historical-museum/
+www.axs.com,1,1,Cloudflare challenge (403),https://www.axs.com/venues/127743/radius-chicago-tickets?skin=radius
+www.chicagoclimateaction.org,1,1,Navigation failed,http://www.chicagoclimateaction.org/
+www.chicagoparkdistrict.com,1,1,"""Access denied"" (403)",https://www.chicagoparkdistrict.com/events/family-fishing-douglass
+www.clippercard.com,1,1,403,https://www.clippercard.com/ClipperWeb/
+www.desplaines.org,1,1,"Redirects to desplainesil.gov ""Error!"" page",https://www.desplaines.org/access-your-government/city-departments/community-and-economic-development/comprehensive-plan
+www.dhbusinessledger.com,1,1,Navigation failed,http://www.dhbusinessledger.com/Content/Default/Homepage-Rotating-Articles/Article/Newsmakers-Despite-state-budget-cloud-business-poised-to-grow-in-2016/-3/303/17328
+www.dpparks.org,1,1,403 Forbidden,https://www.dpparks.org/mystic-waters/
+www.dupagecounty.gov,1,1,403 Forbidden,https://www.dupagecounty.gov/government/departments/public_works/special_service_areas.php
+www.gfoa.org,1,1,Cloudflare challenge (403),http://www.gfoa.org/coa
+www.greencarreports.com,1,1,Cloudflare challenge (403),http://www.greencarreports.com/news/1102130_chicago-transit-authority-to-add-dozens-of-electric-buses-after-successful-tests
+www.kohlchildrensmuseum.org,1,1,403,https://www.kohlchildrensmuseum.org/visit/programming/
+www.lakecountyil.gov,1,1,"Cloudflare ""Attention Required"" (403)",https://www.lakecountyil.gov/563/Ride-Lake-County
+www.mta.info,1,1,Document link; not opened,https://www.mta.info/document/176416
+www.mysouthshoreline.com,1,1,"Sucuri firewall ""Access Denied"" (403)",https://www.mysouthshoreline.com/
+www.newpf.org,1,1,403,http://www.newpf.org/freda-johnson-award
+www.pjstar.com,1,1,402 (likely regional block),https://www.pjstar.com/story/news/politics/county/2015/07/16/peoria-city-council-reviews-waiver/33867791007/
+www.planetizen.com,1,1,"Cloudflare ""Attention Required"" (403)",https://www.planetizen.com/news/2022/11/119603-van-ness-bus-rapid-transit-boosts-ridership-san-francisco
+www.projectaction.org,1,1,Navigation failed,http://www.projectaction.org/Initiatives/YouthTransportation/TransportationEducationCurriculum.aspx
+www.publicsource.org,1,1,"""Checking your browser"" (403)",https://www.publicsource.org/can-dynamic-pricing-help-ease-pittsburghers-parking-headaches/
+www.qconline.com,1,1,"Captcha ""Security Check""",http://www.qconline.com/opinion/letters/rta-chair-would-love-to-call-rock-to-say-hello/article_fd86bdb0-599d-50e7-9da3-5c2e865b4c80.html
+www.sheffieldgardenwalk.com,1,1,Navigation failed,http://www.sheffieldgardenwalk.com/content/chicago-craft-beer-festival
+www.sightline.org,1,1,Cloudflare challenge (403),https://www.sightline.org/2021/01/28/more-parking-isnt-harmless-it-actually-makes-us-drive-more/
+www.sj-r.com,1,1,402 (likely regional block),http://www.sj-r.com/opinion/20160507/letter-state-shouldnt-raid-transportation-funds
+www.tripadvisor.com,1,1,403,https://www.tripadvisor.com/Restaurant_Review-g35805-d429089-Reviews-Margie_s_Candies-Chicago_Illinois.html
+www.urban.org,1,1,Cloudflare challenge (403),https://www.urban.org/research/publication/surmounting-fiscal-cliff
+www.vah.com,1,1,403 Forbidden,https://www.vah.com/explore/tree_lighting_.php
+www.vibrantnotvacant.com,1,1,"400 ""DisallowedHost"" server error",https://www.vibrantnotvacant.com/
+www.washingtonpost.com,1,1,"""Access Denied"" (403)",https://www.washingtonpost.com/news/dr-gridlock/wp/2016/04/06/heres-what-metro-could-learn-from-chicagos-experience-in-shutting-down-part-of-its-subway/
+www.willcountyillinois.com,1,1,"Redirects to willcounty.gov; Cloudflare ""Attention Required""",https://www.willcountyillinois.com/County-Offices/Special-Services/Will-Ride-Dial-A-Ride
