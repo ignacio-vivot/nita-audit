@@ -51,3 +51,10 @@
 Conclusion: 7 third-level pages are linked from the parent page only through the desktop menu, which is hidden on phones:
 public meetings, registration sites, Obama Presidential Center, NITA Committees, Oversight audits, Ethics & OEIG, FOIA.
 Links from other pages' body content were not checked here (Step 3 part D, internal linking).
+
+## Correction after the full internal link crawl (2026-11-24, Step 3 part D)
+The checks above searched only after </header>. On /about-nita/transparency the links to Oversight audits,
+Ethics & OEIG, and FOIA are in the page's introductory text inside its <header> banner, so these three pages ARE
+linked from their parent page. /riders/free-and-reduced-fare-programs/registration-sites is not a page: it
+redirects (302) to an ArcGIS map. Content-link counts for all pages are in
+../../../crawls/link-discovery/2026-11-24/nita-page-inlinks.csv; the corrected list is in SEO-NITA-023.

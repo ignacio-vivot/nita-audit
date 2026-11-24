@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Six issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; image `alt` text often repeats file names, with the footer logo labeled “RTA”; and on mobile the pages load slowly in lab tests because masthead images are oversized and static files are not cached (no field data is available).
+**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Seven issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; image `alt` text often repeats file names, with the footer logo labeled “RTA”; and on mobile the pages load slowly in lab tests because masthead images are oversized and static files are not cached (no field data is available); and the website has no direct link to NITA, whose content it reaches only through former RTA blog URLs, while its logo and social links are still labeled RTA.
 
 ## Findings
 
@@ -123,6 +123,25 @@
 - **Recommendation:** Change the footer logo `alt` and the home-link label to “NITA” or “Northern Illinois Transit Authority”, write short descriptions for the content photos (for example, coworkers commuting by train), give icons an empty `alt=""` where a visible label already names the item, and apply the same asset alternative-text field recommended for NITA's website (`SEO-NITA-017`).
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: image SEO best practices](https://developers.google.com/search/docs/appearance/google-images#use-descriptive-alt-text); accessibility criteria are assessed in the accessibility section.
+
+### The program website does not link to NITA directly, and its news links use former RTA URLs
+
+- **Finding ID:** SEO-MTB-007
+- **Page or component:** Links from the four pages to nita.illinois.gov: header and footer, the homepage news cards, and the Employers page text.
+- **Priority:** Low
+- **Evidence:** On 2026-11-24 every link on the four pages was extracted from the raw HTML ([raw HTML files](../../../evidence/public-technical/2026-11-24/rendered-review/raw-html/); method in the [rendered review README](../../../evidence/public-technical/2026-11-24/rendered-review/README.md)). None links to `nita.illinois.gov`. The only paths to NITA content are four links to former RTA blog URLs that redirect (301) to NITA's blog:
+
+  | Page | Link text | URL in the page | Final destination (2026-11-24) |
+  | --- | --- | --- | --- |
+  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region` | [NITA blog post, 2023-07-25](https://nita.illinois.gov/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region) |
+  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return` | [NITA blog post, 2021-07-23](https://nita.illinois.gov/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return) |
+  | [Employers](https://www.mytransitbenefit.com/employers) (twice) | “Transit Benefits Program Act, which went into effect on January 1, 2024” and “Transit Benefits Program Act, which goes into effect on January 1, 2024” | the same 2023 RTA blog URL | the same NITA blog post |
+
+  The header logo links to the homepage with the label “Regional Transportation Authority”, the footer agency strip labels the program's own homepage “RTA”, and the six social links read “RTA on Facebook” and so on, although they point to NITA's accounts (`facebook.com/NITAchicago`, `instagram.com/nita_chicago`, `x.com/NITA_Chicago`, `youtube.com/@NITAChicagoland`, `threads.com/@nita_chicago`, `tiktok.com/@nita_chicago`). In the other direction, NITA's menu links to the program through the shortcut `/riders/transit-benefit-fare-program`, which redirects (302) to `https://www.mytransitbenefit.com/`, and the [Riders](https://nita.illinois.gov/riders) page links to it directly (“Learn More”).
+- **Impact:** The program website names NITA in its titles and structured data, but gives users and search engines no direct link to the agency that runs it, and its only NITA links pass through the former RTA domain. Clear links between the two websites help users confirm the program is official and help search engines connect the program to NITA; the labels that still say RTA undercut that connection after the September 1, 2026 name change.
+- **Recommendation:** Add a direct link to NITA's website in the header or footer (for example “A program of the Northern Illinois Transit Authority”), update the two news cards and the Employers links to the `nita.illinois.gov` URLs, and change the logo, footer, and social link labels from RTA to NITA. Coordinate with `SEO-MTB-004` (structured data) and `SEO-MTB-005` (image text).
+- **Implementation complexity:** Low (template and content edits)
+- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 
 ## Observations under review
 

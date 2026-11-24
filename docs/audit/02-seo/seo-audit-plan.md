@@ -105,7 +105,7 @@ Method (team decision, 2026-11-24): Step 3 is AI-assisted. The reviewer (Claude)
 
 Work in parts and review each with the team before the next: (A) performance and Core Web Vitals, item 4; (B) rendered review of the sample pages, item 1; (C) mobile SEO, item 5; (D) information architecture and internal links, item 2; (E) content and keyword opportunities, item 3, including the content observations listed in the matrix.
 
-Progress: part A completed 2026-11-24 (`SEO-NITA-019`, `SEO-NITA-020`, and `SEO-MTB-006` added); part B completed 2026-11-24 (rendered and raw HTML match on all 20 sample pages; `SEO-NITA-021` added for translations not visible to search engines; heading observations updated); part C completed 2026-11-24 (`SEO-NITA-022` and `SEO-NITA-023` added; no My Transit Benefit mobile issue beyond performance). See the matrix log.
+Progress: part A completed 2026-11-24 (`SEO-NITA-019`, `SEO-NITA-020`, and `SEO-MTB-006` added); part B completed 2026-11-24 (rendered and raw HTML match on all 20 sample pages; `SEO-NITA-021` added for translations not visible to search engines; heading observations updated); part C completed 2026-11-24 (`SEO-NITA-022` and `SEO-NITA-023` added; no My Transit Benefit mobile issue beyond performance); part D completed 2026-11-24 (full internal link graph; `SEO-NITA-024`, `SEO-NITA-025`, and `SEO-MTB-007` added; `SEO-NITA-023` corrected). See the matrix log.
 
 1. Inspect the confirmed page URLs for each website in a browser, including rendered content and key public journeys. Confirm that titles, descriptions, headings, links, canonicals, and structured data align with page purpose.
 2. Assess whether information architecture and internal links make important content discoverable and understandable.
@@ -138,6 +138,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-24
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 is in progress with an AI-assisted method: parts A (performance), B (rendered review of the sample pages), and C (mobile SEO) are complete; part D (information architecture and internal links) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
-- Draft findings: `SEO-NITA-001` to `SEO-NITA-023` and `SEO-MTB-001` to `SEO-MTB-006`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 is in progress with an AI-assisted method: parts A to D (performance, rendered review, mobile SEO, and information architecture and internal links) are complete; part E (content and keyword opportunities) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
+- Draft findings: `SEO-NITA-001` to `SEO-NITA-025` and `SEO-MTB-001` to `SEO-MTB-007`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.
