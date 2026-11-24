@@ -1,4 +1,4 @@
-domain,urls,links,browser_result_from_argentina,sample_url
+domain,urls,links,browser_result_2026_11_20,sample_url
 www.rtams.org,49,104,"Redirects to datahub.nita.illinois.gov; CloudFront 403 ""Request blocked""",http://www.rtams.org/rtams/planningProgram.jsp?id=7
 rtams.org,44,74,"Redirects to datahub.nita.illinois.gov; CloudFront 403 ""Request blocked""",https://rtams.org/
 www.rtams.com,7,31,Navigation failed,http://www.rtams.com/rtams/planningStudy.jsp?id=310
@@ -70,14 +70,14 @@ www.lakecountyil.gov,1,1,"Cloudflare ""Attention Required"" (403)",https://www.l
 www.mta.info,1,1,Document link; not opened,https://www.mta.info/document/176416
 www.mysouthshoreline.com,1,1,"Sucuri firewall ""Access Denied"" (403)",https://www.mysouthshoreline.com/
 www.newpf.org,1,1,403,http://www.newpf.org/freda-johnson-award
-www.pjstar.com,1,1,402 (likely regional block),https://www.pjstar.com/story/news/politics/county/2015/07/16/peoria-city-council-reviews-waiver/33867791007/
+www.pjstar.com,1,1,402,https://www.pjstar.com/story/news/politics/county/2015/07/16/peoria-city-council-reviews-waiver/33867791007/
 www.planetizen.com,1,1,"Cloudflare ""Attention Required"" (403)",https://www.planetizen.com/news/2022/11/119603-van-ness-bus-rapid-transit-boosts-ridership-san-francisco
 www.projectaction.org,1,1,Navigation failed,http://www.projectaction.org/Initiatives/YouthTransportation/TransportationEducationCurriculum.aspx
 www.publicsource.org,1,1,"""Checking your browser"" (403)",https://www.publicsource.org/can-dynamic-pricing-help-ease-pittsburghers-parking-headaches/
 www.qconline.com,1,1,"Captcha ""Security Check""",http://www.qconline.com/opinion/letters/rta-chair-would-love-to-call-rock-to-say-hello/article_fd86bdb0-599d-50e7-9da3-5c2e865b4c80.html
 www.sheffieldgardenwalk.com,1,1,Navigation failed,http://www.sheffieldgardenwalk.com/content/chicago-craft-beer-festival
 www.sightline.org,1,1,Cloudflare challenge (403),https://www.sightline.org/2021/01/28/more-parking-isnt-harmless-it-actually-makes-us-drive-more/
-www.sj-r.com,1,1,402 (likely regional block),http://www.sj-r.com/opinion/20160507/letter-state-shouldnt-raid-transportation-funds
+www.sj-r.com,1,1,402,http://www.sj-r.com/opinion/20160507/letter-state-shouldnt-raid-transportation-funds
 www.tripadvisor.com,1,1,403,https://www.tripadvisor.com/Restaurant_Review-g35805-d429089-Reviews-Margie_s_Candies-Chicago_Illinois.html
 www.urban.org,1,1,Cloudflare challenge (403),https://www.urban.org/research/publication/surmounting-fiscal-cliff
 www.vah.com,1,1,403 Forbidden,https://www.vah.com/explore/tree_lighting_.php

@@ -30,7 +30,7 @@ GEO looks at the websites from the side of generative platforms: whether their c
 
 The audit is limited to publicly accessible pages, resources, public search results, public AI platforms, and open testing tools, with no Search Console, analytics, CMS, source code, hosting, or server logs (project decision, 2026-11-19). Without server logs, it is not possible to see which AI crawlers actually visit the websites, how often, or what they receive; mark these **Not verifiable in public scope**.
 
-Generative answers change with the platform, model version, mode (with or without web search), signed-in state, location, conversation history, and time. Tests run from Argentina in a new conversation for each prompt, with web search enabled where the platform offers it, and record all of these conditions. A prompt sample shows how platforms answer on that date; it is not a measure of visibility, share of voice, or traffic, and no finding may promise citation or inclusion in generative answers ([authoring guide](../authoring-guide.md#6-section-specific-guidance)).
+Generative answers change with the platform, model version, mode (with or without web search), signed-in state, location, conversation history, and time. Tests run through a US connection with a Chicago, Illinois IP address, in a new conversation for each prompt, with web search enabled where the platform offers it, and record all of these conditions. A prompt sample shows how platforms answer on that date; it is not a measure of visibility, share of voice, or traffic, and no finding may promise citation or inclusion in generative answers ([authoring guide](../authoring-guide.md#6-section-specific-guidance)).
 
 Prompts sent to AI platforms contain only public, generic questions about NITA's services; no client or personal data is entered. Platforms that require an account (for example Gemini) are used only after a team member signs in in the built-in browser; the reviewer does not create accounts or enter credentials.
 
@@ -71,7 +71,7 @@ Store new evidence in dated folders under `evidence/geo/`, each with a README th
 | Tool or source | Use | Evidence and limits |
 | --- | --- | --- |
 | curl with AI crawler user-agent strings | Server and firewall responses to AI crawler user agents. | Borrowed user agents do not reproduce the crawlers' IP addresses or verification. |
-| Built-in Chromium browser in the Claude desktop app | Run prompts on ChatGPT, Perplexity, Gemini, and Google; read cited pages. | Located in Argentina; signed-out unless a team member signs in; answers vary by model and date. |
+| Built-in Chromium browser in the Claude desktop app | Run prompts on ChatGPT, Perplexity, Gemini, and Google; read cited pages. | US connection with a Chicago, Illinois IP address; signed out unless a team member signs in; answers vary by model and date. |
 | Google and Bing result pages | AI Overviews and AI Mode for Google; Bing results as an input to Bing-based answers. | Qualitative; record settings and date. |
 | SEO and AEO evidence | Crawlability, rendering, structured data, question inventory, answer map, and fact checks. | Snapshots from their review dates. |
 | Scripts in the evidence folders (Python standard library) | User-agent tests, answer and citation tables, accuracy scoring against the fact sheet. | Saved with the evidence so results can be reproduced. |
@@ -130,7 +130,6 @@ The GEO workstream is ready for consolidation when:
 
 - Approve the fact sheet and prompt set (Step 1).
 - Confirm the platforms and modes to test, and who signs in to platforms that require an account.
-- Decide whether a sample of prompts should also be run from a US connection to compare with the Argentina results.
 
 ## Current work status — 2026-11-24
 

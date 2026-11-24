@@ -41,6 +41,6 @@
 ## Checked and current
 - Fares on https://nita.illinois.gov/riders/paying-for-your-ride match CTA, Pace, and Metra on 2026-11-24 (fare-check.txt), including
   the Metra tables labeled "Effective February 1, 2024".
-- mytransitbenefit.com states a 2026 pre-tax limit of $340 per month (Behind the Benefits and Employers); the IRS figure was not
-  re-checked in this review.
+- mytransitbenefit.com states a 2026 pre-tax limit of $340 per month (Behind the Benefits and Employers); the Illinois Department of
+  Central Management Services Commuter Savings Program page shows the same $340 limit effective 2026-01-01 (search sample, query 5).
 - 2027 budget comment deadline (December 4) and "No fare increases in 2027" on the budget page.

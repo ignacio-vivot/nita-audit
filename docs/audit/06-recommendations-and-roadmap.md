@@ -73,9 +73,8 @@ Each recommendation's type (technical or editorial) and the confirmation it need
 | SEO — Correct the law name and tense on Employers after legal review. (`SEO-MTB-008`) | mytransitbenefit.com | Low | Low | Short-term |
 | SEO — Decide which translations to expose, then serve them on their own URLs with `hreflang`. (`SEO-NITA-021`) | nita.illinois.gov | Medium | Medium | Long-term |
 | SEO — Base Related Articles on shared topics, tag press releases, and shorten the archive path. (`SEO-NITA-025`) | nita.illinois.gov | Low | Medium | Long-term |
-| SEO — Fix outbound links on current pages, then rewrite former RTA domain links in bulk. (`SEO-NITA-018`) | nita.illinois.gov | Low | Medium | Long-term |
+| SEO — Fix outbound links on current pages (including the retired Metra domain and unpublished Pace hearing pages), add Data Hub redirects for former RTAMS paths, then rewrite former RTA domain links in bulk. (`SEO-NITA-018`) | nita.illinois.gov | Low | Medium | Long-term |
 | SEO — Make recurring post and budget page titles unique. (`SEO-NITA-013`) | nita.illinois.gov | Low | Low to Medium | Long-term |
 | SEO — Replace copied meta descriptions with page-specific ones. (`SEO-NITA-014`) | nita.illinois.gov | Low | Low to Medium | Long-term |
 | SEO — Add a required alternative-text field and describe content images (with the accessibility section). (`SEO-NITA-017`) | nita.illinois.gov | Low | Medium | Long-term |
 
-Open item: 315 external URLs (480 links on 85 domains) that could not be checked from Argentina await a check from a US connection; results may add links to `SEO-NITA-018`.

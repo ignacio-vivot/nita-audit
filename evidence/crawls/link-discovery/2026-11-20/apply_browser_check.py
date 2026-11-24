@@ -2,12 +2,13 @@
 
 The 459 URLs in nita-external-links-pending-validation.csv were inconclusive by
 script. One sample URL per domain was opened in the Claude desktop app's built-in
-browser (Chromium) from Argentina on 2026-11-20; on domains that loaded normally,
+browser (Chromium) on 2026-11-20; on domains that loaded normally,
 every pending URL was opened. Results are recorded below as observed (page title,
 HTTP status, or browser error). Team rule (2026-11-20): a link that opens normally
 in a browser is treated as working; links that fail definitively in the browser
 (not found, certificate error, removed account, parked domain, unrelated generic
-redirect) are treated as broken; everything else stays for review from the US.
+redirect) are treated as broken; everything else stays for review from a US connection (see
+../2026-11-24/us-check/).
 
 Output: nita-external-links-browser-check.csv (one row per pending URL).
 Usage: python3 -I apply_browser_check.py
@@ -156,7 +157,7 @@ DOM = {
  "www.dpparks.org": (BLOCK, "403 Forbidden"), "www.dupagecounty.gov": (BLOCK, "403 Forbidden"),
  "www.gfoa.org": (BLOCK, "Cloudflare challenge (403)"), "www.greencarreports.com": (BLOCK, "Cloudflare challenge (403)"),
  "www.kohlchildrensmuseum.org": (BLOCK, "403"), "www.lakecountyil.gov": (BLOCK, "Cloudflare \"Attention Required\" (403)"),
- "www.newpf.org": (BLOCK, "403"), "www.pjstar.com": (BLOCK, "402 (likely regional block)"), "www.sj-r.com": (BLOCK, "402 (likely regional block)"),
+ "www.newpf.org": (BLOCK, "403"), "www.pjstar.com": (BLOCK, "402"), "www.sj-r.com": (BLOCK, "402"),
  "www.planetizen.com": (BLOCK, "Cloudflare \"Attention Required\" (403)"), "www.publicsource.org": (BLOCK, "\"Checking your browser\" (403)"),
  "www.qconline.com": (BLOCK, "Captcha \"Security Check\""), "www.sightline.org": (BLOCK, "Cloudflare challenge (403)"),
  "www.tripadvisor.com": (BLOCK, "403"), "www.urban.org": (BLOCK, "Cloudflare challenge (403)"), "www.vah.com": (BLOCK, "403 Forbidden"),

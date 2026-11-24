@@ -94,11 +94,11 @@ https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=984&ChapterID=15,0,URLErro
 https://www.pacebus.com/meeting/budget-public-hearing-virtual-2,403,,,2,2,https://nita.illinois.gov/transit-funding/2025-regional-transit-budget,
 https://www.rtams.org/jurisdictions,403,,https://datahub.nita.illinois.gov/jurisdictions,2,2,https://nita.illinois.gov/blog/2023/06/15/how-the-rta-is-prioritizing-inclusive-community-engagement-and-transparency,
 https://www.rtams.org/ridership,403,,https://datahub.nita.illinois.gov/ridership,2,2,https://nita.illinois.gov/blog/2022/07/01/transportation-tuesday-recap-accessing-transportation-data-in-the-chicagoland-region,
-https://www.rtams.org/search/type/digital_document,403,,https://datahub.nita.illinois.gov/search/type/digital_document,2,2,https://nita.illinois.gov/region/how-system-working,"Browser 2026-11-20: redirects to datahub.nita.illinois.gov, CloudFront 403; possible region block."
+https://www.rtams.org/search/type/digital_document,403,,https://datahub.nita.illinois.gov/search/type/digital_document,2,2,https://nita.illinois.gov/region/how-system-working,"Browser 2026-11-20: redirects to datahub.nita.illinois.gov, CloudFront 403."
 https://www.rtams.org/transit-projects-and-studies,403,,https://datahub.nita.illinois.gov/transit-projects-and-studies,2,2,https://nita.illinois.gov/blog/2021/07/06/rebuild-illinois-funding-is-already-investing-in-the-chicago-regions-transit-system,
 https://www.sheddaquarium.org/,403,,,2,2,https://nita.illinois.gov/blog/2026/09/17/how-to-use-transit-to-explore-museums-in-the-chicago-region,
 https://www.ventrachicago.com/eventscalendar/,403,,,2,2,https://nita.illinois.gov/about-rta/press-releases/rta-reminds-seniors-and-persons-with-disabilities-to-activate-their-reduced-fare-and-ride-free-cards,
-https://www.ventrachicago.com/how-to/app-metra-tickets/,403,,,2,2,https://nita.illinois.gov/riders/how-to-ride,Browser 2026-11-20: 403 with empty page; may be bot or region blocking.
+https://www.ventrachicago.com/how-to/app-metra-tickets/,403,,,2,2,https://nita.illinois.gov/riders/how-to-ride,Browser 2026-11-20: 403 with empty page; possibly bot blocking.
 https://www.womenandchildrenfirst.com/,403,,https://womenandchildrenfirst.com/,2,2,https://nita.illinois.gov/blog/2026/02/25/how-to-use-public-transit-to-celebrate-womens-history-month-in-the-chicago-region-2,
 http://access.umn.edu/research/america/transit/2016/index.html,403,,https://access.umn.edu/research/america/transit/2016/index.html,1,1,https://nita.illinois.gov/blog/2017/12/13/chicago-ranks-high-for-transit-access-to-jobs,
 http://activetrans.org/,403,,,1,1,https://nita.illinois.gov/blog/2016/05/25/rta-celebrates-national-bike-month,
@@ -227,7 +227,7 @@ https://chicagoreader.com/news-politics/anatomy-of-an-intervention/,403,,,1,1,ht
 https://cmapbicycleusage.metroquest.com/,0,URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify fai,,1,1,https://nita.illinois.gov/blog/2016/03/30/cmap-needs-your-input-on-bicycle-usage-in-the-region,
 https://datahub.nita.illinois.gov/sites/default/files/documents/2026-08/RTA_RY_2019-2024_Modal_Trends_Report.pdf,403,,,1,1,https://nita.illinois.gov/region/how-system-working,
 https://datahub.nita.illinois.gov/sites/default/files/documents/2026-08/RTA_RY_2024%20Modal_Peer_Review.pdf,403,,,1,1,https://nita.illinois.gov/region/how-system-working,
-https://datahub.nita.illinois.gov/sites/default/files/documents/2026-08/RTA_RY_2024_Regional_Peer_Review.pdf,403,,,1,1,https://nita.illinois.gov/region/how-system-working,"Browser 2026-11-20: CloudFront 403 ""Request blocked"" (served from Buenos Aires POP); possible region block."
+https://datahub.nita.illinois.gov/sites/default/files/documents/2026-08/RTA_RY_2024_Regional_Peer_Review.pdf,403,,,1,1,https://nita.illinois.gov/region/how-system-working,"Browser 2026-11-20: CloudFront 403 ""Request blocked""."
 https://forgeparks.com/,403,,,1,1,https://nita.illinois.gov/blog/2026/06/24/how-to-take-transit-to-summer-fun-in-the-chicago-region,
 https://fpdcc.com/event/womens-heritage-month-walk/,403,,,1,1,https://nita.illinois.gov/blog/2026/02/25/how-to-use-public-transit-to-celebrate-womens-history-month-in-the-chicago-region-2,
 https://fpdcc.com/event/womens-history-month-walk-2/,403,,,1,1,https://nita.illinois.gov/blog/2023/03/03/how-to-use-public-transit-to-celebrate-womens-history-month-in-the-chicago-region,

@@ -30,7 +30,7 @@ AEO asks a narrower question than SEO: for the questions people actually ask, do
 
 The audit is limited to publicly accessible pages, resources, public search results, and open testing tools, with no Search Console, analytics, CMS, source code, or server access (project decision, 2026-11-19). Actual queries, impressions, featured-snippet ownership over time, and click data cannot be measured; mark these **Not verifiable in public scope**.
 
-Search answer features vary by location, time, device, signed-in state, and personalization. Public search checks run from Argentina with US English settings (`hl=en&gl=us&pws=0`), as in SEO Step 3, and do not represent what users in the Chicago region see. Record each query with date, settings, and the features shown; this is a qualitative sample, not rank tracking. Do not claim that a change will win a featured snippet or an AI Overview mention.
+Search answer features vary by location, time, device, signed-in state, and personalization. Public search checks run through a US connection with a Chicago, Illinois IP address and US English settings (`hl=en&gl=us&pws=0`), as in SEO Step 3; record the connection with each capture. Google may return US results that are not localized to Chicago, so the sample does not represent exactly what every user in the region sees. Record each query with date, settings, and the features shown; this is a qualitative sample, not rank tracking. Do not claim that a change will win a featured snippet or an AI Overview mention.
 
 ## How to record the audit
 
@@ -66,7 +66,7 @@ Store new evidence in dated folders under `evidence/aeo/` (for example `evidence
 | Tool or source | Use | Evidence and limits |
 | --- | --- | --- |
 | SEO page text and raw HTML | Locate answers, headings, lists, tables, and accordions on the sample pages. | Snapshot of 2026-11-24; re-fetch pages that change before reporting. |
-| Built-in Chromium browser in the Claude desktop app | Read pages as users see them, open accordions and tabs, and capture Google result pages. | Not signed in; located in Argentina; results vary by location and time. |
+| Built-in Chromium browser in the Claude desktop app | Read pages as users see them, open accordions and tabs, and capture Google result pages. | Not signed in; US connection with a Chicago, Illinois IP address; results vary by location and time. |
 | Google autocomplete endpoint and result pages (`hl=en&gl=us&pws=0`) | Question discovery and answer-feature capture. | Qualitative; no volume or rank tracking; record date and settings. |
 | Partner and official sources (CTA, Metra, Pace, Ventra, ilga.gov) | Ground truth for checking that answers are correct and current. | Checked on the review date only. |
 | Google Rich Results Test, Schema.org Validator, Google Search Central documentation | Confirm which structured data types are supported and how. | Valid markup does not guarantee a search feature. |
@@ -126,7 +126,6 @@ The AEO workstream is ready for consolidation when:
 ## Open decisions for the team
 
 - Approve the question inventory and the extended page sample (Step 1).
-- Decide whether a sample of answer-feature checks should also be run from a US connection, as planned for the pending external links, to compare with the Argentina results.
 
 ## Current work status — 2026-11-24
 
