@@ -46,9 +46,11 @@ Organize the audit **by section, with a separate subsection or file for each web
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 03-aeo/
+│       │   ├── aeo-audit-plan.md
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 04-geo/
+│       │   ├── geo-audit-plan.md
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 05-ux/
