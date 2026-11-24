@@ -10,7 +10,14 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Eight issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; image `alt` text often repeats file names, with the footer logo labeled “RTA”; and on mobile the pages load slowly in lab tests because masthead images are oversized and static files are not cached (no field data is available); and the website has no direct link to NITA, whose content it reaches only through former RTA blog URLs, while its logo and social links are still labeled RTA; the Employers page also misnames the Illinois commuter benefit law and describes its 2024 start as upcoming.
+**Review complete; ready for team review** (2026-11-24).
+
+The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, the four pages are indexable with self-referencing canonicals and distinct meta descriptions, page content does not depend on JavaScript, and the pages fit a phone screen. The review found 8 issues: 4 Medium and 4 Low.
+
+- **Medium:** the sitemap lists a `/404` URL that returns 200 and is indexable (`SEO-MTB-001`); mobile pages load slowly in lab tests because masthead images are oversized, static files are not cached, and Employers loads a map and reCAPTCHA three times (`SEO-MTB-006`; no field data is available); the structured data describes NITA as a business with a misspelled name and a former RTA email address (`SEO-MTB-004`); and all four titles and the homepage description are cut off with a literal ellipsis (`SEO-MTB-002`).
+- **Low:** the website has no direct link to NITA and its logo and social links are still labeled RTA (`SEO-MTB-007`); inner-page H1s are slogans (`SEO-MTB-003`); image `alt` text often repeats file names (`SEO-MTB-005`); and the Employers page misnames the Illinois Transportation Benefits Program Act and describes its 2024 start as upcoming (`SEO-MTB-008`).
+
+Recommendations are classified and sequenced in “Recommendation types and confirmations” below and in the [roadmap](../06-recommendations-and-roadmap.md). This review does not establish rankings, clicks, or Google index status.
 
 ## Findings
 
