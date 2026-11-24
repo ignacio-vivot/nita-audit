@@ -125,6 +125,16 @@ Ordered by priority, then by user or business impact.
 - **Recommendation:** Confirm whether automatic language detection is an intended feature; if kept, ensure the automatically-selected language gets the same translation coverage as a manually-selected one (see `UX-NITA-002`), and consider showing a dismissible notice ("We've translated this page to Tagalog — switch back to English") so the change is not silent.
 - **Implementation complexity:** Low
 
+### Buttons give no visible hover feedback on desktop, unlike navigation links
+
+- **Finding ID:** UX-NITA-013
+- **Page or component:** Buttons site-wide (e.g., "Learn more," "Submit," "Apply now"), observed on the homepage and `/riders`
+- **Priority:** Medium
+- **Evidence:** Reported by the reviewer and confirmed manually in a real desktop browser, 2026-11-24: primary navigation links show a clear color change on hover, but buttons show no visible hover state at all. This matches an earlier inconclusive check in this audit (see prior Limitations note) using the automated browser tool, which could not reliably trigger CSS `:hover`; the reviewer's manual confirmation in a real browser resolves that uncertainty.
+- **Impact:** On desktop, where hover is a meaningful signal, a visitor gets no visual confirmation that a button is interactive until they click it, while nearby nav links do give that signal — an inconsistent, if minor, cue about what responds to the mouse. Not applicable to mobile/touch, which has no true hover state.
+- **Recommendation:** Add a hover state to buttons (e.g., a background or border color shift) consistent with the existing link hover treatment, scoped to desktop/pointer input.
+- **Implementation complexity:** Low
+
 ### Riders, the largest and most frequent audience, has no more visual weight than smaller institutional audiences
 
 - **Finding ID:** UX-NITA-005
@@ -147,6 +157,6 @@ Ordered by priority, then by user or business impact.
 
 - Audit in progress — most of the agreed page/journey sample (see [`ux-audit-plan.md`](ux-audit-plan.md)) has not yet been reviewed; this file reflects a complete first-pass review of the homepage plus a light spot-check of two inner pages.
 - The footer contact form was reviewed for field labeling and layout only. Submission behavior (validation messages, confirmation state) was **not verifiable in this audit**: submitting it would send a real, unwanted message to NITA, which is outside the audit's intent.
-- Button hover-state feedback (as opposed to link hover-state, which was confirmed) was inconclusive with the automated browser tool used for this review and needs manual confirmation in a standard browser.
+- Button hover-state feedback was initially inconclusive with the automated browser tool used for this review; resolved by the reviewer's manual confirmation in a real browser (see `UX-NITA-013`).
 - Chinese (Simplified), Tagalog, and Gujarati were not individually checked for the carousel-overlap or mistranslation patterns found in Spanish, Polish, Arabic, and Urdu; given the shared component and translation mechanism, the same issues are plausible but **not confirmed** in those three languages.
 - This audit's automated browser tool did not reproduce two issues the reviewer found and confirmed manually in real Chrome and Firefox windows (`UX-NITA-011`, the undersized logo; and an earlier devtools-only false lead involving a header utility-bar clipping artifact, correctly ruled out as not a site defect). The discrepancy is noted rather than resolved; it underscores that manual, cross-browser spot checks remain necessary alongside the automated pass, and other viewport-dependent issues may exist that neither method alone would catch.
