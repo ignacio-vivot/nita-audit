@@ -13,3 +13,5 @@ Files:
 Test location: the analyses were requested from Argentina, but PSI runs Lighthouse on Google's own servers (Google chooses the region; the report does not show it), not in the requesting browser. On mobile, Lighthouse simulates a slow 4G connection (about 150 ms round-trip time and 1.6 Mbps) and a 4× slower CPU, so the requester's location and connection have little effect on lab results. Field data comes from real Chrome users who visited the pages and is not affected by these tests. The curl header checks and code inspection are not location-dependent. Lighthouse always measures a first visit with an empty cache, so missing cache headers do not change lab scores; they affect repeat and multi-page visits.
 
 PSI report links are kept in each record; Google may expire them. Lab results vary between runs and depend on Google's test location and throttling; field data reflects Chrome users who visited the pages in the previous 28 days.
+
+`rendered-review/` contains the Step 3 part B evidence (raw HTML compared with the rendered page on the 20 sample pages, the Weglot translation check, and heading checks); see its [README](rendered-review/README.md).

@@ -1,0 +1,61 @@
+# Weglot translation check — 2026-11-24 (~15:41 UTC), Claude desktop built-in browser (Chromium)
+
+## Raw HTML (curl, same files as raw-html/)
+Weglot script and initialization in <head> of every NITA sample page:
+https://cdn.weglot.com/weglot.min.js
+        Weglot.initialize({
+            api_key: 'wg_0e1dbd5218a1de987baaedec9f8967032'
+        });
+
+hreflang <link> elements per sample page (raw HTML):
+0 raw-html/nita-illinois-gov-about-rta-press-releases-northern-illinois-transit-authoritys-first-regi.html
+0 raw-html/nita-illinois-gov-blog-2026-10-01-nita-expanding-access-pilot-program-to-cta-and-pace-star.html
+0 raw-html/nita-illinois-gov-blog-tags-cta.html
+0 raw-html/nita-illinois-gov-blog.html
+0 raw-html/nita-illinois-gov-communities-access-to-transit-program.html
+0 raw-html/nita-illinois-gov-communities-community-planning.html
+0 raw-html/nita-illinois-gov-communities.html
+0 raw-html/nita-illinois-gov-region-how-system-working.html
+0 raw-html/nita-illinois-gov-riders-access.html
+0 raw-html/nita-illinois-gov-riders-accessible-transit.html
+0 raw-html/nita-illinois-gov-riders-free-and-reduced-fare-programs.html
+0 raw-html/nita-illinois-gov-riders-how-to-ride.html
+0 raw-html/nita-illinois-gov-riders-paying-for-your-ride.html
+0 raw-html/nita-illinois-gov-riders.html
+0 raw-html/nita-illinois-gov-transit-funding-2027-regional-transit-budget.html
+0 raw-html/nita-illinois-gov.html
+0 raw-html/www-mytransitbenefit-com-behind-the-benefits.html
+0 raw-html/www-mytransitbenefit-com-employees.html
+0 raw-html/www-mytransitbenefit-com-employers.html
+0 raw-html/www-mytransitbenefit-com.html
+
+Weglot references in My Transit Benefit pages: 0
+
+## Translated URL patterns (curl / dig)
+dig +short es.nita.illinois.gov -> ''
+dig +short pl.nita.illinois.gov -> ''
+dig +short ar.nita.illinois.gov -> ''
+dig +short zh.nita.illinois.gov -> ''
+dig +short tl.nita.illinois.gov -> ''
+dig +short ur.nita.illinois.gov -> ''
+dig +short gu.nita.illinois.gov -> ''
+curl https://nita.illinois.gov/es/ -> 404
+curl https://nita.illinois.gov/pl/ -> 404
+curl https://nita.illinois.gov/zh/ -> 404
+curl 'https://nita.illinois.gov/riders/free-and-reduced-fare-programs?lang=es' title -> <title>Discounted Fares | Northern Illinois Transit Authority
+
+## Rendered DOM (browser)
+Language switcher options on https://nita.illinois.gov/ (and every NITA sample page):
+  English (no href, lang=en) | Español (href="#", es) | Polski (#, pl) | العربية‏ (#, ar) | 中文 (简体) (#, zh) | Tagalog (#, tl) | اردو (#, ur) | ગુજરાતી (#, gu)
+Rendered hreflang <link> elements: 0 on all 20 sample pages (raw-vs-rendered.csv).
+
+Selecting "Español" on https://nita.illinois.gov/riders/free-and-reduced-fare-programs:
+  URL after switch:   https://nita.illinois.gov/riders/free-and-reduced-fare-programs (unchanged)
+  <html lang>:        es
+  <title>:            Tarifas con descuento | Autoridad de Transporte Público del Norte de Illinois
+  H1:                 Tarifas reducidas y programas de transporte gratuito
+  First paragraph:    NITA coordina los programas de tarifas reducidas y de transporte gratuito de la región. Las personas mayores, las personas con discapacidad y el personal milita…
+  canonical:          https://nita.illinois.gov/riders/free-and-reduced-fare-programs
+  hreflang links:     0
+  Language choice stored in browser localStorage keys: wg-translations, wg-translations-v, wglang (no cookie)
+The browser was switched back to English after the check (wglang=en).

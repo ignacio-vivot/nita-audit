@@ -4,7 +4,7 @@
 
 - **Website:** [mytransitbenefit.com](https://www.mytransitbenefit.com/)
 - **Review date:** 2026-11-19
-- **Pages, templates, or journeys reviewed:** Complete four-page scope confirmed by the user on 2026-11-19: [homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), and [Employers](https://www.mytransitbenefit.com/employers); plus the `/404` URL listed in the sitemap. Manual review is in progress.
+- **Pages, templates, or journeys reviewed:** Complete four-page scope confirmed by the user on 2026-11-19: [homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), and [Employers](https://www.mytransitbenefit.com/employers); plus the `/404` URL listed in the sitemap. Rendered review on 2026-11-24 (raw HTML compared with the rendered page; [comparison](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)); further manual review is in progress.
 - **Methods and tools:** Screaming Frog SEO Spider 25.1 free version, full Spider crawl with default configuration on 2026-11-19 ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public sitemap and `robots.txt`; public browser review; Google Search Central guidance.
 - **Control checklist:** [SEO review matrix](seo-review-matrix.md#review-controls-and-current-status)
 
@@ -132,6 +132,7 @@
 
 - On 2026-11-19, `http://www.mytransitbenefit.com/` and `https://mytransitbenefit.com/` each returned a single 301 redirect to `https://www.mytransitbenefit.com/`. Only the homepage was tested.
 - The four HTML pages in the 2026-11-19 crawl have distinct meta descriptions and self-referencing canonicals, and none of the 31 crawled images is missing alternative text. See [`meta_description_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/meta_description_all.csv), [`canonicals_all.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/canonicals_all.csv), and [`crawl_overview.csv`](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/crawl_overview.csv).
+- On all four pages the content, metadata, links, and structured data are in the HTML sent by the server; the rendered page after scripts run is the same apart from 2 words of interface text ([`raw-vs-rendered.csv`](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)). The robots-blocked form and tag-manager assets therefore do not hide indexable content.
 - The pages communicate distinct audiences (employees and employers) and calls to action. Full enrollment journeys were not tested.
 
 ## Limitations
@@ -139,4 +140,4 @@
 - The 2026-11-19 crawl (default configuration, Text Only) replaces the undocumented 2026-11-16 crawl and confirms the four-page scope. The free Screaming Frog version does not extract structured data, so markup is validated manually.
 - The public spot checks did not submit forms, follow authenticated flows, or verify transaction completion.
 - Public crawl data cannot establish Google index coverage, rankings, queries, traffic, click-through rate, or conversions. Search Console and analytics are outside the agreed scope.
-- Performance was measured with PageSpeed Insights on 2026-11-24 (lab data only; Google has no field data for the website). Lab tests run on Google's servers with simulated device and network conditions, so the auditor's location (Argentina) does not affect them; field data, where available, reflects real Chrome users. Mobile rendering, internal linking, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.
+- Performance was measured with PageSpeed Insights on 2026-11-24 (lab data only; Google has no field data for the website). Lab tests run on Google's servers with simulated device and network conditions, so the auditor's location (Argentina) does not affect them; field data, where available, reflects real Chrome users. Mobile rendering, internal linking, and content accuracy have not yet been assessed.

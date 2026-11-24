@@ -1,0 +1,28 @@
+# H1 elements on NITA pages with 3+ H1s in the 2026-11-19 crawl (curl, 2026-11-24T15:42Z)
+
+== https://nita.illinois.gov/about-nita
+About NITA 
+Newsletter
+Disclaimer
+
+== https://nita.illinois.gov/about-nita/doing-business
+Doing Business 
+NITA Supplier Portal
+Questions?
+
+== https://nita.illinois.gov/region/section-5310
+Section 5310 
+Program Management Plan 
+Human Services Transportation Plan (HSTP) 
+Section 5310 Subrecipient Guide 
+Recent Articles
+
+== https://nita.illinois.gov/blog/2022/11/30/how-to-use-transit-to-celebrate-the-holidays-in-the-chicago-region
+How to use transit to celebrate the holidays in the Chicago region November 30, 2022 
+Holiday Markets
+Events 
+Performing Arts
+
+# Empty H2 elements on https://nita.illinois.gov/riders/how-to-ride (raw HTML, line numbers in raw-html/nita-illinois-gov-riders-how-to-ride.html)
+1167:     <h2 class="text-xl font-heading py-4 hidden" id="error"></h2>
+1506:        <h2 class="mt-2 text-4xl md:text-5xl leading-20 font-heading"></h2>
