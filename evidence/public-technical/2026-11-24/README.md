@@ -17,3 +17,5 @@ PSI report links are kept in each record; Google may expire them. Lab results va
 `rendered-review/` contains the Step 3 part B evidence (raw HTML compared with the rendered page on the 20 sample pages, the Weglot translation check, and heading checks); see its [README](rendered-review/README.md).
 
 `mobile-review/` contains the Step 3 part C evidence (device parity, mobile layout checks at 375 px, accordion tables, and mobile navigation); see its [README](mobile-review/README.md).
+
+`content-review/` contains the Step 3 part E evidence (page text of the 20 sample pages, fare comparison, time-sensitive content, Outlook Safe Links URLs, and the public search-feature sample); see its [README](content-review/README.md).

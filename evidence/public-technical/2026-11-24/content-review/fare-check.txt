@@ -1,0 +1,22 @@
+# Fare values on https://nita.illinois.gov/riders/paying-for-your-ride compared with the operators' pages, 2026-11-24
+# NITA values: page-text/nita-illinois-gov-riders-paying-for-your-ride.md (raw HTML ~15:33 UTC).
+# CTA and Pace pages read with WebFetch (~17:20 UTC); Metra fare table read in the Claude desktop built-in browser
+# (metra.com returned 403 to WebFetch).
+
+## CTA — https://www.transitchicago.com/fares/ (page states its fares are "effective February 20, 2023")
+'L' $2.50 / reduced $1.25; bus $2.25 / $1.10; cash bus $2.50 / $1.25; 1-Day $5; 3-Day $15; 7-Day $20;
+30-Day $75 / reduced $35; O'Hare $5; Single-Ride ticket $3.                      -> all match NITA's table
+
+## Pace — https://www.pacebus.com/fares (no effective date shown)
+Bus Ventra $2.00 / $1.00; cash $2.25 / $1.10; Premium $4.50 / $2.25; 30-Day Pace $60 / $30;
+30-Day Pace Premium $140 / $70; Pace/CTA 30-Day $75 / $35.                       -> all match NITA's table
+
+## Metra — https://metra.com/fare-table
+Zones 1-2 / 1-3 / 1-4 / 2-4
+One Way        $3.75 / $5.50 / $6.75 / $3.75   reduced $1.75 / $2.75 / $3.25 / $1.75   -> match
+Day Pass       $7.50 / $11.00 / $13.50 / $7.50 reduced $3.50 / $5.50 / $6.50 / $3.50   -> match
+Day Pass 5-Pack $35.75 / $52.25 / $64.25 / $35.75 reduced $17.50 / $26.00 / $32.00 / $17.50 -> match
+Monthly        $75.00 / $110.00 / $135.00 / $75.00 (reduced $37.50 / $55.00 / $67.50 / $37.50)
+Weekend Pass $10.00; Regional Connect Pass $30.00                                  -> match
+Result: NITA's "Effective February 1, 2024" Metra tables show the fares Metra publishes on 2026-11-24.
+Note: Metra describes the NITA Access Permit as for low-income customers enrolled in SNAP.

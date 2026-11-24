@@ -1,0 +1,46 @@
+# Time-sensitive and practical information on the sample pages, checked 2026-11-24
+# Source text: page-text/*.md (raw HTML fetched ~15:33 UTC); meta descriptions from ../rendered-review/raw-extract.jsonl.
+# Status is as of 2026-11-24.
+
+## Events and deadlines that have passed but are still presented as upcoming or open
+1. https://nita.illinois.gov/ — homepage slide 2: "Submit public comment by December 4 and register for a November 12 public hearing."
+   -> The hearing date has passed; the comment deadline (December 4) is still open.
+2. https://nita.illinois.gov/transit-funding/2027-regional-transit-budget — "NITA will hold a public hearing with in person and virtual
+   attendance coinciding with its November Board Meeting on Thursday, Nov. 12." and "NITA will present the proposed 2027 Regional
+   Transit Budget to county boards across the six-county region in November." (county meeting list starts "Lake County – Wednesday,
+   Nov. 4, 8:30 a.m.").  Registration link: https://rtachicago.zoom.us/meeting/register/... (former RTA Zoom account, with browser
+   tracking parameters _gl, ampDeviceId, ampSessionId copied into the URL).
+   Meta description: "NITA controls the operating budgets of the CTA, Metra, and Pace. The first regional budget for the agency will be
+   available later this fall."  -> the proposed budget was published on the page.
+3. https://nita.illinois.gov/nita-rider-advisory-council — "Applications are open from September 24 through October 31, 2026."
+4. https://nita.illinois.gov/riders/free-and-reduced-fare-programs — "Registration Site Alerts" accordion: "There will be no NITA services
+   at City Hall from 11:00 a.m. – 1:00 p.m. on Monday November 23, 2026." and "...after 1:00 p.m. on Monday November 23, 2026, at
+   Southeast (Atlas) Center."  -> alert for the previous day still shown.
+5. https://nita.illinois.gov/riders/accessible-transit — "The number of TAP and RAP rides available ... is increasing from 30 to 40 rides
+   per month per rider for those who apply, effective July 1, 2026." and "Starting May 1, 2026, TAP and RAP enrollees can visit
+   https://fares.RTAChicago.org to apply ..." (link wrapped in an Outlook Safe Links URL; fares.rtachicago.org redirects to
+   fares.nita.illinois.gov).
+6. https://www.mytransitbenefit.com/employers — "...comply with the new Transit Benefits Program Act, which goes into effect on
+   January 1, 2024." and, in the FAQ, "Transit Benefits Program Act, which went into effect on January 1, 2024" (both link to a 2023
+   rtachicago.org blog post).
+
+## Practical information that differs between pages
+7. ADA Paratransit application line, 312-663-HELP (4357):
+   - https://nita.illinois.gov/riders — "Call 312-663-HELP (4357) between 8:30 a.m. and 5:00 p.m."
+   - https://nita.illinois.gov/riders/accessible-transit — "call NITA's ADA Paratransit Certification program at 312-663-HELP (4357)
+     between 8:00 a.m. and 5:00 p.m., Monday through Friday."
+   - Pace (https://www.pacebus.com/paratransit, as shown in Google on 2026-11-24): 8:30 am to 5:00 pm.
+   - Google displayed the 8:00 a.m. version as the snippet for the Accessible transit page (search-sample-2026-11-24.md, query 2).
+
+8. CTA station accessibility:
+   - https://nita.illinois.gov/riders — "75 percent of CTA stations and 75 percent of Metra stations are fully ADA accessible"
+   - https://nita.illinois.gov/riders/accessible-transit — "More than 70 percent of CTA 'L' stations are accessible" and
+     "More than 75 percent of Metra stations are accessible"
+   -> different CTA figures; neither page gives a date or source.
+
+## Checked and current
+- Fares on https://nita.illinois.gov/riders/paying-for-your-ride match CTA, Pace, and Metra on 2026-11-24 (fare-check.txt), including
+  the Metra tables labeled "Effective February 1, 2024".
+- mytransitbenefit.com states a 2026 pre-tax limit of $340 per month (Behind the Benefits and Employers); the IRS figure was not
+  re-checked in this review.
+- 2027 budget comment deadline (December 4) and "No fare increases in 2027" on the budget page.
