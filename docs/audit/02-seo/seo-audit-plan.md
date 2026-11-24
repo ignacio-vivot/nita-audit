@@ -125,6 +125,10 @@ Progress: part A completed 2026-11-24 (`SEO-NITA-019`, `SEO-NITA-020`, and `SEO-
 
 **Output:** completed SEO matrices, site reports, evidence links, prioritized recommendations, and inputs to the consolidated roadmap.
 
+Work in parts and review each with the team before the next: (A) close the matrix, item 1; (B) validate and order the findings, items 2 and 3; (C) classify recommendations as technical, editorial, or requiring client confirmation, item 4; (D) roadmap inputs and final review of the SEO section, item 5.
+
+Progress: part A completed 2026-11-24 (every control for both websites has a final status; the synthesis row now summarizes the Medium-priority issues and the overlaps between findings; the content review priorities have a recorded outcome; the 315 external URLs awaiting a US check remain marked **Needs manual validation** within the technical row).
+
 ## Completion criteria
 
 The SEO workstream is ready for consolidation when:
@@ -138,6 +142,6 @@ The SEO workstream is ready for consolidation when:
 
 ## Current work status — 2026-11-24
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 is complete (AI-assisted, parts A to E, 2026-11-24). Step 4 (close the matrix, validate findings, and prepare the roadmap) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 is complete (AI-assisted, parts A to E, 2026-11-24). Step 4 is in progress: part A (close the matrix) is complete; part B (validate and order the findings) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
 - Draft findings: `SEO-NITA-001` to `SEO-NITA-028` and `SEO-MTB-001` to `SEO-MTB-008`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.
