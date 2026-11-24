@@ -13,7 +13,25 @@ _Draft — audit in progress, homepage pass complete._ The homepage review surfa
 
 ## Findings
 
-Ordered by priority, then by user or business impact.
+Ordered by priority, then by user or business impact. **Scope** marks whether a finding is **Site-wide** (a shared component — header, navigation, footer, translation, language switcher — observed on one page but applying everywhere it appears), **Component** (shared by some, not all, pages — e.g., a tabbed section reused on two pages), or **Page** (unique to the content/component of one specific page). Before filing a new finding on a newly-reviewed page, check whether a Site-wide finding below already covers it; if so, add that page as supporting evidence to the existing ID rather than creating a new one.
+
+### Findings at a glance
+
+| ID | Finding | Priority | Scope |
+| --- | --- | --- | --- |
+| [`UX-NITA-001`](#hero-carousel-text-overlaps-itself-and-on-page-controls-in-translated-languages) | Hero carousel text overlaps itself and on-page controls in translated languages | High | Page (homepage hero) |
+| [`UX-NITA-006`](#right-to-left-languages-arabic-urdu-are-translated-but-the-layout-is-not-mirrored) | Right-to-left languages (Arabic, Urdu) are translated but the layout is not mirrored | High | Site-wide |
+| [`UX-NITA-002`](#first-hero-slide-is-not-translated-by-the-sites-translation-tool) | First hero slide is not translated by the site's translation tool | Medium | Page (homepage hero) |
+| [`UX-NITA-003`](#automated-translation-mistranslates-riders-in-polish-navigation) | Automated translation mistranslates "Riders" in Polish navigation | Medium | Site-wide |
+| [`UX-NITA-004`](#homepage-body-offers-no-visible-path-to-key-tasks-below-the-hero) | Homepage body offers no visible path to key tasks below the hero | Medium | Page (homepage) |
+| [`UX-NITA-007`](#mobile-navigation-menu-does-not-cover-the-full-screen) | Mobile navigation menu does not cover the full screen | Medium | Site-wide |
+| [`UX-NITA-008`](#trip-planner-silently-redirects-to-google-maps-with-no-warning) | Trip Planner silently redirects to Google Maps with no warning | Medium | Page (How to ride) |
+| [`UX-NITA-009`](#neighborhood-maps-dropdown-lists-20-options-in-no-discernible-order) | "Neighborhood Maps" dropdown lists 20+ options in no discernible order | Medium | Page (How to ride) |
+| [`UX-NITA-010`](#tabbed-sections-are-hard-to-use-at-tablet-width-because-switching-tabs-requires-repeated-scrolling) | Tabbed sections are hard to use at tablet width because switching tabs requires repeated scrolling | Medium | Component (Riders, How to ride) |
+| [`UX-NITA-011`](#logo-renders-at-a-tiny-size-across-a-wide-range-of-intermediate-viewport-widths) | Logo renders at a tiny size across a wide range of intermediate viewport widths | Medium | Site-wide |
+| [`UX-NITA-013`](#buttons-give-no-visible-hover-feedback-on-desktop-unlike-navigation-links) | Buttons give no visible hover feedback on desktop, unlike navigation links | Medium | Site-wide |
+| [`UX-NITA-005`](#riders-the-largest-and-most-frequent-audience-has-no-more-visual-weight-than-smaller-institutional-audiences) | Riders, the largest and most frequent audience, has no more visual weight than smaller institutional audiences | Low | Site-wide |
+| [`UX-NITA-012`](#site-auto-translates-based-on-browser-language-without-the-visitor-choosing-it) | Site auto-translates based on browser language without the visitor choosing it | Low | Site-wide |
 
 ### Hero carousel text overlaps itself and on-page controls in translated languages
 

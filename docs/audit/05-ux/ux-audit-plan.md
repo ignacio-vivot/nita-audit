@@ -54,6 +54,16 @@ Per the [authoring guide, section 6](../authoring-guide.md#6-section-specific-gu
 
 The audit is limited to publicly accessible pages, resources, and public testing tools, consistent with the project-wide decision already applied to SEO. No analytics, session recordings, heatmaps, or user research (surveys, interviews, usability testing with real users) are in scope. This means actual task-completion rates, drop-off points, and user sentiment cannot be measured directly — they are inferred from heuristic review of the public interface. Mark anything that would require analytics or user research **Not verifiable in public scope**.
 
+## Site-wide vs. page-specific findings
+
+Pages share components — header, primary navigation, footer, language switcher, button styles — so the same defect can surface on every page reviewed. Do not file a new finding per page for the same root issue. Each finding in a site report states a **Scope**:
+
+- **Site-wide:** a shared component's defect, observed on one page but applying everywhere that component appears (e.g., the header logo, language switcher, mobile menu panel).
+- **Component:** shared by some, not all, pages (e.g., a specific tabbed section reused on two of several pages).
+- **Page:** unique to one page's own content or a component that exists only there (e.g., a page-specific tool or widget).
+
+Before recording a finding on a newly-reviewed page, check the existing Site-wide findings first. If the same defect recurs, add that page as supporting evidence to the existing finding ID rather than creating a new one; only open a new ID when the page reveals a genuinely different issue.
+
 ## How to record the audit
 
 Use a UX review matrix (`ux-review-matrix.md`, to be created at the start of Step 1) as the control checklist for both websites, following the general [review controls and coverage method](../authoring-guide.md#3-review-controls-and-coverage). Give each of the 8 proposal areas, per website, a status, review date, method, and evidence reference. Findings are a separate, linked record in the site reports (`nita-illinois-gov.md`, `mytransitbenefit-com.md`), using IDs `UX-NITA-###` / `UX-MTB-###`.
