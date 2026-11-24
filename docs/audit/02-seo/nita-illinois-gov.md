@@ -3,9 +3,9 @@
 ## Assessment Scope
 
 - **Website:** [nita.illinois.gov](https://nita.illinois.gov/)
-- **Review date:** 2026-11-19
+- **Review date:** 2026-11-19 to 2026-11-24 (crawl baseline 2026-11-19; Step 2 checks 2026-11-20; Step 3 manual and AI-assisted review 2026-11-24)
 - **Pages, templates, or journeys reviewed:** Crawl-level review of 1,736 URLs (1,613 HTML pages returning 200), combining the 1,286-URL public sitemap with every HTML URL reachable through internal links; dated live header and HTML checks on 2026-11-19; navigation and spot checks across the agreed 16-URL sample listed in the [SEO review matrix](seo-review-matrix.md#page-level-review-scope). Rendered review of the 16 sample pages on 2026-11-24 (raw HTML compared with the rendered page after scripts run; [comparison](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)); mobile review, full internal link crawl, and content and keyword review on 2026-11-24 ([content review](../../../evidence/public-technical/2026-11-24/content-review/README.md)).
-- **Methods and tools:** link-discovery script with no depth limit ([B1 README](../../../evidence/crawls/link-discovery/2026-11-19/README.md)); Screaming Frog SEO Spider 25.1 free version, List mode, Text Only ([B2 README](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public browser review; Google Search Central guidance.
+- **Methods and tools:** link-discovery script with no depth limit ([B1 README](../../../evidence/crawls/link-discovery/2026-11-19/README.md)); Screaming Frog SEO Spider 25.1 free version, List mode, Text Only ([B2 README](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); full internal link crawl of the 1,609 HTML pages on 2026-11-24 ([README](../../../evidence/crawls/link-discovery/2026-11-24/README.md)); Schema.org Validator and Google Rich Results Test; PageSpeed Insights (Lighthouse 13.6.0) through its web interface ([README](../../../evidence/public-technical/2026-11-24/README.md)); Chromium browser review in the Claude desktop app, including raw and rendered HTML comparison and mobile emulation at 375×812 ([rendered review](../../../evidence/public-technical/2026-11-24/rendered-review/README.md), [mobile review](../../../evidence/public-technical/2026-11-24/mobile-review/README.md)); Google autocomplete and a seven-query result sample ([content review](../../../evidence/public-technical/2026-11-24/content-review/README.md)); Google Search Central guidance. Step 3 was AI-assisted: Claude ran the browser checks and analyses, and the team reviewed each part.
 - **Control checklist:** [SEO review matrix](seo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
@@ -20,23 +20,12 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 
 - **Finding ID:** SEO-NITA-003
 - **Page or component:** Website-wide protocol handling; confirmed on every template tested over HTTP (homepage, rider, community, funding, blog listing and post, press-release listing and release, tag archive, and a PDF).
-- **Priority:** Medium
+- **Priority:** High
 - **Evidence:** On 2026-11-19, `curl -sI` requests to `http://nita.illinois.gov/` and `http://nita.illinois.gov/riders` returned `HTTP/1.1 200 OK` with no `Location` header. On 2026-11-20, HTTP requests to ten URLs across templates, including a PDF, all returned 200 without redirecting ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). The `www.` host redirects correctly to `https://nita.illinois.gov/`, so only the HTTP scheme is affected. The HTTPS homepage returned no `Strict-Transport-Security` header. The HTTP homepage declares `https://nita.illinois.gov/` as canonical. The 2026-11-19 crawl baseline also found two internal links that use `http://` (to a press release and to `/popa`) and two tag archives whose canonical uses `http://` (`/blog/tags/chicago`, `/blog/tags/moving-you`). See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt), [`pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv), and [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv). By contrast, My Transit Benefit redirects HTTP to HTTPS.
-- **Impact:** Every page is available at two protocol versions. Search engines must rely on canonical tags to consolidate them, and links or bookmarks to HTTP URLs keep users on an unencrypted connection. Google's canonicalization guidance states a preference for HTTPS pages as canonical and lists redirects as a strong signal for consolidating duplicate URLs.
+- **Impact:** Every page is available at two protocol versions. Search engines have to rely on canonical tags to consolidate them, and links or bookmarks to HTTP URLs keep users on an unencrypted connection. Google's canonicalization guidance states a preference for HTTPS pages as canonical and lists redirects as a strong signal for consolidating duplicate URLs. Priority is High (team decision, 2026-11-24) because the issue affects every page and template, including pages with forms, and is a recurring condition rather than an isolated defect.
 - **Recommendation:** Add a website-wide, server-level 301 redirect from HTTP to the equivalent HTTPS URL, then consider adding an HSTS header after the redirects are verified. Update internal links and canonicals that still use `http://`.
 - **Implementation complexity:** Low (assumes a server or CDN configuration change; confirm with the hosting team)
 - **Related standard:** [Google Search Central: consolidate duplicate URLs](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls) and [redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
-
-### Coalition page redirects pass through six hops and end in a 404
-
-- **Finding ID:** SEO-NITA-006
-- **Page or component:** Redirects for the former “Transit Is the Answer” coalition pages: `/region/transit-is-the-answer/join-the-transit-is-the-answer-coalition`, `/region/transit-is-the-answer/coalition`, `/coalition`, `/transit-funding/coalition`, `/riders/coalition`, and `/communities/coalition`.
-- **Priority:** Medium
-- **Evidence:** On 2026-11-20, a request to `/region/transit-is-the-answer/join-the-transit-is-the-answer-coalition` passed through six 301 redirects (`/region/transit-is-the-answer/coalition` → `/coalition` → `/transit-funding/coalition` → `/riders/coalition` → `/communities/coalition` → `/region/coalition`) and ended at a 404 page ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). The starting URL is linked from a 2023 blog post about reduced fares; the 2026-11-19 crawl baseline recorded the same chain ([`pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv), and the batch `redirects.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/)). The coalition remains active (blog posts through 2026), and `/region/transit-is-the-answer` redirects to the external website `transitistheanswer.org`.
-- **Impact:** Users following old coalition links, including any external links or bookmarks to these URLs, reach a “not found” page after several redirects instead of current coalition information. Search engines following the chain find no destination to consolidate signals to. Google follows a limited number of redirect hops and recommends avoiding chains.
-- **Recommendation:** Point each of the six old coalition URLs directly, in one 301, to the current coalition destination (for example the relevant page on `transitistheanswer.org` or a NITA page about the coalition), and update the link in the 2023 blog post.
-- **Implementation complexity:** Low (redirect configuration; confirm the intended destination with NITA)
-- **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
 
 ### Links on two current pages lead to “not found” pages
 
@@ -55,6 +44,107 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Impact:** Riders looking for how to get an Access card, a reduced-fare task on a high-value page, and users looking for regional data reach an error page instead of the intended destination. Broken links on core pages also stop crawlers from following those paths.
 - **Recommendation:** Change both Access card links to the full `https://getaccess.org/` address (or the current Access program page) and delete the Safe Links `title` attribute. Point the Data Portal button to the current data destination (for example the dashboard `/dashboards` redirects to) or add a 301 redirect from `/data`. Check other pages edited from email content for pasted Safe Links URLs.
 - **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: make links crawlable](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)
+
+### Former RTA URLs redirect to section overview pages instead of the matching current page
+
+- **Finding ID:** SEO-NITA-024
+- **Page or component:** Redirect rules for former RTA website paths (`/plans-programs/…`, `/rider-resources/…`, `/plan-your-trip/…`, `/finance-management/…`, `/about-us/…`) and the internal links that still use them.
+- **Priority:** Medium
+- **Evidence:** In the 2026-11-24 link crawl of the 1,609 NITA pages, 160 links in page content, on 132 pages (mostly RTA-era press releases and blog posts), point to 49 former RTA paths that redirect (301) to a section overview page: `/communities`, `/riders`, `/riders/how-to-ride`, `/transit-funding`, or `/about-rta`, which itself redirects to `/about-nita` ([`nita-legacy-redirects-to-section-pages.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-legacy-redirects-to-section-pages.csv), with linking pages, anchor text, and redirect targets from the 2026-11-19 crawl). For 19 of the 49 paths (90 of the 160 links), a current page on the same subject exists:
+
+  | Former RTA path | Links (pages) | Redirects to | Current page on the same subject |
+  | --- | --- | --- | --- |
+  | `/plans-programs/access-transit-program` | 21 (16) | `/communities` | [Access to Transit](https://nita.illinois.gov/communities/access-to-transit-program) |
+  | `/plans-programs/community-planning` | 16 (16) | `/communities` | [Community Planning](https://nita.illinois.gov/communities/community-planning) |
+  | `/plans-programs/grants-projects/community-planning` | 14 (14) | `/communities` | [Community Planning](https://nita.illinois.gov/communities/community-planning) |
+  | `/plans-programs/programs-and-projects/section-5310-enhanced-mobility-seniors-and-individuals` | 12 (12) | `/communities` | [Section 5310](https://nita.illinois.gov/region/section-5310) |
+  | `/plans-programs/programs-and-projects/section-5310` | 5 (5) | `/communities` | [Section 5310](https://nita.illinois.gov/region/section-5310) |
+  | `/rider-resources/rta-fare-programs`, `/rider-resources/reduced-fare/ride-free-permits`, and three other reduced-fare paths | 8 (8) | `/riders` | [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs) |
+  | `/plan-your-trip/travel-tips/paying-your-ride` | 2 (2) | `/riders/how-to-ride` | [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) |
+  | `/about-us/media/press-release-archives/2021-press-releases/transit-ridership-survey-reveals` | 4 (4) | `/about-rta` → `/about-nita` | [Transit ridership survey reveals challenges for Chicago region in COVID’s wake](https://nita.illinois.gov/about-rta/press-releases/transit-ridership-survey-reveals-challenges-for-chicago-region-in-covids-wake) |
+  | Three other `/about-us/media/press-release-archives/…` paths | 4 (4) | `/about-rta` → `/about-nita` | The matching press releases under [`/about-rta/press-releases/`](https://nita.illinois.gov/news/press-releases) |
+  | `/finance-management/investor-relations/investor-relations`, `/about-us/careers`, `/about-us/board-meetings`, `/about-us/board-meetings/meetings-archive` | 4 (4) | `/transit-funding` or `/about-rta` | [Investor relations](https://nita.illinois.gov/about-nita/investor-relations), [Careers](https://nita.illinois.gov/careers), [Boards and Committees](https://nita.illinois.gov/about-nita/boards-and-committees), [Meeting Materials](https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials) |
+
+  The same rules apply to links from other websites: on 2026-11-24, `https://www.rtachicago.org/plans-programs/access-transit-program` redirected through `https://nita.illinois.gov/plans-programs/access-transit-program` to `/communities` (2 redirects), and a former RTA press-release URL reached `/about-nita` after 3 redirects. Former paths that return 404 instead are covered in `SEO-NITA-009`.
+- **Impact:** A reader who follows an older link about Access to Transit, Section 5310, or reduced-fare permits lands on a general section page and has to search again. Google's site-move guidance recommends mapping each old URL to its corresponding new URL; a redirect to a general section page gives search engines a weaker match, so the relevance of links built up by the RTA-era pages may not carry over to the current program pages. The effect cannot be measured without Search Console and backlink data.
+- **Recommendation:** Update the redirect map so each former path with a clear successor redirects in one step to that page (at least the 19 paths listed in the evidence file), and send former press-release paths to the matching release. Update the 160 internal links to point directly at the current URLs. Keep section-level redirects only for paths with no equivalent page.
+- **Implementation complexity:** Low (redirect rules and link updates)
+- **Related standard:** [Google Search Central: redirects and Google Search](https://developers.google.com/search/docs/crawling-indexing/301-redirects) and [site moves with URL changes](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)
+
+### Coalition page redirects pass through six hops and end in a 404
+
+- **Finding ID:** SEO-NITA-006
+- **Page or component:** Redirects for the former “Transit Is the Answer” coalition pages: `/region/transit-is-the-answer/join-the-transit-is-the-answer-coalition`, `/region/transit-is-the-answer/coalition`, `/coalition`, `/transit-funding/coalition`, `/riders/coalition`, and `/communities/coalition`.
+- **Priority:** Medium
+- **Evidence:** On 2026-11-20, a request to `/region/transit-is-the-answer/join-the-transit-is-the-answer-coalition` passed through six 301 redirects (`/region/transit-is-the-answer/coalition` → `/coalition` → `/transit-funding/coalition` → `/riders/coalition` → `/communities/coalition` → `/region/coalition`) and ended at a 404 page ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). The starting URL is linked from a 2023 blog post about reduced fares; the 2026-11-19 crawl baseline recorded the same chain ([`pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv), and the batch `redirects.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/)). The coalition remains active (blog posts through 2026), and `/region/transit-is-the-answer` redirects to the external website `transitistheanswer.org`.
+- **Impact:** Users following old coalition links, including any external links or bookmarks to these URLs, reach a “not found” page after several redirects instead of current coalition information. Search engines following the chain find no destination to consolidate signals to. Google follows a limited number of redirect hops and recommends avoiding chains.
+- **Recommendation:** Point each of the six old coalition URLs directly, in one 301, to the current coalition destination (for example the relevant page on `transitistheanswer.org` or a NITA page about the coalition), and update the link in the 2023 blog post.
+- **Implementation complexity:** Low (redirect configuration; confirm the intended destination with NITA)
+- **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
+
+### Translations into seven languages are visible to users but not to search engines
+
+- **Finding ID:** SEO-NITA-021
+- **Page or component:** Website-wide language switcher (Weglot translation script in the page template); checked on the 16 NITA sample pages.
+- **Priority:** Medium
+- **Evidence:** On 2026-11-24 every NITA sample page loaded the Weglot script (`cdn.weglot.com/weglot.min.js`) and showed a language switcher with English, Español, Polski, العربية (Arabic), 中文 (简体) (Simplified Chinese), Tagalog, اردو (Urdu), and ગુજરાતી (Gujarati); every option except English links to `#` ([`weglot-check.txt`](../../../evidence/public-technical/2026-11-24/rendered-review/weglot-check.txt)). Selecting Español on [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs) translated the page in the browser without changing the URL:
+
+  | Element | Before (English) | After selecting Español |
+  | --- | --- | --- |
+  | URL | `/riders/free-and-reduced-fare-programs` | `/riders/free-and-reduced-fare-programs` (unchanged) |
+  | `<html lang>` | `en` | `es` |
+  | `<title>` | Discounted Fares \| Northern Illinois Transit Authority | Tarifas con descuento \| Autoridad de Transporte Público del Norte de Illinois |
+  | H1 | Discounted Fare and Ride Free Programs | Tarifas reducidas y programas de transporte gratuito |
+  | Canonical | self (English URL) | self (English URL) |
+
+  The choice is stored in the browser (`localStorage` key `wglang`). No sample page has `hreflang` annotations in the raw or rendered HTML ([`raw-vs-rendered.csv`](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)); `https://nita.illinois.gov/es/`, `/pl/`, and `/zh/` return 404; subdomains such as `es.nita.illinois.gov` do not resolve; and a `?lang=es` parameter returns the English page. The translated text therefore exists only after a visitor's browser runs the script and the visitor chooses a language.
+- **Impact:** Search engines index one URL per page, and Googlebot does not use the language switcher, so it sees only the English version; as a result the Spanish, Polish, Chinese, and other versions cannot be found by people searching in those languages. NITA has invested in translations for rider-critical content such as reduced fares, paratransit, and trip planning, but that content is reachable only by visitors who already arrive at the English page. This is a discoverability limit, not a defect in the translations themselves, whose quality was not reviewed.
+- **Recommendation:** Decide which languages and pages should be discoverable in search, starting with rider programs. Configure the translation service to serve each language on its own URL (Weglot supports subdirectory or subdomain setups that output translated HTML and `hreflang` annotations; confirm the plan and hosting requirements with the provider), add each language version to the sitemap or `hreflang` set, and have key machine-translated pages reviewed by a fluent speaker before they are exposed to search. Coordinate with the accessibility and content sections on language support.
+- **Implementation complexity:** Medium (translation service configuration, DNS or server routing, and translation review)
+- **Related standard:** [Google Search Central: managing multi-regional and multilingual sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites) and [localized versions of your pages (hreflang)](https://developers.google.com/search/docs/specialty/international/localized-versions)
+
+### Homepage content jumps during loading and fails the desktop Core Web Vitals check
+
+- **Finding ID:** SEO-NITA-019
+- **Page or component:** [Homepage](https://nita.illinois.gov/) slider (`<ul id="homeslider">`) and the content below it.
+- **Priority:** Medium
+- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt); method in the [README](../../../evidence/public-technical/2026-11-24/README.md)):
+
+  | Data source | Device | Cumulative Layout Shift (CLS) | Assessment |
+  | --- | --- | --- | --- |
+  | Field data for this URL (Chrome users, latest 28 days) | Desktop | 0.29 | Core Web Vitals **Failed** (good is 0.1 or less) |
+  | Field data for this URL | Mobile | 0 | Passed |
+  | Lab test, two runs | Desktop | 0.363 and 0.352 | — |
+  | Lab test, two runs | Mobile | 0.596 and 0.596 | — |
+
+  In both lab runs, Lighthouse attributed almost all the shift to the footer contact block (`<div class="w-full bg-nitadarkblue-500">`, 0.351 on desktop and 0.596 on mobile), which is pushed down after the page first renders. Code inspection explains why: the stylesheet `/dist/app.css` positions every slide of `#homeslider` absolutely and hides it until JavaScript adds the `active` class (`#homeslider li{...position:absolute...visibility:hidden}`, `#homeslider li.active{...position:relative...}`), so the slider has no height until `/dist/app.js` runs; when it does, the first slide (up to 600 px tall on desktop) appears and moves the rest of the page down. With a warm cache in the audit browser the shift was small (0.011), so it depends on how late the script runs. The other six NITA templates tested had field CLS of 0 to 0.04.
+- **Impact:** Desktop visitors to the homepage see content move after it appears, which can cause misclicks and makes the page feel unstable. The homepage is the only NITA page tested that fails Google's Core Web Vitals assessment, which Google uses as one page-experience signal; passing it does not guarantee any ranking change.
+- **Recommendation:** Reserve the slider's height before JavaScript runs: render the first slide with the `active` class (or `position: relative`) in the HTML, or give `#homeslider` a fixed height or `aspect-ratio` per breakpoint, and add `width` and `height` attributes to the slide images. Re-test with PageSpeed Insights and watch the field CLS over the following 28 days.
+- **Implementation complexity:** Low (template and CSS change)
+- **Related standard:** [web.dev: Cumulative Layout Shift](https://web.dev/articles/cls) and [Google Search Central: Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals)
+
+### Links copied from Outlook emails route through Microsoft Safe Links and include staff email addresses
+
+- **Finding ID:** SEO-NITA-026
+- **Page or component:** Rich-text content on 21 pages, including seven core pages; follows up the Safe Links attribute noted in `SEO-NITA-008`.
+- **Priority:** Medium
+- **Evidence:** The HTML of all 1,609 NITA pages, fetched on 2026-11-24 for the internal link review, was searched for Microsoft Outlook Safe Links URLs (`*.safelinks.protection.outlook.com`): 68 were found on 21 pages, 49 as the link address (`href`) and 19 as the hover text (`title`) of another link ([`safelinks-urls.csv`](../../../evidence/public-technical/2026-11-24/content-review/safelinks-urls.csv), with each page, attribute, decoded destination, and the email address in the URL). Each Safe Links URL contains the mailbox of the person who copied it: `melissa.meyer@rtachicago.org` (30), `Jessica.Cabe@RTACHICAGO.ORG` (16), `MeyerM@RTACHICAGO.ORG` / `meyerm@rtachicago.org` (14), `Natalie.Rzucidlo@RTACHICAGO.ORG` (4), `gerry.tumbali@nita.illinois.gov` (2), and `Robert.Morris@RTACHICAGO.ORG` (2). Core pages affected:
+
+  | Page | In `href` | In `title` | Real destinations |
+  | --- | --- | --- | --- |
+  | [Getting to the Obama Presidential Center](https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center) | 8 | 5 | Metra station pages, Metra ticket machines, Pace ADA page, Ventra app; one `title` points to `www.rtachicago.org` |
+  | [Improving the system](https://nita.illinois.gov/transit-funding/improving-the-system) | 3 | 0 | `rtams.org` capital dataset, Pace and CTA transparency pages |
+  | [Accessible transit](https://nita.illinois.gov/riders/accessible-transit) | 1 | 0 | `fares.rtachicago.org` (TAP and RAP applications) |
+  | [Doing Business](https://nita.illinois.gov/about-nita/doing-business) | 1 | 0 | Federal Register DBE interim final rule |
+  | [Ethics & OEIG](https://nita.illinois.gov/about-nita/transparency/ethics-oeig) | 1 | 1 | `oeig.illinois.gov` |
+  | [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) | 0 | 2 | `getaccess.org`, Metra Regional Connect Pass (see `SEO-NITA-008`) |
+  | [How to ride](https://nita.illinois.gov/riders/how-to-ride) | 0 | 1 | `www.rtachicago.org/riders/paying-for-your-ride` |
+
+  The other 14 pages are press releases and blog posts from 2020 to 2026; the press release [Public transit is the best way to get to the Obama Presidential Center grand opening](https://nita.illinois.gov/about-rta/press-releases/public-transit-is-the-best-way-to-get-to-the-obama-presidential-center-grand-opening) alone has 17. Some decoded destinations are themselves Mailchimp click-tracking links (`rtachicago.us3.list-manage.com/track/click…`) or `rtachicago.zoom.us` meeting links. On 2026-11-24 the two Safe Links URLs tested (Accessible transit and Ethics & OEIG) still redirected (302) to their destinations.
+- **Impact:** Each link depends on Microsoft's redirect service and on the sender's mail tenant; the links send users through an extra hop and may stop working or show a warning if those settings change. Search engines see a link to `safelinks.protection.outlook.com` instead of the real destination, so the page does not clearly reference the official CTA, Metra, Pace, or state page it cites. The URLs and hover text also publish staff email addresses and mail-system identifiers in the page source, and the `title` text appears as a long URL when users hover over a link.
+- **Recommendation:** Replace every Safe Links `href` with the decoded destination listed in the evidence file, remove the Safe Links `title` attributes, and replace Mailchimp tracking and former RTA Zoom links with direct URLs. To prevent recurrence, add a CMS or publishing check that rejects links containing `safelinks.protection.outlook.com`, `list-manage.com/track`, or `rtachicago` domains, and ask editors to copy links from the destination page rather than from email.
+- **Implementation complexity:** Low (68 link edits on 21 pages; optional CMS validation rule)
 - **Related standard:** [Google Search Central: make links crawlable](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)
 
 ### Homepage title says only “Home” and its H1s come from rotating announcements
@@ -100,73 +190,6 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Low (content change in the CMS; about 60 pages)
 - **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/appearance/title-link)
 
-### Homepage content jumps during loading and fails the desktop Core Web Vitals check
-
-- **Finding ID:** SEO-NITA-019
-- **Page or component:** [Homepage](https://nita.illinois.gov/) slider (`<ul id="homeslider">`) and the content below it.
-- **Priority:** Medium
-- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt); method in the [README](../../../evidence/public-technical/2026-11-24/README.md)):
-
-  | Data source | Device | Cumulative Layout Shift (CLS) | Assessment |
-  | --- | --- | --- | --- |
-  | Field data for this URL (Chrome users, latest 28 days) | Desktop | 0.29 | Core Web Vitals **Failed** (good is 0.1 or less) |
-  | Field data for this URL | Mobile | 0 | Passed |
-  | Lab test, two runs | Desktop | 0.363 and 0.352 | — |
-  | Lab test, two runs | Mobile | 0.596 and 0.596 | — |
-
-  In both lab runs, Lighthouse attributed almost all the shift to the footer contact block (`<div class="w-full bg-nitadarkblue-500">`, 0.351 on desktop and 0.596 on mobile), which is pushed down after the page first renders. Code inspection explains why: the stylesheet `/dist/app.css` positions every slide of `#homeslider` absolutely and hides it until JavaScript adds the `active` class (`#homeslider li{...position:absolute...visibility:hidden}`, `#homeslider li.active{...position:relative...}`), so the slider has no height until `/dist/app.js` runs; when it does, the first slide (up to 600 px tall on desktop) appears and moves the rest of the page down. With a warm cache in the audit browser the shift was small (0.011), so it depends on how late the script runs. The other six NITA templates tested had field CLS of 0 to 0.04.
-- **Impact:** Desktop visitors to the homepage see content move after it appears, which can cause misclicks and makes the page feel unstable. The homepage is the only NITA page tested that fails Google's Core Web Vitals assessment, which Google uses as one page-experience signal; passing it does not guarantee any ranking change.
-- **Recommendation:** Reserve the slider's height before JavaScript runs: render the first slide with the `active` class (or `position: relative`) in the HTML, or give `#homeslider` a fixed height or `aspect-ratio` per breakpoint, and add `width` and `height` attributes to the slide images. Re-test with PageSpeed Insights and watch the field CLS over the following 28 days.
-- **Implementation complexity:** Low (template and CSS change)
-- **Related standard:** [web.dev: Cumulative Layout Shift](https://web.dev/articles/cls) and [Google Search Central: Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals)
-
-### Translations into seven languages are visible to users but not to search engines
-
-- **Finding ID:** SEO-NITA-021
-- **Page or component:** Website-wide language switcher (Weglot translation script in the page template); checked on the 16 NITA sample pages.
-- **Priority:** Medium
-- **Evidence:** On 2026-11-24 every NITA sample page loaded the Weglot script (`cdn.weglot.com/weglot.min.js`) and showed a language switcher with English, Español, Polski, العربية (Arabic), 中文 (简体) (Simplified Chinese), Tagalog, اردو (Urdu), and ગુજરાતી (Gujarati); every option except English links to `#` ([`weglot-check.txt`](../../../evidence/public-technical/2026-11-24/rendered-review/weglot-check.txt)). Selecting Español on [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs) translated the page in the browser without changing the URL:
-
-  | Element | Before (English) | After selecting Español |
-  | --- | --- | --- |
-  | URL | `/riders/free-and-reduced-fare-programs` | `/riders/free-and-reduced-fare-programs` (unchanged) |
-  | `<html lang>` | `en` | `es` |
-  | `<title>` | Discounted Fares \| Northern Illinois Transit Authority | Tarifas con descuento \| Autoridad de Transporte Público del Norte de Illinois |
-  | H1 | Discounted Fare and Ride Free Programs | Tarifas reducidas y programas de transporte gratuito |
-  | Canonical | self (English URL) | self (English URL) |
-
-  The choice is stored in the browser (`localStorage` key `wglang`). No sample page has `hreflang` annotations in the raw or rendered HTML ([`raw-vs-rendered.csv`](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)); `https://nita.illinois.gov/es/`, `/pl/`, and `/zh/` return 404; subdomains such as `es.nita.illinois.gov` do not resolve; and a `?lang=es` parameter returns the English page. The translated text therefore exists only after a visitor's browser runs the script and the visitor chooses a language.
-- **Impact:** Search engines index one URL per page, and Googlebot does not use the language switcher, so it sees only the English version; as a result the Spanish, Polish, Chinese, and other versions cannot be found by people searching in those languages. NITA has invested in translations for rider-critical content such as reduced fares, paratransit, and trip planning, but that content is reachable only by visitors who already arrive at the English page. This is a discoverability limit, not a defect in the translations themselves, whose quality was not reviewed.
-- **Recommendation:** Decide which languages and pages should be discoverable in search, starting with rider programs. Configure the translation service to serve each language on its own URL (Weglot supports subdirectory or subdomain setups that output translated HTML and `hreflang` annotations; confirm the plan and hosting requirements with the provider), add each language version to the sitemap or `hreflang` set, and have key machine-translated pages reviewed by a fluent speaker before they are exposed to search. Coordinate with the accessibility and content sections on language support.
-- **Implementation complexity:** Medium (translation service configuration, DNS or server routing, and translation review)
-- **Related standard:** [Google Search Central: managing multi-regional and multilingual sites](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites) and [localized versions of your pages (hreflang)](https://developers.google.com/search/docs/specialty/international/localized-versions)
-
-### Former RTA URLs redirect to section overview pages instead of the matching current page
-
-- **Finding ID:** SEO-NITA-024
-- **Page or component:** Redirect rules for former RTA website paths (`/plans-programs/…`, `/rider-resources/…`, `/plan-your-trip/…`, `/finance-management/…`, `/about-us/…`) and the internal links that still use them.
-- **Priority:** Medium
-- **Evidence:** In the 2026-11-24 link crawl of the 1,609 NITA pages, 160 links in page content, on 132 pages (mostly RTA-era press releases and blog posts), point to 49 former RTA paths that redirect (301) to a section overview page: `/communities`, `/riders`, `/riders/how-to-ride`, `/transit-funding`, or `/about-rta`, which itself redirects to `/about-nita` ([`nita-legacy-redirects-to-section-pages.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-legacy-redirects-to-section-pages.csv), with linking pages, anchor text, and redirect targets from the 2026-11-19 crawl). For 19 of the 49 paths (90 of the 160 links), a current page on the same subject exists:
-
-  | Former RTA path | Links (pages) | Redirects to | Current page on the same subject |
-  | --- | --- | --- | --- |
-  | `/plans-programs/access-transit-program` | 21 (16) | `/communities` | [Access to Transit](https://nita.illinois.gov/communities/access-to-transit-program) |
-  | `/plans-programs/community-planning` | 16 (16) | `/communities` | [Community Planning](https://nita.illinois.gov/communities/community-planning) |
-  | `/plans-programs/grants-projects/community-planning` | 14 (14) | `/communities` | [Community Planning](https://nita.illinois.gov/communities/community-planning) |
-  | `/plans-programs/programs-and-projects/section-5310-enhanced-mobility-seniors-and-individuals` | 12 (12) | `/communities` | [Section 5310](https://nita.illinois.gov/region/section-5310) |
-  | `/plans-programs/programs-and-projects/section-5310` | 5 (5) | `/communities` | [Section 5310](https://nita.illinois.gov/region/section-5310) |
-  | `/rider-resources/rta-fare-programs`, `/rider-resources/reduced-fare/ride-free-permits`, and three other reduced-fare paths | 8 (8) | `/riders` | [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs) |
-  | `/plan-your-trip/travel-tips/paying-your-ride` | 2 (2) | `/riders/how-to-ride` | [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) |
-  | `/about-us/media/press-release-archives/2021-press-releases/transit-ridership-survey-reveals` | 4 (4) | `/about-rta` → `/about-nita` | [Transit ridership survey reveals challenges for Chicago region in COVID’s wake](https://nita.illinois.gov/about-rta/press-releases/transit-ridership-survey-reveals-challenges-for-chicago-region-in-covids-wake) |
-  | Three other `/about-us/media/press-release-archives/…` paths | 4 (4) | `/about-rta` → `/about-nita` | The matching press releases under [`/about-rta/press-releases/`](https://nita.illinois.gov/news/press-releases) |
-  | `/finance-management/investor-relations/investor-relations`, `/about-us/careers`, `/about-us/board-meetings`, `/about-us/board-meetings/meetings-archive` | 4 (4) | `/transit-funding` or `/about-rta` | [Investor relations](https://nita.illinois.gov/about-nita/investor-relations), [Careers](https://nita.illinois.gov/careers), [Boards and Committees](https://nita.illinois.gov/about-nita/boards-and-committees), [Meeting Materials](https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials) |
-
-  The same rules apply to links from other websites: on 2026-11-24, `https://www.rtachicago.org/plans-programs/access-transit-program` redirected through `https://nita.illinois.gov/plans-programs/access-transit-program` to `/communities` (2 redirects), and a former RTA press-release URL reached `/about-nita` after 3 redirects. Former paths that return 404 instead are covered in `SEO-NITA-009`.
-- **Impact:** A reader who follows an older link about Access to Transit, Section 5310, or reduced-fare permits lands on a general section page and has to search again. Google's site-move guidance recommends mapping each old URL to its corresponding new URL; a redirect to a general section page gives search engines a weaker match, so the relevance of links built up by the RTA-era pages may not carry over to the current program pages. The effect cannot be measured without Search Console and backlink data.
-- **Recommendation:** Update the redirect map so each former path with a clear successor redirects in one step to that page (at least the 19 paths listed in the evidence file), and send former press-release paths to the matching release. Update the 160 internal links to point directly at the current URLs. Keep section-level redirects only for paths with no equivalent page.
-- **Implementation complexity:** Low (redirect rules and link updates)
-- **Related standard:** [Google Search Central: redirects and Google Search](https://developers.google.com/search/docs/crawling-indexing/301-redirects) and [site moves with URL changes](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)
-
 ### Past events, an expired alert, and conflicting phone hours appear as current information
 
 - **Finding ID:** SEO-NITA-027
@@ -190,29 +213,6 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Low (content edits) to Medium (CMS expiry fields and review process)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
-### Links copied from Outlook emails route through Microsoft Safe Links and include staff email addresses
-
-- **Finding ID:** SEO-NITA-026
-- **Page or component:** Rich-text content on 21 pages, including seven core pages; follows up the Safe Links attribute noted in `SEO-NITA-008`.
-- **Priority:** Medium
-- **Evidence:** The HTML of all 1,609 NITA pages, fetched on 2026-11-24 for the internal link review, was searched for Microsoft Outlook Safe Links URLs (`*.safelinks.protection.outlook.com`): 68 were found on 21 pages, 49 as the link address (`href`) and 19 as the hover text (`title`) of another link ([`safelinks-urls.csv`](../../../evidence/public-technical/2026-11-24/content-review/safelinks-urls.csv), with each page, attribute, decoded destination, and the email address in the URL). Each Safe Links URL contains the mailbox of the person who copied it: `melissa.meyer@rtachicago.org` (30), `Jessica.Cabe@RTACHICAGO.ORG` (16), `MeyerM@RTACHICAGO.ORG` / `meyerm@rtachicago.org` (14), `Natalie.Rzucidlo@RTACHICAGO.ORG` (4), `gerry.tumbali@nita.illinois.gov` (2), and `Robert.Morris@RTACHICAGO.ORG` (2). Core pages affected:
-
-  | Page | In `href` | In `title` | Real destinations |
-  | --- | --- | --- | --- |
-  | [Getting to the Obama Presidential Center](https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center) | 8 | 5 | Metra station pages, Metra ticket machines, Pace ADA page, Ventra app; one `title` points to `www.rtachicago.org` |
-  | [Improving the system](https://nita.illinois.gov/transit-funding/improving-the-system) | 3 | 0 | `rtams.org` capital dataset, Pace and CTA transparency pages |
-  | [Accessible transit](https://nita.illinois.gov/riders/accessible-transit) | 1 | 0 | `fares.rtachicago.org` (TAP and RAP applications) |
-  | [Doing Business](https://nita.illinois.gov/about-nita/doing-business) | 1 | 0 | Federal Register DBE interim final rule |
-  | [Ethics & OEIG](https://nita.illinois.gov/about-nita/transparency/ethics-oeig) | 1 | 1 | `oeig.illinois.gov` |
-  | [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) | 0 | 2 | `getaccess.org`, Metra Regional Connect Pass (see `SEO-NITA-008`) |
-  | [How to ride](https://nita.illinois.gov/riders/how-to-ride) | 0 | 1 | `www.rtachicago.org/riders/paying-for-your-ride` |
-
-  The other 14 pages are press releases and blog posts from 2020 to 2026; the press release [Public transit is the best way to get to the Obama Presidential Center grand opening](https://nita.illinois.gov/about-rta/press-releases/public-transit-is-the-best-way-to-get-to-the-obama-presidential-center-grand-opening) alone has 17. Some decoded destinations are themselves Mailchimp click-tracking links (`rtachicago.us3.list-manage.com/track/click…`) or `rtachicago.zoom.us` meeting links. On 2026-11-24 the two Safe Links URLs tested (Accessible transit and Ethics & OEIG) still redirected (302) to their destinations.
-- **Impact:** Each link depends on Microsoft's redirect service and on the sender's mail tenant; the links send users through an extra hop and may stop working or show a warning if those settings change. Search engines see a link to `safelinks.protection.outlook.com` instead of the real destination, so the page does not clearly reference the official CTA, Metra, Pace, or state page it cites. The URLs and hover text also publish staff email addresses and mail-system identifiers in the page source, and the `title` text appears as a long URL when users hover over a link.
-- **Recommendation:** Replace every Safe Links `href` with the decoded destination listed in the evidence file, remove the Safe Links `title` attributes, and replace Mailchimp tracking and former RTA Zoom links with direct URLs. To prevent recurrence, add a CMS or publishing check that rejects links containing `safelinks.protection.outlook.com`, `list-manage.com/track`, or `rtachicago` domains, and ask editors to copy links from the destination page rather than from email.
-- **Implementation complexity:** Low (68 link edits on 21 pages; optional CMS validation rule)
-- **Related standard:** [Google Search Central: make links crawlable](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)
-
 ### Legacy document redirects point to HTTP destinations
 
 - **Finding ID:** SEO-NITA-004
@@ -223,17 +223,6 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Recommendation:** Update the internal links to point directly to the current HTTPS document URLs, and change the redirect targets to HTTPS so external links to the old paths resolve in one step. Restore or remove the links to the two missing PDFs.
 - **Implementation complexity:** Low to Medium (depends on whether redirects are managed in the CMS or server configuration)
 - **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
-
-### Sitemap lists a “404” page that returns 200 and is indexable
-
-- **Finding ID:** SEO-NITA-007
-- **Page or component:** [`/404`](https://nita.illinois.gov/404) and the [general-pages sitemap](../../../evidence/public-technical/2026-11-19/nita-sitemaps-1-section-pages-1-sitemap.xml).
-- **Priority:** Low
-- **Evidence:** On 2026-11-20, `/404` returned HTTP 200 with the title “404 | Northern Illinois Transit Authority”, `<meta name="robots" content="all">`, and a self-referencing canonical; it is listed in the general-pages sitemap. A nonexistent URL on the same website correctly returned 404 with `robots: none`, so `/404` appears to be a published CMS entry rather than the error response ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). My Transit Benefit has the same pattern (`SEO-MTB-001`).
-- **Impact:** The sitemap asks search engines to crawl and index an error-page entry. If indexed, a “404” page could appear in search results for NITA. The effect is limited to one URL among about 1,300 in the sitemap.
-- **Recommendation:** Exclude `/404` from the sitemap and mark it `noindex`, or unpublish it if the error template does not depend on it. Apply the same fix on both websites, since they share the CMS setup.
-- **Implementation complexity:** Low
-- **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors)
 
 ### Older blog posts and press releases contain broken internal links
 
@@ -308,6 +297,52 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Recommendation:** Add 301 redirects for removed pages with clear successors (for example `/region/transformingtransit` to the [Transforming Transit tag archive](https://nita.illinois.gov/blog/tags/transforming-transit) or a current page, `/transit-funding/fiscalcliff` to the [fiscal cliff tag archive](https://nita.illinois.gov/blog/tags/fiscal-cliff) or current funding page, and `/index.php/plans-programs/community-planning` to [Community Planning](https://nita.illinois.gov/communities/community-planning)), and consider a rule for the remaining `/index.php/...` paths. Remove or correct the `href="%5C"` links with a CMS search. Add `https://` or `mailto:` to the links in group 4, remove the trailing period in the NITA board press release, and clean the two links in group 5.
 - **Implementation complexity:** Medium (many pages; partly scriptable in the CMS)
 - **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
+
+### Sitemap lists a “404” page that returns 200 and is indexable
+
+- **Finding ID:** SEO-NITA-007
+- **Page or component:** [`/404`](https://nita.illinois.gov/404) and the [general-pages sitemap](../../../evidence/public-technical/2026-11-19/nita-sitemaps-1-section-pages-1-sitemap.xml).
+- **Priority:** Low
+- **Evidence:** On 2026-11-20, `/404` returned HTTP 200 with the title “404 | Northern Illinois Transit Authority”, `<meta name="robots" content="all">`, and a self-referencing canonical; it is listed in the general-pages sitemap. A nonexistent URL on the same website correctly returned 404 with `robots: none`, so `/404` appears to be a published CMS entry rather than the error response ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). My Transit Benefit has the same pattern (`SEO-MTB-001`).
+- **Impact:** The sitemap asks search engines to crawl and index an error-page entry. If indexed, a “404” page could appear in search results for NITA. The effect is limited to one URL among about 1,300 in the sitemap.
+- **Recommendation:** Exclude `/404` from the sitemap and mark it `noindex`, or unpublish it if the error template does not depend on it. Apply the same fix on both websites, since they share the CMS setup.
+- **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors)
+
+### Sitemap lists redirecting shortcuts and placeholder entries
+
+- **Finding ID:** SEO-NITA-015
+- **Page or component:** [XML sitemap](https://nita.illinois.gov/sitemaps-1-sitemap.xml): general-pages and news child sitemaps.
+- **Priority:** Low
+- **Evidence:** Of the 1,286 URLs in the 2026-11-19 sitemap, 1,278 returned 200 and were indexable; the other 8 are internal shortcut URLs that return 302 to other websites ([`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv); live on 2026-11-20 in [`step2d-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2d-live-checks.txt)):
+
+  | Sitemap URL | Redirects (302) to | Linked from the website? |
+  | --- | --- | --- |
+  | [`/dashboards`](https://nita.illinois.gov/dashboards) | ArcGIS Experience dashboard | Yes |
+  | [`/popamap`](https://nita.illinois.gov/popamap) | ArcGIS lookup app | Yes |
+  | [`/region/regional-transit-data`](https://nita.illinois.gov/region/regional-transit-data) | `https://rtams.org/` | Yes (global navigation) |
+  | [`/region/transit-is-the-answer`](https://nita.illinois.gov/region/transit-is-the-answer) | `https://transitistheanswer.org/` | Yes |
+  | [`/riders/free-and-reduced-fare-programs/registration-sites`](https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites) | ArcGIS “nearby” app | Yes (global navigation) |
+  | [`/riders/transit-benefit-fare-program`](https://nita.illinois.gov/riders/transit-benefit-fare-program) | `https://www.mytransitbenefit.com/` | Yes (global navigation) |
+  | [`/regsitehub`](https://nita.illinois.gov/regsitehub) | `https://sites.google.com/view/rtasitehub/home` | No |
+  | [`/ridersurvey26`](https://nita.illinois.gov/ridersurvey26) | `https://www.research.net/r/ChiTransitFall2026` | No |
+
+  The sitemap also lists two placeholder entries that return 200 and are indexable: the post [`/blog/1970/01/01/take-rta-survey`](https://nita.illinois.gov/blog/1970/01/01/take-rta-survey) (title “Take RTA survey”; the 1970-01-01 date in its URL and sitemap indicates a missing publication date) and the category page [`/blog/uncategorized`](https://nita.illinois.gov/blog/uncategorized) (title “Uncategorized”, not linked from the website). The `/404` entry is covered by `SEO-NITA-007`.
+- **Impact:** A sitemap should list the canonical URLs a website wants indexed. Redirecting shortcuts and placeholder entries send search engines to URLs that are not content pages; search engines ignore or devalue redirecting sitemap entries, and the 1970 post and “Uncategorized” page can surface in results with misleading dates or labels.
+- **Recommendation:** Exclude shortcut entries (the CMS redirect or “link” entries) from the sitemap, and unpublish or exclude the `take-rta-survey` placeholder and the `uncategorized` category. Keep using the shortcuts in navigation if useful.
+- **Implementation complexity:** Low (CMS sitemap settings per section or entry type)
+- **Related standard:** [Google Search Central: build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+
+### Paginated listings declare the first page as canonical
+
+- **Finding ID:** SEO-NITA-005
+- **Page or component:** 248 paginated listing pages: [On Track blog](https://nita.illinois.gov/blog) (65), blog archive (36), blog categories `/blog/plan`, `/blog/invest`, and `/blog/move` (27), [press releases](https://nita.illinois.gov/news/press-releases) (34), meeting materials (9), and paginated tag archives (77).
+- **Priority:** Low
+- **Evidence:** On 2026-11-19, `/blog/p2` and `/blog/p3` returned 200, linked to the next page with standard anchors, and declared `https://nita.illinois.gov/blog` as canonical. The 2026-11-19 crawl baseline shows the same pattern on every paginated listing: each page canonicalizes to the first page of its listing. Older posts and press releases are reachable only through these sequential pages, up to 66 clicks from the homepage. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv).
+- **Impact:** Later listing pages contain different items from the first page, so the canonical signal is inaccurate. Search engines may give less weight to these pages and the links on them, which are the only internal crawl path to older posts and press releases. The XML sitemap partly offsets this because it lists individual posts.
+- **Recommendation:** Give each paginated listing page a self-referencing canonical URL. Keep sequential links between pages.
+- **Implementation complexity:** Low (template change)
+- **Related standard:** [Google Search Central: pagination best practices](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading)
 
 ### External links lead to removed pages and closed domains
 
@@ -405,6 +440,50 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Medium (current-page fixes are low; bulk rewrites across about 330 historical entries need a script or CMS search-and-replace and editorial review)
 - **Related standard:** [Google Search Central: SEO starter guide — link to relevant resources](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#link-to-relevant-resources)
 
+### Some current pages are linked only from the desktop menu or from a single news post
+
+- **Finding ID:** SEO-NITA-023
+- **Page or component:** Global navigation (desktop menu `<nav class="hidden lg:flex …">`, hidden on small screens, and the mobile menu opened with “Open menu”) and in-content links to current program and governance pages.
+- **Priority:** Low
+- **Evidence:** On 2026-11-24 the two menus were compared on the homepage at a 375 px width ([`nav-parity.txt`](../../../evidence/public-technical/2026-11-24/mobile-review/nav-parity.txt)). Both are in the same HTML. The mobile menu lists every section overview and second-level page (35 page links plus search, Careers, and Contact); the desktop menu has 53 unique links, and its 19 extra links are 15 third-level pages and four featured blog posts. The same day, every internal link on the 1,609 NITA HTML pages was recorded with the part of the page it sits in ([`nita-internal-link-edges.csv.gz`](../../../evidence/crawls/link-discovery/2026-11-24/nita-internal-link-edges.csv.gz); linking pages per URL in [`nita-page-inlinks.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-page-inlinks.csv); method in the [README](../../../evidence/crawls/link-discovery/2026-11-24/README.md)). Most desktop-only pages are also linked from their parent page's content, but these current pages are not:
+
+  | Page | Desktop menu | Mobile menu | Pages linking to it in their content |
+  | --- | --- | --- | --- |
+  | [NITA Committees](https://nita.illinois.gov/about-nita/boards-and-committees/nita-committees) | Yes | No | None |
+  | [Registration Sites](https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites) (a shortcut that redirects (302) to an ArcGIS map of Reduced Fare and Ride Free registration sites) | Yes | No | None |
+  | [Upcoming public meetings on transit service](https://nita.illinois.gov/region/nita-engagement/public-meetings) | Yes | No | 1: the 2026-11-02 post [What moves you?](https://nita.illinois.gov/blog/2026/11/02/what-moves-you-thousands-weigh-in-on-their-regional-transit-priorities-via-online-survey-at-union-station-event) (“View upcoming engagement opportunities”) |
+  | [Getting to the Obama Presidential Center](https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center) | Yes | No | 1: the press release [Public transit is the best way to get to the Obama Presidential Center grand opening](https://nita.illinois.gov/about-rta/press-releases/public-transit-is-the-best-way-to-get-to-the-obama-presidential-center-grand-opening) |
+  | [NITA Riders Advisory Council](https://nita.illinois.gov/nita-rider-advisory-council) | No | No | 1: the 2026-09-25 post [NITA launches Rider Advisory Councils, now accepting applications](https://nita.illinois.gov/blog/2026/09/25/nita-launches-rider-advisory-councils-now-accepting-applications) |
+  | [NITA ADA Advisory Council](https://nita.illinois.gov/nita-ada-advisory-council) | No | No | 1: the same 2026-09-25 post |
+
+  The two advisory council pages describe councils that the NITA legislation requires; they sit at top-level URLs outside [Boards and Committees](https://nita.illinois.gov/about-nita/boards-and-committees), and the Riders Advisory Council page says applications were open from September 24 through October 31, 2026. The other desktop-only pages (the five community toolkit guides, three board pages, and the Oversight audits, Ethics & OEIG, and FOIA pages) are linked from their parent page's content.
+- **Impact:** Search engines can still find the menu-linked pages because the desktop menu stays in the HTML, but pages with only one contextual link, from a news post that will move down the blog listing, receive little internal signal about their importance. For phone users, these pages have no path from their section: people looking for public meetings, reduced-fare registration sites, or the advisory councils have to use search or find the right news post.
+- **Recommendation:** Link each page from its parent page's content (for example a “Related pages” list on How to ride, Discounted Fare and Ride Free Programs, A Stronger Region Moves Together, and Boards and Committees). Add the two advisory councils to Boards and Committees and, for the ADA council, to Accessible transit; if their URLs are moved under `/about-nita/boards-and-committees/`, redirect the current URLs. Consider a third menu level on mobile for sections with child pages. Coordinate with the UX section, which assesses navigation.
+- **Implementation complexity:** Low (content links) to Medium (mobile menu template or URL moves)
+- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing)
+
+### Related Articles and pagination do not connect the archive of posts and press releases
+
+- **Finding ID:** SEO-NITA-025
+- **Page or component:** “Related Articles” block of the blog post template; press-release template; blog and press-release listings.
+- **Priority:** Low
+- **Evidence:** In the 2026-11-24 link crawl, 791 of the 792 blog posts have a “Related Articles” block with six links, but only five different sets of six posts appear across all of them ([`nita-related-articles.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-related-articles.csv)): the block shows the latest posts of a group, not posts on the same topic. The largest set is frozen in 2020: 442 posts published from 2015-08-20 to 2020-07-29, on any subject, all link to the same six posts from March to July 2020:
+
+  | Post shown in Related Articles on 442 older posts |
+  | --- |
+  | [How's Your Ride? Take This Survey](https://nita.illinois.gov/blog/2020/03/02/hows-your-ride-take-this-survey) (2020-03-02) |
+  | [Happy International Women’s Day and Women’s History Month from the RTA](https://nita.illinois.gov/blog/2020/03/08/happy-international-womens-day-and-womens-history-month-from-the-rta) (2020-03-08) |
+  | [Announcing the 2020 Access to Transit Program Call for Projects for Small-Scale Capital Projects](https://nita.illinois.gov/blog/2020/03/13/announcing-the-2020-access-to-transit-program-call-for-projects-for-small-scale-capital-projects) (2020-03-13) |
+  | [Transportation Tuesday Webinar Series: Attend the 2020 RTA Annual Planning Workshop Virtually](https://nita.illinois.gov/blog/2020/04/17/transportation-tuesday-webinar-series-attend-the-2020-rta-annual-planning-workshop-virtually) (2020-04-17) |
+  | [Take a survey to help improve mobility options for older adults and people with disabilities](https://nita.illinois.gov/blog/2020/05/07/take-a-survey-to-help-improve-mobility-options-for-older-adults-and-people-with-disabilities) (2020-05-07) |
+  | [RTA celebrates 30 years of the Americans with Disabilities Act](https://nita.illinois.gov/blog/2020/07/29/rta-celebrates-30-years-of-the-americans-with-disabilities-act) (2020-07-29) |
+
+  The other sets show recent posts: 180 posts show the same six NITA posts from September to November 2026, 88 a fixed set of posts from 2025 and 2026, 76 the six newest posts, and 5 posts a set of five that includes four 2022 posts and a post dated 1970-01-01 ([`/blog/1970/01/01/take-rta-survey`](https://nita.illinois.gov/blog/1970/01/01/take-rta-survey)). The 420 press releases have no related links and no tags. Older content is otherwise reached through numbered listing pages: in the 2026-11-19 crawl, blog posts are a median of 13 clicks from the homepage (364 posts more than 30 clicks) and press releases a median of 19 (72 more than 30), with a maximum of 66 ([B1 `pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv)). Posts are also reachable through 78 tag archives (no more than 7 clicks deep), but those archives have generic titles (`SEO-NITA-001`).
+- **Impact:** Related links are one of the few ways readers and search engines move between articles on the same subject. Showing the same 2020 announcements on 442 posts about other subjects sends links to expired surveys and events, and gives no path from an older post to current NITA content on the same topic. Deep pagination makes the archive slow to crawl and hard to browse, although every post is in the XML sitemap. The direct ranking effect is limited and depends on how much search traffic the archive receives, which this audit cannot measure.
+- **Recommendation:** Change Related Articles to select posts that share a tag or category with the current post, newest first, with a fallback to the latest NITA posts; exclude posts dated 1970-01-01 and fix that post's date. Add tags or a topic link to press releases, and link press releases to the related program page (for example budget releases to the current budget page). Consider year archives or a filterable listing for posts and press releases so that older content is a few clicks from the listing page.
+- **Implementation complexity:** Medium (CMS template query and listing changes)
+- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [pagination best practices](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading)
+
 ### Mobile lab tests show slow loading caused by scripts and oversized images
 
 - **Finding ID:** SEO-NITA-020
@@ -455,69 +534,21 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Low (template CSS or rich-text wrapper)
 - **Related standard:** [Google Search Central: mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) and [web.dev: responsive web design basics](https://web.dev/articles/responsive-web-design-basics)
 
-### Some current pages are linked only from the desktop menu or from a single news post
+### Structured data labels every page as a website and omits article markup
 
-- **Finding ID:** SEO-NITA-023
-- **Page or component:** Global navigation (desktop menu `<nav class="hidden lg:flex …">`, hidden on small screens, and the mobile menu opened with “Open menu”) and in-content links to current program and governance pages.
+- **Finding ID:** SEO-NITA-016
+- **Page or component:** JSON-LD generated by the CMS SEO plugin on every page; checked on the 16 sample URLs.
 - **Priority:** Low
-- **Evidence:** On 2026-11-24 the two menus were compared on the homepage at a 375 px width ([`nav-parity.txt`](../../../evidence/public-technical/2026-11-24/mobile-review/nav-parity.txt)). Both are in the same HTML. The mobile menu lists every section overview and second-level page (35 page links plus search, Careers, and Contact); the desktop menu has 53 unique links, and its 19 extra links are 15 third-level pages and four featured blog posts. The same day, every internal link on the 1,609 NITA HTML pages was recorded with the part of the page it sits in ([`nita-internal-link-edges.csv.gz`](../../../evidence/crawls/link-discovery/2026-11-24/nita-internal-link-edges.csv.gz); linking pages per URL in [`nita-page-inlinks.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-page-inlinks.csv); method in the [README](../../../evidence/crawls/link-discovery/2026-11-24/README.md)). Most desktop-only pages are also linked from their parent page's content, but these current pages are not:
-
-  | Page | Desktop menu | Mobile menu | Pages linking to it in their content |
-  | --- | --- | --- | --- |
-  | [NITA Committees](https://nita.illinois.gov/about-nita/boards-and-committees/nita-committees) | Yes | No | None |
-  | [Registration Sites](https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites) (a shortcut that redirects (302) to an ArcGIS map of Reduced Fare and Ride Free registration sites) | Yes | No | None |
-  | [Upcoming public meetings on transit service](https://nita.illinois.gov/region/nita-engagement/public-meetings) | Yes | No | 1: the 2026-11-02 post [What moves you?](https://nita.illinois.gov/blog/2026/11/02/what-moves-you-thousands-weigh-in-on-their-regional-transit-priorities-via-online-survey-at-union-station-event) (“View upcoming engagement opportunities”) |
-  | [Getting to the Obama Presidential Center](https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center) | Yes | No | 1: the press release [Public transit is the best way to get to the Obama Presidential Center grand opening](https://nita.illinois.gov/about-rta/press-releases/public-transit-is-the-best-way-to-get-to-the-obama-presidential-center-grand-opening) |
-  | [NITA Riders Advisory Council](https://nita.illinois.gov/nita-rider-advisory-council) | No | No | 1: the 2026-09-25 post [NITA launches Rider Advisory Councils, now accepting applications](https://nita.illinois.gov/blog/2026/09/25/nita-launches-rider-advisory-councils-now-accepting-applications) |
-  | [NITA ADA Advisory Council](https://nita.illinois.gov/nita-ada-advisory-council) | No | No | 1: the same 2026-09-25 post |
-
-  The two advisory council pages describe councils that the NITA legislation requires; they sit at top-level URLs outside [Boards and Committees](https://nita.illinois.gov/about-nita/boards-and-committees), and the Riders Advisory Council page says applications were open from September 24 through October 31, 2026. The other desktop-only pages (the five community toolkit guides, three board pages, and the Oversight audits, Ethics & OEIG, and FOIA pages) are linked from their parent page's content.
-- **Impact:** Search engines can still find the menu-linked pages because the desktop menu stays in the HTML, but pages with only one contextual link, from a news post that will move down the blog listing, receive little internal signal about their importance. For phone users, these pages have no path from their section: people looking for public meetings, reduced-fare registration sites, or the advisory councils must use search or find the right news post.
-- **Recommendation:** Link each page from its parent page's content (for example a “Related pages” list on How to ride, Discounted Fare and Ride Free Programs, A Stronger Region Moves Together, and Boards and Committees). Add the two advisory councils to Boards and Committees and, for the ADA council, to Accessible transit; if their URLs are moved under `/about-nita/boards-and-committees/`, redirect the current URLs. Consider a third menu level on mobile for sections with child pages. Coordinate with the UX section, which assesses navigation.
-- **Implementation complexity:** Low (content links) to Medium (mobile menu template or URL moves)
-- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing)
-
-### Related Articles and pagination do not connect the archive of posts and press releases
-
-- **Finding ID:** SEO-NITA-025
-- **Page or component:** “Related Articles” block of the blog post template; press-release template; blog and press-release listings.
-- **Priority:** Low
-- **Evidence:** In the 2026-11-24 link crawl, 791 of the 792 blog posts have a “Related Articles” block with six links, but only five different sets of six posts appear across all of them ([`nita-related-articles.csv`](../../../evidence/crawls/link-discovery/2026-11-24/nita-related-articles.csv)): the block shows the latest posts of a group, not posts on the same topic. The largest set is frozen in 2020: 442 posts published from 2015-08-20 to 2020-07-29, on any subject, all link to the same six posts from March to July 2020:
-
-  | Post shown in Related Articles on 442 older posts |
-  | --- |
-  | [How's Your Ride? Take This Survey](https://nita.illinois.gov/blog/2020/03/02/hows-your-ride-take-this-survey) (2020-03-02) |
-  | [Happy International Women’s Day and Women’s History Month from the RTA](https://nita.illinois.gov/blog/2020/03/08/happy-international-womens-day-and-womens-history-month-from-the-rta) (2020-03-08) |
-  | [Announcing the 2020 Access to Transit Program Call for Projects for Small-Scale Capital Projects](https://nita.illinois.gov/blog/2020/03/13/announcing-the-2020-access-to-transit-program-call-for-projects-for-small-scale-capital-projects) (2020-03-13) |
-  | [Transportation Tuesday Webinar Series: Attend the 2020 RTA Annual Planning Workshop Virtually](https://nita.illinois.gov/blog/2020/04/17/transportation-tuesday-webinar-series-attend-the-2020-rta-annual-planning-workshop-virtually) (2020-04-17) |
-  | [Take a survey to help improve mobility options for older adults and people with disabilities](https://nita.illinois.gov/blog/2020/05/07/take-a-survey-to-help-improve-mobility-options-for-older-adults-and-people-with-disabilities) (2020-05-07) |
-  | [RTA celebrates 30 years of the Americans with Disabilities Act](https://nita.illinois.gov/blog/2020/07/29/rta-celebrates-30-years-of-the-americans-with-disabilities-act) (2020-07-29) |
-
-  The other sets show recent posts: 180 posts show the same six NITA posts from September to November 2026, 88 a fixed set of posts from 2025 and 2026, 76 the six newest posts, and 5 posts a set of five that includes four 2022 posts and a post dated 1970-01-01 ([`/blog/1970/01/01/take-rta-survey`](https://nita.illinois.gov/blog/1970/01/01/take-rta-survey)). The 420 press releases have no related links and no tags. Older content is otherwise reached through numbered listing pages: in the 2026-11-19 crawl, blog posts are a median of 13 clicks from the homepage (364 posts more than 30 clicks) and press releases a median of 19 (72 more than 30), with a maximum of 66 ([B1 `pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv)). Posts are also reachable through 78 tag archives (no more than 7 clicks deep), but those archives have generic titles (`SEO-NITA-001`).
-- **Impact:** Related links are one of the few ways readers and search engines move between articles on the same subject. Showing the same 2020 announcements on 442 posts about other subjects sends links to expired surveys and events, and gives no path from an older post to current NITA content on the same topic. Deep pagination makes the archive slow to crawl and hard to browse, although every post is in the XML sitemap. The direct ranking effect is limited and depends on how much search traffic the archive receives, which this audit cannot measure.
-- **Recommendation:** Change Related Articles to select posts that share a tag or category with the current post, newest first, with a fallback to the latest NITA posts; exclude posts dated 1970-01-01 and fix that post's date. Add tags or a topic link to press releases, and link press releases to the related program page (for example budget releases to the current budget page). Consider year archives or a filterable listing for posts and press releases so that older content is a few clicks from the listing page.
-- **Implementation complexity:** Medium (CMS template query and listing changes)
-- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [pagination best practices](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading)
-
-### Rider program pages do not use the permit names and former RTA name that people search with
-
-- **Finding ID:** SEO-NITA-028
-- **Page or component:** Titles, H1s, descriptions, and opening text of the rider program pages: [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs), [Access Program](https://nita.illinois.gov/riders/access), [Accessible transit](https://nita.illinois.gov/riders/accessible-transit), and [How to ride](https://nita.illinois.gov/riders/how-to-ride).
-- **Priority:** Low
-- **Evidence:** A small public sample on 2026-11-24: Google autocomplete for 22 seed phrases ([`autocomplete-2026-11-24.txt`](../../../evidence/public-technical/2026-11-24/content-review/autocomplete-2026-11-24.txt)) and seven Google searches ([`search-sample-2026-11-24.md`](../../../evidence/public-technical/2026-11-24/content-review/search-sample-2026-11-24.md)), run from Argentina with US English settings. The suggestions show phrasing, not search volume:
-
-  | Topic | Phrasing in suggestions and related searches | Wording on the NITA page |
-  | --- | --- | --- |
-  | Reduced Fare and Ride Free permits | “reduced fare permit chicago”, “reduced fare permit application”, “ride free permit renewal online”, “rta reduced fare permit for seniors”, “rta reduced fare application status”, “senior ride free program chicago” | Title “Discounted Fares”; H1 and menu “Discounted Fare and Ride Free Programs”. The permit names appear in the body; the page does not mention that the permits were previously issued by the RTA |
-  | ADA Paratransit | “ada paratransit application”, “ada paratransit eligibility”, “paratransit chicago phone number”, “rta paratransit chicago”, “RTA ADA Paratransit application” | Title “There's always a ride available, regardless of your ability”; H1 “Accessible transit” |
-  | Access Program | “access program snap” returns no transit suggestions; the CTA and Pace pages that appear for “reduced transit fare snap chicago” explain the program as reduced fares for SNAP households | Title and H1 “Access Program”; the description starts “…proud to provide reduced fares to low income transit riders” without naming SNAP |
-  | Trip planning | “chicago transit trip planner”, “rta chicago trip planner”, “rta chicago map” | Title “Your guide to getting around town” |
-
-  In the searches, NITA pages were shown for the permit, paratransit, SNAP, and trip planner queries, with the existing titles (the slogans for Accessible transit and How to ride, “Northern Illinois Transit Authority | Access Program” for Access) or, for the permit page, its H1. Third-party pages in the same results (municipal websites, a disability-resource foundation, a travel forum) still describe these services as “RTA” programs and link to `fares.rtachicago.org`. Discounted Fare and Ride Free Programs and Paying for your ride never mention the RTA; How to ride mentions it once as NITA's predecessor (in a note on the Regional Day Pass), and Accessible transit still sends readers to “the RTA's trip planner and maps”.
-- **Impact:** People continue to use the RTA name and the permit names on the cards they hold. Pages that state those terms in the title, H1, and first paragraph give search engines and readers a clearer match, and help AI answers connect the old and new names. Because NITA pages already appear for these queries in the sample, the expected benefit is better titles and snippets and fewer users ending up on outdated third-party pages, not a guaranteed ranking change.
-- **Recommendation:** When the core titles are rewritten (`SEO-NITA-011`), use the service names people search with, for example “Reduced Fare and Ride Free Permits: apply, renew, replace | NITA”, “ADA Paratransit eligibility and application | NITA”, “Access Program: reduced fares for SNAP and FRESH households | NITA”, and “Plan your trip on CTA, Metra, and Pace | NITA”. Add one sentence near the top of each rider program page stating that NITA took over these programs from the RTA on September 1, 2026, at least during the transition. Ask partner and municipal websites that still describe “RTA” programs to update their wording and links.
-- **Implementation complexity:** Low (content edits)
-- **Related standard:** [Google Search Central: SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [influence title links](https://developers.google.com/search/docs/appearance/title-link)
+- **Evidence:** On 2026-11-20 each of the 16 sample pages contained one JSON-LD block with the same structure: a `WebSite` node, two `GovernmentOrganization` nodes (`#identity` and `#creator`), and a `BreadcrumbList` ([extracted JSON-LD per page](../../../evidence/public-technical/2026-11-20/structured-data/); no Microdata or RDFa found). Official validation on 2026-11-20 ([results and screenshots](../../../evidence/public-technical/2026-11-20/structured-data/validation-results.md)): the Schema.org Validator reported 0 errors and 0 warnings on the homepage and the budget press release, and Google's Rich Results Test crawled both successfully and found 5 valid items (Breadcrumbs, Local businesses, Organization), with one optional field missing (`image` on the `#creator` organization) and no Article item on the press release. Validity does not cover whether the types and values are appropriate. Observations against the schema.org vocabulary and Google's structured data documentation:
+  - **Page type:** the page-level node is `@type: "WebSite"` on every page, including the blog post and press release, with the page title as `headline` (for example `"headline": "Affordable and seamless payment"` on Paying for your ride). Inner pages are not marked as `WebPage`, and posts and press releases have no `Article`, `NewsArticle`, or `BlogPosting` node, although `datePublished`, `dateModified`, `author`, and `publisher` values are already present on that node.
+  - **Logo:** the `#identity` organization's `logo` is an `ImageObject` with `height` 264 and `width` 600 but no `url`, so no logo image is declared.
+  - **Profiles:** no `sameAs` links to NITA's official profiles, although the footer links six of them: [Facebook](https://www.facebook.com/NITAchicago/), [Instagram](https://www.instagram.com/nita_chicago/), [X](https://x.com/NITA_Chicago), [YouTube](https://www.youtube.com/@NITAChicagoland), [Threads](https://www.threads.com/@nita_chicago), and [TikTok](https://www.tiktok.com/@nita_chicago) (checked on 2026-11-20; the Facebook page loaded as “Northern Illinois Transit Authority - NITA”).
+  - **Breadcrumbs:** the press release breadcrumb has two items, Home and the release itself, without a News or Press releases level; core pages have complete trails (for example Home › Riders › Paying for your ride).
+  - **Headline values:** the JSON-LD `headline` holds the full title (for example the complete budget press-release headline), while the HTML `<title>` is truncated with “…” (`SEO-NITA-012`), which confirms the truncation happens only in the title output.
+- **Impact:** Structured data helps search engines and AI systems identify what each page is and who publishes it. Labeling every page as a `WebSite` and omitting article markup and a logo URL gives a less accurate description of NITA's pages and news content. Valid markup does not guarantee any search feature.
+- **Recommendation:** Set, in the SEO plugin, the page-level type to `WebPage` for general pages and `NewsArticle` (press releases) or `BlogPosting` (blog posts) for news entries; add the logo `url` and the six footer profiles as `sameAs` on the organization; add the News or Press releases level to press-release breadcrumbs. Validate the result with the Rich Results Test.
+- **Implementation complexity:** Low (plugin configuration per section)
+- **Related standard:** [Google Search Central: Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article), [Organization structured data](https://developers.google.com/search/docs/appearance/structured-data/organization), and [schema.org/WebPage](https://schema.org/WebPage)
 
 ### The CMS cuts titles and descriptions off with a literal ellipsis
 
@@ -561,7 +592,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 ### Copied meta descriptions describe a different or outdated topic
 
 - **Finding ID:** SEO-NITA-014
-- **Page or component:** 100 indexable posts, press releases, and budget pages in 39 groups that share a description other than the generic site description; full list in [`nita-metadata-review.csv`](../../../evidence/public-technical/2026-11-20/nita-metadata-review.csv) (column `description_duplicate_count`).
+- **Page or component:** 100 indexable posts, press releases, and budget pages in 39 groups that share a description other than the generic website description; full list in [`nita-metadata-review.csv`](../../../evidence/public-technical/2026-11-20/nita-metadata-review.csv) (column `description_duplicate_count`).
 - **Priority:** Low
 - **Evidence:** In the 2026-11-19 crawl baseline, descriptions were copied between entries and no longer summarize each page. Largest groups:
 
@@ -580,45 +611,27 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Low to Medium (content edits)
 - **Related standard:** [Google Search Central: control your snippets](https://developers.google.com/search/docs/appearance/snippet)
 
-### Sitemap lists redirecting shortcuts and placeholder entries
+### The homepage, archives, and some core pages have generic or placeholder descriptions
 
-- **Finding ID:** SEO-NITA-015
-- **Page or component:** [XML sitemap](https://nita.illinois.gov/sitemaps-1-sitemap.xml): general-pages and news child sitemaps.
+- **Finding ID:** SEO-NITA-002
+- **Page or component:** 292 pages with the generic website description (85 of them indexable: the homepage, 76 tag pages, 6 blog listings, one press release, and the `/blog/1970/01/01/take-rta-survey` post) and 7 core pages whose description repeats the page name or a fragment.
 - **Priority:** Low
-- **Evidence:** Of the 1,286 URLs in the 2026-11-19 sitemap, 1,278 returned 200 and were indexable; the other 8 are internal shortcut URLs that return 302 to other websites ([`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv); live on 2026-11-20 in [`step2d-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2d-live-checks.txt)):
+- **Evidence:** In the 2026-11-19 crawl baseline, all 1,613 HTML pages have a meta description; 292 use the same description beginning “Committed to achieving a vision of safe, reliable, accessible public transportation…”. See the batch `meta_description_all.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/) and [`nita-metadata-review.csv`](../../../evidence/public-technical/2026-11-20/nita-metadata-review.csv). Placeholder descriptions on core pages: [`/contact`](https://nita.illinois.gov/contact) (“Contact”), [`/privacy-policy`](https://nita.illinois.gov/privacy-policy) (“Privacy Policy”), [`/whistleblower-policy`](https://nita.illinois.gov/whistleblower-policy) (“Whistleblower Policy”), [`/forward-for-all`](https://nita.illinois.gov/forward-for-all) (“Forward For All”), [`/investor-relations-sub`](https://nita.illinois.gov/investor-relations-sub) (“Information for Potential Investors”), [`/about-nita/investor-relations`](https://nita.illinois.gov/about-nita/investor-relations) (“The information is provided for quick reference only.”), and [`/safety/app`](https://nita.illinois.gov/safety/app) (“One free app and one text number for CTA, Metra, and Pace.”).
+- **Impact:** The repeated description does not summarize the distinct purpose of these pages when used as a search snippet. Google may instead create a snippet from page content.
+- **Recommendation:** Write concise descriptions for the homepage, the seven core pages listed, and any priority blog landing/archive pages intended for search. Confirm the indexability and editorial purpose of archive and pagination pages before producing copy for all of them.
+- **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: control your snippets](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#control-your-snippets)
 
-  | Sitemap URL | Redirects (302) to | Linked from the website? |
-  | --- | --- | --- |
-  | [`/dashboards`](https://nita.illinois.gov/dashboards) | ArcGIS Experience dashboard | Yes |
-  | [`/popamap`](https://nita.illinois.gov/popamap) | ArcGIS lookup app | Yes |
-  | [`/region/regional-transit-data`](https://nita.illinois.gov/region/regional-transit-data) | `https://rtams.org/` | Yes (global navigation) |
-  | [`/region/transit-is-the-answer`](https://nita.illinois.gov/region/transit-is-the-answer) | `https://transitistheanswer.org/` | Yes |
-  | [`/riders/free-and-reduced-fare-programs/registration-sites`](https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites) | ArcGIS “nearby” app | Yes (global navigation) |
-  | [`/riders/transit-benefit-fare-program`](https://nita.illinois.gov/riders/transit-benefit-fare-program) | `https://www.mytransitbenefit.com/` | Yes (global navigation) |
-  | [`/regsitehub`](https://nita.illinois.gov/regsitehub) | `https://sites.google.com/view/rtasitehub/home` | No |
-  | [`/ridersurvey26`](https://nita.illinois.gov/ridersurvey26) | `https://www.research.net/r/ChiTransitFall2026` | No |
+### Blog tag archive titles and headings do not identify their topics
 
-  The sitemap also lists two placeholder entries that return 200 and are indexable: the post [`/blog/1970/01/01/take-rta-survey`](https://nita.illinois.gov/blog/1970/01/01/take-rta-survey) (title “Take RTA survey”; the 1970-01-01 date in its URL and sitemap indicates a missing publication date) and the category page [`/blog/uncategorized`](https://nita.illinois.gov/blog/uncategorized) (title “Uncategorized”, not linked from the website). The `/404` entry is covered by `SEO-NITA-007`.
-- **Impact:** A sitemap should list the canonical URLs a website wants indexed. Redirecting shortcuts and placeholder entries send search engines to URLs that are not content pages; search engines ignore or devalue redirecting sitemap entries, and the 1970 post and “Uncategorized” page can surface in results with misleading dates or labels.
-- **Recommendation:** Exclude shortcut entries (the CMS redirect or “link” entries) from the sitemap, and unpublish or exclude the `take-rta-survey` placeholder and the `uncategorized` category. Keep using the shortcuts in navigation if useful.
-- **Implementation complexity:** Low (CMS sitemap settings per section or entry type)
-- **Related standard:** [Google Search Central: build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
-
-### Structured data labels every page as a website and omits article markup
-
-- **Finding ID:** SEO-NITA-016
-- **Page or component:** JSON-LD generated by the CMS SEO plugin on every page; checked on the 16 sample URLs.
+- **Finding ID:** SEO-NITA-001
+- **Page or component:** Blog tag archive template: 155 `/blog/tags/` URLs (78 tag pages and 77 paginated tag pages), for example [CTA](https://nita.illinois.gov/blog/tags/cta) and [Metra](https://nita.illinois.gov/blog/tags/metra).
 - **Priority:** Low
-- **Evidence:** On 2026-11-20 each of the 16 sample pages contained one JSON-LD block with the same structure: a `WebSite` node, two `GovernmentOrganization` nodes (`#identity` and `#creator`), and a `BreadcrumbList` ([extracted JSON-LD per page](../../../evidence/public-technical/2026-11-20/structured-data/); no Microdata or RDFa found). Official validation on 2026-11-20 ([results and screenshots](../../../evidence/public-technical/2026-11-20/structured-data/validation-results.md)): the Schema.org Validator reported 0 errors and 0 warnings on the homepage and the budget press release, and Google's Rich Results Test crawled both successfully and found 5 valid items (Breadcrumbs, Local businesses, Organization), with one optional field missing (`image` on the `#creator` organization) and no Article item on the press release. Validity does not cover whether the types and values are appropriate. Observations against the schema.org vocabulary and Google's structured data documentation:
-  - **Page type:** the page-level node is `@type: "WebSite"` on every page, including the blog post and press release, with the page title as `headline` (for example `"headline": "Affordable and seamless payment"` on Paying for your ride). Inner pages are not marked as `WebPage`, and posts and press releases have no `Article`, `NewsArticle`, or `BlogPosting` node, although `datePublished`, `dateModified`, `author`, and `publisher` values are already present on that node.
-  - **Logo:** the `#identity` organization's `logo` is an `ImageObject` with `height` 264 and `width` 600 but no `url`, so no logo image is declared.
-  - **Profiles:** no `sameAs` links to NITA's official profiles, although the footer links six of them: [Facebook](https://www.facebook.com/NITAchicago/), [Instagram](https://www.instagram.com/nita_chicago/), [X](https://x.com/NITA_Chicago), [YouTube](https://www.youtube.com/@NITAChicagoland), [Threads](https://www.threads.com/@nita_chicago), and [TikTok](https://www.tiktok.com/@nita_chicago) (checked on 2026-11-20; the Facebook page loaded as “Northern Illinois Transit Authority - NITA”).
-  - **Breadcrumbs:** the press release breadcrumb has two items, Home and the release itself, without a News or Press releases level; core pages have complete trails (for example Home › Riders › Paying for your ride).
-  - **Headline values:** the JSON-LD `headline` holds the full title (for example the complete budget press-release headline), while the HTML `<title>` is truncated with “…” (`SEO-NITA-012`), which confirms the truncation happens only in the title output.
-- **Impact:** Structured data helps search engines and AI systems identify what each page is and who publishes it. Labeling every page as a `WebSite` and omitting article markup and a logo URL gives a less accurate description of NITA's pages and news content. Valid markup does not guarantee any search feature.
-- **Recommendation:** In the SEO plugin, set the page-level type to `WebPage` for general pages and `NewsArticle` (press releases) or `BlogPosting` (blog posts) for news entries; add the logo `url` and the six footer profiles as `sameAs` on the organization; add the News or Press releases level to press-release breadcrumbs. Validate the result with the Rich Results Test.
-- **Implementation complexity:** Low (plugin configuration per section)
-- **Related standard:** [Google Search Central: Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article), [Organization structured data](https://developers.google.com/search/docs/appearance/structured-data/organization), and [schema.org/WebPage](https://schema.org/WebPage)
+- **Evidence:** In the 2026-11-19 crawl baseline, all 155 tag archive URLs have the title “NITA | Northern Illinois Transit Authority.” Of the 78 tag pages, 76 are indexable with self-referencing canonicals and 2 canonicalize to their `http://` version (see `SEO-NITA-003`). On 2026-11-18, a public spot check of the [CTA archive](https://nita.illinois.gov/blog/tags/cta) confirmed that it lists CTA-related posts while its title does not identify the topic. The same template uses the H1 “Connections Blog”, the former RTA blog name, on all 76 indexable tag pages and on five blog listings (`/blog/archive`, `/blog/plan`, `/blog/invest`, `/blog/move`, `/blog/uncategorized`); confirmed live on [`/blog/tags/cta`](https://nita.illinois.gov/blog/tags/cta) on 2026-11-20 ([`step2c-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2c-live-checks.txt)). The tag list also contains a misspelled duplicate, `/blog/tags/acces-to-transit`, alongside `/blog/tags/access-to-transit`. See [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv) and the batch `page_titles_all.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/).
+- **Impact:** In a search result or browser tab, these pages are difficult to distinguish by subject. Google may generate title links from other page signals, so the exported title alone does not predict the exact result shown.
+- **Recommendation:** Update the tag archive template so the title and H1 name the tag topic (for example “CTA news and updates | NITA”) and replace the “Connections Blog” heading with the current blog name, “On Track”. Confirm which of the 78 tags should remain indexable, and merge the misspelled duplicate tag.
+- **Implementation complexity:** Low
+- **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#influence-your-title-links)
 
 ### Image alternative text repeats file names, and the footer logo is labeled “RTA”
 
@@ -661,38 +674,25 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Medium (template fixes are low; describing existing images is content work across the media library)
 - **Related standard:** [Google Search Central: image SEO best practices](https://developers.google.com/search/docs/appearance/google-images#use-descriptive-alt-text); accessibility criteria are assessed in the accessibility section.
 
-### Paginated listings declare the first page as canonical
+### Rider program pages do not use the permit names and former RTA name that people search with
 
-- **Finding ID:** SEO-NITA-005
-- **Page or component:** 248 paginated listing pages: [On Track blog](https://nita.illinois.gov/blog) (65), blog archive (36), blog categories `/blog/plan`, `/blog/invest`, and `/blog/move` (27), [press releases](https://nita.illinois.gov/news/press-releases) (34), meeting materials (9), and paginated tag archives (77).
+- **Finding ID:** SEO-NITA-028
+- **Page or component:** Titles, H1s, descriptions, and opening text of the rider program pages: [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs), [Access Program](https://nita.illinois.gov/riders/access), [Accessible transit](https://nita.illinois.gov/riders/accessible-transit), and [How to ride](https://nita.illinois.gov/riders/how-to-ride).
 - **Priority:** Low
-- **Evidence:** On 2026-11-19, `/blog/p2` and `/blog/p3` returned 200, linked to the next page with standard anchors, and declared `https://nita.illinois.gov/blog` as canonical. The 2026-11-19 crawl baseline shows the same pattern on every paginated listing: each page canonicalizes to the first page of its listing. Older posts and press releases are reachable only through these sequential pages, up to 66 clicks from the homepage. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv).
-- **Impact:** Later listing pages contain different items from the first page, so the canonical signal is inaccurate. Search engines may give less weight to these pages and the links on them, which are the only internal crawl path to older posts and press releases. The XML sitemap partly offsets this because it lists individual posts.
-- **Recommendation:** Give each paginated listing page a self-referencing canonical URL. Keep sequential links between pages.
-- **Implementation complexity:** Low (template change)
-- **Related standard:** [Google Search Central: pagination best practices](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading)
+- **Evidence:** A small public sample on 2026-11-24: Google autocomplete for 22 seed phrases ([`autocomplete-2026-11-24.txt`](../../../evidence/public-technical/2026-11-24/content-review/autocomplete-2026-11-24.txt)) and seven Google searches ([`search-sample-2026-11-24.md`](../../../evidence/public-technical/2026-11-24/content-review/search-sample-2026-11-24.md)), run from Argentina with US English settings. The suggestions show phrasing, not search volume:
 
-### Blog tag archive titles and headings do not identify their topics
+  | Topic | Phrasing in suggestions and related searches | Wording on the NITA page |
+  | --- | --- | --- |
+  | Reduced Fare and Ride Free permits | “reduced fare permit chicago”, “reduced fare permit application”, “ride free permit renewal online”, “rta reduced fare permit for seniors”, “rta reduced fare application status”, “senior ride free program chicago” | Title “Discounted Fares”; H1 and menu “Discounted Fare and Ride Free Programs”. The permit names appear in the body; the page does not mention that the permits were previously issued by the RTA |
+  | ADA Paratransit | “ada paratransit application”, “ada paratransit eligibility”, “paratransit chicago phone number”, “rta paratransit chicago”, “RTA ADA Paratransit application” | Title “There's always a ride available, regardless of your ability”; H1 “Accessible transit” |
+  | Access Program | “access program snap” returns no transit suggestions; the CTA and Pace pages that appear for “reduced transit fare snap chicago” explain the program as reduced fares for SNAP households | Title and H1 “Access Program”; the description starts “…proud to provide reduced fares to low income transit riders” without naming SNAP |
+  | Trip planning | “chicago transit trip planner”, “rta chicago trip planner”, “rta chicago map” | Title “Your guide to getting around town” |
 
-- **Finding ID:** SEO-NITA-001
-- **Page or component:** Blog tag archive template: 155 `/blog/tags/` URLs (78 tag pages and 77 paginated tag pages), for example [CTA](https://nita.illinois.gov/blog/tags/cta) and [Metra](https://nita.illinois.gov/blog/tags/metra).
-- **Priority:** Low
-- **Evidence:** In the 2026-11-19 crawl baseline, all 155 tag archive URLs have the title “NITA | Northern Illinois Transit Authority.” Of the 78 tag pages, 76 are indexable with self-referencing canonicals and 2 canonicalize to their `http://` version (see `SEO-NITA-003`). On 2026-11-18, a public spot check of the [CTA archive](https://nita.illinois.gov/blog/tags/cta) confirmed that it lists CTA-related posts while its title does not identify the topic. The same template uses the H1 “Connections Blog”, the former RTA blog name, on all 76 indexable tag pages and on five blog listings (`/blog/archive`, `/blog/plan`, `/blog/invest`, `/blog/move`, `/blog/uncategorized`); confirmed live on [`/blog/tags/cta`](https://nita.illinois.gov/blog/tags/cta) on 2026-11-20 ([`step2c-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2c-live-checks.txt)). The tag list also contains a misspelled duplicate, `/blog/tags/acces-to-transit`, alongside `/blog/tags/access-to-transit`. See [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv) and the batch `page_titles_all.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/).
-- **Impact:** In a search result or browser tab, these pages are difficult to distinguish by subject. Google may generate title links from other page signals, so the exported title alone does not predict the exact result shown.
-- **Recommendation:** Update the tag archive template so the title and H1 name the tag topic (for example “CTA news and updates | NITA”) and replace the “Connections Blog” heading with the current blog name, “On Track”. Confirm which of the 78 tags should remain indexable, and merge the misspelled duplicate tag.
-- **Implementation complexity:** Low
-- **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#influence-your-title-links)
-
-### The homepage, archives, and some core pages have generic or placeholder descriptions
-
-- **Finding ID:** SEO-NITA-002
-- **Page or component:** 292 pages with the generic site description (85 of them indexable: the homepage, 76 tag pages, 6 blog listings, one press release, and the `/blog/1970/01/01/take-rta-survey` post) and 7 core pages whose description repeats the page name or a fragment.
-- **Priority:** Low
-- **Evidence:** In the 2026-11-19 crawl baseline, all 1,613 HTML pages have a meta description; 292 use the same description beginning “Committed to achieving a vision of safe, reliable, accessible public transportation…”. See the batch `meta_description_all.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/) and [`nita-metadata-review.csv`](../../../evidence/public-technical/2026-11-20/nita-metadata-review.csv). Placeholder descriptions on core pages: [`/contact`](https://nita.illinois.gov/contact) (“Contact”), [`/privacy-policy`](https://nita.illinois.gov/privacy-policy) (“Privacy Policy”), [`/whistleblower-policy`](https://nita.illinois.gov/whistleblower-policy) (“Whistleblower Policy”), [`/forward-for-all`](https://nita.illinois.gov/forward-for-all) (“Forward For All”), [`/investor-relations-sub`](https://nita.illinois.gov/investor-relations-sub) (“Information for Potential Investors”), [`/about-nita/investor-relations`](https://nita.illinois.gov/about-nita/investor-relations) (“The information is provided for quick reference only.”), and [`/safety/app`](https://nita.illinois.gov/safety/app) (“One free app and one text number for CTA, Metra, and Pace.”).
-- **Impact:** The repeated description does not summarize the distinct purpose of these pages when used as a search snippet. Google may instead create a snippet from page content.
-- **Recommendation:** Write concise descriptions for the homepage, the seven core pages listed, and any priority blog landing/archive pages intended for search. Confirm the indexability and editorial purpose of archive and pagination pages before producing copy for all of them.
-- **Implementation complexity:** Low
-- **Related standard:** [Google Search Central: control your snippets](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#control-your-snippets)
+  In the searches, NITA pages were shown for the permit, paratransit, SNAP, and trip planner queries, with the existing titles (the slogans for Accessible transit and How to ride, “Northern Illinois Transit Authority | Access Program” for Access) or, for the permit page, its H1. Third-party pages in the same results (municipal websites, a disability-resource foundation, a travel forum) still describe these services as “RTA” programs and link to `fares.rtachicago.org`. Discounted Fare and Ride Free Programs and Paying for your ride never mention the RTA; How to ride mentions it once as NITA's predecessor (in a note on the Regional Day Pass), and Accessible transit still sends readers to “the RTA's trip planner and maps”.
+- **Impact:** People continue to use the RTA name and the permit names on the cards they hold. Pages that state those terms in the title, H1, and first paragraph give search engines and readers a clearer match, and help AI answers connect the old and new names. Because NITA pages already appear for these queries in the sample, the expected benefit is better titles and snippets and fewer users ending up on outdated third-party pages, not a guaranteed ranking change.
+- **Recommendation:** Use the service names people search with when the core titles are rewritten (`SEO-NITA-011`), for example “Reduced Fare and Ride Free Permits: apply, renew, replace | NITA”, “ADA Paratransit eligibility and application | NITA”, “Access Program: reduced fares for SNAP and FRESH households | NITA”, and “Plan your trip on CTA, Metra, and Pace | NITA”. Add one sentence near the top of each rider program page stating that NITA took over these programs from the RTA on September 1, 2026, at least during the transition. Ask partner and municipal websites that still describe “RTA” programs to update their wording and links.
+- **Implementation complexity:** Low (content edits)
+- **Related standard:** [Google Search Central: SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [influence title links](https://developers.google.com/search/docs/appearance/title-link)
 
 ## Content observations
 

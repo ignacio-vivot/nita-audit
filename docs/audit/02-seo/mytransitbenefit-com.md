@@ -3,9 +3,9 @@
 ## Assessment Scope
 
 - **Website:** [mytransitbenefit.com](https://www.mytransitbenefit.com/)
-- **Review date:** 2026-11-19
+- **Review date:** 2026-11-19 to 2026-11-24 (crawl 2026-11-19; Step 2 checks 2026-11-20; Step 3 manual and AI-assisted review 2026-11-24)
 - **Pages, templates, or journeys reviewed:** Complete four-page scope confirmed by the user on 2026-11-19: [homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), and [Employers](https://www.mytransitbenefit.com/employers); plus the `/404` URL listed in the sitemap. Rendered review on 2026-11-24 (raw HTML compared with the rendered page; [comparison](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)); mobile and content review on 2026-11-24 ([content review](../../../evidence/public-technical/2026-11-24/content-review/README.md)).
-- **Methods and tools:** Screaming Frog SEO Spider 25.1 free version, full Spider crawl with default configuration on 2026-11-19 ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public sitemap and `robots.txt`; public browser review; Google Search Central guidance.
+- **Methods and tools:** Screaming Frog SEO Spider 25.1 free version, full Spider crawl with default configuration on 2026-11-19 ([README](../../../evidence/crawls/screaming-frog/mytransitbenefit-com/2026-11-19/README.md)); curl 8.7.1 ([`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt)); public sitemap and `robots.txt`; Schema.org Validator and Google Rich Results Test; PageSpeed Insights (Lighthouse 13.6.0) through its web interface ([README](../../../evidence/public-technical/2026-11-24/README.md)); Chromium browser review in the Claude desktop app, including raw and rendered HTML comparison and mobile emulation at 375×812 ([rendered review](../../../evidence/public-technical/2026-11-24/rendered-review/README.md), [mobile review](../../../evidence/public-technical/2026-11-24/mobile-review/README.md)); Google autocomplete and a seven-query result sample ([content review](../../../evidence/public-technical/2026-11-24/content-review/README.md)); Google Search Central guidance. Step 3 was AI-assisted: Claude ran the browser checks and analyses, and the team reviewed each part.
 - **Control checklist:** [SEO review matrix](seo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
@@ -24,6 +24,30 @@
 - **Recommendation:** Exclude the `/404` entry from the sitemap and mark it `noindex`, or remove it as a public entry if the error template does not depend on it. Confirm with the CMS team how the error template is configured before changing it.
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors) and [build a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+
+### Pages load slowly on mobile because images are oversized and not cached
+
+- **Finding ID:** SEO-MTB-006
+- **Page or component:** All four pages; masthead images, server caching headers, and the Employers page embeds.
+- **Priority:** Medium
+- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt), [`step3a-header-checks.txt`](../../../evidence/public-technical/2026-11-24/step3a-header-checks.txt)). Google has no field data for the website (too few Chrome users), so only lab results are available:
+
+  | Page | Mobile score | Mobile FCP | Mobile LCP | Desktop score | Desktop LCP | Page weight |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | [Homepage](https://www.mytransitbenefit.com/) (two runs) | 45 / 49 | 7.4 s | 17.9 s / 15.2 s | 89 | 2.1 s | 3.5 MB |
+  | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) | 43 | 7.4 s | 14.1 s | 93 | 0.9 s | 2.9 MB |
+  | [Employees](https://www.mytransitbenefit.com/employees) | 51 | 7.4 s | 16.6 s | 91 | 1.9 s | 3.2 MB |
+  | [Employers](https://www.mytransitbenefit.com/employers) | 39 | 2.6 s | 18.0 s | 61 | 2.0 s | 8.3 MB |
+
+  Causes identified:
+  - **Oversized masthead images:** the LCP element on each page is a PNG masthead, for example `_mastheadImage/home.png` (1,018 KiB, 1140×566, displayed at 364×181 on mobile; estimated savings 913–915 KiB) and `_mastheadImage/employer.png` (974 KiB). The partner logos are also large PNGs (`icon-watertaxi.png` 170 KiB).
+  - **No browser caching:** the server sends no `Cache-Control` or `Expires` header for first-party images, CSS, JavaScript, or fonts (checked with curl on `employer.png`, `icon-watertaxi.png`, and `/dist/app.css`), so returning visitors and visitors moving between pages download them again; Lighthouse estimates 1.3–4.5 MB of savings per page. NITA's website does send these headers. This does not change the lab scores above, which always simulate a first visit with an empty cache; it affects repeat and multi-page visits.
+  - **Heavy embeds on Employers:** an ArcGIS map iframe from `rtagis.maps.arcgis.com` (about 1.3 MB of map code and images, loaded with the page) and Google reCAPTCHA listed three times (352 KiB each), plus two Google tag scripts (330 KiB).
+  - Images without `width` and `height`; the masthead is not marked `fetchpriority="high"`.
+- **Impact:** These pages are the program's enrollment entry points for employees and employers. On a mid-range phone with a slow connection, the lab test shows the main image appearing after 14–18 seconds, which risks visitors leaving before reading the offer. Without field data, the real-user experience cannot be confirmed; desktop results are acceptable except on Employers.
+- **Recommendation:** Convert masthead and logo images to WebP or AVIF and serve sizes matched to the display (`srcset`), add `fetchpriority="high"` to the masthead and `width`/`height` to images, configure the web server to send long `Cache-Control` lifetimes for static files (as NITA's server does), and load the Employers map only on demand (for example `loading="lazy"` on the iframe or a click-to-load preview) with reCAPTCHA loaded once. Re-test with PageSpeed Insights.
+- **Implementation complexity:** Low to Medium (server configuration and image export are low; changing the map embed needs a design decision)
+- **Related standard:** [web.dev: Largest Contentful Paint](https://web.dev/articles/lcp) and [web.dev: HTTP cache](https://web.dev/articles/http-cache)
 
 ### Structured data describes NITA as a business with the wrong name and an RTA email
 
@@ -57,29 +81,24 @@
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/appearance/title-link)
 
-### Pages load slowly on mobile because images are oversized and not cached
+### The program website does not link to NITA directly, and its news links use former RTA URLs
 
-- **Finding ID:** SEO-MTB-006
-- **Page or component:** All four pages; masthead images, server caching headers, and the Employers page embeds.
-- **Priority:** Medium
-- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt), [`step3a-header-checks.txt`](../../../evidence/public-technical/2026-11-24/step3a-header-checks.txt)). Google has no field data for the website (too few Chrome users), so only lab results are available:
+- **Finding ID:** SEO-MTB-007
+- **Page or component:** Links from the four pages to nita.illinois.gov: header and footer, the homepage news cards, and the Employers page text.
+- **Priority:** Low
+- **Evidence:** On 2026-11-24 every link on the four pages was extracted from the raw HTML ([raw HTML files](../../../evidence/public-technical/2026-11-24/rendered-review/raw-html/); method in the [rendered review README](../../../evidence/public-technical/2026-11-24/rendered-review/README.md)). None links to `nita.illinois.gov`. The only paths to NITA content are four links to former RTA blog URLs that redirect (301) to NITA's blog:
 
-  | Page | Mobile score | Mobile FCP | Mobile LCP | Desktop score | Desktop LCP | Page weight |
-  | --- | --- | --- | --- | --- | --- | --- |
-  | [Homepage](https://www.mytransitbenefit.com/) (two runs) | 45 / 49 | 7.4 s | 17.9 s / 15.2 s | 89 | 2.1 s | 3.5 MB |
-  | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) | 43 | 7.4 s | 14.1 s | 93 | 0.9 s | 2.9 MB |
-  | [Employees](https://www.mytransitbenefit.com/employees) | 51 | 7.4 s | 16.6 s | 91 | 1.9 s | 3.2 MB |
-  | [Employers](https://www.mytransitbenefit.com/employers) | 39 | 2.6 s | 18.0 s | 61 | 2.0 s | 8.3 MB |
+  | Page | Link text | URL in the page | Final destination (2026-11-24) |
+  | --- | --- | --- | --- |
+  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region` | [NITA blog post, 2023-07-25](https://nita.illinois.gov/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region) |
+  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return` | [NITA blog post, 2021-07-23](https://nita.illinois.gov/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return) |
+  | [Employers](https://www.mytransitbenefit.com/employers) (twice) | “Transit Benefits Program Act, which went into effect on January 1, 2024” and “Transit Benefits Program Act, which goes into effect on January 1, 2024” | the same 2023 RTA blog URL | the same NITA blog post |
 
-  Causes identified:
-  - **Oversized masthead images:** the LCP element on each page is a PNG masthead, for example `_mastheadImage/home.png` (1,018 KiB, 1140×566, displayed at 364×181 on mobile; estimated savings 913–915 KiB) and `_mastheadImage/employer.png` (974 KiB). The partner logos are also large PNGs (`icon-watertaxi.png` 170 KiB).
-  - **No browser caching:** the server sends no `Cache-Control` or `Expires` header for first-party images, CSS, JavaScript, or fonts (checked with curl on `employer.png`, `icon-watertaxi.png`, and `/dist/app.css`), so returning visitors and visitors moving between pages download them again; Lighthouse estimates 1.3–4.5 MB of savings per page. NITA's website does send these headers. This does not change the lab scores above, which always simulate a first visit with an empty cache; it affects repeat and multi-page visits.
-  - **Heavy embeds on Employers:** an ArcGIS map iframe from `rtagis.maps.arcgis.com` (about 1.3 MB of map code and images, loaded with the page) and Google reCAPTCHA listed three times (352 KiB each), plus two Google tag scripts (330 KiB).
-  - Images without `width` and `height`; the masthead is not marked `fetchpriority="high"`.
-- **Impact:** These pages are the program's enrollment entry points for employees and employers. On a mid-range phone with a slow connection, the lab test shows the main image appearing after 14–18 seconds, which risks visitors leaving before reading the offer. Without field data, the real-user experience cannot be confirmed; desktop results are acceptable except on Employers.
-- **Recommendation:** Convert masthead and logo images to WebP or AVIF and serve sizes matched to the display (`srcset`), add `fetchpriority="high"` to the masthead and `width`/`height` to images, configure the web server to send long `Cache-Control` lifetimes for static files (as NITA's server does), and load the Employers map only on demand (for example `loading="lazy"` on the iframe or a click-to-load preview) with reCAPTCHA loaded once. Re-test with PageSpeed Insights.
-- **Implementation complexity:** Low to Medium (server configuration and image export are low; changing the map embed needs a design decision)
-- **Related standard:** [web.dev: Largest Contentful Paint](https://web.dev/articles/lcp) and [web.dev: HTTP cache](https://web.dev/articles/http-cache)
+  The header logo links to the homepage with the label “Regional Transportation Authority”, the footer agency strip labels the program's own homepage “RTA”, and the six social links read “RTA on Facebook” and so on, although they point to NITA's accounts (`facebook.com/NITAchicago`, `instagram.com/nita_chicago`, `x.com/NITA_Chicago`, `youtube.com/@NITAChicagoland`, `threads.com/@nita_chicago`, `tiktok.com/@nita_chicago`). In the other direction, NITA's menu links to the program through the shortcut `/riders/transit-benefit-fare-program`, which redirects (302) to `https://www.mytransitbenefit.com/`, and the [Riders](https://nita.illinois.gov/riders) page links to it directly (“Learn More”).
+- **Impact:** The program website names NITA in its titles and structured data, but gives users and search engines no direct link to the agency that runs it, and its only NITA links pass through the former RTA domain. Clear links between the two websites help users confirm the program is official and help search engines connect the program to NITA; the labels that still say RTA undercut that connection after the September 1, 2026 name change.
+- **Recommendation:** Add a direct link to NITA's website in the header or footer (for example “A program of the Northern Illinois Transit Authority”), update the two news cards and the Employers links to the `nita.illinois.gov` URLs, and change the logo, footer, and social link labels from RTA to NITA. Coordinate with `SEO-MTB-004` (structured data) and `SEO-MTB-005` (image text).
+- **Implementation complexity:** Low (template and content edits)
+- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 
 ### H1 headings are slogans that do not name the page topic
 
@@ -123,25 +142,6 @@
 - **Recommendation:** Change the footer logo `alt` and the home-link label to “NITA” or “Northern Illinois Transit Authority”, write short descriptions for the content photos (for example, coworkers commuting by train), give icons an empty `alt=""` where a visible label already names the item, and apply the same asset alternative-text field recommended for NITA's website (`SEO-NITA-017`).
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: image SEO best practices](https://developers.google.com/search/docs/appearance/google-images#use-descriptive-alt-text); accessibility criteria are assessed in the accessibility section.
-
-### The program website does not link to NITA directly, and its news links use former RTA URLs
-
-- **Finding ID:** SEO-MTB-007
-- **Page or component:** Links from the four pages to nita.illinois.gov: header and footer, the homepage news cards, and the Employers page text.
-- **Priority:** Low
-- **Evidence:** On 2026-11-24 every link on the four pages was extracted from the raw HTML ([raw HTML files](../../../evidence/public-technical/2026-11-24/rendered-review/raw-html/); method in the [rendered review README](../../../evidence/public-technical/2026-11-24/rendered-review/README.md)). None links to `nita.illinois.gov`. The only paths to NITA content are four links to former RTA blog URLs that redirect (301) to NITA's blog:
-
-  | Page | Link text | URL in the page | Final destination (2026-11-24) |
-  | --- | --- | --- | --- |
-  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region` | [NITA blog post, 2023-07-25](https://nita.illinois.gov/blog/2023/07/25/legislation-expands-transit-benefit-program-to-workplaces-across-the-chicago-region) |
-  | [Homepage](https://www.mytransitbenefit.com/) | Learn More | `https://www.rtachicago.org/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return` | [NITA blog post, 2021-07-23](https://nita.illinois.gov/blog/2021/07/23/transit-benefit-fare-program-adds-parking-option-to-increase-flexibility-as-riders-return) |
-  | [Employers](https://www.mytransitbenefit.com/employers) (twice) | “Transit Benefits Program Act, which went into effect on January 1, 2024” and “Transit Benefits Program Act, which goes into effect on January 1, 2024” | the same 2023 RTA blog URL | the same NITA blog post |
-
-  The header logo links to the homepage with the label “Regional Transportation Authority”, the footer agency strip labels the program's own homepage “RTA”, and the six social links read “RTA on Facebook” and so on, although they point to NITA's accounts (`facebook.com/NITAchicago`, `instagram.com/nita_chicago`, `x.com/NITA_Chicago`, `youtube.com/@NITAChicagoland`, `threads.com/@nita_chicago`, `tiktok.com/@nita_chicago`). In the other direction, NITA's menu links to the program through the shortcut `/riders/transit-benefit-fare-program`, which redirects (302) to `https://www.mytransitbenefit.com/`, and the [Riders](https://nita.illinois.gov/riders) page links to it directly (“Learn More”).
-- **Impact:** The program website names NITA in its titles and structured data, but gives users and search engines no direct link to the agency that runs it, and its only NITA links pass through the former RTA domain. Clear links between the two websites help users confirm the program is official and help search engines connect the program to NITA; the labels that still say RTA undercut that connection after the September 1, 2026 name change.
-- **Recommendation:** Add a direct link to NITA's website in the header or footer (for example “A program of the Northern Illinois Transit Authority”), update the two news cards and the Employers links to the `nita.illinois.gov` URLs, and change the logo, footer, and social link labels from RTA to NITA. Coordinate with `SEO-MTB-004` (structured data) and `SEO-MTB-005` (image text).
-- **Implementation complexity:** Low (template and content edits)
-- **Related standard:** [Google Search Central: SEO starter guide, links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 
 ### The Employers page names the Illinois commuter benefit law incorrectly and describes it as upcoming
 
