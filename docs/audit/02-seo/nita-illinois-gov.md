@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The most consequential observation so far is protocol handling: the website serves pages over unencrypted HTTP without redirecting to HTTPS, and 141 internal links to legacy documents redirect to HTTP destinations. Canonical tags point to HTTPS, which limits but does not remove the risk of split signals and unencrypted visits. Redirect handling for the former coalition pages is broken: a six-hop chain ends in a 404. Two current pages, including Paying for your ride, link to “not found” pages, and 102 blog posts and press releases, mostly from the RTA period, contain broken internal links. On-page metadata is the other main theme: the homepage title is “Home”, core page titles are slogans rather than topics, and the CMS truncates most titles and descriptions with an ellipsis. Paginated listings declare their first page as canonical. Metadata observations are lower priority: 155 tag archive URLs share a brand-only title, and 292 pages share one generic meta description. Step 2 also found that image `alt` text mostly repeats file names (and the footer logo is labeled “RTA”), and that 722 outbound links, mostly in historical content, lead to removed pages or closed RTA-era domains.
+**Draft.** The most consequential observation so far is protocol handling: the website serves pages over unencrypted HTTP without redirecting to HTTPS, and 141 internal links to legacy documents redirect to HTTP destinations. Canonical tags point to HTTPS, which limits but does not remove the risk of split signals and unencrypted visits. Redirect handling for the former coalition pages is broken: a six-hop chain ends in a 404. Two current pages, including Paying for your ride, link to “not found” pages, and 102 blog posts and press releases, mostly from the RTA period, contain broken internal links. On-page metadata is the other main theme: the homepage title is “Home”, core page titles are slogans rather than topics, and the CMS truncates most titles and descriptions with an ellipsis. Paginated listings declare their first page as canonical. Metadata observations are lower priority: 155 tag archive URLs share a brand-only title, and 292 pages share one generic meta description. Step 2 also found that image `alt` text mostly repeats file names (and the footer logo is labeled “RTA”), and that 722 outbound links, mostly in historical content, lead to removed pages or closed RTA-era domains. Performance is acceptable for real users on mobile, but the homepage fails the desktop Core Web Vitals check because its slider shifts the page while loading.
 
 The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short of deep pagination ([method](seo-audit-plan.md#crawl-baseline-method)). With complete link discovery, only 6 of the 1,286 sitemap URLs are not reached through internal links; the earlier gap of 1,203 URLs was a crawl artifact. The new baseline also surfaces items for Step 2: 50 internal links returning 404, content up to 66 clicks from the homepage, and malformed links in older posts. This review does not establish rankings, clicks, or Google index status.
 
@@ -99,6 +99,26 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Recommendation:** Rewrite core page titles to lead with the page topic in the words riders and municipalities use (for example “Fares and ways to pay for CTA, Metra, and Pace”, “Paratransit and accessible transit”, “Community Planning Program for local governments”), keeping slogans for on-page copy. Consider a shorter suffix such as “ | NITA” once the new name is established, or keep the full name only on the homepage.
 - **Implementation complexity:** Low (content change in the CMS; about 60 pages)
 - **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/appearance/title-link)
+
+### Homepage content jumps during loading and fails the desktop Core Web Vitals check
+
+- **Finding ID:** SEO-NITA-019
+- **Page or component:** [Homepage](https://nita.illinois.gov/) slider (`<ul id="homeslider">`) and the content below it.
+- **Priority:** Medium
+- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt); method in the [README](../../../evidence/public-technical/2026-11-24/README.md)):
+
+  | Data source | Device | Cumulative Layout Shift (CLS) | Assessment |
+  | --- | --- | --- | --- |
+  | Field data for this URL (Chrome users, latest 28 days) | Desktop | 0.29 | Core Web Vitals **Failed** (good is 0.1 or less) |
+  | Field data for this URL | Mobile | 0 | Passed |
+  | Lab test, two runs | Desktop | 0.363 and 0.352 | — |
+  | Lab test, two runs | Mobile | 0.596 and 0.596 | — |
+
+  In both lab runs, Lighthouse attributed almost all the shift to the footer contact block (`<div class="w-full bg-nitadarkblue-500">`, 0.351 on desktop and 0.596 on mobile), which is pushed down after the page first renders. Code inspection explains why: the stylesheet `/dist/app.css` positions every slide of `#homeslider` absolutely and hides it until JavaScript adds the `active` class (`#homeslider li{...position:absolute...visibility:hidden}`, `#homeslider li.active{...position:relative...}`), so the slider has no height until `/dist/app.js` runs; when it does, the first slide (up to 600 px tall on desktop) appears and moves the rest of the page down. With a warm cache in the audit browser the shift was small (0.011), so it depends on how late the script runs. The other six NITA templates tested had field CLS of 0 to 0.04.
+- **Impact:** Desktop visitors to the homepage see content move after it appears, which can cause misclicks and makes the page feel unstable. The homepage is the only NITA page tested that fails Google's Core Web Vitals assessment, which Google uses as one page-experience signal; passing it does not guarantee any ranking change.
+- **Recommendation:** Reserve the slider's height before JavaScript runs: render the first slide with the `active` class (or `position: relative`) in the HTML, or give `#homeslider` a fixed height or `aspect-ratio` per breakpoint, and add `width` and `height` attributes to the slide images. Re-test with PageSpeed Insights and watch the field CLS over the following 28 days.
+- **Implementation complexity:** Low (template and CSS change)
+- **Related standard:** [web.dev: Cumulative Layout Shift](https://web.dev/articles/cls) and [Google Search Central: Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals)
 
 ### Legacy document redirects point to HTTP destinations
 
@@ -291,6 +311,35 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Recommendation:** Fix the links on current pages first (table above): update the IL UCP directory and Metra careers links, correct the “Watch” video link, and replace or remove expired Zoom registrations and moved budget documents on the budget pages. Then rewrite links to former RTA domains in bulk: replace `blog.rtachicago.org/…` with `nita.illinois.gov/blog/…` where the post exists (46 URLs), point RTA social links to NITA's accounts, and map the legacy `rtachicago.org` and `rtachicago.com` paths, including the `/files/documents/` PDFs, to current NITA pages or documents, together with the internal legacy redirects in `SEO-NITA-004`, `SEO-NITA-006`, and `SEO-NITA-009`. For other historical posts, update or unlink dead references, and add a periodic external link check to content maintenance. Complete the check of the 315 unverified URLs from a US connection.
 - **Implementation complexity:** Medium (current-page fixes are low; bulk rewrites across about 330 historical entries need a script or CMS search-and-replace and editorial review)
 - **Related standard:** [Google Search Central: SEO starter guide — link to relevant resources](https://developers.google.com/search/docs/fundamentals/seo-starter-guide#link-to-relevant-resources)
+
+### Mobile lab tests show slow loading caused by scripts and oversized images
+
+- **Finding ID:** SEO-NITA-020
+- **Page or component:** Shared page template (header scripts and footer form) and the homepage slider image; measured on 7 templates.
+- **Priority:** Low
+- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt)). Field data from real Chrome users passes on mobile for every template tested (LCP 1.6–1.8 s, INP 92–133 ms, CLS 0; URL-level data for the homepage, Riders, and the 2027 budget page; origin-level data for the others). The mobile lab test, which simulates a mid-range phone on a slow 4G connection, is much slower:
+
+  | Template | Mobile lab score | Lab LCP | Desktop lab score |
+  | --- | --- | --- | --- |
+  | [Homepage](https://nita.illinois.gov/) (two runs) | 41 / 41 | 13.5 s / 12.2 s | 59 / 61 |
+  | [Riders](https://nita.illinois.gov/riders) | 68 | 9.4 s | 74 |
+  | [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) | 72 | 8.3 s | 94 |
+  | [2027 regional transit budget](https://nita.illinois.gov/transit-funding/2027-regional-transit-budget) | 52 | 7.7 s | 92 |
+  | [On Track blog](https://nita.illinois.gov/blog) | 67 | 11.2 s | 90 |
+  | [Blog post (2026-10-01)](https://nita.illinois.gov/blog/2026/10/01/nita-expanding-access-pilot-program-to-cta-and-pace-starting-october-1-offering-income-based-reduced-fare-transit-regionwide) | 89 | 2.2 s | 93 |
+  | [Budget press release (2026)](https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties) | 79 | 2.2 s | 81 |
+
+  Main causes reported on the homepage (similar on the other templates):
+  - **Render-blocking script:** the Weglot translation script (`cdn.weglot.com/weglot.min.js`, 74.8 KiB) is loaded in `<head>` without `defer` or `async` and blocks rendering for about 1.2 s on mobile.
+  - **reCAPTCHA on every page:** the footer form (`#footer-form`) loads Google reCAPTCHA; Lighthouse lists `recaptcha__en.js` twice (350.8 KiB each, about 372 KiB unused) and 441 ms of main-thread time. The blog post template, which has no reCAPTCHA, scores 89 on mobile. Two Google tag scripts (`gtag` G-KJJEV3N2SL and GTM-52F2WNB, 355 KiB) add another 150 KiB of unused code.
+  - **Slider image:** the Largest Contentful Paint element is the first slide, a 437 KiB PNG (`NITA-Ride-Safe-App-Graphic-4-3-v2.png`) served at 1440×781 for a 721×611 display; Lighthouse estimates 254–266 KiB of savings from a modern format or a correctly sized file. The image is not marked `fetchpriority="high"`.
+  - Images without `width` and `height` attributes, and total page weight of 2.7–4.2 MB.
+
+  Static files on NITA are served with long cache lifetimes (for example `Cache-Control: max-age=2592000` on `/dist/app.css`; [`step3a-header-checks.txt`](../../../evidence/public-technical/2026-11-24/step3a-header-checks.txt)).
+- **Impact:** Real users currently load NITA's pages within Google's “good” thresholds, so the current effect is limited. The lab results show headroom on slower phones and connections, where riders checking fares or service information would wait several seconds for the main content. Reducing script and image weight also lowers data use for mobile riders.
+- **Recommendation:** Load the Weglot script with `defer` (or as Weglot recommends for non-blocking loading); load reCAPTCHA only when a user interacts with the footer form, or remove it from pages where the form is not needed; review whether both Google tag scripts are required; convert slider and masthead images to WebP or AVIF with sizes matched to their display, add `fetchpriority="high"` to the first slide, and add `width` and `height` to images. Re-test mobile and desktop with PageSpeed Insights after each change.
+- **Implementation complexity:** Medium (template, plugin, and image pipeline changes)
+- **Related standard:** [web.dev: Largest Contentful Paint](https://web.dev/articles/lcp) and [Google Search Central: Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals)
 
 ### The CMS cuts titles and descriptions off with a literal ellipsis
 
@@ -485,4 +534,5 @@ Manual review priorities (rider decision content, program naming, time-sensitive
 - Public crawl data cannot establish Google index coverage, rankings, queries, traffic, click-through rate, or conversions. Search Console and analytics are outside the agreed scope.
 - External links were checked by script and then in a browser from Argentina on 2026-11-20. Only definitive failures are reported in `SEO-NITA-018`; 315 URLs (480 links on 85 domains) could not be verified because of bot protection, regional blocks, or pages that did not load, including NITA's own `datahub.nita.illinois.gov`, and need a check from a US connection ([browser check](../../../evidence/crawls/link-discovery/2026-11-20/nita-external-links-browser-check.csv)).
 - Image alternative text was reviewed on the 16-page sample only; screen-reader impact is assessed in the accessibility section.
-- Performance/Core Web Vitals, mobile, and internal linking quality have not yet been assessed (Step 3).
+- Performance was measured with PageSpeed Insights on 7 templates on 2026-11-24 (one run per URL, two for the homepage); lab results vary between runs and depend on Google's test conditions. Lab tests run on Google's servers with simulated device and network conditions, so the auditor's location (Argentina) does not affect them; field data reflects real Chrome users who visited the pages. Field data for 4 of the 7 templates is origin-level because those URLs have too few Chrome UX Report samples.
+- Mobile rendering and internal linking quality have not yet been assessed (Step 3).

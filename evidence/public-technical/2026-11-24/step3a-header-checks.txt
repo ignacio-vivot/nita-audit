@@ -1,0 +1,59 @@
+== https://www.mytransitbenefit.com/uploads/images/general/_mastheadImage/employer.png
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: image/png
+Content-Length: 997354
+Last-Modified: Mon, 06 Apr 2026 21:01:27 GMT
+ETag: "f37ea-64ed0f8597644"
+== https://www.mytransitbenefit.com/dist/img/icon-watertaxi.png
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: image/png
+Content-Length: 173529
+Last-Modified: Fri, 18 Sep 2026 15:39:36 GMT
+ETag: "2a5d9-65bc3b525fbd7"
+== https://www.mytransitbenefit.com/dist/app.css
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: text/css
+Content-Length: 45080
+Last-Modified: Fri, 18 Sep 2026 15:39:35 GMT
+ETag: "b018-65bc3b51f21f3"
+== https://nita.illinois.gov/dist/app.css
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: text/css
+Content-Length: 53509
+Last-Modified: Wed, 11 Nov 2026 21:40:57 GMT
+ETag: "d105-660070ce331ef"
+Cache-Control: max-age=2592000
+Expires: Thu, 24 Dec 2026 12:07:45 GMT
+== https://nita.illinois.gov/uploads/images/general/_carouselImage/NITA-Ride-Safe-App-Graphic-4-3-v2.png
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: image/png
+Content-Length: 447604
+Last-Modified: Wed, 18 Nov 2026 22:28:17 GMT
+ETag: "6d474-66094870e2239"
+Cache-Control: max-age=31536000
+Expires: Wed, 24 Nov 2027 12:07:45 GMT
+recaptcha refs 4 forms 1 arcgis 1
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKB82CHF"
+height="0" width="0" style="display:none;visibility:hidden">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="NITA Transit Benefit Fare Program" src="https://rtagis.maps.arcgis.com/apps/instant/basic/index.html?appid=b18cff481dfa491a86ddfb9af7eae3ad">
+script https://unpkg.com/alpinejs-money@latest/dist/cdn.min.js
+script https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js
+script /dist/app.js
+script https://www.mytransitbenefit.com/cpresources/7ceb5aa5/js/scripts/front-end/captchas/recaptcha/v3.js?v=1794434952
+script https://www.mytransitbenefit.com/cpresources/7ceb5aa5/js/scripts/front-end/plugin/freeform.js?v=1794434952
+script https://www.mytransitbenefit.com/cpresources/7ceb5aa5/js/scripts/front-end/integrations/gtm/gtm.js?v=1794434952
+https://nita.illinois.gov/ recaptcha 4 forms 3 weglot-in-head True defer/async on weglot False
+https://nita.illinois.gov/riders recaptcha 4 forms 3 weglot-in-head True defer/async on weglot False
+https://nita.illinois.gov/blog/2026/10/01/nita-expanding-acc recaptcha 0 forms 3 weglot-in-head True defer/async on weglot False
+https://nita.illinois.gov/blog recaptcha 4 forms 3 weglot-in-head True defer/async on weglot False
+<form action="/search" class="hidden lg:block">
+    ['placeholder="Search"', '<button aria-label="Submit" type="submit" class="w-full border border-transparent ml-1 px-2 py-2 bg-nitaactiveblue-500 text-base font-medium text-nitadarkblue-500 hover:bg-nitaactiveblue-300 focus:outline-none ">\n            \n            ']
+<form action="/search" class="px-5">
+    ['placeholder="Search"', '<button type="submit" class="border border-transparent ml-1 px-2 py-2 bg-nitaactiveblue-500 text-base font-medium text-nitadarkblue-500 hover:bg-nitaactiveblue-300 ">']
+<form id="footer-form" fieldIdPrefix="footer-form-" method="post" data-gtm-event="footer_submitted" data-freeform data-id="697c88-form-2AdRq60Ko-mpky9oBKo-SPDKSGkEfldosSTUjGGCCEEzx1JWsxSuep4KE4V0" dat
+    ['data-freeform']

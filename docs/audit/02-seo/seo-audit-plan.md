@@ -101,6 +101,12 @@ Uses the 2026-11-19 crawl baseline from Step 1: [`url-inventory.csv`](../../../e
 
 ### Step 3 — Manually assess representative pages and mobile/performance
 
+Method (team decision, 2026-11-24): Step 3 is AI-assisted. The reviewer (Claude) opens pages in a Chromium browser, compares raw and rendered HTML, runs PageSpeed Insights through its web interface, emulates a mobile viewport, and analyzes the collected evidence; the team reviews the conclusions after each part. Limits to record in the reports: PageSpeed runs one URL at a time (the keyless API quota was exhausted on 2026-11-24); mobile checks use Chromium device emulation, not physical devices; keyword opportunities are qualitative, without search-volume data, and any public search checks run from Argentina, so they do not reflect results seen in the Chicago region.
+
+Work in parts and review each with the team before the next: (A) performance and Core Web Vitals, item 4; (B) rendered review of the sample pages, item 1; (C) mobile SEO, item 5; (D) information architecture and internal links, item 2; (E) content and keyword opportunities, item 3, including the content observations listed in the matrix.
+
+Progress: part A completed 2026-11-24 (`SEO-NITA-019`, `SEO-NITA-020`, and `SEO-MTB-006` added). See the matrix log.
+
 1. Inspect the confirmed page URLs for each website in a browser, including rendered content and key public journeys. Confirm that titles, descriptions, headings, links, canonicals, and structured data align with page purpose.
 2. Assess whether information architecture and internal links make important content discoverable and understandable.
 3. Identify qualitative keyword optimization opportunities from page topics, audience needs, geography, and publicly visible language, supported by a small documented sample of public search features. Do not claim search demand or rankings.
@@ -130,8 +136,8 @@ The SEO workstream is ready for consolidation when:
 - Public-only limitations are explicit, and no first-party performance or comprehensive index claims are made.
 - The site reports and consolidated recommendations are consistent with the matrix and authoring guide.
 
-## Current work status — 2026-11-20
+## Current work status — 2026-11-24
 
-- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 (manual review of the sample, mobile and performance, and keyword opportunities) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
-- Draft findings: `SEO-NITA-001` to `SEO-NITA-018` and `SEO-MTB-001` to `SEO-MTB-005`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
+- Step 1 is closed with the 2026-11-19 crawl baseline. Step 2 is complete (parts A to F, 2026-11-20). Step 3 is in progress with an AI-assisted method: part A (performance) is complete; part B (rendered review of the sample pages) is next. Open item: check the 315 external URLs marked `review-*` in `nita-external-links-browser-check.csv` (85 domains, one sample URL each in `nita-external-pending-domains.csv`) from a US connection.
+- Draft findings: `SEO-NITA-001` to `SEO-NITA-020` and `SEO-MTB-001` to `SEO-MTB-006`. The protocol, redirect, pagination-canonical, soft 404, and title findings were verified with dated live checks on 2026-11-19.
 - Decisions recorded 2026-11-19: the crawl baseline is redone with the free Screaming Frog version (no paid license) plus a documented link-discovery script, and no Search Console or analytics access is requested from DHD at this stage.

@@ -1,0 +1,43 @@
+PageSpeed Insights audit details — 2026-11-24 (expanded in the PSI web report; Lighthouse 13.6.0)
+
+https://nita.illinois.gov/ — mobile, run 2 (https://pagespeed.web.dev/analysis/https-nita-illinois-gov/kkahir67c49p7s7o7lwoxv?form_factor=mobile), captured 9:05 AM GMT-3
+Layout shift culprits (CLS 0.596 total):
+  - "NITA Contact Information NITA Administrative Offices 175 W. Jackson Blvd, Suit…" <div class="w-full bg-nitadarkblue-500">  layout shift score 0.596
+  - "English" <div class="weglot-container wg-default" data-switcher-id="1" id="weglot-switcher-1">  0.001
+LCP breakdown: TTFB 20 ms; resource load delay 1,180 ms; resource load duration 400 ms; element render delay 100 ms
+  LCP element: <img class="w-full h-full object-cover" src="https://nita.illinois.gov/uploads/images/general/_carouselImage/NITA-Ride-…" alt="NITA Ride Safe App Graphic 4 3 v2"> (homepage carousel)
+LCP request discovery checklist: PASS "LCP resources shouldn't use loading=lazy"; FAIL "fetchpriority=high should be applied"; PASS "Request is discoverable in initial document"
+
+https://nita.illinois.gov/ — desktop, run 2 (https://pagespeed.web.dev/analysis/https-nita-illinois-gov/kkahir67c49p7s7o7lwoxv?form_factor=desktop)
+Layout shift culprits (CLS 0.352 total):
+  - "NITA Contact Information NITA Administrative Offices 175 W. Jackson Blvd, Suit…" <div class="w-full bg-nitadarkblue-500">  0.351
+  - "Region Communities Riders Public Safety Funding News About NITA" <nav class="hidden lg:flex space-x-4" id="mainNav">  0.001 (web fonts GraphikRT, Graphik-R, Graphik-Bold-Web.woff2 listed as likely causes)
+  - "English" <div class="weglot-container wg-default" id="weglot-switcher-1">  0.000
+LCP breakdown: TTFB 20 ms; resource load delay 980 ms; resource load duration 340 ms; element render delay 120 ms; LCP element: homepage carousel image "NITA Ride Safe App Graphic 4 3 v2"
+Field data (Chrome UX Report, this URL, desktop, latest 28 days): CLS 0.29 — Core Web Vitals assessment "Failed"; mobile field CLS 0 ("Passed").
+
+Homepage layout-shift mechanism (code inspection, 2026-11-24):
+  - Raw HTML: <ul id="homeslider"> contains 4 slides (<li>), each slide up to lg:h-[600px].
+  - /dist/app.css?v=68: "#homeslider li{left:0;opacity:0;position:absolute;right:0;top:0;...;visibility:hidden}" and "#homeslider li.active{...;position:relative;...;visibility:visible}".
+    Until JavaScript adds the "active" class, every slide is absolutely positioned, so the slider has no height and the content below it renders higher on the page.
+  - /dist/app.js (49,527 bytes) selects document.getElementById("homeslider") and adds "active" to the first slide; when it runs, the slider expands and pushes the content and footer down.
+  - A warm-cache load in the audit browser (Chromium, 1024x768) recorded CLS 0.011, so the shift depends on how late app.js runs; Lighthouse (throttled) and desktop field data (CLS 0.29) capture it.
+
+https://www.mytransitbenefit.com/employers — mobile, run 1 (https://pagespeed.web.dev/analysis/https-www-mytransitbenefit-com-employers/2wda82zc0w91cqjni489qq?form_factor=mobile)
+LCP element: <img class="w-full object-cover" src="https://www.mytransitbenefit.com/uploads/images/general/_mastheadImage/emp…" alt="Employer">
+LCP breakdown: TTFB 10 ms; resource load delay 350 ms; resource load duration 290 ms; element render delay 880 ms
+LCP request discovery: PASS no loading=lazy; FAIL fetchpriority=high; PASS discoverable in initial document
+Use efficient cache lifetimes (est. savings 4,539 KiB): first-party resources with Cache TTL "None", including _mastheadImage/employer.png 974 KiB, img/icon-watertaxi.png 170 KiB, img/icon-cta.png 83 KiB, GettyImages-150…_tiny.jpeg 55 KiB, freeform.js 41 KiB, Graphik web fonts (29–37 KiB each), icon-pace.png 34 KiB, icon-amtrak.png 24 KiB, icon-metra.png 23 KiB, /dist/app.js 11 KiB, /dist/app.css 10 KiB
+Avoid enormous network payloads (total 8,287 KiB): Esri ArcGIS 1,334.4 KiB (pe-wasm.wasm 685.9 KiB from js.arcgis.com; a 418.1 KiB PNG from www.arcgis.com; NavigationDepth.glsl JS 230.4 KiB from rtagis.maps.arcgis.com); first party 1,143.9 KiB (employer.png 974.2 KiB; icon-watertaxi.png 169.7 KiB); Google reCAPTCHA recaptcha__en.js 351.8 KiB listed three times (1,055.4 KiB); Google Tag Manager 330.1 KiB (gtag G-MS4K06BWXL 180.2 KiB; GTM-MKB82CHF 150.0 KiB)
+
+https://www.mytransitbenefit.com/ — mobile, run 2 (https://pagespeed.web.dev/analysis/https-www-mytransitbenefit-com/6mq8540nmqivq0mtrlgunm?form_factor=mobile), captured 9:08 AM GMT-3: score 49, FCP 7.4 s, LCP 15.2 s, TBT 350 ms, CLS 0 (run 1: score 45, FCP 7.4 s, LCP 17.9 s)
+LCP element: <img class="w-full object-cover" src="https://www.mytransitbenefit.com/uploads/images/general/_mastheadImage/hom…" alt="Home">
+LCP breakdown: TTFB 0 ms; resource load delay 310 ms; resource load duration 270 ms; element render delay 1,880 ms
+Render-blocking requests (est. 150 ms): /dist/app.css?v=2 10.4 KiB 300 ms; freeform.css 9.2 KiB 450 ms
+Improve image delivery (est. 1,712 KiB): _mastheadImage/home.png 1,018.4 KiB — modern format/compression could save 913.3 KiB; file is 1140x566 but displayed at 364x181 (responsive images could save 914.5 KiB); /dist/img/icon-watertaxi.png 169.5 KiB (est. savings 168.4 KiB)
+
+https://nita.illinois.gov/ — mobile, run 2 — further audit details
+Render-blocking requests (est. 1,240 ms): cdn.weglot.com/weglot.min.js 74.8 KiB, 1,200 ms; freeform.css 6.9 KiB, 560 ms; /dist/app.css?v=68 12.0 KiB, 200 ms
+Reduce unused JavaScript (est. 590 KiB): Google reCAPTCHA recaptcha__en.js 350.8 KiB listed twice (est. 188.9 + 183.4 KiB unused); Google Tag Manager gtag G-KJJEV3N2SL 193.4 KiB (81.6 unused) and GTM-52F2WNB 161.8 KiB (68.9 unused); weglot.min.js 72.6 KiB (41.6 unused); freeform.js 31.7 KiB (25.6 unused)
+Improve image delivery (est. 500 KiB): _carouselImage/NITA-Ride-Safe-App-Graphic-4-3-v2.png 437.1 KiB — modern format could save 254.1 KiB; served at 1440x781 for a 721x611 display (265.9 KiB)
+3rd parties: reCAPTCHA 742 KiB / 441 ms main thread; Google Tag Manager 357 KiB / 290 ms; Weglot 115 KiB / 111 ms

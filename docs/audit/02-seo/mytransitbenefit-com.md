@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Five issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; and image `alt` text often repeats file names, with the footer logo labeled “RTA”.
+**Draft.** The website's technical base is sound for its size: HTTP and non-www requests redirect to the HTTPS www homepage, and the four pages are indexable with self-referencing canonicals and distinct meta descriptions. Six issues were found; the most significant is the structured data, which describes NITA as a business with a misspelled name and a former RTA email address. A `/404` page listed in the sitemap returns 200 and is indexable; all four page titles and the homepage description contain a literal ellipsis that cuts off the text; the inner pages' H1s are campaign slogans that do not name the page topic; image `alt` text often repeats file names, with the footer logo labeled “RTA”; and on mobile the pages load slowly in lab tests because masthead images are oversized and static files are not cached (no field data is available).
 
 ## Findings
 
@@ -56,6 +56,30 @@
 - **Recommendation:** Write complete, concise titles that state each page's topic and audience first and the brand second (for example, a title for the Employees page that names pre-tax transit and parking benefits for employees). Complete the homepage description. Change the CMS SEO setting that truncates titles and descriptions with an ellipsis, together with NITA's website.
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: influence title links](https://developers.google.com/search/docs/appearance/title-link)
+
+### Pages load slowly on mobile because images are oversized and not cached
+
+- **Finding ID:** SEO-MTB-006
+- **Page or component:** All four pages; masthead images, server caching headers, and the Employers page embeds.
+- **Priority:** Medium
+- **Evidence:** PageSpeed Insights on 2026-11-24 ([`psi-results.jsonl`](../../../evidence/public-technical/2026-11-24/psi-results.jsonl), [`psi-details.txt`](../../../evidence/public-technical/2026-11-24/psi-details.txt), [`step3a-header-checks.txt`](../../../evidence/public-technical/2026-11-24/step3a-header-checks.txt)). Google has no field data for the website (too few Chrome users), so only lab results are available:
+
+  | Page | Mobile score | Mobile FCP | Mobile LCP | Desktop score | Desktop LCP | Page weight |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | [Homepage](https://www.mytransitbenefit.com/) (two runs) | 45 / 49 | 7.4 s | 17.9 s / 15.2 s | 89 | 2.1 s | 3.5 MB |
+  | [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits) | 43 | 7.4 s | 14.1 s | 93 | 0.9 s | 2.9 MB |
+  | [Employees](https://www.mytransitbenefit.com/employees) | 51 | 7.4 s | 16.6 s | 91 | 1.9 s | 3.2 MB |
+  | [Employers](https://www.mytransitbenefit.com/employers) | 39 | 2.6 s | 18.0 s | 61 | 2.0 s | 8.3 MB |
+
+  Causes identified:
+  - **Oversized masthead images:** the LCP element on each page is a PNG masthead, for example `_mastheadImage/home.png` (1,018 KiB, 1140×566, displayed at 364×181 on mobile; estimated savings 913–915 KiB) and `_mastheadImage/employer.png` (974 KiB). The partner logos are also large PNGs (`icon-watertaxi.png` 170 KiB).
+  - **No browser caching:** the server sends no `Cache-Control` or `Expires` header for first-party images, CSS, JavaScript, or fonts (checked with curl on `employer.png`, `icon-watertaxi.png`, and `/dist/app.css`), so returning visitors and visitors moving between pages download them again; Lighthouse estimates 1.3–4.5 MB of savings per page. NITA's website does send these headers. This does not change the lab scores above, which always simulate a first visit with an empty cache; it affects repeat and multi-page visits.
+  - **Heavy embeds on Employers:** an ArcGIS map iframe from `rtagis.maps.arcgis.com` (about 1.3 MB of map code and images, loaded with the page) and Google reCAPTCHA listed three times (352 KiB each), plus two Google tag scripts (330 KiB).
+  - Images without `width` and `height`; the masthead is not marked `fetchpriority="high"`.
+- **Impact:** These pages are the program's enrollment entry points for employees and employers. On a mid-range phone with a slow connection, the lab test shows the main image appearing after 14–18 seconds, which risks visitors leaving before reading the offer. Without field data, the real-user experience cannot be confirmed; desktop results are acceptable except on Employers.
+- **Recommendation:** Convert masthead and logo images to WebP or AVIF and serve sizes matched to the display (`srcset`), add `fetchpriority="high"` to the masthead and `width`/`height` to images, configure the web server to send long `Cache-Control` lifetimes for static files (as NITA's server does), and load the Employers map only on demand (for example `loading="lazy"` on the iframe or a click-to-load preview) with reCAPTCHA loaded once. Re-test with PageSpeed Insights.
+- **Implementation complexity:** Low to Medium (server configuration and image export are low; changing the map embed needs a design decision)
+- **Related standard:** [web.dev: Largest Contentful Paint](https://web.dev/articles/lcp) and [web.dev: HTTP cache](https://web.dev/articles/http-cache)
 
 ### H1 headings are slogans that do not name the page topic
 
@@ -115,4 +139,4 @@
 - The 2026-11-19 crawl (default configuration, Text Only) replaces the undocumented 2026-11-16 crawl and confirms the four-page scope. The free Screaming Frog version does not extract structured data, so markup is validated manually.
 - The public spot checks did not submit forms, follow authenticated flows, or verify transaction completion.
 - Public crawl data cannot establish Google index coverage, rankings, queries, traffic, click-through rate, or conversions. Search Console and analytics are outside the agreed scope.
-- Performance/Core Web Vitals, mobile, internal linking, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.
+- Performance was measured with PageSpeed Insights on 2026-11-24 (lab data only; Google has no field data for the website). Lab tests run on Google's servers with simulated device and network conditions, so the auditor's location (Argentina) does not affect them; field data, where available, reflects real Chrome users. Mobile rendering, internal linking, the rendering impact of four robots-blocked form and tag-manager assets, and content accuracy have not yet been assessed.
