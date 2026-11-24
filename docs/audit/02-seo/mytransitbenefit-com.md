@@ -154,6 +154,21 @@
 - **Implementation complexity:** Low (content edit after legal review)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
+## Recommendation types and confirmations
+
+Each recommendation is classified as **technical** (server, CMS configuration, or template changes), **editorial** (content and wording changes made by editors), or both. The last column lists what NITA or another owner should confirm before acting; recommendations that change URLs, redirects, or indexing wait for that confirmation (Step 4 part C, 2026-11-24).
+
+| Finding | Priority | Type | Confirm before acting |
+| --- | --- | --- | --- |
+| `SEO-MTB-001` | Medium | Technical | CMS team: whether the error template depends on the `/404` entry. |
+| `SEO-MTB-006` | Medium | Technical | NITA: whether the Employers map must load with the page; hosting team: caching headers. |
+| `SEO-MTB-004` | Medium | Technical | NITA: the contact email and how the program should be described as part of NITA. |
+| `SEO-MTB-002` | Medium | Technical and editorial | NITA communications: title wording. |
+| `SEO-MTB-007` | Low | Editorial | NITA communications: how the program is attributed to NITA in the header or footer. |
+| `SEO-MTB-003` | Low | Editorial | NITA communications: H1 wording. |
+| `SEO-MTB-005` | Low | Technical and editorial | None. |
+| `SEO-MTB-008` | Low | Editorial | NITA legal team: the law name, employer threshold, and coverage wording. |
+
 ## Observations under review
 
 - **Legacy and third-party links (reviewed in Step 2 part F):** no external link is confirmed broken. The links to `rtachicago.org` blog posts redirect to the matching NITA posts; see `SEO-MTB-007`. A script is loaded from `unpkg.com` with the floating `@latest` version, which 302-redirects to a pinned version on every page; pinning the version is a maintenance and performance consideration to review in Step 3.

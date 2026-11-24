@@ -68,7 +68,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 
   The same rules apply to links from other websites: on 2026-11-24, `https://www.rtachicago.org/plans-programs/access-transit-program` redirected through `https://nita.illinois.gov/plans-programs/access-transit-program` to `/communities` (2 redirects), and a former RTA press-release URL reached `/about-nita` after 3 redirects. Former paths that return 404 instead are covered in `SEO-NITA-009`.
 - **Impact:** A reader who follows an older link about Access to Transit, Section 5310, or reduced-fare permits lands on a general section page and has to search again. Google's site-move guidance recommends mapping each old URL to its corresponding new URL; a redirect to a general section page gives search engines a weaker match, so the relevance of links built up by the RTA-era pages may not carry over to the current program pages. The effect cannot be measured without Search Console and backlink data.
-- **Recommendation:** Update the redirect map so each former path with a clear successor redirects in one step to that page (at least the 19 paths listed in the evidence file), and send former press-release paths to the matching release. Update the 160 internal links to point directly at the current URLs. Keep section-level redirects only for paths with no equivalent page.
+- **Recommendation:** Confirm with NITA the successor page for each former path (the evidence file proposes one for 19 paths), then update the redirect map so each of those paths redirects in one step to its successor, and send former press-release paths to the matching release. Update the 160 internal links to point directly at the current URLs. Keep section-level redirects only for paths with no equivalent page.
 - **Implementation complexity:** Low (redirect rules and link updates)
 - **Related standard:** [Google Search Central: redirects and Google Search](https://developers.google.com/search/docs/crawling-indexing/301-redirects) and [site moves with URL changes](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)
 
@@ -79,7 +79,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Priority:** Medium
 - **Evidence:** On 2026-11-20, a request to `/region/transit-is-the-answer/join-the-transit-is-the-answer-coalition` passed through six 301 redirects (`/region/transit-is-the-answer/coalition` → `/coalition` → `/transit-funding/coalition` → `/riders/coalition` → `/communities/coalition` → `/region/coalition`) and ended at a 404 page ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). The starting URL is linked from a 2023 blog post about reduced fares; the 2026-11-19 crawl baseline recorded the same chain ([`pages.csv`](../../../evidence/crawls/link-discovery/2026-11-19/nita-illinois-gov/pages.csv), and the batch `redirects.csv` exports in the [B2 crawl folder](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/)). The coalition remains active (blog posts through 2026), and `/region/transit-is-the-answer` redirects to the external website `transitistheanswer.org`.
 - **Impact:** Users following old coalition links, including any external links or bookmarks to these URLs, reach a “not found” page after several redirects instead of current coalition information. Search engines following the chain find no destination to consolidate signals to. Google follows a limited number of redirect hops and recommends avoiding chains.
-- **Recommendation:** Point each of the six old coalition URLs directly, in one 301, to the current coalition destination (for example the relevant page on `transitistheanswer.org` or a NITA page about the coalition), and update the link in the 2023 blog post.
+- **Recommendation:** Confirm with NITA where the coalition is presented today, then point each of the six old coalition URLs directly, in one 301, to that destination (for example the relevant page on `transitistheanswer.org` or a NITA page about the coalition), and update the link in the 2023 blog post.
 - **Implementation complexity:** Low (redirect configuration; confirm the intended destination with NITA)
 - **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
 
@@ -294,7 +294,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
   | [`/blog/2024/08/27/transit-station-activations-in-rogers-park-joliet-bring-live-music-games-and-more`](https://nita.illinois.gov/blog/2024/08/27/transit-station-activations-in-rogers-park-joliet-bring-live-music-games-and-more) | In May, the RTA announced | `%22%20/t%20%22_blank` (a Word `\t "_blank"` field switch) |
   | [`/blog/2025/06/16/plan-to-improve-access-to-transit-commercial-investment-in-auburn-gresham-underway`](https://nita.illinois.gov/blog/2025/06/16/plan-to-improve-access-to-transit-commercial-investment-in-auburn-gresham-underway) | that began in 2022 | `%22%20/h%20HYPERLINK%20%22…` (a Word `HYPERLINK` field) |
 - **Impact:** Readers of archived content reach error pages, and crawlers spend requests on dead ends. Because most affected pages are historical, the effect on current tasks is limited; the 2025 links about Transforming Transit and the fiscal cliff and the September 2026 NITA board press release are the most likely to still be read.
-- **Recommendation:** Add 301 redirects for removed pages with clear successors (for example `/region/transformingtransit` to the [Transforming Transit tag archive](https://nita.illinois.gov/blog/tags/transforming-transit) or a current page, `/transit-funding/fiscalcliff` to the [fiscal cliff tag archive](https://nita.illinois.gov/blog/tags/fiscal-cliff) or current funding page, and `/index.php/plans-programs/community-planning` to [Community Planning](https://nita.illinois.gov/communities/community-planning)), and consider a rule for the remaining `/index.php/...` paths. Remove or correct the `href="%5C"` links with a CMS search. Add `https://` or `mailto:` to the links in group 4, remove the trailing period in the NITA board press release, and clean the two links in group 5.
+- **Recommendation:** Add 301 redirects for removed pages whose successor NITA confirms (for example `/region/transformingtransit` to the [Transforming Transit tag archive](https://nita.illinois.gov/blog/tags/transforming-transit) or a current page, `/transit-funding/fiscalcliff` to the [fiscal cliff tag archive](https://nita.illinois.gov/blog/tags/fiscal-cliff) or current funding page, and `/index.php/plans-programs/community-planning` to [Community Planning](https://nita.illinois.gov/communities/community-planning)), and consider a rule for the remaining `/index.php/...` paths. Remove or correct the `href="%5C"` links with a CMS search. Add `https://` or `mailto:` to the links in group 4, remove the trailing period in the NITA board press release, and clean the two links in group 5.
 - **Implementation complexity:** Medium (many pages; partly scriptable in the CMS)
 - **Related standard:** [Google Search Central: redirects](https://developers.google.com/search/docs/crawling-indexing/301-redirects)
 
@@ -305,7 +305,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Priority:** Low
 - **Evidence:** On 2026-11-20, `/404` returned HTTP 200 with the title “404 | Northern Illinois Transit Authority”, `<meta name="robots" content="all">`, and a self-referencing canonical; it is listed in the general-pages sitemap. A nonexistent URL on the same website correctly returned 404 with `robots: none`, so `/404` appears to be a published CMS entry rather than the error response ([`step2a-live-checks.txt`](../../../evidence/public-technical/2026-11-20/step2a-live-checks.txt)). My Transit Benefit has the same pattern (`SEO-MTB-001`).
 - **Impact:** The sitemap asks search engines to crawl and index an error-page entry. If indexed, a “404” page could appear in search results for NITA. The effect is limited to one URL among about 1,300 in the sitemap.
-- **Recommendation:** Exclude `/404` from the sitemap and mark it `noindex`, or unpublish it if the error template does not depend on it. Apply the same fix on both websites, since they share the CMS setup.
+- **Recommendation:** Exclude `/404` from the sitemap and mark it `noindex`, or unpublish it if the error template does not depend on it; confirm with the CMS team how the error template is configured before changing it. Apply the same fix on both websites, since they share the CMS setup.
 - **Implementation complexity:** Low
 - **Related standard:** [Google Search Central: soft 404 errors](https://developers.google.com/search/docs/crawling-indexing/http-network-errors#soft-404-errors)
 
@@ -329,7 +329,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 
   The sitemap also lists two placeholder entries that return 200 and are indexable: the post [`/blog/1970/01/01/take-rta-survey`](https://nita.illinois.gov/blog/1970/01/01/take-rta-survey) (title “Take RTA survey”; the 1970-01-01 date in its URL and sitemap indicates a missing publication date) and the category page [`/blog/uncategorized`](https://nita.illinois.gov/blog/uncategorized) (title “Uncategorized”, not linked from the website). The `/404` entry is covered by `SEO-NITA-007`.
 - **Impact:** A sitemap should list the canonical URLs a website wants indexed. Redirecting shortcuts and placeholder entries send search engines to URLs that are not content pages; search engines ignore or devalue redirecting sitemap entries, and the 1970 post and “Uncategorized” page can surface in results with misleading dates or labels.
-- **Recommendation:** Exclude shortcut entries (the CMS redirect or “link” entries) from the sitemap, and unpublish or exclude the `take-rta-survey` placeholder and the `uncategorized` category. Keep using the shortcuts in navigation if useful.
+- **Recommendation:** Exclude shortcut entries (the CMS redirect or “link” entries) from the sitemap, and, once NITA confirms they are not needed, unpublish or exclude the `take-rta-survey` placeholder and the `uncategorized` category. Keep using the shortcuts in navigation if useful.
 - **Implementation complexity:** Low (CMS sitemap settings per section or entry type)
 - **Related standard:** [Google Search Central: build and submit a sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 
@@ -340,7 +340,7 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Priority:** Low
 - **Evidence:** On 2026-11-19, `/blog/p2` and `/blog/p3` returned 200, linked to the next page with standard anchors, and declared `https://nita.illinois.gov/blog` as canonical. The 2026-11-19 crawl baseline shows the same pattern on every paginated listing: each page canonicalizes to the first page of its listing. Older posts and press releases are reachable only through these sequential pages, up to 66 clicks from the homepage. See [`live-http-checks.txt`](../../../evidence/public-technical/2026-11-19/live-http-checks.txt) and [`url-inventory.csv`](../../../evidence/crawls/screaming-frog/nita-illinois-gov/2026-11-19/url-inventory.csv).
 - **Impact:** Later listing pages contain different items from the first page, so the canonical signal is inaccurate. Search engines may give less weight to these pages and the links on them, which are the only internal crawl path to older posts and press releases. The XML sitemap partly offsets this because it lists individual posts.
-- **Recommendation:** Give each paginated listing page a self-referencing canonical URL. Keep sequential links between pages.
+- **Recommendation:** Give each paginated listing page a self-referencing canonical URL and keep sequential links between pages, after confirming with NITA that the listing pages are meant to be found in search (they are in the sitemap today).
 - **Implementation complexity:** Low (template change)
 - **Related standard:** [Google Search Central: pagination best practices](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading)
 
@@ -693,6 +693,41 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Recommendation:** Use the service names people search with when the core titles are rewritten (`SEO-NITA-011`), for example “Reduced Fare and Ride Free Permits: apply, renew, replace | NITA”, “ADA Paratransit eligibility and application | NITA”, “Access Program: reduced fares for SNAP and FRESH households | NITA”, and “Plan your trip on CTA, Metra, and Pace | NITA”. Add one sentence near the top of each rider program page stating that NITA took over these programs from the RTA on September 1, 2026, at least during the transition. Ask partner and municipal websites that still describe “RTA” programs to update their wording and links.
 - **Implementation complexity:** Low (content edits)
 - **Related standard:** [Google Search Central: SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [influence title links](https://developers.google.com/search/docs/appearance/title-link)
+
+## Recommendation types and confirmations
+
+Each recommendation is classified as **technical** (server, CMS configuration, or template changes), **editorial** (content and wording changes made by editors), or both. The last column lists what NITA or another owner should confirm before acting; recommendations that change URLs, redirects, or indexing wait for that confirmation (Step 4 part C, 2026-11-24).
+
+| Finding | Priority | Type | Confirm before acting |
+| --- | --- | --- | --- |
+| `SEO-NITA-003` | High | Technical | Hosting or CDN team: where the redirect is configured; enable HSTS only after redirects are verified. |
+| `SEO-NITA-008` | Medium | Technical and editorial | NITA: the intended destination of the Data Portal button and of the Access card links. |
+| `SEO-NITA-024` | Medium | Technical | NITA: the successor page for each former RTA path before the redirect map changes. |
+| `SEO-NITA-006` | Medium | Technical | NITA: where the Transit is the Answer coalition is presented today. |
+| `SEO-NITA-021` | Medium | Technical and editorial | NITA: which languages and pages should be discoverable, the translation service plan and hosting setup, and who reviews translations. |
+| `SEO-NITA-019` | Medium | Technical | None. |
+| `SEO-NITA-026` | Medium | Technical and editorial | None for the link fixes (destinations are listed); editors confirm each destination is still the right reference. |
+| `SEO-NITA-010` | Medium | Technical and editorial | NITA communications: homepage title and H1 wording. |
+| `SEO-NITA-011` | Medium | Editorial | NITA communications: title wording. |
+| `SEO-NITA-027` | Medium | Editorial | Program owners: correct ADA Paratransit call hours, CTA accessibility figure, and advisory council status; NITA: who owns time-sensitive content reviews. |
+| `SEO-NITA-004` | Low | Technical | NITA: whether the two missing PDFs should be restored or the links removed. |
+| `SEO-NITA-009` | Low | Technical and editorial | NITA: the successor for each removed page before adding redirects. |
+| `SEO-NITA-007` | Low | Technical | CMS team: whether the error template depends on the `/404` entry. |
+| `SEO-NITA-015` | Low | Technical | NITA: whether the placeholder post and the `uncategorized` category can be unpublished. |
+| `SEO-NITA-005` | Low | Technical | NITA: that paginated listings are meant to be found in search. |
+| `SEO-NITA-018` | Low | Editorial | NITA: replacements for legacy RTA documents and a policy for updating or annotating links in historical posts. |
+| `SEO-NITA-023` | Low | Technical and editorial | NITA and the UX section: parent-page links, any move of the advisory council URLs, and mobile menu changes. |
+| `SEO-NITA-025` | Low | Technical and editorial | NITA: the rule for related articles and any archive or listing design change. |
+| `SEO-NITA-020` | Low | Technical | Form and analytics owners: whether reCAPTCHA is needed on every page and whether both Google tag scripts are required. |
+| `SEO-NITA-022` | Low | Technical | None. |
+| `SEO-NITA-016` | Low | Technical | NITA: the official social profiles to list as `sameAs`. |
+| `SEO-NITA-012` | Low | Technical and editorial | None for the configuration change; editors write summaries for priority pages. |
+| `SEO-NITA-013` | Low | Editorial | NITA: whether blog copies of press releases should point to one version. |
+| `SEO-NITA-014` | Low | Editorial | None. |
+| `SEO-NITA-002` | Low | Editorial | NITA: the editorial purpose and indexability of archive and pagination pages before writing descriptions for them. |
+| `SEO-NITA-001` | Low | Technical and editorial | NITA: which tag archives should remain indexable and which duplicate tag to keep. |
+| `SEO-NITA-017` | Low | Technical and editorial | Accessibility section: alternative-text wording. |
+| `SEO-NITA-028` | Low | Editorial | NITA communications: title wording and the RTA-to-NITA transition message; partner websites for their own wording. |
 
 ## Content observations
 
