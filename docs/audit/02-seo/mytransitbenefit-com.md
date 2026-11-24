@@ -19,6 +19,21 @@ The website's technical base is sound for its size: HTTP and non-www requests re
 
 Recommendations are classified and sequenced in “Recommendation types and confirmations” below and in the [roadmap](../06-recommendations-and-roadmap.md). This review does not establish rankings, clicks, or Google index status.
 
+### Findings at a glance
+
+Findings are listed in report order: by priority, then technical issues first. IDs are stable references assigned when each finding was created, so they are not consecutive. Timing is the suggested grouping in the [roadmap](../06-recommendations-and-roadmap.md).
+
+| ID | Finding | Priority | Complexity | Timing |
+| --- | --- | --- | --- | --- |
+| [`SEO-MTB-001`](#sitemap-lists-a-404-url-that-returns-200-and-is-indexable) | Sitemap lists a “404” URL that returns 200 and is indexable | Medium | Low | Immediate |
+| [`SEO-MTB-006`](#pages-load-slowly-on-mobile-because-images-are-oversized-and-not-cached) | Pages load slowly on mobile because images are oversized and not cached | Medium | Low to Medium | Short-term |
+| [`SEO-MTB-004`](#structured-data-describes-nita-as-a-business-with-the-wrong-name-and-an-rta-email) | Structured data describes NITA as a business with the wrong name and an RTA email | Medium | Low | Immediate |
+| [`SEO-MTB-002`](#page-titles-and-the-homepage-description-are-truncated-with-a-literal-ellipsis) | Page titles and the homepage description are truncated with a literal ellipsis | Medium | Low | Immediate |
+| [`SEO-MTB-007`](#the-program-website-does-not-link-to-nita-directly-and-its-news-links-use-former-rta-urls) | The program website does not link to NITA directly, and its news links use former RTA URLs | Low | Low | Short-term |
+| [`SEO-MTB-003`](#h1-headings-are-slogans-that-do-not-name-the-page-topic) | H1 headings are slogans that do not name the page topic | Low | Low | Short-term |
+| [`SEO-MTB-005`](#image-alternative-text-repeats-file-names-and-the-footer-logo-is-labeled-rta) | Image alternative text repeats file names, and the footer logo is labeled “RTA” | Low | Low | Short-term |
+| [`SEO-MTB-008`](#the-employers-page-names-the-illinois-commuter-benefit-law-incorrectly-and-describes-it-as-upcoming) | The Employers page names the Illinois commuter benefit law incorrectly and describes it as upcoming | Low | Low | Short-term |
+
 ## Findings
 
 ### Sitemap lists a “404” URL that returns 200 and is indexable

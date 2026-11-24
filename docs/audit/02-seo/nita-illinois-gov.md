@@ -22,6 +22,41 @@ The website is crawlable and indexable: every HTML page in the 2026-11-19 baseli
 
 Recommendations are classified and sequenced in “Recommendation types and confirmations” below and in the [roadmap](../06-recommendations-and-roadmap.md). This review does not establish rankings, clicks, or Google index status.
 
+### Findings at a glance
+
+Findings are listed in report order: by priority, then technical issues first. IDs are stable references assigned when each finding was created, so they are not consecutive. Timing is the suggested grouping in the [roadmap](../06-recommendations-and-roadmap.md).
+
+| ID | Finding | Priority | Complexity | Timing |
+| --- | --- | --- | --- | --- |
+| [`SEO-NITA-003`](#http-pages-load-without-redirecting-to-https) | HTTP pages load without redirecting to HTTPS | High | Low | Immediate |
+| [`SEO-NITA-008`](#links-on-two-current-pages-lead-to-not-found-pages) | Links on two current pages lead to “not found” pages | Medium | Low | Immediate |
+| [`SEO-NITA-024`](#former-rta-urls-redirect-to-section-overview-pages-instead-of-the-matching-current-page) | Former RTA URLs redirect to section overview pages instead of the matching current page | Medium | Low | Short-term |
+| [`SEO-NITA-006`](#coalition-page-redirects-pass-through-six-hops-and-end-in-a-404) | Coalition page redirects pass through six hops and end in a 404 | Medium | Low | Short-term |
+| [`SEO-NITA-021`](#translations-into-seven-languages-are-visible-to-users-but-not-to-search-engines) | Translations into seven languages are visible to users but not to search engines | Medium | Medium | Long-term |
+| [`SEO-NITA-019`](#homepage-content-jumps-during-loading-and-fails-the-desktop-core-web-vitals-check) | Homepage content jumps during loading and fails the desktop Core Web Vitals check | Medium | Low | Immediate |
+| [`SEO-NITA-026`](#links-copied-from-outlook-emails-route-through-microsoft-safe-links-and-include-staff-email-addresses) | Links copied from Outlook emails route through Microsoft Safe Links and include staff email addresses | Medium | Low | Immediate |
+| [`SEO-NITA-010`](#homepage-title-says-only-home-and-its-h1s-come-from-rotating-announcements) | Homepage title says only “Home” and its H1s come from rotating announcements | Medium | Low | Short-term |
+| [`SEO-NITA-011`](#core-page-titles-use-slogans-instead-of-the-page-topic) | Core page titles use slogans instead of the page topic | Medium | Low | Short-term |
+| [`SEO-NITA-027`](#past-events-an-expired-alert-and-conflicting-phone-hours-appear-as-current-information) | Past events, an expired alert, and conflicting phone hours appear as current information | Medium | Low to Medium | Immediate |
+| [`SEO-NITA-004`](#legacy-document-redirects-point-to-http-destinations) | Legacy document redirects point to HTTP destinations | Low | Low to Medium | Short-term |
+| [`SEO-NITA-009`](#older-blog-posts-and-press-releases-contain-broken-internal-links) | Older blog posts and press releases contain broken internal links | Low | Medium | Short-term |
+| [`SEO-NITA-007`](#sitemap-lists-a-404-page-that-returns-200-and-is-indexable) | Sitemap lists a “404” page that returns 200 and is indexable | Low | Low | Short-term |
+| [`SEO-NITA-015`](#sitemap-lists-redirecting-shortcuts-and-placeholder-entries) | Sitemap lists redirecting shortcuts and placeholder entries | Low | Low | Short-term |
+| [`SEO-NITA-005`](#paginated-listings-declare-the-first-page-as-canonical) | Paginated listings declare the first page as canonical | Low | Low | Short-term |
+| [`SEO-NITA-018`](#external-links-lead-to-removed-pages-and-closed-domains) | External links lead to removed pages and closed domains | Low | Medium | Long-term |
+| [`SEO-NITA-023`](#some-current-pages-are-linked-only-from-the-desktop-menu-or-from-a-single-news-post) | Some current pages are linked only from the desktop menu or from a single news post | Low | Low to Medium | Short-term |
+| [`SEO-NITA-025`](#related-articles-and-pagination-do-not-connect-the-archive-of-posts-and-press-releases) | Related Articles and pagination do not connect the archive of posts and press releases | Low | Medium | Long-term |
+| [`SEO-NITA-020`](#mobile-lab-tests-show-slow-loading-caused-by-scripts-and-oversized-images) | Mobile lab tests show slow loading caused by scripts and oversized images | Low | Medium | Short-term |
+| [`SEO-NITA-022`](#fare-tables-are-wider-than-a-phone-screen-and-push-the-whole-page-sideways) | Fare tables are wider than a phone screen and push the whole page sideways | Low | Low | Short-term |
+| [`SEO-NITA-016`](#structured-data-labels-every-page-as-a-website-and-omits-article-markup) | Structured data labels every page as a website and omits article markup | Low | Low | Short-term |
+| [`SEO-NITA-012`](#the-cms-cuts-titles-and-descriptions-off-with-a-literal-ellipsis) | The CMS cuts titles and descriptions off with a literal ellipsis | Low | Low to Medium | Short-term |
+| [`SEO-NITA-013`](#recurring-posts-and-press-releases-share-identical-titles) | Recurring posts and press releases share identical titles | Low | Low to Medium | Long-term |
+| [`SEO-NITA-014`](#copied-meta-descriptions-describe-a-different-or-outdated-topic) | Copied meta descriptions describe a different or outdated topic | Low | Low to Medium | Long-term |
+| [`SEO-NITA-002`](#the-homepage-archives-and-some-core-pages-have-generic-or-placeholder-descriptions) | The homepage, archives, and some core pages have generic or placeholder descriptions | Low | Low | Short-term |
+| [`SEO-NITA-001`](#blog-tag-archive-titles-and-headings-do-not-identify-their-topics) | Blog tag archive titles and headings do not identify their topics | Low | Low | Short-term |
+| [`SEO-NITA-017`](#image-alternative-text-repeats-file-names-and-the-footer-logo-is-labeled-rta) | Image alternative text repeats file names, and the footer logo is labeled “RTA” | Low | Medium | Long-term |
+| [`SEO-NITA-028`](#rider-program-pages-do-not-use-the-permit-names-and-former-rta-name-that-people-search-with) | Rider program pages do not use the permit names and former RTA name that people search with | Low | Low | Short-term |
+
 ## Findings
 
 ### HTTP pages load without redirecting to HTTPS
