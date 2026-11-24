@@ -15,3 +15,5 @@ Test location: the analyses were requested from Argentina, but PSI runs Lighthou
 PSI report links are kept in each record; Google may expire them. Lab results vary between runs and depend on Google's test location and throttling; field data reflects Chrome users who visited the pages in the previous 28 days.
 
 `rendered-review/` contains the Step 3 part B evidence (raw HTML compared with the rendered page on the 20 sample pages, the Weglot translation check, and heading checks); see its [README](rendered-review/README.md).
+
+`mobile-review/` contains the Step 3 part C evidence (device parity, mobile layout checks at 375 px, accordion tables, and mobile navigation); see its [README](mobile-review/README.md).

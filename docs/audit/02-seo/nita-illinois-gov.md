@@ -10,7 +10,7 @@
 
 ## Summary
 
-**Draft.** The most consequential observation so far is protocol handling: the website serves pages over unencrypted HTTP without redirecting to HTTPS, and 141 internal links to legacy documents redirect to HTTP destinations. Canonical tags point to HTTPS, which limits but does not remove the risk of split signals and unencrypted visits. Redirect handling for the former coalition pages is broken: a six-hop chain ends in a 404. Two current pages, including Paying for your ride, link to “not found” pages, and 102 blog posts and press releases, mostly from the RTA period, contain broken internal links. On-page metadata is the other main theme: the homepage title is “Home”, core page titles are slogans rather than topics, and the CMS truncates most titles and descriptions with an ellipsis. Paginated listings declare their first page as canonical. Metadata observations are lower priority: 155 tag archive URLs share a brand-only title, and 292 pages share one generic meta description. Step 2 also found that image `alt` text mostly repeats file names (and the footer logo is labeled “RTA”), and that 722 outbound links, mostly in historical content, lead to removed pages or closed RTA-era domains. Performance is acceptable for real users on mobile, but the homepage fails the desktop Core Web Vitals check because its slider shifts the page while loading. The rendered review confirmed that page content does not depend on JavaScript, but the website's translations into seven languages exist only in the visitor's browser, on the English URLs, so search engines cannot find them.
+**Draft.** The most consequential observation so far is protocol handling: the website serves pages over unencrypted HTTP without redirecting to HTTPS, and 141 internal links to legacy documents redirect to HTTP destinations. Canonical tags point to HTTPS, which limits but does not remove the risk of split signals and unencrypted visits. Redirect handling for the former coalition pages is broken: a six-hop chain ends in a 404. Two current pages, including Paying for your ride, link to “not found” pages, and 102 blog posts and press releases, mostly from the RTA period, contain broken internal links. On-page metadata is the other main theme: the homepage title is “Home”, core page titles are slogans rather than topics, and the CMS truncates most titles and descriptions with an ellipsis. Paginated listings declare their first page as canonical. Metadata observations are lower priority: 155 tag archive URLs share a brand-only title, and 292 pages share one generic meta description. Step 2 also found that image `alt` text mostly repeats file names (and the footer logo is labeled “RTA”), and that 722 outbound links, mostly in historical content, lead to removed pages or closed RTA-era domains. Performance is acceptable for real users on mobile, but the homepage fails the desktop Core Web Vitals check because its slider shifts the page while loading. The rendered review confirmed that page content does not depend on JavaScript, but the website's translations into seven languages exist only in the visitor's browser, on the English URLs, so search engines cannot find them. On phones the pages serve the same content as on desktop, but the main fare tables push the page wider than the screen, and the mobile menu leaves out seven public-service pages that have no other link from their section.
 
 The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short of deep pagination ([method](seo-audit-plan.md#crawl-baseline-method)). With complete link discovery, only 6 of the 1,286 sitemap URLs are not reached through internal links; the earlier gap of 1,203 URLs was a crawl artifact. The new baseline also surfaces items for Step 2: 50 internal links returning 404, content up to 66 clicks from the homepage, and malformed links in older posts. This review does not establish rankings, clicks, or Google index status.
 
@@ -362,6 +362,50 @@ The 2026-11-19 crawl baseline replaces the 2026-11-16 crawl, which stopped short
 - **Implementation complexity:** Medium (template, plugin, and image pipeline changes)
 - **Related standard:** [web.dev: Largest Contentful Paint](https://web.dev/articles/lcp) and [Google Search Central: Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals)
 
+### Fare tables are wider than a phone screen and push the whole page sideways
+
+- **Finding ID:** SEO-NITA-022
+- **Page or component:** Data tables inside accordions on [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride) and [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs).
+- **Priority:** Low
+- **Evidence:** On 2026-11-24 the 20 sample pages were opened in a Chromium browser emulating a 375×812 phone screen ([`mobile-results.csv`](../../../evidence/public-technical/2026-11-24/mobile-review/mobile-results.csv); method in the [README](../../../evidence/public-technical/2026-11-24/mobile-review/README.md)). With accordions closed, no sample page is wider than the screen. When the fare accordions are opened, tables that are not wrapped in a scrolling container extend past the right edge and widen the whole page:
+
+  | Page | Accordion | Table (columns) | Right edge on a 375 px screen | Page width |
+  | --- | --- | --- | --- | --- |
+  | Paying for your ride | CTA and Pace | Ventra Full Fare, Ventra Reduced Fare, Cash Fare, Cash Reduced (5) | 465 px; “Cash Reduced” starts off-screen | 465 px |
+  | Paying for your ride | Regional Passes | Metra Zones, RDP Weekday, RDP Saturday/Sunday/Holidays (3) | 457 px | 465 px |
+  | Paying for your ride | Metra | Monthly Passes by zone (5) | 427 px | 465 px |
+  | Paying for your ride | Metra | Day Passes by zone (5) | 410 px | 465 px |
+  | Discounted Fare and Ride Free Programs | Registration Site Alerts | four senior-center registration sites (4) | 408 px; the Northeast (Levy) Senior Center column starts off-screen | 409 px |
+
+  The tables have `overflow-x: auto` set on the `<table>` element itself, which does not create a scrolling area, and their parent `<details>` element has no scrolling wrapper. On Community Planning, Access to Transit, and the 2027 budget page, wider tables are inside a scrolling container and the page stays 375 px wide. Screenshot: [`paying-for-your-ride-cta-pace-table-375px.jpg`](../../../evidence/public-technical/2026-11-24/mobile-review/paying-for-your-ride-cta-pace-table-375px.jpg).
+- **Impact:** On a phone, riders opening the main fare tables have to drag the whole page sideways, and the browser may zoom the page out, to see the last columns. Google indexes the mobile version of pages, and the table content stays in the HTML, so the effect on search is likely small; the cost is usability on the pages riders most often need for fares and registration.
+- **Recommendation:** Wrap tables in the rich-text template in a container with `overflow-x: auto` (as the Community Planning template already does), or restack the fare tables on small screens (for example one card per fare type). Re-test the accordions at 360–390 px widths.
+- **Implementation complexity:** Low (template CSS or rich-text wrapper)
+- **Related standard:** [Google Search Central: mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) and [web.dev: responsive web design basics](https://web.dev/articles/responsive-web-design-basics)
+
+### The mobile menu leaves out 19 desktop menu links, and seven pages have no other link from their section
+
+- **Finding ID:** SEO-NITA-023
+- **Page or component:** Global navigation: desktop menu (`<nav class="hidden lg:flex …">`, hidden on small screens) compared with the mobile menu opened with the “Open menu” button.
+- **Priority:** Low
+- **Evidence:** On 2026-11-24 both menus were compared on the homepage at a 375 px width ([`nav-parity.txt`](../../../evidence/public-technical/2026-11-24/mobile-review/nav-parity.txt)). Both are in the same HTML. The mobile menu lists every section overview and second-level page (35 page links plus search, Careers, and Contact); the desktop menu has 53 unique links. The 19 desktop-only links are 15 third-level pages and four featured blog posts. Seven of the third-level pages are not linked from the body or footer of their parent page, so on a phone the menu offers no path to them from their section:
+
+  | Page | Parent page checked |
+  | --- | --- |
+  | [Upcoming public meetings on transit service](https://nita.illinois.gov/region/nita-engagement/public-meetings) | [A Stronger Region Moves Together](https://nita.illinois.gov/region/nita-engagement) |
+  | [Registration Sites](https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites) | [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs) |
+  | [Getting to the Obama Presidential Center](https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center) | [How to ride](https://nita.illinois.gov/riders/how-to-ride) |
+  | [NITA Committees](https://nita.illinois.gov/about-nita/boards-and-committees/nita-committees) | [Boards and Committees](https://nita.illinois.gov/about-nita/boards-and-committees) |
+  | [Oversight audits](https://nita.illinois.gov/about-nita/transparency/audit) | [Transparency and oversight](https://nita.illinois.gov/about-nita/transparency) |
+  | [Ethics & OEIG](https://nita.illinois.gov/about-nita/transparency/ethics-oeig) | [Transparency and oversight](https://nita.illinois.gov/about-nita/transparency) |
+  | [FOIA](https://nita.illinois.gov/about-nita/transparency/foia) | [Transparency and oversight](https://nita.illinois.gov/about-nita/transparency) |
+
+  The other third-level pages (the five community toolkit guides and three board pages) are linked from their parent page body. Links from other pages' content were not counted here; internal linking is reviewed in Step 3 part D.
+- **Impact:** Because the desktop menu stays in the HTML, search engines can still discover these pages, so crawling is not affected. The gap is for phone users: people looking for public meetings, reduced-fare registration sites, or FOIA requests must use search or other pages to reach them. These are public-service pages that people may need on the go.
+- **Recommendation:** Add a link to each of the seven pages in its parent page's content (for example a “Related pages” list), or add a third level to the mobile menu for sections with child pages. Coordinate with the UX section, which assesses navigation.
+- **Implementation complexity:** Low (content links) to Medium (mobile menu template)
+- **Related standard:** [Google Search Central: mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) and [SEO starter guide: links](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+
 ### The CMS cuts titles and descriptions off with a literal ellipsis
 
 - **Finding ID:** SEO-NITA-012
@@ -546,6 +590,7 @@ Manual review priorities (rider decision content, program naming, time-sensitive
 - All 1,613 HTML pages in the 2026-11-19 crawl baseline have a title, meta description, and H1, and none has a `noindex` directive. This does not assess whether their content is effective.
 - The website publishes an XML sitemap index with five child sitemaps, referenced from `robots.txt`. 1,280 of its 1,286 URLs are also reachable through internal links, and the sitemap updates promptly: the Ride Safe pages and posts published on 2026-11-19 (`/safety`, `/safety/app`, and the related blog post and press release) were listed by 2026-11-20 ([current sitemap copies](../../../evidence/public-technical/2026-11-20/sitemaps/)).
 - On all 16 sample pages the content, metadata, links, and structured data are present in the HTML sent by the server; the rendered page after scripts run is the same apart from 2–3 words of interface text ([`raw-vs-rendered.csv`](../../../evidence/public-technical/2026-11-24/rendered-review/raw-vs-rendered.csv)). Search engines therefore do not need to run JavaScript to read the pages.
+- The website uses one responsive HTML version for all devices: desktop, mobile, and Googlebot smartphone requests receive the same HTML, and on the sample pages the text and headings are the same at mobile and desktop widths ([`mobile-results.csv`](../../../evidence/public-technical/2026-11-24/mobile-review/mobile-results.csv)).
 - Every page carries valid JSON-LD that identifies NITA as a `GovernmentOrganization` with name, alternate name, address, telephone, and email, and core pages have complete breadcrumb trails ([extracted JSON-LD](../../../evidence/public-technical/2026-11-20/structured-data/)).
 
 ## Limitations
@@ -557,4 +602,4 @@ Manual review priorities (rider decision content, program naming, time-sensitive
 - External links were checked by script and then in a browser from Argentina on 2026-11-20. Only definitive failures are reported in `SEO-NITA-018`; 315 URLs (480 links on 85 domains) could not be verified because of bot protection, regional blocks, or pages that did not load, including NITA's own `datahub.nita.illinois.gov`, and need a check from a US connection ([browser check](../../../evidence/crawls/link-discovery/2026-11-20/nita-external-links-browser-check.csv)).
 - Image alternative text was reviewed on the 16-page sample only; screen-reader impact is assessed in the accessibility section.
 - Performance was measured with PageSpeed Insights on 7 templates on 2026-11-24 (one run per URL, two for the homepage); lab results vary between runs and depend on Google's test conditions. Lab tests run on Google's servers with simulated device and network conditions, so the auditor's location (Argentina) does not affect them; field data reflects real Chrome users who visited the pages. Field data for 4 of the 7 templates is origin-level because those URLs have too few Chrome UX Report samples.
-- Mobile rendering and internal linking quality have not yet been assessed (Step 3).
+- Mobile checks used Chromium device emulation at 375×812 on the 16 sample pages, not physical phones ([method](../../../evidence/public-technical/2026-11-24/mobile-review/README.md)). Internal linking quality has not yet been assessed (Step 3 part D).

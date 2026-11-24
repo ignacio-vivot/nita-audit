@@ -1,0 +1,22 @@
+# Desktop vs mobile user-agent responses, 2026-11-24T15:58Z, curl 8.7.1
+# columns: url | desktop bytes | mobile-UA bytes | Googlebot-smartphone-UA status/bytes | Vary header | same title/H1/canonical across UAs
+https://nita.illinois.gov/ | 124356 | 124356 | 200/124356 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders | 130986 | 130986 | 200/130986 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders/how-to-ride | 155973 | 155973 | 200/155973 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders/paying-for-your-ride | 140883 | 140883 | 200/140883 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders/free-and-reduced-fare-programs | 149556 | 149556 | 200/149556 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders/access | 132528 | 132528 | 200/132528 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/riders/accessible-transit | 148344 | 148344 | 200/148344 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/communities | 126637 | 126637 | 200/126637 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/communities/community-planning | 126828 | 126828 | 200/126828 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/communities/access-to-transit-program | 149552 | 149552 | 200/149552 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/transit-funding/2027-regional-transit-budget | 150357 | 150357 | 200/150357 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/region/how-system-working | 128217 | 128217 | 200/128217 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/blog | 130332 | 130332 | 200/130332 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/blog/2026/10/01/nita-expanding-access-pilot-program-to-cta-and-pace-starting-october-1-offering-income-based-reduced-fare-transit-regionwide | 123082 | 123082 | 200/123082 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/blog/tags/cta | 115018 | 115018 | 200/115018 | Vary: Accept-Encoding | yes
+https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties | 141656 | 141656 | 200/141656 | Vary: Accept-Encoding | yes
+https://www.mytransitbenefit.com/ | 62011 | 62011 | 200/62011 | Vary: Accept-Encoding | yes
+https://www.mytransitbenefit.com/behind-the-benefits | 62323 | 62323 | 200/62323 | Vary: Accept-Encoding | yes
+https://www.mytransitbenefit.com/employees | 61478 | 61478 | 200/61478 | Vary: Accept-Encoding | yes
+https://www.mytransitbenefit.com/employers | 63779 | 63779 | 200/63779 | Vary: Accept-Encoding | yes

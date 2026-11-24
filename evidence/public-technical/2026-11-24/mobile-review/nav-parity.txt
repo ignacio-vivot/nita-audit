@@ -1,0 +1,53 @@
+# Mobile vs desktop navigation menu — https://nita.illinois.gov/ , 2026-11-24 (~16:03 UTC)
+# Claude desktop built-in browser (Chromium), viewport emulated at 375x812; both menus are in the same HTML.
+# Desktop menu: <nav class="hidden lg:flex space-x-4"> (display:none below the lg breakpoint) — 53 unique link targets.
+# Mobile menu:  <nav class="grid gap-y-8 relative p-5"> (opened with the "Open menu" button) — 36 unique targets
+#               (7 section toggles with href="#", plus 35 page links; "News — Overview" /news is mobile-only).
+# The mobile menu lists every section overview and second-level page. It also has a search field, Careers, and Contact.
+
+## Links in the desktop menu that are not in the mobile menu (19)
+/region/nita-engagement/public-meetings  | Upcoming public meetings on transit service
+/communities/toolkits-and-education/parking-guide  | Parking Strategies for TOD
+/communities/toolkits-and-education/funding-guide  | Funding guide
+/communities/toolkits-and-education/zoning-guide  | Zoning Guide
+/communities/toolkits-and-education/what-are-mobility-hubs  | What are mobility hubs?
+/communities/toolkits-and-education/transit-friendly-communities-guide  | Transit-Friendly Communities Guide
+/riders/free-and-reduced-fare-programs/registration-sites  | Registration Sites
+/riders/how-to-ride/getting-to-the-obama-presidential-center  | Getting to the Obama Presidential Center
+/blog/2026/11/19/nita-launches-ride-safe-one-safety-incident-reporting-app-and-text-number-for-cta-metra-and-pace-riders  | NITA launches Ride Safe, ... (featured post card)
+/blog/2026/11/18/how-to-use-transit-to-celebrate-the-holidays-in-the-chicago-region-2  | How to use transit to celebrate the holidays ... (featured post card)
+/blog/2026/11/10/new-community-planning-projects-support-transit-friendly-housing-in-avondale-better-dial-a-ride-coordination-in-dupage-county  | NITA Community Planning projects ... (featured post card)
+/blog/2026/11/02/what-moves-you-thousands-weigh-in-on-their-regional-transit-priorities-via-online-survey-at-union-station-event  | What moves you? ... (featured post card)
+/about-nita/boards-and-committees/meeting-materials  | Meeting Materials
+/about-nita/boards-and-committees/board-of-directors  | Board of Directors
+/about-nita/boards-and-committees/nita-committees  | NITA Committees
+/about-nita/boards-and-committees/pension-committee  | Pension Committee and Board of Trustees
+/about-nita/transparency/audit  | Oversight audits
+/about-nita/transparency/ethics-oeig  | Ethics & OEIG
+/about-nita/transparency/foia  | FOIA
+# Desktop-only menu links: are they linked from the parent page body (outside the header menus)? curl mobile UA, 2026-11-24T16:05Z
+/region/nita-engagement -> /region/nita-engagement/public-meetings : 0 link(s) after </header>
+/communities/toolkits-and-education -> /communities/toolkits-and-education/parking-guide : 1 link(s) after </header>
+/communities/toolkits-and-education -> /communities/toolkits-and-education/funding-guide : 1 link(s) after </header>
+/communities/toolkits-and-education -> /communities/toolkits-and-education/zoning-guide : 1 link(s) after </header>
+/communities/toolkits-and-education -> /communities/toolkits-and-education/what-are-mobility-hubs : 1 link(s) after </header>
+/communities/toolkits-and-education -> /communities/toolkits-and-education/transit-friendly-communities-guide : 1 link(s) after </header>
+/riders/free-and-reduced-fare-programs -> /riders/free-and-reduced-fare-programs/registration-sites : 0 link(s) after </header>
+/riders/how-to-ride -> /riders/how-to-ride/getting-to-the-obama-presidential-center : 0 link(s) after </header>
+/about-nita/boards-and-committees -> /about-nita/boards-and-committees/meeting-materials : 1 link(s) after </header>
+/about-nita/boards-and-committees -> /about-nita/boards-and-committees/board-of-directors : 1 link(s) after </header>
+/about-nita/boards-and-committees -> /about-nita/boards-and-committees/nita-committees : 0 link(s) after </header>
+/about-nita/boards-and-committees -> /about-nita/boards-and-committees/pension-committee : 1 link(s) after </header>
+/about-nita/transparency -> /about-nita/transparency/audit : 0 link(s) after </header>
+/about-nita/transparency -> /about-nita/transparency/ethics-oeig : 0 link(s) after </header>
+/about-nita/transparency -> /about-nita/transparency/foia : 0 link(s) after </header>
+
+## Re-check with a looser pattern (any href containing the slug), showing the line of the first match and where </header> ends
+/region/nita-engagement: header ends line 1073; public-meetings link at line 207 (inside the header menu only)
+/riders/free-and-reduced-fare-programs: header ends line 1063; registration-sites link at line 380 (header menu only)
+/riders/how-to-ride: header ends line 1069; getting-to-the-obama-presidential-center link at line 393 (header menu only)
+/about-nita/boards-and-committees: header ends line 1063; nita-committees link at line 741 (header menu only)
+/about-nita/transparency: header ends line 1063; audit, ethics-oeig, foia links at lines 755-757 (header menu only)
+Conclusion: 7 third-level pages are linked from the parent page only through the desktop menu, which is hidden on phones:
+public meetings, registration sites, Obama Presidential Center, NITA Committees, Oversight audits, Ethics & OEIG, FOIA.
+Links from other pages' body content were not checked here (Step 3 part D, internal linking).
