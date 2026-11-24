@@ -27,6 +27,12 @@ Each website file within an audit section should use this structure:
 ## Summary
 Briefly state the overall observation for this section and website. If the review is not complete, label this as a draft.
 
+### Findings at a glance
+When the file has more than five findings, end the summary with this table, one row per finding in report order. Link each ID to its finding heading. Add the Timing column once the roadmap groups the findings, using the same values as the roadmap.
+
+| ID | Finding | Priority | Complexity | Timing |
+| --- | --- | --- | --- | --- |
+
 ## Findings
 Add findings using the format below, ordered by priority and then by user or business impact.
 
@@ -83,7 +89,7 @@ Give each finding a short, descriptive title. Keep one underlying issue per find
 - **Related standard:** [When applicable, e.g. WCAG 2.1 success criterion]
 ```
 
-Use stable IDs: `A11Y-NITA-001`, `SEO-MTB-001`, `AEO-NITA-001`, `GEO-MTB-001`, `UX-NITA-001`. Use `NITA` for `nita.illinois.gov` and `MTB` for `mytransitbenefit.com`. Number findings sequentially within each section and site. Do not reuse an ID; retain it if the finding is later edited.
+Use stable IDs: `A11Y-NITA-001`, `SEO-MTB-001`, `AEO-NITA-001`, `GEO-MTB-001`, `UX-NITA-001`. Use `NITA` for `nita.illinois.gov` and `MTB` for `mytransitbenefit.com`. Number findings sequentially within each section and site. Do not reuse an ID; retain it if the finding is later edited or moved. Findings are ordered by priority, so IDs are assigned in creation order and are not renumbered when the order changes; the “Findings at a glance” table shows the report order (team decision, 2026-11-24).
 
 ### Evidence quality
 
@@ -142,4 +148,5 @@ Before marking a section ready for consolidation, confirm:
 - Impact and recommendation are understandable without specialist knowledge.
 - Priority and complexity follow the definitions above.
 - Findings are distinct, IDs are unique, and no unsupported compliance or outcome claims are made.
+- Files with more than five findings include the “Findings at a glance” table, and its order, priorities, complexity, and timing match the findings and the roadmap.
 - Spelling, terminology, heading style, and formatting are consistent with this guide.
