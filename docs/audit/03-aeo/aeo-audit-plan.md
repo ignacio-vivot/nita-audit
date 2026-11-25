@@ -130,4 +130,5 @@ The AEO workstream is ready for consolidation when:
 ## Current work status — 2026-11-25
 
 - Step 1 completed 2026-11-25 and approved by the team: [AEO review matrix](aeo-review-matrix.md) created; both site reports updated to the authoring guide structure; question inventory of 57 questions (42 NITA, 15 My Transit Benefit; 20 marked for the answer-feature sample) built from autocomplete, “People also ask” on 17 result pages, question-style headings on the websites, and the SEO search sample; proposed sample of 32 pages and 2 documents ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)).
-- Next: Step 2 part A (answer map for the question inventory).
+- Step 2 part A completed 2026-11-25: answer map for all 57 questions ([evidence](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map); summary in the [matrix](aeo-review-matrix.md#answer-map)). NITA: 23 direct, 6 partial, 3 scattered, 4 conflicting, 2 outdated, 1 link-only, 3 missing. My Transit Benefit: 4 direct, 5 partial, 1 outdated, 1 link-only, 4 missing. Awaiting team review.
+- Next: Step 2 part B (content structure and semantic organization).
