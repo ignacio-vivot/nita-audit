@@ -1,0 +1,41 @@
+prompt_id,website,type,language,prompt,fact_ids,aeo_question,repeat_for_variability,source_of_wording
+P-NITA-01,nita.illinois.gov,entity,en,What is NITA in Chicago?,F-NITA-01; F-NITA-02,Q-NITA-28,yes,AEO inventory (“what is nita in illinois”)
+P-NITA-02,nita.illinois.gov,entity,en,Is the RTA still the transit agency for the Chicago area?,F-NITA-02; F-NITA-01,Q-NITA-29,yes,"Former agency name, as people still search (SEO-NITA-028)"
+P-NITA-03,nita.illinois.gov,entity,en,What is the NITA Act in Illinois and when did it take effect?,F-NITA-03; F-NITA-02,Q-NITA-29,no,AEO inventory
+P-NITA-04,nita.illinois.gov,task,en,What is the NITA sales tax rate in Cook County and in the collar counties?,F-NITA-04,Q-NITA-30,no,AEO inventory (“what is the nita tax in illinois”)
+P-NITA-05,nita.illinois.gov,task,en,How much does a CTA train or bus ride cost?,F-NITA-05,Q-NITA-01,no,AEO inventory
+P-NITA-06,nita.illinois.gov,task,en,How much is a Metra ticket from zone 1 to zone 3?,F-NITA-07,Q-NITA-02,no,AEO inventory
+P-NITA-07,nita.illinois.gov,task,en,What is the Regional Day Pass in Chicago and how much does it cost?,F-NITA-08,Q-NITA-04,no,AEO inventory
+P-NITA-08,nita.illinois.gov,task,en,How do I apply for an RTA reduced fare permit?,F-NITA-10; F-NITA-11; F-NITA-02,Q-NITA-08,yes,AEO priority query with the former agency name
+P-NITA-09,nita.illinois.gov,task,en,How do I renew my Reduced Fare Permit in Chicago?,F-NITA-12; F-NITA-11,Q-NITA-09,no,AEO inventory
+P-NITA-10,nita.illinois.gov,task,en,How do I renew my RTA Ride Free permit?,F-NITA-13; F-NITA-11; F-NITA-02,Q-NITA-12,no,GEO work plan example
+P-NITA-11,nita.illinois.gov,task,en,"How can seniors ride CTA, Metra, and Pace for free or at a reduced fare?",F-NITA-13; F-NITA-10,Q-NITA-13,yes,AEO inventory
+P-NITA-12,nita.illinois.gov,task,en,Can I get reduced CTA and Metra fares if I receive SNAP benefits?,F-NITA-14,Q-NITA-16,no,AEO inventory (“cta reduced fare snap”)
+P-NITA-13,nita.illinois.gov,task,en,How do I apply for ADA paratransit in Chicago?,F-NITA-15; F-NITA-16,Q-NITA-19,yes,AEO priority query
+P-NITA-14,nita.illinois.gov,task,en,"What is the phone number for ADA paratransit certification in Chicago, and what hours can I call?",F-NITA-15,Q-NITA-21,no,AEO inventory
+P-NITA-15,nita.illinois.gov,task,en,Who qualifies for ADA paratransit in the Chicago region?,F-NITA-16,Q-NITA-20,no,AEO inventory
+P-NITA-16,nita.illinois.gov,task,en,Is paratransit in Chicago only for medical appointments?,F-NITA-17,Q-NITA-22,no,AEO “People also ask”
+P-NITA-17,nita.illinois.gov,task,en,"What number can I call for help planning a trip on CTA, Metra, or Pace?",F-NITA-18,Q-NITA-25,no,AEO inventory
+P-NITA-18,nita.illinois.gov,task,en,"How do I report a safety problem on CTA, Metra, or Pace?",F-NITA-19,Q-NITA-26,no,AEO inventory
+P-NITA-19,nita.illinois.gov,task,en,"What is in NITA's proposed 2027 budget, and how can I comment on it?",F-NITA-20,Q-NITA-31,yes,AEO inventory
+P-NITA-20,nita.illinois.gov,task,en,When and where is the next NITA board meeting?,F-NITA-21,Q-NITA-32,yes,AEO inventory
+P-NITA-21,nita.illinois.gov,task,en,How do I submit a FOIA request to the Northern Illinois Transit Authority?,F-NITA-24,Q-NITA-36,no,AEO inventory
+P-NITA-22,nita.illinois.gov,task,en,What is the phone number and address of the Northern Illinois Transit Authority?,F-NITA-23,Q-NITA-34,no,AEO inventory
+P-NITA-23,nita.illinois.gov,comparison,en,"What is the difference between the Reduced Fare, Ride Free, and Access programs in the Chicago area?",F-NITA-10; F-NITA-13; F-NITA-14,Q-NITA-18,yes,Comparison of three NITA programs (Access FAQ)
+P-NITA-24,nita.illinois.gov,comparison,en,"Who sets transit fares in the Chicago region: CTA, Metra, Pace, or NITA?",F-NITA-01,Q-NITA-28,no,Comparison of NITA with the operators
+P-NITA-25,nita.illinois.gov,task,en,"What is the Illinois People Over Parking Act, and how can NITA help my village?",F-NITA-25,Q-NITA-38; Q-NITA-39,no,AEO inventory
+P-NITA-26,nita.illinois.gov,non-English,es,¿Qué es NITA en Chicago?,F-NITA-01; F-NITA-02,Q-NITA-28,no,Spanish version of P-NITA-01
+P-NITA-27,nita.illinois.gov,non-English,es,¿Cómo solicito el permiso de tarifa reducida para personas mayores en el transporte de Chicago?,F-NITA-10; F-NITA-11,Q-NITA-08,no,Spanish version of P-NITA-08 (NITA publishes Spanish brochures)
+P-NITA-28,nita.illinois.gov,non-English,pl,Czym jest NITA w Chicago?,F-NITA-01; F-NITA-02,Q-NITA-28,no,Polish version of P-NITA-01
+P-NITA-29,nita.illinois.gov,non-English,pl,Jak złożyć wniosek o bilet ulgowy (Reduced Fare Permit) na komunikację w Chicago?,F-NITA-10; F-NITA-11,Q-NITA-08,no,Polish version of P-NITA-08
+P-MTB-01,mytransitbenefit.com,entity,en,What is My Transit Benefit in Chicago?,F-MTB-01,Q-MTB-01,yes,AEO inventory
+P-MTB-02,mytransitbenefit.com,task,en,How does a pre-tax transit benefit work for employees in Illinois?,F-MTB-01,Q-MTB-02,no,AEO priority query
+P-MTB-03,mytransitbenefit.com,task,en,"What is the 2026 pre-tax transit benefit limit, and can I also use it for parking?",F-MTB-02,Q-MTB-03; Q-MTB-04,yes,AEO priority queries
+P-MTB-04,mytransitbenefit.com,task,en,How do I enroll in the NITA (formerly RTA) transit benefit program as an employee?,F-MTB-01; F-MTB-08,Q-MTB-06,no,AEO inventory
+P-MTB-05,mytransitbenefit.com,task,en,Do unused funds on the RTA transit benefit card expire?,F-MTB-05,Q-MTB-09,no,AEO gap query (“do pre-tax transit benefits expire”)
+P-MTB-06,mytransitbenefit.com,task,en,How do I use the RTA Transit Benefit Prepaid Mastercard with Ventra?,F-MTB-04,Q-MTB-10,no,AEO gap query (“rta transit benefit card”)
+P-MTB-07,mytransitbenefit.com,task,en,Does my Chicago employer have to offer pre-tax transit benefits?,F-MTB-07,Q-MTB-11; Q-MTB-12,yes,GEO work plan example
+P-MTB-08,mytransitbenefit.com,task,en,"How does an employer sign up for the NITA Transit Benefit Fare Program, and does it cost anything?",F-MTB-06,Q-MTB-13; Q-MTB-15,no,AEO inventory
+P-MTB-09,mytransitbenefit.com,task,en,How much can employers save in payroll taxes with a pre-tax transit benefit?,F-MTB-03,Q-MTB-14,no,AEO inventory
+P-MTB-10,mytransitbenefit.com,comparison,en,What is the difference between the CTA Transit Benefit Fare Program and the NITA Transit Benefit Fare Program?,F-MTB-01,Q-MTB-01,no,Both names appeared in one AI Overview (AEO-MTB-002)
+P-MTB-11,mytransitbenefit.com,non-English,es,¿Mi empleador en Chicago tiene que ofrecer beneficios de transporte antes de impuestos?,F-MTB-07,Q-MTB-11,no,Spanish version of P-MTB-07

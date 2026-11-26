@@ -1,0 +1,16 @@
+Platform availability check, 2026-11-26 between about 18:38 and 18:41 UTC, in the built-in browser, not signed in,
+through a US connection with a Chicago, Illinois IP address (ipinfo.io/json checked at 18:14 UTC:
+Chicago, Illinois, US; AS11878 tzulo, inc.). Only the start pages were loaded; no prompt was sent.
+
+ChatGPT (https://chatgpt.com/): prompt box available signed out; "Web search" is offered as a tool;
+Deep research requires login. Footer: "By using it, you agree to our Terms & Privacy Policy."
+Perplexity (https://www.perplexity.ai/): a Cloudflare "Just a moment..." page (HTTP 403) cleared by
+itself after a few seconds, with no interaction; the start page offers a prompt box in "Search" mode
+signed out; a cookie banner offers "Got it" and "Decline optional" (not answered).
+Gemini (https://gemini.google.com/app): prompt box available signed out ("Auto" model selector);
+footer: Google Terms and the Google Privacy Policy apply.
+Google (https://www.google.com/?hl=en&gl=us&pws=0): the AI Mode entry point is shown signed out.
+AI Overviews were already captured for AEO with hl=en&gl=us&pws=0.
+
+Sending prompts means using these services under their terms. The prompt sample starts only after the
+team approves the prompt set and confirms that these platforms may be used signed out.

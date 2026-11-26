@@ -129,8 +129,16 @@ The GEO workstream is ready for consolidation when:
 ## Open decisions for the team
 
 - Approve the fact sheet and prompt set (Step 1).
-- Confirm the platforms and modes to test, and who signs in to platforms that require an account.
+- Confirm the platforms and modes to test. On 2026-11-26 all four could be used signed out, so no sign-in is needed; using them means accepting their terms of use.
 
-## Current work status — 2026-11-24
+## Current work status — 2026-11-26
 
-- Plan drafted. Step 1 not started; Step 2 part C waits for the AEO question inventory and answer map. SEO evidence listed above is available for reuse.
+- Plan drafted 2026-11-24. The AEO section, whose question inventory and answer map GEO reuses, was completed on 2026-11-26.
+- Step 1 drafted 2026-11-26 ([evidence](../../../evidence/geo/2026-11-26/README.md); summary in the [matrix](geo-review-matrix.md)). Work done:
+  - the [GEO review matrix](geo-review-matrix.md) was created, and both site reports were updated to the authoring guide structure;
+  - a fact sheet of 33 official facts (25 NITA, 8 My Transit Benefit) was built from evidence already checked in SEO and AEO, with 8 conflicts recorded;
+  - a prompt set of 40 prompts (29 NITA, 11 My Transit Benefit; 5 in Spanish or Polish) was drafted from the AEO question inventory;
+  - ChatGPT, Perplexity, Gemini, and Google AI Mode were found to open signed out through a US connection with a Chicago, Illinois IP address, without sending any prompt.
+
+  Awaiting team approval of the prompt set and the platform plan, including use of the platforms signed out under their terms of use.
+- Next: Step 2 part A (AI crawler access test and machine-readable inventory), which does not depend on the prompt set.
