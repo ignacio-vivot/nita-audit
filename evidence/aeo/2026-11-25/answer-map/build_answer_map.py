@@ -34,10 +34,10 @@ R = [
     ("Q-NITA-03", "direct", pay, "section", "How to pay to ride transit", 65,
      "You can pay for transit with a credit card, debit card, or your smart phone. Ventra is the region’s fare payment system",
      "Cash on buses is stated in the CTA and Pace accordion."),
-    ("Q-NITA-04", "conflicting", pay, "opening text + accordion (table)", "Paying for your ride (opening); Regional Passes (accordion)", 0,
+    ("Q-NITA-04", "direct", pay, "opening text + accordion (table)", "Paying for your ride (opening); Regional Passes (accordion)", 0,
      "The Regional Day Pass (RDP) can be purchased only in the Ventra app.",
-     "The price table lists $10 (reduced $6) for “1-1, 1-2, 2-3-4” and $9.50 on weekends but omits trips between zone 1 and zones 3 or 4. "
-     "Metra (metra.com/rdp, 2026-11-25) prices the RDP as the Metra Day Pass plus $2.50, so those trips cost $13.50 and $16 ($8 and $9 reduced)."),
+     "The Regional Passes accordion lists the combined price for zones “1-1, 1-2, 2-3-4” ($10/$6), 1-3 ($13.50/$8), and 1-4 ($16/$9), and $9.50 on weekends; these match Metra (metra.com/rdp, 2026-11-25). "
+     "(Corrected 2026-11-26: the first version said the zone 1-3 and 1-4 rows were missing and recorded the answer as conflicting.)"),
     ("Q-NITA-05", "partial", pay, "accordion (table footnote)", "CTA and Pace (accordion)", None,
      "A special $5 fare applies when boarding the CTA Blue Line at O’Hare paying transit value or buying a Single-Ride Ticket",
      "The answer is a footnote under the fare table inside a closed accordion; no heading or sentence frames it as the answer to the $5 question."),

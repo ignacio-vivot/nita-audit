@@ -1,0 +1,8 @@
+https://fares.rtachicago.org -> 403 https://fares.nita.illinois.gov/ (redirects 1)
+https://rtachicago.org -> 200 https://nita.illinois.gov/ (redirects 1)
+https://www.rtachicago.org -> 200 https://nita.illinois.gov/ (redirects 1)
+2026-11-26T12:12Z
+curl (default settings) above; fares.nita.illinois.gov returns 403 to curl. Opened in the built-in browser on 2026-11-26:
+https://fares.rtachicago.org -> https://fares.nita.illinois.gov/ ("Welcome To NITA Fare Programs Online ... The Northern Illinois Transit Authority, NITA, replaced the RTA as of September 1, 2026.")
+http://getaccess.org/ (curl, 2026-11-26) -> 302 Location: https://fares.nita.illinois.gov/
+All eight “Apply now”, “new online portal”, and “NITA Fare Programs Portal” links on Discounted Fare and Ride Free Programs point to http://getaccess.org/, which redirects to the same portal.
