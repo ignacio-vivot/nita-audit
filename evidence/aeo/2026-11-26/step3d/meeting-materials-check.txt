@@ -1,0 +1,13 @@
+Meeting Materials, https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials, checked on 2026-11-26.
+
+HTML fetched with curl (default settings) at 17:27 UTC and again at 18:17 UTC. The "Upcoming Meetings" card contains, in this order:
+  <img src="/dist/img/rta-oakpark-meeting.jpeg" class="w-full h-80 object-cover" alt="Oak Park Meeting">
+  <h2>Upcoming: December 10, 2026: 9:00 AM</h2>
+  <h2>Board Meeting</h2>
+  <p>Board Room, 16th Floor<br> 175 W. Jackson Blvd., Chicago, IL 60604</p>
+  <h3>Add to Calendar:</h3> (Outlook .ics and Google Calendar links, titled "RTA Board Meeting: December 10, 2026")
+The image is a template file (/dist/img/, 200, image/jpeg, 1,243,425 bytes). "Oak Park" appears nowhere else on the page.
+The address has no label ("Location" or similar). The page has no Event markup: its JSON-LD is the site template (WebSite, GovernmentOrganization, BreadcrumbList).
+
+Screenshot of the card in the built-in browser, 2026-11-26 at about 18:18 UTC:
+meeting-materials-upcoming-card-2026-11-26.png. The photo shows an elevated train station; the text beside it gives the 175 W. Jackson address.

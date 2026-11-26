@@ -4,19 +4,19 @@
 
 - **Website:** [nita.illinois.gov](https://nita.illinois.gov/)
 - **Review date:** 2026-11-25 to 2026-11-26 (in progress)
-- **Pages, templates, or journeys reviewed:** 42 inventoried questions for riders, the public, and local governments ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); the approved sample of 28 pages and the rider application PDFs (see the [matrix](aeo-review-matrix.md#page-level-review-scope)), plus Moving the system and three older posts and press releases found while tracing missing answers, and the FOIA request form; Google result pages for 14 priority questions, 6 questions with missing or scattered answers, and 3 FOIA searches.
-- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing and scattered answers with nine further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)); structure and naming assessment with three FOIA captures ([Step 3 part C](../../../evidence/aeo/2026-11-26/step3c/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
+- **Pages, templates, or journeys reviewed:** 42 inventoried questions for riders, the public, and local governments ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); the approved sample of 28 pages and the rider application PDFs (see the [matrix](aeo-review-matrix.md#page-level-review-scope)), plus Moving the system and three older posts and press releases found while tracing missing answers, and the FOIA request form; Google result pages for 14 priority questions, 6 questions with missing or scattered answers, 3 FOIA searches, and 2 board meeting searches.
+- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing and scattered answers with nine further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)); structure and naming assessment with three FOIA captures ([Step 3 part C](../../../evidence/aeo/2026-11-26/step3c/README.md)); structured data assessment with two board meeting captures and one comparison ([Step 3 part D](../../../evidence/aeo/2026-11-26/step3d/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
 - **Control checklist:** [AEO review matrix](aeo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
 
-**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 has produced eight findings so far: part A (direct answers and answer clarity), part B (question-based content and FAQ opportunities), and part C (structure and semantic organization). Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
+**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 is complete and has produced nine findings: part A (direct answers and answer clarity), part B (question-based content and FAQ opportunities), part C (structure and semantic organization), and part D (structured data opportunities). Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
 
 The main gaps are:
 - answers that sit in closed accordions or tables without a visible answer sentence (fares and ADA Paratransit applications, `AEO-NITA-001`);
 - common rider questions about seniors, paratransit eligibility and trip purposes, and phone trip planning that no page answers in one place (`AEO-NITA-004`);
 - rider forms that still carry the RTA name and mailing address (`AEO-NITA-002`);
-- board meeting details that differ between pages (`AEO-NITA-003`);
+- board meeting details that differ between pages (`AEO-NITA-003`), and an image label on Meeting Materials that leads Google's AI Overview to place the next board meeting in Oak Park (`AEO-NITA-009`);
 - the NITA Act and the new transit sales tax, which are explained only in scattered passages, some written before the act took effect and one with a collar-county rate that differs from the Illinois Department of Revenue (`AEO-NITA-005`);
 - community program pages that do not say who can apply or when (`AEO-NITA-006`);
 - FOIA instructions that misname the agency and point to RTA contact details, which Google's AI Overview repeats (`AEO-NITA-007`);
@@ -24,7 +24,9 @@ The main gaps are:
 
 Past events and conflicting call hours recorded in SEO (`SEO-NITA-027`) also reach the AI Overviews.
 
-On several pages, heading levels, table header cells, and the markup of steps and FAQ questions do not match the visual layout. Google states that heading order does not matter for Google Search, and pages built this way, such as Ride Safe, are already used in AI Overviews. These patterns mainly affect screen-reader users, so they are passed to the accessibility review rather than recorded as AEO findings ([matrix](aeo-review-matrix.md#review-controls-and-current-status)). Step 3 part D (structured data) is pending.
+On several pages, heading levels, table header cells, and the markup of steps and FAQ questions do not match the visual layout. Google states that heading order does not matter for Google Search, and pages built this way, such as Ride Safe, are already used in AI Overviews. These patterns mainly affect screen-reader users, so they are passed to the accessibility review rather than recorded as AEO findings ([matrix](aeo-review-matrix.md#review-controls-and-current-status)).
+
+No structured data type is recommended as a stand-alone AEO action. Google no longer shows FAQ or HowTo results and states that its AI features need no special markup. `Event` markup is an option only if each board meeting or hearing gets its own page (`AEO-NITA-009`). Corrections to the existing markup are in SEO (`SEO-NITA-016`). Step 4 (final statuses and roadmap inputs) is next.
 
 ### Findings at a glance
 
@@ -36,6 +38,7 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 | [`AEO-NITA-004`](#common-rider-questions-about-seniors-paratransit-and-trip-planning-have-no-answer-passage) | Common rider questions about seniors, paratransit, and trip planning have no answer passage | Medium | Low | — |
 | [`AEO-NITA-002`](#rider-application-forms-and-brochures-still-carry-the-rta-name-and-mailing-address) | Rider application forms and brochures still carry the RTA name and mailing address | Medium | Medium | — |
 | [`AEO-NITA-003`](#board-meeting-day-time-and-comment-details-differ-between-pages) | Board meeting day, time, and comment details differ between pages | Medium | Low | — |
+| [`AEO-NITA-009`](#googles-ai-overview-places-the-next-board-meeting-in-oak-park-taken-from-an-image-label-on-meeting-materials) | Google's AI Overview places the next board meeting in Oak Park, taken from an image label on Meeting Materials | Medium | Low | — |
 | [`AEO-NITA-005`](#the-nita-act-and-the-new-transit-sales-tax-are-explained-only-in-scattered-partly-outdated-passages) | The NITA Act and the new transit sales tax are explained only in scattered, partly outdated passages | Medium | Low | — |
 | [`AEO-NITA-007`](#foia-request-instructions-name-the-wrong-agency-and-send-requests-to-rta-contact-details) | FOIA request instructions name the wrong agency and send requests to RTA contact details | Medium | Low | — |
 | [`AEO-NITA-006`](#community-program-pages-do-not-say-who-can-apply-or-when) | Community program pages do not say who can apply or when | Low | Low | — |
@@ -131,6 +134,34 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - **Recommendation:** Confirm the meeting schedule with the board office and replace “third Thursday of each month” with the correct pattern or a link to the meeting list; publish the year's adopted meeting dates on Meeting Materials; state each meeting's start time in its listing instead of a single time for all meetings; change the `mailto` link to `communications@nita.illinois.gov`; and rename the calendar entry “NITA Board Meeting”.
 - **Implementation complexity:** Low (content and link edits; calendar title in the template)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
+### Google's AI Overview places the next board meeting in Oak Park, taken from an image label on Meeting Materials
+
+- **Finding ID:** AEO-NITA-009
+- **Page or component:** “Upcoming Meetings” card on [Meeting Materials](https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials) (page template).
+- **Priority:** Medium
+- **Evidence:** The card was checked in the HTML fetched on 2026-11-26 and in the built-in browser ([notes](../../../evidence/aeo/2026-11-26/step3d/meeting-materials-check.txt); [screenshot](../../../evidence/aeo/2026-11-26/step3d/meeting-materials-upcoming-card-2026-11-26.png)). In order, it shows:
+  - a template photo of an elevated train station (`/dist/img/rta-oakpark-meeting.jpeg`) with the alternative text “Oak Park Meeting”;
+  - the headings “Upcoming: December 10, 2026: 9:00 AM” and “Board Meeting”;
+  - the address “Board Room, 16th Floor, 175 W. Jackson Blvd., Chicago, IL 60604”, with no label such as “Location”.
+
+  “Oak Park” appears nowhere else on the page. The page has no `Event` markup; its JSON-LD is the site template.
+
+  Google result pages were captured on 2026-11-26 through a US connection with a Chicago, Illinois IP address ([captures](../../../evidence/aeo/2026-11-26/step3d/google-board-meeting-2026-11-26.jsonl); [Step 3 part D evidence](../../../evidence/aeo/2026-11-26/step3d/README.md)):
+  - “nita board meeting”: Meeting Materials ranked first. The AI Overview said the next meeting is on “December 10, 2026, at 9:00 AM in Oak Park”, and then that standard meetings are held at 175 W. Jackson Blvd.
+  - “when is the next nita board meeting”: Meeting Materials ranked first. The AI Overview gave the location as “Listed as an Oak Park Meeting on the NITA Meeting Materials page”, and then offered to help find “the exact Oak Park venue address”.
+  - “cta board meeting”, for comparison: the AI Overview gave the Chicago Transit Board's address correctly. The CTA board page has no structured data; it states the place and usual time in a sentence of its text ([CTA check](../../../evidence/aeo/2026-11-26/step3d/cta-board-check.txt)).
+
+  None of the three result pages showed an events panel. Google's [Event documentation](https://developers.google.com/search/docs/appearance/structured-data/event) (last updated 2026-09-08) supports event results only for pages about a single event, at a physical location and open to the public. It recommends marking up event pages rather than pages that list schedules. Every NITA meeting is listed on Meeting Materials, with no page of its own ([assessment by type](../../../evidence/aeo/2026-11-26/step3d/structured-data-assessment.csv)).
+- **Impact:** The December 10 meeting includes the board's vote on the 2027 budget. Residents who ask Google where it takes place are told Oak Park, a different municipality from the Chicago address on the page. The second answer even offers to look for an Oak Park venue. Readers of the page itself see the correct address. The label that misleads the AI Overview is part of the page template, so it will appear beside every upcoming meeting until it is changed. Screen-reader users hear the same “Oak Park Meeting” label before the date.
+- **Recommendation:**
+  - Give the template photo an empty alternative text (`alt=""`), because it is decorative; if a description is kept, describe the photo without a place name that can be read as the venue.
+  - Label the meeting details in the card's text, for example “Date and time: Thursday, December 10, 2026, 9:00 a.m. Location: Board Room, 16th Floor, 175 W. Jackson Blvd., Chicago”, followed by how to watch online and how to comment (with the corrections in `AEO-NITA-003`).
+  - Optional: if NITA decides to give each board meeting and public hearing its own page (date, time, place, agenda, and how to comment), add `Event` markup to those pages that matches the visible text, and keep past meetings marked as past. On 2026-11-26 Google showed no events panel for board meeting searches, so this is a longer-term option, not a fix for the wrong location.
+
+  Recheck the AI Overview after the change; Google may take time to recrawl the page, and the result cannot be guaranteed.
+- **Implementation complexity:** Low (template alternative text and labels); Medium if single-meeting pages are added
+- **Related standard:** [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features); [Event structured data](https://developers.google.com/search/docs/appearance/structured-data/event); WCAG 2.1 success criterion 1.1.1 (Non-text Content), for the accessibility review
 
 ### The NITA Act and the new transit sales tax are explained only in scattered, partly outdated passages
 
@@ -268,3 +299,4 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - Tax rates, the act's dates, and the federal paratransit rule were checked against the Illinois Department of Revenue, NITA's board summary, and the eCFR on 2026-11-26 only. Whether the 0.25% increase was approved by the RTA Board, as the funding list says it must be, was not checked beyond the Department of Revenue bulletin.
 - The Access to Transit program guide that Google listed (`ProgramGuide`) was not reviewed, because the program page does not link it.
 - Heading, table, list, and FAQ markup was assessed only for answer extraction; its effect on screen-reader users is left to the accessibility review.
+- The value of `Event` markup could not be tested, because no NITA page is dedicated to a single meeting; the captures recorded only that no events panel appeared for the board meeting searches.

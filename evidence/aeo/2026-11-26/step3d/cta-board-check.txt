@@ -1,0 +1,4 @@
+Chicago Transit Board page, https://www.transitchicago.com/board/, fetched with curl (default settings) on 2026-11-26 at about 18:20 UTC: 200, 223,459 bytes.
+JSON-LD blocks (application/ld+json): 0. No Event markup.
+Visible text about meetings (excerpt): the board "meets monthly at the principal offices of the Chicago Transit Authority, 567 W. Lake Street, Second Floor Boardroom, Chicago, Illinois. Board meetings are open to the public." Meetings "usually take place at 10:00 am", followed by a detailed calendar on the same page.
+Used only to compare with the NITA Meeting Materials page; the page itself was not kept.

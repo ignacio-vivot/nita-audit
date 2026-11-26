@@ -143,5 +143,12 @@ The AEO workstream is ready for consolidation when:
   - agency, permit, program, and portal names were reviewed;
   - three FOIA searches were captured through a US connection with a Chicago, Illinois IP address.
 
-  Two findings were recorded in the [NITA report](nita-illinois-gov.md): `AEO-NITA-007` and `008`. The evidence and recommendation of `AEO-NITA-001` were extended. Markup patterns that mainly affect screen-reader users were passed to the accessibility review. There is no new My Transit Benefit finding. Awaiting team review.
-- Next: Step 3 part D (structured data opportunities).
+  Two findings were recorded in the [NITA report](nita-illinois-gov.md): `AEO-NITA-007` and `008`. The evidence and recommendation of `AEO-NITA-001` were extended. Markup patterns that mainly affect screen-reader users were passed to the accessibility review. There is no new My Transit Benefit finding. Reviewed by the team.
+- Step 3 part D completed 2026-11-26 ([evidence](../../../evidence/aeo/2026-11-26/step3d/README.md)). Work done:
+  - the current markup and Google's structured data documentation were rechecked;
+  - two board meeting searches and one CTA comparison were captured through a US connection with a Chicago, Illinois IP address;
+  - each schema type received a decision for both websites.
+
+  One finding was recorded in the [NITA report](nita-illinois-gov.md): `AEO-NITA-009`, Google's AI Overview places the next board meeting in Oak Park because of an image label. No stand-alone structured data is recommended; `Event` markup is optional with single-meeting pages. There is no new My Transit Benefit finding. Awaiting team review.
+- Step 3 is complete.
+- Next: Step 4 (final matrix statuses, validation and ordering of findings, recommendation types, and roadmap inputs).
