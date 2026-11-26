@@ -21,6 +21,8 @@ Step 3 part C (structure and semantic organization) found no new issue. The page
 
 Step 3 part D (structured data opportunities) found no answer-oriented markup to recommend. The pages have no events, and Google no longer shows FAQ or HowTo results. The errors in the existing `LocalBusiness` markup are recorded in `SEO-MTB-004`. Step 3 is complete; Step 4 (final statuses and roadmap inputs) is next.
 
+All three recommendations are editorial. What NITA should confirm first is listed in “Recommendation types and confirmations” below.
+
 ## Findings
 
 ### The monthly limit and the savings figures are stated differently across pages
@@ -91,6 +93,16 @@ Step 3 part D (structured data opportunities) found no answer-oriented markup to
 - **Recommendation:** Add a two- or three-sentence opening under the H1 of the homepage and Employees page that says what the program is, who runs it (NITA, formerly the RTA), and who can use it, using one program name consistently. Confirm the wording with the program team and align it with the entity description reviewed in GEO and the organization markup in `SEO-MTB-004`.
 - **Implementation complexity:** Low (content edits)
 - **Related standard:** [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+
+## Recommendation types and confirmations
+
+Each recommendation is classified as **technical** (CMS configuration or template changes), **editorial** (content and wording changes made by editors), or both. The last column lists what NITA or another owner should confirm before acting. New answer passages, question-and-answer content, and any wording that states a rule, fee, date, or contact detail need the approval of the program owner before they are published. (Step 4 part C, 2026-11-26.)
+
+| Finding | Priority | Type | Confirm before acting |
+| --- | --- | --- | --- |
+| `AEO-MTB-001` | Medium | Editorial | Program team: the limit wording, and what the 7.65%, 8.45%, and “up to 40%” figures represent. |
+| `AEO-MTB-003` | Medium | Editorial | Program team: each answer on enrollment, card and Ventra use, when funds arrive, unused funds, and fees, and the single support phone number. NITA communications: the archive note on the 2013 press release. |
+| `AEO-MTB-002` | Low | Editorial | Program team and NITA communications: the program name and the opening wording, aligned with the entity description in GEO and the organization markup in `SEO-MTB-004`. |
 
 ## Positive Observations
 

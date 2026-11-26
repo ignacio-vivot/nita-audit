@@ -28,6 +28,8 @@ On several pages, heading levels, table header cells, and the markup of steps an
 
 No structured data type is recommended as a stand-alone AEO action. Google no longer shows FAQ or HowTo results and states that its AI features need no special markup. `Event` markup is an option only if each board meeting or hearing gets its own page (`AEO-NITA-009`). Corrections to the existing markup are in SEO (`SEO-NITA-016`). Step 4 (final statuses and roadmap inputs) is next.
 
+All recommendations are editorial, or editorial with template changes. None changes indexing; the only redirects suggested keep the URLs of reissued documents working. Their type and what NITA should confirm first are listed in “Recommendation types and confirmations” below.
+
 ### Findings at a glance
 
 Findings are listed in report order: by priority, then by user impact. IDs are stable references assigned when each finding was created, so they are not consecutive. Timing will be added when the roadmap groups the findings.
@@ -283,6 +285,22 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
   - Keep a short list of official program, permit, and portal names for editors.
 - **Implementation complexity:** Low (text edits on four pages)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
+## Recommendation types and confirmations
+
+Each recommendation is classified as **technical** (CMS configuration or template changes), **editorial** (content and wording changes made by editors), or both. The last column lists what NITA or another owner should confirm before acting. New answer passages, question-and-answer content, and any wording that states a rule, fee, date, or contact detail need the approval of the program owner before they are published. Recommendations that change a document URL keep the old URL working or redirect it (Step 4 part C, 2026-11-26).
+
+| Finding | Priority | Type | Confirm before acting |
+| --- | --- | --- | --- |
+| `AEO-NITA-001` | Medium | Editorial | Fare programs and paratransit teams: the wording of the fare and “How to apply” passages, and the ADA Paratransit call hours (`SEO-NITA-027`). Moving the accordions needs no confirmation. |
+| `AEO-NITA-004` | Medium | Editorial | Fare programs and paratransit teams: the senior, eligibility, and trip-purpose wording; the Travel Information Center hours. NITA communications: the archive note on the 2011 press release. |
+| `AEO-NITA-002` | Medium | Technical and editorial | Fare programs team: the current mailing address and whether the RTA PO Box still receives NITA's mail. NITA communications: the reissued forms and brochures in English and Spanish. CMS team: keeping or redirecting the current PDF URLs. |
+| `AEO-NITA-003` | Medium | Technical and editorial | Board office: the adopted meeting schedule and the start time of each meeting; that `communications@nita.illinois.gov` is the comment mailbox. CMS team: the calendar title in the template. |
+| `AEO-NITA-009` | Medium | Technical and editorial | None for the alternative text and the labels. NITA: whether to publish one page per meeting or hearing before any `Event` markup is added. |
+| `AEO-NITA-005` | Medium | Editorial | Finance and government affairs staff: the current sales tax rates and effective dates, the NITA Act dates, and the status of the 0.25% increase. |
+| `AEO-NITA-007` | Medium | Editorial | FOIA officer: the FOIA email address, mailing address, suite, and phone number, and the wording of the reissued request form. CMS team: keeping or redirecting the current form URL. |
+| `AEO-NITA-006` | Low | Editorial | Program managers for Access to Transit, Community Planning, and Section 5310: eligible applicants, the call schedule, and the guide or call to link. |
+| `AEO-NITA-008` | Low | Editorial | Fare programs team: the official names of the permits, the portal, and the Access Program, and how its pilot status is described. |
 
 ## Positive Observations
 
