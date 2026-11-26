@@ -3,14 +3,14 @@
 ## Assessment Scope
 
 - **Website:** [nita.illinois.gov](https://nita.illinois.gov/)
-- **Review date:** 2026-11-25 to 2026-11-26 (in progress)
+- **Review date:** 2026-11-25 to 2026-11-26
 - **Pages, templates, or journeys reviewed:** 42 inventoried questions for riders, the public, and local governments ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); the approved sample of 28 pages and the rider application PDFs (see the [matrix](aeo-review-matrix.md#page-level-review-scope)), plus Moving the system and three older posts and press releases found while tracing missing answers, and the FOIA request form; Google result pages for 14 priority questions, 6 questions with missing or scattered answers, 3 FOIA searches, and 2 board meeting searches.
 - **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing and scattered answers with nine further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)); structure and naming assessment with three FOIA captures ([Step 3 part C](../../../evidence/aeo/2026-11-26/step3c/README.md)); structured data assessment with two board meeting captures and one comparison ([Step 3 part D](../../../evidence/aeo/2026-11-26/step3d/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
 - **Control checklist:** [AEO review matrix](aeo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
 
-**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 is complete and has produced nine findings: part A (direct answers and answer clarity), part B (question-based content and FAQ opportunities), part C (structure and semantic organization), and part D (structured data opportunities). Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
+**Review complete; ready for team review** (2026-11-26). Google result pages were captured through a US connection with a Chicago, Illinois IP address. The review produced nine findings: seven Medium and two Low, none High. Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
 
 The main gaps are:
 - answers that sit in closed accordions or tables without a visible answer sentence (fares and ADA Paratransit applications, `AEO-NITA-001`);
@@ -18,33 +18,33 @@ The main gaps are:
 - rider forms that still carry the RTA name and mailing address (`AEO-NITA-002`);
 - board meeting details that differ between pages (`AEO-NITA-003`), and an image label on Meeting Materials that leads Google's AI Overview to place the next board meeting in Oak Park (`AEO-NITA-009`);
 - the NITA Act and the new transit sales tax, which are explained only in scattered passages, some written before the act took effect and one with a collar-county rate that differs from the Illinois Department of Revenue (`AEO-NITA-005`);
-- community program pages that do not say who can apply or when (`AEO-NITA-006`);
 - FOIA instructions that misname the agency and point to RTA contact details, which Google's AI Overview repeats (`AEO-NITA-007`);
+- community program pages that do not say who can apply or when (`AEO-NITA-006`);
 - permit, program, and fare portal names that vary between rider pages (`AEO-NITA-008`).
 
 Past events and conflicting call hours recorded in SEO (`SEO-NITA-027`) also reach the AI Overviews.
 
 On several pages, heading levels, table header cells, and the markup of steps and FAQ questions do not match the visual layout. Google states that heading order does not matter for Google Search, and pages built this way, such as Ride Safe, are already used in AI Overviews. These patterns mainly affect screen-reader users, so they are passed to the accessibility review rather than recorded as AEO findings ([matrix](aeo-review-matrix.md#review-controls-and-current-status)).
 
-No structured data type is recommended as a stand-alone AEO action. Google no longer shows FAQ or HowTo results and states that its AI features need no special markup. `Event` markup is an option only if each board meeting or hearing gets its own page (`AEO-NITA-009`). Corrections to the existing markup are in SEO (`SEO-NITA-016`). Step 4 (final statuses and roadmap inputs) is next.
+No structured data type is recommended as a stand-alone AEO action. Google no longer shows FAQ or HowTo results and states that its AI features need no special markup. `Event` markup is an option only if each board meeting or hearing gets its own page (`AEO-NITA-009`). Corrections to the existing markup are in SEO (`SEO-NITA-016`).
 
-All recommendations are editorial, or editorial with template changes. None changes indexing; the only redirects suggested keep the URLs of reissued documents working. Their type and what NITA should confirm first are listed in “Recommendation types and confirmations” below.
+All recommendations are editorial, or editorial with template changes. None changes indexing; the only redirects suggested keep the URLs of reissued documents working. Their type and what NITA should confirm first are listed in “Recommendation types and confirmations” below, and their timing in the [roadmap](../06-recommendations-and-roadmap.md). Three actions are immediate: the board meeting corrections before the meeting of 2026-12-10 (`AEO-NITA-003`, `009`) and the FOIA contact details (`AEO-NITA-007`).
 
 ### Findings at a glance
 
-Findings are listed in report order: by priority, then by user impact. IDs are stable references assigned when each finding was created, so they are not consecutive. Timing will be added when the roadmap groups the findings.
+Findings are listed in report order: by priority, then by user impact. IDs are stable references assigned when each finding was created, so they are not consecutive. Timing follows the [roadmap](../06-recommendations-and-roadmap.md).
 
 | ID | Finding | Priority | Complexity | Timing |
 | --- | --- | --- | --- | --- |
-| [`AEO-NITA-001`](#fare-and-ada-paratransit-answers-have-no-visible-answer-passage) | Fare and ADA Paratransit answers have no visible answer passage | Medium | Low | — |
-| [`AEO-NITA-004`](#common-rider-questions-about-seniors-paratransit-and-trip-planning-have-no-answer-passage) | Common rider questions about seniors, paratransit, and trip planning have no answer passage | Medium | Low | — |
-| [`AEO-NITA-002`](#rider-application-forms-and-brochures-still-carry-the-rta-name-and-mailing-address) | Rider application forms and brochures still carry the RTA name and mailing address | Medium | Medium | — |
-| [`AEO-NITA-003`](#board-meeting-day-time-and-comment-details-differ-between-pages) | Board meeting day, time, and comment details differ between pages | Medium | Low | — |
-| [`AEO-NITA-009`](#googles-ai-overview-places-the-next-board-meeting-in-oak-park-taken-from-an-image-label-on-meeting-materials) | Google's AI Overview places the next board meeting in Oak Park, taken from an image label on Meeting Materials | Medium | Low | — |
-| [`AEO-NITA-005`](#the-nita-act-and-the-new-transit-sales-tax-are-explained-only-in-scattered-partly-outdated-passages) | The NITA Act and the new transit sales tax are explained only in scattered, partly outdated passages | Medium | Low | — |
-| [`AEO-NITA-007`](#foia-request-instructions-name-the-wrong-agency-and-send-requests-to-rta-contact-details) | FOIA request instructions name the wrong agency and send requests to RTA contact details | Medium | Low | — |
-| [`AEO-NITA-006`](#community-program-pages-do-not-say-who-can-apply-or-when) | Community program pages do not say who can apply or when | Low | Low | — |
-| [`AEO-NITA-008`](#permit-program-and-fare-portal-names-vary-between-rider-pages) | Permit, program, and fare portal names vary between rider pages | Low | Low | — |
+| [`AEO-NITA-001`](#fare-and-ada-paratransit-answers-have-no-visible-answer-passage) | Fare and ADA Paratransit answers have no visible answer passage | Medium | Low | Short-term |
+| [`AEO-NITA-004`](#common-rider-questions-about-seniors-paratransit-and-trip-planning-have-no-answer-passage) | Common rider questions about seniors, paratransit, and trip planning have no answer passage | Medium | Low | Short-term |
+| [`AEO-NITA-002`](#rider-application-forms-and-brochures-still-carry-the-rta-name-and-mailing-address) | Rider application forms and brochures still carry the RTA name and mailing address | Medium | Medium | Short-term |
+| [`AEO-NITA-003`](#board-meeting-day-time-and-comment-details-differ-between-pages) | Board meeting day, time, and comment details differ between pages | Medium | Low | Immediate |
+| [`AEO-NITA-009`](#googles-ai-overview-places-the-next-board-meeting-in-oak-park-taken-from-an-image-label-on-meeting-materials) | Google's AI Overview places the next board meeting in Oak Park, taken from an image label on Meeting Materials | Medium | Low | Immediate |
+| [`AEO-NITA-005`](#the-nita-act-and-the-new-transit-sales-tax-are-explained-only-in-scattered-partly-outdated-passages) | The NITA Act and the new transit sales tax are explained only in scattered, partly outdated passages | Medium | Low | Short-term |
+| [`AEO-NITA-007`](#foia-request-instructions-name-the-wrong-agency-and-send-requests-to-rta-contact-details) | FOIA request instructions name the wrong agency and send requests to RTA contact details | Medium | Low | Immediate |
+| [`AEO-NITA-006`](#community-program-pages-do-not-say-who-can-apply-or-when) | Community program pages do not say who can apply or when | Low | Low | Short-term |
+| [`AEO-NITA-008`](#permit-program-and-fare-portal-names-vary-between-rider-pages) | Permit, program, and fare portal names vary between rider pages | Low | Low | Short-term |
 
 ## Findings
 

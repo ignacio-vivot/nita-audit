@@ -127,7 +127,7 @@ The AEO workstream is ready for consolidation when:
 
 - Approve the question inventory and the extended page sample (Step 1).
 
-## Current work status — 2026-11-25
+## Current work status — 2026-11-26
 
 - Step 1 completed 2026-11-25 and approved by the team: [AEO review matrix](aeo-review-matrix.md) created; both site reports updated to the authoring guide structure; question inventory of 57 questions (42 NITA, 15 My Transit Benefit; 20 marked for the answer-feature sample) built from autocomplete, “People also ask” on 17 result pages, question-style headings on the websites, and the SEO search sample; proposed sample of 32 pages and 2 documents ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)).
 - Step 2 part A completed 2026-11-25: answer map for all 57 questions ([evidence](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map); summary in the [matrix](aeo-review-matrix.md#answer-map)). NITA: 24 direct, 6 partial, 3 scattered, 4 conflicting, 2 outdated, 1 link-only, 2 missing (after the corrections of `Q-NITA-04` and `Q-NITA-30`). My Transit Benefit: 4 direct, 5 partial, 1 outdated, 1 link-only, 4 missing. Reviewed by the team.
@@ -153,5 +153,6 @@ The AEO workstream is ready for consolidation when:
 - Step 3 is complete.
 - Step 4 part A completed 2026-11-26: every control in the [matrix](aeo-review-matrix.md#review-controls-and-current-status) has a final status for both websites. Two rows were added: “Answer performance in search” (not verifiable in public scope) and a synthesis row that lists the findings by priority and the themes that link them. Reviewed by the team.
 - Step 4 part B completed 2026-11-26: the 12 findings were checked against the authoring guide's format, evidence, wording, and priority definitions. Recommendation wording, date format, list formatting, and four cross-references to SEO and UX findings were corrected. Priorities and order are unchanged ([review log](aeo-review-matrix.md#evidence-and-review-log)). Reviewed by the team.
-- Step 4 part C completed 2026-11-26: both site reports have a “Recommendation types and confirmations” table. Each of the 12 recommendations is classified as editorial (9) or technical and editorial (3), with the owner who should confirm facts or wording before publication. Awaiting team review.
-- Next: Step 4 part D (add AEO inputs to the [roadmap](../06-recommendations-and-roadmap.md), grouped with related SEO actions, and add timing to the “Findings at a glance” table).
+- Step 4 part C completed 2026-11-26: both site reports have a “Recommendation types and confirmations” table. Each of the 12 recommendations is classified as editorial (9) or technical and editorial (3), with the owner who should confirm facts or wording before publication. Reviewed by the team.
+- Step 4 part D completed 2026-11-26: the AEO inputs were added to the [roadmap](../06-recommendations-and-roadmap.md), grouped with the SEO actions on the same pages. Four actions are immediate, eight short-term, and the optional single-meeting pages long-term. The “Findings at a glance” timing column is filled in, and both site summaries were rewritten. The completion criteria below were checked.
+- Step 4 is complete. The AEO section is ready for team review and for consolidation with the other sections in the roadmap and the executive summary.

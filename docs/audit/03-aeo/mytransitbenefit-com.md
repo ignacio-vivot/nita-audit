@@ -3,25 +3,25 @@
 ## Assessment Scope
 
 - **Website:** [mytransitbenefit.com](https://www.mytransitbenefit.com/)
-- **Review date:** 2026-11-25 to 2026-11-26 (in progress)
+- **Review date:** 2026-11-25 to 2026-11-26
 - **Pages, templates, or journeys reviewed:** 15 inventoried questions for employees and employers ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); all four pages ([homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), [Employers](https://www.mytransitbenefit.com/employers)); the employer Account Setup Guide (PDF); Google result pages for 6 priority questions and 3 questions with missing answers.
 - **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing answers with three further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)); structure assessment ([Step 3 part C](../../../evidence/aeo/2026-11-26/step3c/README.md)); structured data assessment ([Step 3 part D](../../../evidence/aeo/2026-11-26/step3d/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
 - **Control checklist:** [AEO review matrix](aeo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
 
-**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 part A (direct answers and answer clarity) and part B (question-based content and FAQ opportunities) have produced three findings. The website has a direct answer passage for three of the six priority questions (the 2026 limits, parking, and whether employers must offer the benefit, although the last is outdated, `SEO-MTB-008`). The gaps are:
+**Review complete; ready for team review** (2026-11-26). Google result pages were captured through a US connection with a Chicago, Illinois IP address. The review produced three findings: two Medium and one Low, none High. The website has a direct answer passage for three of the six priority questions (the 2026 limits, parking, and whether employers must offer the benefit, although the last is outdated, `SEO-MTB-008`). The gaps are:
 - it states the monthly limit and the savings figures differently from page to page (`AEO-MTB-001`);
 - practical questions about enrolling, the card and Ventra loads, unused funds, and fees are answered only in an employer PDF or not at all, and the three product sections are empty (`AEO-MTB-003`);
 - no page opens with a short statement of what the program is and who runs it (`AEO-MTB-002`).
 
 In Google on 2026-11-26, My Transit Benefit appeared for enrollment, the employer law, and the “rta transit benefit card” search, and was a listed source in three of nine AI Overviews checked; national benefit providers and federal sources answered the general benefit questions. The outdated description of the employer law is recorded in SEO (`SEO-MTB-008`).
 
-Step 3 part C (structure and semantic organization) found no new issue. The pages have no accordions, hidden text, tables, or lists. Their structural gaps are already recorded: the missing opening passage and the varying program names (`AEO-MTB-002`), the empty product sections (`AEO-MTB-003`), and the slogan H1s (`SEO-MTB-003`).
+The structure review found no further issue. The pages have no accordions, hidden text, tables, or lists. Their structural gaps are already recorded: the missing opening passage and the varying program names (`AEO-MTB-002`), the empty product sections (`AEO-MTB-003`), and the slogan H1s (`SEO-MTB-003`).
 
-Step 3 part D (structured data opportunities) found no answer-oriented markup to recommend. The pages have no events, and Google no longer shows FAQ or HowTo results. The errors in the existing `LocalBusiness` markup are recorded in `SEO-MTB-004`. Step 3 is complete; Step 4 (final statuses and roadmap inputs) is next.
+The structured data review found no answer-oriented markup to recommend. The pages have no events, and Google no longer shows FAQ or HowTo results. The errors in the existing `LocalBusiness` markup are recorded in `SEO-MTB-004`.
 
-All three recommendations are editorial. What NITA should confirm first is listed in “Recommendation types and confirmations” below.
+All three recommendations are editorial. What NITA should confirm first is listed in “Recommendation types and confirmations” below, and their timing in the [roadmap](../06-recommendations-and-roadmap.md): the limit wording is immediate (`AEO-MTB-001`), the new content short-term.
 
 ## Findings
 
