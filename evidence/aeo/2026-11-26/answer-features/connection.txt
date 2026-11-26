@@ -1,0 +1,3 @@
+ipinfo.io/json checked in the built-in browser before the captures:
+Chicago, Illinois, US; AS11878 tzulo, inc.
+2026-11-26T11:37Z
