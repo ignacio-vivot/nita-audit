@@ -82,6 +82,8 @@ Use a UX review matrix (`ux-review-matrix.md`, to be created at the start of Ste
 ### Step 1 — Confirm scope and representative pages/journeys
 
 1. Adopt the SEO-confirmed page sample as the default UX page-level scope: the 4 My Transit Benefit URLs and the 15 NITA URLs/templates in the [SEO review matrix](../02-seo/seo-review-matrix.md). Record any addition needed to cover a distinct user journey or audience not represented there and the reason. **2026-11-24:** the SEO sample has no institutional/compliance-audience page (see audience map above); added `/about-nita` and `/about-nita/transparency` (FOIA/transparency hub) to the NITA scope for this reason.
+
+   **Resulting full NITA scope: 17 pages** (the SEO section's 15 + these 2 additions) — comparable in scale to the SEO section's own total sample of 19 pages (15 NITA + 4 My Transit Benefit), not a smaller or separately-negotiated scope. Pages are worked through in small batches across multiple sessions (see Current work status below for which batch is active and which pages are done); a batch size (e.g. 6-7 pages at a time) is a *session-sized chunk of this plan*, never the plan's total page count. Read this file's Current work status section, not a batch mentioned in any one conversation, to know the real total and what remains.
 2. Define the key user journeys to walk end-to-end rather than page-by-page, for example: a rider finding how to pay for a ride, a rider applying for a reduced-fare program, an employer/employee understanding My Transit Benefit, a community member finding a planning program.
 3. Create the UX review matrix with one row per proposal area, per website, status `Not assessed`.
 
@@ -126,6 +128,14 @@ The UX workstream is ready for consolidation when:
 - No duplicate findings with the accessibility section; cross-references are used instead.
 - The site reports and roadmap inputs are consistent with the matrix and authoring guide.
 
-## Current work status — 2026-11-24
+## Current work status — 2026-11-25
 
-- Plan drafted; Step 1 (scope confirmation) not yet started.
+Read this section first in any new session before assuming a page count or next step; it is the authoritative status, not a number mentioned in any single conversation.
+
+- **Full confirmed scope:** 17 NITA pages (SEO's 15 + `/about-nita`, `/about-nita/transparency`) + 4 My Transit Benefit pages = 21 pages total across both sites. See Step 1 above for how this was derived.
+- **Closed so far (2 of 17 NITA pages):** Homepage, Riders (`/riders`). 13 findings recorded (`UX-NITA-001`–`013`) in [nita-illinois-gov.md](nita-illinois-gov.md); see its "Findings at a glance" table. Review matrix rows for both pages are complete in [ux-review-matrix.md](ux-review-matrix.md).
+- **In progress, not yet closed:** How to ride (`/riders/how-to-ride`) — 2 findings already drafted (`UX-NITA-008`, `UX-NITA-009`) from before the one-page-at-a-time pacing was agreed with the reviewer; this page still needs a full closing pass (mobile/language checks, reviewer confirmation) before being marked done.
+- **Not started (remaining 14 NITA pages of 17):** How to ride (to finish), `/riders/access` (Access Program), `/riders/free-and-reduced-fare-programs` (Discounted Fare and Ride Free Programs), `/riders/paying-for-your-ride` (spot-checked for visual consistency only, not a full heuristic pass), `/riders/accessible-transit`, `/communities`, `/communities/community-planning`, `/communities/access-to-transit-program`, `/transit-funding/2027-regional-transit-budget`, `/region/how-system-working`, `/blog` (On Track blog listing), one blog article, the CTA tag archive, `/about-nita`, `/about-nita/transparency`.
+- **Not started at all:** mytransitbenefit.com (4 pages).
+- **Working agreement with the reviewer (Fernando):** go one page at a time; close and get explicit confirmation on a page before starting the next one (do not batch multiple pages' review into one uninterrupted pass). A "batch of N pages" discussed in any one session is that session's planned sequence through the scope above, not a redefinition of the scope itself.
+- **Next step:** finish closing How to ride, then continue through the remaining pages above, one at a time.
