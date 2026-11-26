@@ -1,0 +1,33 @@
+group	label	regex
+Agency name	Northern Illinois Transit Authority	Northern Illinois Transit Authority
+Agency name	Northern Illinois Transportation Authority	Northern Illinois Transportation Authority
+Agency name	NITA (case-sensitive)	\bNITA\b
+Agency name	Regional Transportation Authority	Regional Transportation Authority
+Agency name	RTA (case-sensitive)	\bRTA\b
+Agency name	rtachicago.org	rtachicago\.org
+Reduced Fare credential	Reduced Fare Permit	reduced[- ]fare permits?
+Reduced Fare credential	Reduced Fare card	reduced[- ]fare cards?
+Reduced Fare credential	Reduced Fare Program	reduced[- ]fare programs?
+Ride Free credential	Ride Free Permit	ride free permits?
+Ride Free credential	Ride Free card	ride free cards?
+Ride Free credential	Ride Free Program	ride free programs?
+Access Program	Access Program (not Benefit, Taxi, or Rideshare Access Program)	(?<!Benefit )(?<!Taxi )(?<!Rideshare )\bAccess Program\b
+Access Program	Access Pilot Program	\bAccess Pilot( Program)?\b
+Access Program	Access Permit	\bAccess permits?\b
+Access Program	Access card	\bAccess cards?\b
+Fare portal	NITA Fare Programs Portal	Fare Programs Portal
+Fare portal	Fare Portal	\bFare Portal\b
+Fare portal	online portal	online portal
+Benefit Access Program	Benefit Access Program	Benefit Access Program
+Benefit Access Program	BAP (case-sensitive)	\bBAP\b
+ADA Paratransit	ADA Paratransit	ADA Paratransit
+ADA Paratransit	paratransit (all uses)	paratransit
+Travel information	Travel Information Center	Travel Information Cent(er|re)
+Travel information	312-836-7000	312[-. ]836[-. ]7000
+Transit benefit program	NITA Transit Benefit Fare Program	Transit Benefit Fare Program
+Transit benefit program	Transit Benefit Program	Transit Benefit Program
+Transit benefit program	My Transit Benefit	My ?Transit ?Benefit
+Transit benefit program	Transit Fare Benefit	Transit Fare Benefit
+Transit benefit program	RTA/NITA Transit Benefit	RTA/NITA Transit Benefit
+Transit benefit law	Transportation Benefits Program Act	Transportation Benefits? Program Act
+Transit benefit law	Transit Benefits Program Act	Transit Benefits? Program Act

@@ -1,6 +1,6 @@
-# AEO Steps 1 and 2 — question inventory, sample, and answer map (2026-11-25)
+# AEO Steps 1 and 2 — question inventory, sample, answer map, and content structure (2026-11-25)
 
-Evidence for Step 1 and Step 2 part A of the [AEO work plan](../../../docs/audit/03-aeo/aeo-audit-plan.md): the question inventory, the sources behind it, and the proposed page sample. All search captures ran through a US connection with a Chicago, Illinois IP address (`connection.txt`) and US English settings; Google returned US results that were not localized to Chicago. Qualitative only: no search volume, no rank tracking.
+Evidence for Step 1 and Step 2 parts A and B of the [AEO work plan](../../../docs/audit/03-aeo/aeo-audit-plan.md): the question inventory, the sources behind it, and the proposed page sample. All search captures ran through a US connection with a Chicago, Illinois IP address (`connection.txt`) and US English settings; Google returned US results that were not localized to Chicago. Qualitative only: no search volume, no rank tracking.
 
 ## Step 1 — method
 
@@ -60,6 +60,52 @@ These are notes for Steps 2B to 3, not findings:
 - **Numbers differ within My Transit Benefit.** The homepage says “Up to 7.65% in savings” and the Employers calculator uses 8.45%. The homepage and Employers say “up to $340 each month” for transit and parking, while Behind the Benefits says $340 for each.
 - **The application PDFs still carry the RTA name.** Both PDFs say “Questions? Call 312-913-3110 or visit rtachicago.org” and “Apply online now at fares.rtachicago.org”. The Reduced Fare application is mailed to “Regional Transportation Authority, PO Box 301150, Chicago, IL 60630” and refers to the “RTA Reduced Fare Permit Program”.
 
+## Step 2 part B — content structure and semantic organization
+
+Folder [`structure/`](structure/). It records how the sample pages are built (headings, accordions, tabs, lists, tables) and which names they use for the same programs.
+
+### Method
+
+1. **Pages.** The 31 HTML pages of the approved sample (27 NITA, 4 My Transit Benefit; `structure-pages.tsv`). The Registration Sites URL is left out because it redirects to an ArcGIS map. HTML comes from `html/` (fetched 2026-11-25) or, for the blog, blog post, CTA tag, and press release pages, from the SEO snapshot of 2026-11-24 ([`rendered-review/raw-html/`](../../public-technical/2026-11-24/rendered-review/raw-html/)), used in place.
+2. **Structure inventory.** [`structure_inventory.py`](structure/structure_inventory.py) counts headings by level, empty headings, skipped levels, repeated heading text, question-style headings and accordion labels, accordions, panels hidden until a click, lists, tables, and definition lists. It also records the words between the H1 and the next heading (the opening passage). Output: [`structure-inventory.csv`](structure/structure-inventory.csv) and [`heading-outlines.md`](structure/heading-outlines.md), the outline of every page with word positions and marks for accordions and hidden panels.
+
+   `python3 -I structure_inventory.py structure-pages.tsv`
+
+3. **Text not visible on load.** The 31 pages were opened in the built-in browser at 1280 × 900 px on 2026-11-25. A script counted the words after the H1, outside menus, footers, and forms, and how many of them were not visible when the page loaded (closed accordions, inactive tabs, lightboxes), using the browser's `checkVisibility()` ([`browser-hidden-content.csv`](structure/browser-hidden-content.csv)). This measure is more reliable than the HTML markers in step 2, which flag the visible first tab and miss the board biographies (they open in a lightbox).
+4. **Names and terms.** [`term_usage.py`](structure/term_usage.py) counts 32 names and terms in [`terms.tsv`](structure/terms.tsv) (agency names, permit and program names, the fare portal, ADA Paratransit, the Travel Information number, the transit benefit program and law) in the content of the 31 pages, from the H1 down, and in the two application PDFs ([`term-usage.csv`](structure/term-usage.csv)).
+
+   `python3 -I term_usage.py structure-pages.tsv terms.tsv`
+
+5. **Site-wide question headings.** Taken from Step 1 (`crawl-question-h2.csv`): 71 question-style H2s on the 1,613 crawled NITA pages, 51 on blog posts, 4 on press releases, and 16 on 12 other pages. The crawl exports only the first two H2s per page and no H3s, so this is a lower bound.
+
+### Results
+
+| Measure | NITA (27 pages) | My Transit Benefit (4 pages) |
+| --- | --- | --- |
+| Pages with question-style headings or accordion labels | 13 (24 headings, 3 accordion labels) | 4 (one each: “How the Program Works”, “How you save”) |
+| Accordions (`<details>`) | 21 on 4 pages | None |
+| Pages where 25% or more of the text is not visible on load | 9 | None |
+| Tables | 17 (4 with header cells, none with a caption) | None |
+| Numbered lists (`<ol>`) | None (steps are styled blocks or typed numbers) | None |
+| Pages with more than one H1 | 10 | 1 |
+| Pages with skipped heading levels | 5 | 3 |
+| Pages with empty headings | 3 (5 headings) | None |
+
+Text not visible on load, by page (25% or more): Paying for your ride 87%, Board of Directors 72% (biographies), FOIA 71%, Discounted Fare and Ride Free Programs 61%, Contact 57%, How to ride 53%, Accessible transit 49%, Access 45%, Funding 26%. The text is present in the HTML on all of them.
+
+### Observations for later steps
+
+These are notes for Step 3, not findings:
+
+- **Rider answers sit behind clicks.** On the five main rider pages, 45% to 87% of the text is hidden on load. Fares are only in tables inside closed accordions; Ride Free steps are in tabs; the FOIA request steps and copying fees are in panels opened by buttons; on Contact, five of seven sections are panels.
+- **Headings do not always describe the content.** Paying for your ride has an H2 “Metra Passes” inside an accordion under an H3. Accessible transit repeats the H2s “ADA Paratransit” and “Rideshare Access Program (RAP) and Taxi Access Program (TAP)”, and its Paratransit Certification accordion has H4s under an H2. Meeting Materials uses 146 H2s, including “Agenda” 29 times, “Minutes” 20, “Slides” 19, and “Watch” 16, so the meeting dates and types are at the same level as their links.
+- **Good patterns exist.** Ride Safe has a 16-word opening passage, question-style H2s, with “What is NITA Ride Safe?” answered in its first sentence, numbered steps, and a plain-text FAQ. Access uses question headings and an accordion FAQ. These are models for the other program pages.
+- **FAQs are not marked as questions.** Ride Safe and People Over Parking Act write questions as plain paragraphs, not headings or accordion labels.
+- **Answers are split by topic.** Seniors' options are split between the Ride Free and Reduced Fare sections; the Travel Information number is only on Contact; the NITA Act and funding appear on About NITA, Funding, and blog posts.
+- **Program names vary.** The Access Program is called “Access Program”, “Access Pilot Program”, “Access Permit”, and, on Paying for your ride only, “Access card” (4 times). The reduced fare credential is “Reduced Fare Permit” 24 times and “Reduced Fare cards” twice (in the opening text and the accordion label “Replace Lost, Stolen or Damaged Reduced Fare Cards”). FOIA uses “Northern Illinois Transportation Authority” twice. The fare portal is “NITA Fare Programs Portal”, “Fare Portal”, and “online portal”, while both application PDFs send readers to `fares.rtachicago.org`.
+- **The RTA name remains in current text.** Most of the 46 “RTA” mentions on 12 NITA pages are historical (“NITA's predecessor, the RTA”) or titles of older blog posts shown as related articles on program pages (for example “RTA begins exploring reduced fares for riders with low incomes” on Access). Two are written as current: “the RTA region” (How to ride) and “Use the RTA's trip planner” (Accessible transit).
+- **My Transit Benefit uses five names for the program:** “NITA Transit Benefit Fare Program” (11), “Transit Benefit Program” (5), “Transit Fare Benefit” (3, for the account), “RTA/NITA Transit Benefit” (1, the card), and “My Transit Benefit” (the domain; used once, on NITA's Riders page). The law is called the “Transit Benefits Program Act”; the official name, Transportation Benefits Program Act, does not appear (`SEO-MTB-008`). Every page goes from the H1 straight to another heading with no opening passage.
+
 ## Files
 
-`connection.txt`, `question-seeds.tsv`, `autocomplete_questions.py`, `autocomplete-questions-2026-11-25.csv`, `google-paa-2026-11-25.jsonl`, `core-urls.txt`, `question_headings.py`, `page-headings.csv`, `html/`, `crawl-question-h2.csv`, `question-inventory.csv`, `proposed-sample.csv`; `answer-map/` (`structured_text.py`, `answer-pages.txt`, `page-text/`, the two application PDFs and their text, `build_answer_map.py`, `answer-map.csv`).
+`connection.txt`, `question-seeds.tsv`, `autocomplete_questions.py`, `autocomplete-questions-2026-11-25.csv`, `google-paa-2026-11-25.jsonl`, `core-urls.txt`, `question_headings.py`, `page-headings.csv`, `html/`, `crawl-question-h2.csv`, `question-inventory.csv`, `proposed-sample.csv`; `answer-map/` (`structured_text.py`, `answer-pages.txt`, `page-text/`, the two application PDFs and their text, `build_answer_map.py`, `answer-map.csv`); `structure/` (`structure-pages.tsv`, `structure_inventory.py`, `structure-inventory.csv`, `heading-outlines.md`, `browser-hidden-content.csv`, `terms.tsv`, `term_usage.py`, `term-usage.csv`).

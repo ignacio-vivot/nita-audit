@@ -1,0 +1,32 @@
+url,content_words,intro_words,h1,h2,h3,h4,h5,empty_headings,level_skips,repeated_heading_texts,question_headings,accordions,question_accordion_labels,headings_inside_accordions_or_panels,hidden_panels,pct_words_in_accordions_or_panels,lists_ul,lists_ol,list_items,tables,tables_with_header_cells,tables_with_caption,definition_lists
+https://nita.illinois.gov/,130,29,4,0,0,0,0,0,,,0,0,0,0,0,0,1,0,7,0,0,0,0
+https://nita.illinois.gov/riders,459,80,1,6,0,0,0,0,,,1,0,0,3,3,31,0,0,0,0,0,0,0
+https://nita.illinois.gov/riders/how-to-ride,955,100,1,15,7,0,0,2,,How to ride (x2),2,0,0,4,4,67,1,0,4,0,0,0,0
+https://nita.illinois.gov/riders/paying-for-your-ride,1986,65,1,3,7,0,0,0,,,2,6,0,8,0,88,0,0,0,8,4,0,0
+https://nita.illinois.gov/riders/free-and-reduced-fare-programs,1271,288,1,7,0,0,0,0,,,3,9,0,3,4,71,2,0,17,1,0,0,0
+https://nita.illinois.gov/riders/access,544,118,2,4,0,0,0,0,,,2,3,3,2,3,58,0,0,0,0,0,0,0
+https://nita.illinois.gov/riders/accessible-transit,1933,74,2,9,1,2,0,0,h2>h4,ADA Paratransit (x2); Rideshare Access Program (RAP) and Taxi Access Program (TAP) (x2),1,3,0,6,3,57,4,0,13,0,0,0,0
+https://nita.illinois.gov/communities,165,0,2,3,2,0,0,0,h1>h3,,0,0,0,2,3,49,0,0,0,0,0,0,0
+https://nita.illinois.gov/communities/community-planning,1171,53,2,2,0,0,0,1,,,0,0,0,0,0,0,0,0,0,1,0,0,0
+https://nita.illinois.gov/communities/access-to-transit-program,3014,87,2,6,0,0,0,0,,,0,0,0,4,4,11,0,0,0,1,0,0,0
+https://nita.illinois.gov/transit-funding/2027-regional-transit-budget,970,74,2,5,8,0,0,0,,,1,0,0,0,0,0,10,0,38,2,0,0,0
+https://nita.illinois.gov/region/how-system-working,540,54,1,3,0,0,0,0,,,2,0,0,0,0,0,2,0,7,0,0,0,0
+https://nita.illinois.gov/blog,585,585,1,0,0,0,0,0,,,0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/blog/2026/10/01/nita-expanding-access-pilot-program-to-cta-and-pace-starting-october-1-offering-income-based-reduced-fare-transit-regionwide,854,285,1,2,0,0,0,0,,,0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/blog/tags/cta,503,503,1,0,0,0,0,0,,,0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties,1805,0,1,0,6,0,0,0,h1>h3,,2,0,0,0,0,0,13,0,52,0,0,0,0
+https://nita.illinois.gov/safety/app,693,16,1,4,2,0,0,0,,,3,0,0,0,1,0,8,0,26,2,0,0,0
+https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center,507,27,1,6,0,0,0,2,,,0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/about-nita,229,81,3,2,2,0,0,0,h1>h3,,0,0,0,0,1,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,91,67,1,146,1,0,0,0,,"Agenda (x29); Minutes (x20); Slides (x19); Watch (x16); Board Meeting (x13); Pension Board of Trustees (x4); Pension Committee (x4); Ad Hoc Committee on NITA Transition (x3); November 20, 2026 (x2); NITA Governance Committee (x2); August 21, 2026 (x2); Citizen Advisory Board (x2)",0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/about-nita/boards-and-committees/board-of-directors,3572,40,1,1,0,0,0,0,,,0,0,0,0,0,0,0,0,0,0,0,0,0
+https://nita.illinois.gov/contact,420,0,1,7,0,0,1,0,h2>h5,,0,0,0,5,5,70,0,0,0,1,0,0,0
+https://nita.illinois.gov/nita-rider-advisory-council,299,34,1,2,0,0,0,0,,,0,0,0,0,0,0,1,0,3,0,0,0,0
+https://nita.illinois.gov/about-nita/transparency/foia,429,34,1,3,1,0,0,0,,,2,0,0,4,3,90,2,0,8,0,0,0,0
+https://nita.illinois.gov/transit-funding,681,79,2,4,0,0,0,0,,,2,0,0,2,2,49,0,0,0,0,0,0,0
+https://nita.illinois.gov/communities/people-over-parking-act,990,73,1,3,3,0,0,0,,,1,0,0,0,0,0,2,0,8,0,0,0,0
+https://nita.illinois.gov/region/section-5310,1866,47,5,4,0,0,0,0,,,0,0,0,0,0,0,3,0,15,1,0,0,0
+https://www.mytransitbenefit.com/,301,0,1,4,1,0,0,0,h1>h3,,1,0,0,0,1,0,0,0,0,0,0,0,0
+https://www.mytransitbenefit.com/behind-the-benefits,177,0,1,5,0,0,0,0,,,1,0,0,0,4,0,0,0,0,0,0,0,0
+https://www.mytransitbenefit.com/employees,188,0,2,2,5,0,0,0,h1>h3,,1,0,0,1,2,1,0,0,0,0,0,0,0
+https://www.mytransitbenefit.com/employers,298,0,1,3,5,0,0,0,h1>h3,,1,0,0,1,2,1,0,0,0,0,0,0,0
