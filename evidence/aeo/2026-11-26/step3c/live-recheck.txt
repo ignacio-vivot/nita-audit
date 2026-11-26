@@ -1,0 +1,31 @@
+Live recheck of the 31 Step 2 part B sample pages, 2026-11-26, 17:27 to 17:28 UTC.
+Fetched with curl (default settings); all 31 returned 200.
+
+1. ../../2026-11-25/structure/structure_inventory.py was run on the new HTML:
+   structure-inventory.csv: identical to the 2026-11-25 file
+   heading-outlines.md: identical to the 2026-11-25 file
+2. structure_assessment.py was run on the new HTML (same page list, new paths):
+   heading-issues.csv: identical
+   accordion-sections.csv: identical
+   tables.csv: identical
+   step-blocks.csv: identical
+   question-paragraphs.csv: identical
+
+The HTML of 2026-11-25 (../../2026-11-25/html/ and the SEO snapshot listed in
+structure-pages.tsv) therefore remains the evidence for this step; the new HTML was not kept.
+
+3. Page text of the nine pages cited in Step 3C, extracted from the new HTML with
+   ../../2026-11-25/answer-map/structured_text.py and compared with the 2026-11-25 page text
+   (word-count markers removed):
+   nita-illinois-gov-about-nita-transparency-foia.md: 0 changed lines
+   nita-illinois-gov-riders-free-and-reduced-fare-programs.md: 0 changed lines
+   nita-illinois-gov-riders-paying-for-your-ride.md: 0 changed lines
+   nita-illinois-gov-riders-access.md: 0 changed lines
+   nita-illinois-gov-riders-accessible-transit.md: 0 changed lines
+   nita-illinois-gov-riders-how-to-ride.md: 0 changed lines
+   nita-illinois-gov-transit-funding-2027-regional-transit-budget.md: 0 changed lines
+   nita-illinois-gov-about-nita-boards-and-committees-meeting-materials.md: 0 changed lines
+   nita-illinois-gov-region-section-5310.md: 0 changed lines
+   The Access blog post of 2026-10-01, in the HTML fetched on 2026-11-26, still links
+   fares.nita.illinois.gov and says that riders with “active Access permits … will be sent a
+   new card in the mail”.

@@ -1,0 +1,45 @@
+url,issue,level,heading,detail
+https://nita.illinois.gov/,H1 after the first,H1,Weigh in on NITA's draft regional budget,
+https://nita.illinois.gov/,H1 after the first,H1,Municipalities can apply for assistance in adhering to POPA,
+https://nita.illinois.gov/,H1 after the first,H1,"Ride into the holidays with CTA, Metra, and Pace",
+https://nita.illinois.gov/riders/how-to-ride,empty heading,H2,(empty),
+https://nita.illinois.gov/riders/how-to-ride,repeats the H1,H2,How to ride,
+https://nita.illinois.gov/riders/how-to-ride,empty heading,H2,(empty),
+https://nita.illinois.gov/riders/paying-for-your-ride,heading inside an accordion at the level of the section it belongs to,H2,Metra Passes,accordion “Metra” in an H2 section
+https://nita.illinois.gov/riders/access,H1 after the first,H1,Recent news about the Access Program,
+https://nita.illinois.gov/riders/accessible-transit,same text as the heading before it,H2,ADA Paratransit,H2 before
+https://nita.illinois.gov/riders/accessible-transit,same text as the heading before it,H2,Rideshare Access Program (RAP) and Taxi Access Program (TAP),H2 before
+https://nita.illinois.gov/riders/accessible-transit,skipped level,H4,"For new, first-time ADA Paratransit applicants:",H2 > H4
+https://nita.illinois.gov/riders/accessible-transit,H1 after the first,H1,Recent Blog Posts,
+https://nita.illinois.gov/communities,skipped level,H3,200+ communities served by transit,H1 > H3
+https://nita.illinois.gov/communities,H1 after the first,H1,Tools and resources,
+https://nita.illinois.gov/communities,skipped level,H3,NITA has developed several toolkits and educational resources to help foster sustainable and livable communities that enhance multi-modal transportation throughout the region.,H1 > H3
+https://nita.illinois.gov/communities/community-planning,empty heading,H2,(empty),
+https://nita.illinois.gov/communities/community-planning,H1 after the first,H1,Related Articles,
+https://nita.illinois.gov/communities/access-to-transit-program,H1 after the first,H1,Recent Access to Transit Blog Posts,
+https://nita.illinois.gov/transit-funding/2027-regional-transit-budget,H1 after the first,H1,Three ways to get involved today,
+https://nita.illinois.gov/about-rta/press-releases/northern-illinois-transit-authoritys-first-regional-budget-proposal-expands-service-creates-jobs-and-improves-safety-across-six-counties,skipped level,H3,Public comment on the proposal is open through Dec. 4 at nita.Illinois.gov,H1 > H3
+https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center,empty heading,H2,(empty),
+https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center,empty heading,H2,(empty),
+https://nita.illinois.gov/about-nita,H1 after the first,H1,Newsletter,
+https://nita.illinois.gov/about-nita,skipped level,H3,"Stakeholders and news media can learn about recent work, press contacts, and releases by subscribing to On Track: A blog from NITA or the NITA News email newsletter.",H1 > H3
+https://nita.illinois.gov/about-nita,H1 after the first,H1,Disclaimer,
+https://nita.illinois.gov/about-nita,skipped level,H3,Please see a disclaimer and conditions of use notice about investor relations regarding the NITA website.,H1 > H3
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Board Meeting,13 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Pension Board of Trustees,4 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Agenda,29 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Pension Committee,4 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Watch,16 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Slides,19 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Minutes,20 times
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,text used three or more times,H2,Ad Hoc Committee on NITA Transition,3 times
+https://nita.illinois.gov/contact,skipped level,H5,NITA Administrative Offices,H2 > H5
+https://nita.illinois.gov/transit-funding,H1 after the first,H1,Recent blog posts about transit funding,
+https://nita.illinois.gov/region/section-5310,H1 after the first,H1,Program Management Plan,
+https://nita.illinois.gov/region/section-5310,H1 after the first,H1,Human Services Transportation Plan (HSTP),
+https://nita.illinois.gov/region/section-5310,H1 after the first,H1,Section 5310 Subrecipient Guide,
+https://nita.illinois.gov/region/section-5310,H1 after the first,H1,Recent Articles,
+https://www.mytransitbenefit.com/,skipped level,H3,Discover the Future of Commuting in Chicagoland!,H1 > H3
+https://www.mytransitbenefit.com/employees,skipped level,H3,Simplify Your Commute and Save Big!,H1 > H3
+https://www.mytransitbenefit.com/employees,H1 after the first,H1,Login,
+https://www.mytransitbenefit.com/employers,skipped level,H3,Commuting Made Easy for Your Employees!,H1 > H3

@@ -1,0 +1,25 @@
+Text of FOIA-Request-Form-9-30-2015-1.docx (body, then page header), extracted from word/document.xml and word/header3.xml on 2026-11-26.
+Linked as "request" from the FOIA page; fetched with curl (200, 145,705 bytes).
+
+Freedom of Information Request
+The Illinois Freedom of Information Act (“FOIA” or the “Act”), as amended by Public Act 096-0542, was created by the state legislature to provide the public with access to public records. The Act was created to clearly define the records that are subject to public review and inspections, and to provide detailed guidelines on the procedures which are to be followed by both the public and the public body to whom the request is made. 
+I, the undersigned, am requesting the following documents under the Act:   
+ FORMCHECKBOX  This request is being made for commercial purposes, defined as “the use of any part of a public record or records, or information derived from public records, in any form for sale, resale, solicitation or advertisement for sales or services.” 5 ILCS 140/2(c-10). For commercial purposes, I understand that I will receive an initial response to this request within twenty-one (21) business days. Requests made by news media and non-profit, scientific or academic organizations shall not be considered to be made for commercial purposes when the principal purpose of the request is (i) to access and disseminate information concerning news and current or past events, (ii) for articles of opinion of features of interest to the public, or (iii) for the purpose of academic, scientific or public research or education.
+ FORMCHECKBOX  This request is not being made for a commercial purpose. For non-commercial requests I understand that I will receive an initial response to this request within five (5) business days of the date of the request. 
+Name of Person Filing Request:  
+Organization, Agency, Business Affiliation:
+Requestor’s Mailing Address: 
+Phone Number:
+E-mail address: 
+Signature:
+Date of FOIA Request:  
+All FOIA requests to the RTA must be submitted in writing. For access to public records of the RTA, this form or a letter containing a FOIA request can be sent via U.S. Mail or e-mail to the RTA FOIA Officer at the address below. By submitting this request, you acknowledge that pursuant to the Act, the RTA may charge fees for the costs of copying and collecting certain documents responsive to this request.
+Paralegal, Freedom of Information Officer
+Regional Transportation Authority
+175 W. Jackson Blvd., Suite 1650
+Chicago, IL 60604
+Phone: 312.913.3147
+Email: FOIA@rtachicago.org
+[page header] rtachicago.org
+[page header, repeated; line breaks lost in extraction] 175 W. Jackson Blvd, Suite 1650 / Chicago, IL 60604 / 312-913-3200
+

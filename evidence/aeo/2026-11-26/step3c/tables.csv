@@ -1,0 +1,18 @@
+url,table,section,accordion,in_hidden_panel,rows,columns,th_cells,thead,caption,first_row
+https://nita.illinois.gov/riders/paying-for-your-ride,1,H3 CTA and Pace,CTA and Pace,no,7,5,5,yes,, | Ventra: Full Fare | Ventra: Reduced Fare ** | Cash Fare | Cash Reduced**
+https://nita.illinois.gov/riders/paying-for-your-ride,2,H3 CTA and Pace Passes,CTA and Pace,no,7,3,3,yes,,Passes | Full | Reduced*
+https://nita.illinois.gov/riders/paying-for-your-ride,3,H3 CTA and Pace Passes,Metra,no,3,5,0,no,,Zone | 1 – 2 | 1 – 3 | 1 – 4 | 2 – 4
+https://nita.illinois.gov/riders/paying-for-your-ride,4,H3 Day Passes,Metra,no,5,5,0,no,,Zone | 1 – 2 | 1 – 3 | 1 – 4 | 2 – 4
+https://nita.illinois.gov/riders/paying-for-your-ride,5,H3 Monthly Passes,Metra,no,3,5,0,no,,Zone | 1 – 2 | 1 – 3 | 1 – 4 | 2 – 4
+https://nita.illinois.gov/riders/paying-for-your-ride,6,H3 Regional Day Pass,Regional Passes,no,4,3,0,no,,Metra Zones | Full Fare/Reduced Fare*** RDP Weekday | Full Fare RDP Saturday/Sunday/Holidays
+https://nita.illinois.gov/riders/paying-for-your-ride,7,H3 Regional Connect Pass,Children,no,4,3,3,yes,, | Ages 7-11 | Under 7
+https://nita.illinois.gov/riders/paying-for-your-ride,8,H3 Regional Connect Pass,Students,no,4,3,3,yes,, | Fare | Eligibility
+https://nita.illinois.gov/riders/free-and-reduced-fare-programs,1,H1 Discounted Fare and Ride Free Programs,Registration Site Alerts,no,1,4,0,no,,"City of Chicago Family & Support ServicesCity Hall, Room 100121 N. LaSalle St.Chicago, IL | Southwest CenterRegional Senior Center6117 S. Kedzie Ave.Chicago, IL"
+https://nita.illinois.gov/communities/community-planning,1,H2 2026 Community Planning Program of Projects,,no,11,3,0,no,,Applicant | Project Type | Project Description
+https://nita.illinois.gov/communities/access-to-transit-program,1,H2 2026 NITA Access to Transit Program of Projects,,no,22,4,0,no,,Applicant | County | Project Type | Project Description
+https://nita.illinois.gov/transit-funding/2027-regional-transit-budget,1,H1 Three ways to get involved today,,no,3,2,0,no,,"Lake County – Wednesday, Nov. 4, 8:30 a.m.Public Works and Transportation CommitteeLake County Board Office, 10th Floor18 N. County Street, Waukegan, IL | McHen"
+https://nita.illinois.gov/transit-funding/2027-regional-transit-budget,2,H2 Proposed 2027 Budget Highlights,,no,7,2,0,no,,Includes funding for additional regional safety initiatives including Transit Ambassadors Program (launching in summer 2027) and NITA Ride Safe app (launching i
+https://nita.illinois.gov/safety/app,1,H3 NITA Ride Safe,,no,1,2,0,no,,Harassment Threatening or disruptive behavior A suspicious or unattended item | Drug use Vandalism A person in crisis
+https://nita.illinois.gov/safety/app,2,H2 What you can report,,no,1,2,0,no,,Someone could get hurtWeaponRobbery / theftViolence / fightingFire / hazardSomeone’s behaviorSexual misconduct / harassmentThreatening / disruptive behavior | R
+https://nita.illinois.gov/contact,1,H2 We're Here to Help,,no,6,2,0,no,," | 175 W. Jackson Blvd, Suite 1550Chicago, IL 60604Weekdays 8:30 a.m. to 5 p.m. 312-913-3200"
+https://nita.illinois.gov/region/section-5310,1,H2 FY2024 - FY2025 Program of Projects,,no,17,6,0,no,,Applicant | Project Title | Project Type | Project Description | Federal Award | Local Match

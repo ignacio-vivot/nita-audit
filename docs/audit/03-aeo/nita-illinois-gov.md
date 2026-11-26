@@ -4,13 +4,13 @@
 
 - **Website:** [nita.illinois.gov](https://nita.illinois.gov/)
 - **Review date:** 2026-11-25 to 2026-11-26 (in progress)
-- **Pages, templates, or journeys reviewed:** 42 inventoried questions for riders, the public, and local governments ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); the approved sample of 28 pages and the rider application PDFs (see the [matrix](aeo-review-matrix.md#page-level-review-scope)), plus Moving the system and three older posts and press releases found while tracing missing answers; Google result pages for 14 priority questions and 6 questions with missing or scattered answers.
-- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing and scattered answers with nine further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
+- **Pages, templates, or journeys reviewed:** 42 inventoried questions for riders, the public, and local governments ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); the approved sample of 28 pages and the rider application PDFs (see the [matrix](aeo-review-matrix.md#page-level-review-scope)), plus Moving the system and three older posts and press releases found while tracing missing answers, and the FOIA request form; Google result pages for 14 priority questions, 6 questions with missing or scattered answers, and 3 FOIA searches.
+- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing and scattered answers with nine further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)); structure and naming assessment with three FOIA captures ([Step 3 part C](../../../evidence/aeo/2026-11-26/step3c/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
 - **Control checklist:** [AEO review matrix](aeo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
 
-**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 part A (direct answers and answer clarity) and part B (question-based content and FAQ opportunities) have produced six findings. Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
+**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 has produced eight findings so far: part A (direct answers and answer clarity), part B (question-based content and FAQ opportunities), and part C (structure and semantic organization). Of the 14 priority questions, 6 have a direct, visible answer passage on the expected page. Pages built that way, such as Ride Safe, the Access Program, and People Over Parking Act, rank in the first results for their questions and are cited in the AI Overviews. NITA appears in the first results for 13 of the 14 priority searches and is a listed source in 12 AI Overviews.
 
 The main gaps are:
 - answers that sit in closed accordions or tables without a visible answer sentence (fares and ADA Paratransit applications, `AEO-NITA-001`);
@@ -18,9 +18,13 @@ The main gaps are:
 - rider forms that still carry the RTA name and mailing address (`AEO-NITA-002`);
 - board meeting details that differ between pages (`AEO-NITA-003`);
 - the NITA Act and the new transit sales tax, which are explained only in scattered passages, some written before the act took effect and one with a collar-county rate that differs from the Illinois Department of Revenue (`AEO-NITA-005`);
-- community program pages that do not say who can apply or when (`AEO-NITA-006`).
+- community program pages that do not say who can apply or when (`AEO-NITA-006`);
+- FOIA instructions that misname the agency and point to RTA contact details, which Google's AI Overview repeats (`AEO-NITA-007`);
+- permit, program, and fare portal names that vary between rider pages (`AEO-NITA-008`).
 
-Past events and conflicting call hours recorded in SEO (`SEO-NITA-027`) also reach the AI Overviews. Steps 3C and 3D (structure, structured data) are pending.
+Past events and conflicting call hours recorded in SEO (`SEO-NITA-027`) also reach the AI Overviews.
+
+On several pages, heading levels, table header cells, and the markup of steps and FAQ questions do not match the visual layout. Google states that heading order does not matter for Google Search, and pages built this way, such as Ride Safe, are already used in AI Overviews. These patterns mainly affect screen-reader users, so they are passed to the accessibility review rather than recorded as AEO findings ([matrix](aeo-review-matrix.md#review-controls-and-current-status)). Step 3 part D (structured data) is pending.
 
 ### Findings at a glance
 
@@ -33,7 +37,9 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 | [`AEO-NITA-002`](#rider-application-forms-and-brochures-still-carry-the-rta-name-and-mailing-address) | Rider application forms and brochures still carry the RTA name and mailing address | Medium | Medium | — |
 | [`AEO-NITA-003`](#board-meeting-day-time-and-comment-details-differ-between-pages) | Board meeting day, time, and comment details differ between pages | Medium | Low | — |
 | [`AEO-NITA-005`](#the-nita-act-and-the-new-transit-sales-tax-are-explained-only-in-scattered-partly-outdated-passages) | The NITA Act and the new transit sales tax are explained only in scattered, partly outdated passages | Medium | Low | — |
+| [`AEO-NITA-007`](#foia-request-instructions-name-the-wrong-agency-and-send-requests-to-rta-contact-details) | FOIA request instructions name the wrong agency and send requests to RTA contact details | Medium | Low | — |
 | [`AEO-NITA-006`](#community-program-pages-do-not-say-who-can-apply-or-when) | Community program pages do not say who can apply or when | Low | Low | — |
+| [`AEO-NITA-008`](#permit-program-and-fare-portal-names-vary-between-rider-pages) | Permit, program, and fare portal names vary between rider pages | Low | Low | — |
 
 ## Findings
 
@@ -52,8 +58,12 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
   | What is the ADA Paratransit phone number and when can I call? (`Q-NITA-21`) | Same accordion (“between 8:00 a.m. and 5:00 p.m., Monday through Friday”) | Pace holds the first three results; NITA is fifth |
 
   Measured in the built-in browser at 1280 × 900 px on 2026-11-25, 87% of the text after the H1 on Paying for your ride and 49% on Accessible transit is not visible until a reader opens an accordion or tab ([`browser-hidden-content.csv`](../../../evidence/aeo/2026-11-25/structure/browser-hidden-content.csv)). The text is in the HTML, so it can be indexed. The fares match CTA, Metra, and Pace (SEO fare check of 2026-11-24 and Regional Day Pass check of 2026-11-25). The two Google result pages for paratransit gave different call hours in the same session (8:30 and 8:00), which reflects the conflict already recorded in `SEO-NITA-027` ([answer-feature evidence](../../../evidence/aeo/2026-11-26/answer-features/README.md)).
+
+  The structure review of 2026-11-26 found two more problems on Accessible transit:
+  - The page's jump link “ADA Paratransit” leads to two short paragraphs and a video link.
+  - The three accordions that hold the rest of the ADA Paratransit information come after the “Rideshare Access Program (RAP) and Taxi Access Program (TAP)” section, with no heading of their own: “Paratransit Certification” (application steps), “Types of Eligibility” (eligibility types and the appeal process), and “Visitors”. In the page outline they therefore sit under the taxi and rideshare heading ([`accordion-sections.csv`](../../../evidence/aeo/2026-11-26/step3c/accordion-sections.csv); [Step 3 part C evidence](../../../evidence/aeo/2026-11-26/step3c/README.md#where-answers-sit-assessed-for-aeo)).
 - **Impact:** Riders who want a fare or the paratransit application number must open the right accordion to find it, and on Accessible transit the application steps are far down the page under a label that does not say “apply”. Answer systems look for a short passage that answers the question; without one on NITA's pages they tend to take the answer from operator pages, as the fare and paratransit result pages show, including a call-hours statement that differs from NITA's. Adding a passage does not guarantee that Google or an AI system will use it.
-- **Recommendation:** Add a short, visible answer passage above the accordions on each page and keep the tables for detail. On Paying for your ride, state the standard CTA, Pace, and Metra fares in two or three sentences (for example “A CTA ‘L’ ride costs $2.50 and a CTA bus ride $2.25 with Ventra or a contactless card”). On Accessible transit, add an H2 such as “How to apply for ADA Paratransit” directly after the ADA Paratransit description, with the phone number, the call hours (once confirmed under `SEO-NITA-027`), and the first steps in its opening sentences. Review these passages whenever fares or hours change.
+- **Recommendation:** Add a short, visible answer passage above the accordions on each page and keep the tables for detail. On Paying for your ride, state the standard CTA, Pace, and Metra fares in two or three sentences (for example “A CTA ‘L’ ride costs $2.50 and a CTA bus ride $2.25 with Ventra or a contactless card”). On Accessible transit, add an H2 such as “How to apply for ADA Paratransit” directly after the ADA Paratransit description, with the phone number, the call hours (once confirmed under `SEO-NITA-027`), and the first steps in its opening sentences. Move the “Paratransit Certification”, “Types of Eligibility”, and “Visitors” accordions under that heading, before the RAP and TAP section. Review these passages whenever fares or hours change.
 - **Implementation complexity:** Low (content edits on two pages)
 - **Related standard:** [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) (important content available in textual form; no special markup needed)
 
@@ -156,6 +166,44 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - **Implementation complexity:** Low (content edits on three pages)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
+### FOIA request instructions name the wrong agency and send requests to RTA contact details
+
+- **Finding ID:** AEO-NITA-007
+- **Page or component:** The “How to submit a request” panel on [FOIA](https://nita.illinois.gov/about-nita/transparency/foia) and the [Freedom of Information Request form](https://nita.illinois.gov/uploads/files/general/About-RTA/FOIA-Request-Form-9-30-2015-1.docx) (Word document) that it links as “request”.
+- **Priority:** Medium
+- **Evidence:** The sources are:
+  - the page text of 2026-11-25, unchanged on 2026-11-26 ([page text](../../../evidence/aeo/2026-11-25/answer-map/page-text/nita-illinois-gov-about-nita-transparency-foia.md); [`live-recheck.txt`](../../../evidence/aeo/2026-11-26/step3c/live-recheck.txt));
+  - the request form, downloaded on 2026-11-26 ([form text](../../../evidence/aeo/2026-11-26/step3c/foia/FOIA-Request-Form-9-30-2015-1.txt)).
+
+  | Detail | FOIA page | Linked request form |
+  | --- | --- | --- |
+  | Agency | “For access to the public records of the Northern Illinois Transportation Authority”, and the same name in the address block | “All FOIA requests to the RTA must be submitted in writing”, sent to the “RTA FOIA Officer” at the “Regional Transportation Authority” |
+  | Mailing address | 175 W. Jackson Boulevard, Suite 1550 | 175 W. Jackson Blvd., Suite 1650 (also in the page header, with `rtachicago.org`) |
+  | Email | Shown as `FOIA@nita.illinois.gov`, but the link opens `mailto:FOIA@rtachicago.org` | `FOIA@rtachicago.org` |
+  | Phone | None | 312.913.3147 |
+
+  The agency's name is Northern Illinois Transit Authority, as in the page's own title, “Freedom of Information Act | Northern Illinois Transit Authority”. The form sits in an `About-RTA` upload folder, its file name carries the date 9-30-2015, and its document properties give 2018-10-17 as the last change.
+
+  Google result pages were captured on 2026-11-26 through a US connection with a Chicago, Illinois IP address ([captures](../../../evidence/aeo/2026-11-26/step3c/google-foia-2026-11-26.jsonl); [Step 3 part C evidence](../../../evidence/aeo/2026-11-26/step3c/README.md#names-assessed-for-aeo)):
+  - “nita illinois foia request”: the FOIA page ranked first, under the title link “FOIA - Regional Transportation Authority - Illinois.gov”. The AI Overview told readers to submit requests “to the Northern Illinois Transportation Authority (NITA)” by emailing `FOIA@nita.illinois.gov` or by mail to Suite 1550, and listed the NITA FOIA page as its source.
+  - “rta foia request”: the FOIA page ranked second, with the same title link. The AI Overview listed the Illinois agency next to transit authorities in Michigan and Cleveland, under the name “Regional Transportation Authority”.
+  - “how to submit a foia request to nita”: Google answered for the National Telecommunications and Information Administration (NTIA), a federal agency, and showed no NITA page in the first nine results. How generative platforms identify NITA is assessed in GEO.
+- **Impact:** Residents, journalists, and businesses use these instructions to address a public-records request. Two of the routes on this page point to the former agency:
+  - a reader who clicks the email address writes to the former RTA mailbox;
+  - a reader who uses the linked form sends it to the RTA, at a different suite, under a different phone number.
+
+  Whether `FOIA@rtachicago.org` and Suite 1650 still reach NITA's FOIA officer cannot be verified in the public scope. The incorrect agency name is already repeated in Google's AI Overview, and Google shows the page under the former agency's name.
+- **Recommendation:**
+  - Confirm the FOIA email address, mailing address, and phone number with the FOIA officer.
+  - Change both mentions of the agency to “Northern Illinois Transit Authority”.
+  - Point the email link to the address it shows.
+  - Reissue the request form with the NITA name and the confirmed contact details, as an accessible PDF or a web form, and keep the current URL or redirect it to the new file.
+  - Add one sentence saying that NITA replaced the RTA on September 1, 2026, so that people who search for the RTA know they have found the right office.
+
+  Google chooses title links from several sources and may keep the former name for some time after the page is corrected.
+- **Implementation complexity:** Low (text and link edits on one page; one form reissued)
+- **Related standard:** [Google Search Central: influence your title links](https://developers.google.com/search/docs/appearance/title-link); [creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
 ### Community program pages do not say who can apply or when
 
 - **Finding ID:** AEO-NITA-006
@@ -170,6 +218,39 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - **Implementation complexity:** Low (content edits on three pages)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 
+### Permit, program, and fare portal names vary between rider pages
+
+- **Finding ID:** AEO-NITA-008
+- **Page or component:** [Discounted Fare and Ride Free Programs](https://nita.illinois.gov/riders/free-and-reduced-fare-programs), [Access Program](https://nita.illinois.gov/riders/access), [Paying for your ride](https://nita.illinois.gov/riders/paying-for-your-ride), [How to ride](https://nita.illinois.gov/riders/how-to-ride), and the blog post [“NITA expands income-based reduced fare pilot Access across Metra, CTA, and Pace”](https://nita.illinois.gov/blog/2026/10/01/nita-expanding-access-pilot-program-to-cta-and-pace-starting-october-1-offering-income-based-reduced-fare-transit-regionwide) (October 1, 2026).
+- **Priority:** Low
+- **Evidence:** The sources are:
+  - the page text of 2026-11-25, unchanged on 2026-11-26 ([`live-recheck.txt`](../../../evidence/aeo/2026-11-26/step3c/live-recheck.txt));
+  - the term counts of Step 2 part B ([`term-usage.csv`](../../../evidence/aeo/2026-11-25/structure/term-usage.csv));
+  - the portal links listed in Step 3 part C ([evidence](../../../evidence/aeo/2026-11-26/step3c/README.md#names-assessed-for-aeo)).
+
+  | Name | What the pages say |
+  | --- | --- |
+  | Ride Free Permit | The “How to replace your Ride Free Permit” panel begins “If your reduced fare permit is lost, stolen or damaged…”. Ride Free and Reduced Fare are separate permits with different eligibility; elsewhere the same page says “Ride Free Permit” 8 times and “Reduced Fare Permit” 9 times |
+  | Fare portal, on Discounted Fare and Ride Free Programs | Linked as `getaccess.org` under “NITA Fare Programs Portal” (6 links), “Apply now”, and “new online portal”; the opening text calls it the “Fare Portal” |
+  | Fare portal, on the Access page | The same address, linked as “GetAccess.org” (3 links) |
+  | Fare portal, elsewhere | The blog post links `fares.nita.illinois.gov`; the rider PDFs and the RAP and TAP text on Accessible transit use `fares.rtachicago.org` (`AEO-NITA-002`, `SEO-NITA-026`) |
+  | Access Program | The Access page says “Access Program” 7 times, including the H1. Its FAQ and related-article list say “Access Pilot Program” (3 times), as does the blog post (4 times, including its tag). The credential is an “Access Permit” on the Access page and an “Access card” on Paying for your ride (4 links, two of them broken, `SEO-NITA-008`); the blog post says permit holders “will be sent a new card in the mail” |
+  | RTA | How to ride describes “maps for specific suburban areas in the RTA region”. Accessible transit says “Use the RTA's trip planner and maps”, which is already part of `SEO-NITA-028` |
+
+  The three portal addresses all redirect to one portal at `fares.nita.illinois.gov`, whose page heading is “Welcome To NITA Fare Programs Online” ([redirect check](../../../evidence/aeo/2026-11-26/step3a/rta-domains-check.txt)). In the Step 2 part C captures, Google's AI Overviews used “Access Permit”, “GetAccess.org”, and “NITA Fare Programs portal (formerly RTA Fare Programs Online)” correctly, so no capture showed an error caused by these variations.
+- **Impact:**
+  - A rider who has lost a Ride Free Permit reads replacement instructions that name the other permit and may not be sure the steps apply to them.
+  - The same portal appears as “GetAccess.org” on one page and as the “NITA Fare Programs Portal” on another, which makes it look like two different websites.
+  - Answer systems quote passages as written, so a passage that names the wrong permit can be repeated. No capture showed this, so the risk is limited.
+- **Recommendation:**
+  - Change “reduced fare permit” to “Ride Free Permit” in the replacement panel.
+  - Use one name and one address for the portal in link text on every rider page, for example “NITA Fare Programs Online (fares.nita.illinois.gov)”, and keep `getaccess.org` as a redirect for printed Access materials.
+  - Use “Access Program” and “Access Permit” consistently, and say once that the program is a pilot.
+  - Replace “RTA region” with “the NITA region” or “the six-county region”.
+  - Keep a short list of official program, permit, and portal names for editors.
+- **Implementation complexity:** Low (text edits on four pages)
+- **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
 ## Positive Observations
 
 - **Clear answer pages are used by Google.** [Ride Safe App](https://nita.illinois.gov/safety/app) opens with a short definition under the question “What is NITA Ride Safe?”, lists numbered steps, and ends with a plain-text FAQ; on 2026-11-26 it ranked first for “ride safe app chicago” and supplied every NITA statement in the AI Overview. [About NITA](https://nita.illinois.gov/about-nita), [Access Program](https://nita.illinois.gov/riders/access), and [People Over Parking Act](https://nita.illinois.gov/communities/people-over-parking-act) also answer their main question in their opening sentences, and NITA was cited in the AI Overviews for those questions.
@@ -177,6 +258,7 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - **Fares and the budget deadline are current.** The fares on Paying for your ride match CTA, Metra, and Pace, including the Regional Day Pass prices, and the 2027 budget page gives the correct December 4 comment deadline, which the AI Overview repeated.
 - **The Reduced Fare application answer is direct.** Discounted Fare and Ride Free Programs opens by saying how to apply online, in person, or by phone.
 - **Program pages rank first for their names.** On 2026-11-26, Access to Transit ranked first for “access to transit program grant illinois” and Community Planning first for “rta community planning program”, and both were cited in the AI Overviews. Adding eligibility and timing (`AEO-NITA-006`) builds on pages that Google already uses.
+- **Rider task headings say what each section answers.** Examples are “How much will my ride cost?” on Paying for your ride; “How to apply for a Ride Free Permit”, “How to renew Ride Free Permits”, and “How to replace your Ride Free Permit” on Discounted Fare and Ride Free Programs; and “Who is eligible?” and “How do I get Access?” on Access. The fare accordion labels also name their content (“CTA and Pace”, “Metra”, “Regional Passes”, “Children”, “Students”).
 
 ## Limitations
 
@@ -185,3 +267,4 @@ Findings are listed in report order: by priority, then by user impact. IDs are s
 - Whether former RTA mailing and email addresses still receive mail cannot be verified in the public scope.
 - Tax rates, the act's dates, and the federal paratransit rule were checked against the Illinois Department of Revenue, NITA's board summary, and the eCFR on 2026-11-26 only. Whether the 0.25% increase was approved by the RTA Board, as the funding list says it must be, was not checked beyond the Department of Revenue bulletin.
 - The Access to Transit program guide that Google listed (`ProgramGuide`) was not reviewed, because the program page does not link it.
+- Heading, table, list, and FAQ markup was assessed only for answer extraction; its effect on screen-reader users is left to the accessibility review.
