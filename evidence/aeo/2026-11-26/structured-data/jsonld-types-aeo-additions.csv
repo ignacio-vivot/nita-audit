@@ -1,0 +1,12 @@
+url,jsonld_blocks,types
+https://nita.illinois.gov/safety/app,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/riders/how-to-ride/getting-to-the-obama-presidential-center,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/about-nita,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/about-nita/boards-and-committees/meeting-materials,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/about-nita/boards-and-committees/board-of-directors,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/contact,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/nita-rider-advisory-council,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/about-nita/transparency/foia,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/transit-funding,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/communities/people-over-parking-act,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
+https://nita.illinois.gov/region/section-5310,1,BreadcrumbList; GovernmentOrganization; ImageObject; ListItem; PostalAddress; WebSite
