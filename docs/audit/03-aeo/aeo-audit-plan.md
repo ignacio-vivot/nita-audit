@@ -151,5 +151,6 @@ The AEO workstream is ready for consolidation when:
 
   One finding was recorded in the [NITA report](nita-illinois-gov.md): `AEO-NITA-009`, Google's AI Overview places the next board meeting in Oak Park because of an image label. No stand-alone structured data is recommended; `Event` markup is optional with single-meeting pages. There is no new My Transit Benefit finding. Reviewed by the team.
 - Step 3 is complete.
-- Step 4 part A completed 2026-11-26: every control in the [matrix](aeo-review-matrix.md#review-controls-and-current-status) has a final status for both websites. Two rows were added: “Answer performance in search” (not verifiable in public scope) and a synthesis row that lists the findings by priority and the themes that link them. Awaiting team review.
-- Next: Step 4 part B (validate the 12 findings against the authoring guide and confirm their order).
+- Step 4 part A completed 2026-11-26: every control in the [matrix](aeo-review-matrix.md#review-controls-and-current-status) has a final status for both websites. Two rows were added: “Answer performance in search” (not verifiable in public scope) and a synthesis row that lists the findings by priority and the themes that link them. Reviewed by the team.
+- Step 4 part B completed 2026-11-26: the 12 findings were checked against the authoring guide's format, evidence, wording, and priority definitions. Recommendation wording, date format, list formatting, and four cross-references to SEO and UX findings were corrected. Priorities and order are unchanged ([review log](aeo-review-matrix.md#evidence-and-review-log)). Awaiting team review.
+- Next: Step 4 part C (classify each recommendation as technical, editorial, or requiring NITA's confirmation).
