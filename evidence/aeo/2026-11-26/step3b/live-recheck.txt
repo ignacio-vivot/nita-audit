@@ -1,0 +1,18 @@
+Live recheck of answer pages, 2026-11-26 (curl, default settings; text extracted with ../../2026-11-25/answer-map/structured_text.py).
+Compared with the 2026-11-25 page text after removing word-count markers.
+
+nita-illinois-gov-about-nita.md: 0 changed lines
+nita-illinois-gov-communities-access-to-transit-program.md: 0 changed lines
+nita-illinois-gov-communities-community-planning.md: 0 changed lines
+nita-illinois-gov-contact.md: 0 changed lines
+nita-illinois-gov-region-section-5310.md: 0 changed lines
+nita-illinois-gov-riders-accessible-transit.md: 0 changed lines
+nita-illinois-gov-riders-free-and-reduced-fare-programs.md: 0 changed lines
+nita-illinois-gov-riders-how-to-ride.md: 0 changed lines
+nita-illinois-gov-transit-funding.md: 0 changed lines
+www-mytransitbenefit-com-behind-the-benefits.md: 0 changed lines
+www-mytransitbenefit-com-employees.md: 0 changed lines
+www-mytransitbenefit-com-employers.md: 0 changed lines
+www-mytransitbenefit-com.md: 0 changed lines
+
+https://nita.illinois.gov/riders/free-and-reduced-fare-programs/registration-sites: 302 -> https://rtagis.maps.arcgis.com/apps/instant/nearby/index.html?appid=85e194b8baf940b2afc8e510d86f8699

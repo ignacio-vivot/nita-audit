@@ -1,0 +1,128 @@
+Source: https://tax.illinois.gov/research/publications/bulletins/fy-2026-34.html (curl, 2026-11-26)
+
+FY 2026-34
+June 2026
+David Harris, Director
+This bulletin is written to inform you of recent changes; it does not replace statutes, rules and regulations, or court decisions.
+For more information visit: 
+tax.illinois.gov
+Sign up for
+IDOR’s email and SMS text subscription service
+ to receive the latest news and updates. 
+Printable version available in:
+English
+ Northern Illinois Transit Authority (NITA) Occupation and Use Tax Rate Change, Effective August 1, 2026
+To: All retailers and servicepersons making sales in Cook, DuPage, Kane, Lake, McHenry, or Will counties and who file Form ST-1, Form ST-556, Form RUT-25, Form CD-1, or Form ST-70
+Effective August 1, 2026, the NITA (formerly the Regional Transportation Authority) occupation and use tax rate will increase by 0.25% in Cook, DuPage, Kane, Lake, McHenry, and Will counties.
+This tax applies to:
+General merchandise
+Qualifying groceries
+Qualifying drugs and medical appliances¹
+Items that must be titled or registered in Illinois²
+Medical and adult use cannabis³
+Aviation fuel⁴
+NITA rates are added to the statewide rate (6.25% or 1.00%) plus any local taxes collected by IDOR.
+To find your updated rate, use the
+MyTax Illinois Tax Rate Finder
+ at
+mytax.illinois.gov
+ and select rates for August 2026.
+Be sure to update your cash register or software so you are collecting the correct rate starting August 1, 2026. If you use software to prepare your forms, check with your vendor for updates.
+       Filers of Form ST-1, Sales and Use Tax and E911 Surcharge Return, and Form ST-2, Multiple Site Form
+If you make sales from a
+Cook County
+ location:
+The new NITA occupation and use tax rate is 1.25% for general merchandise and 1.50% for qualifying grocery and qualifying drugs and medical appliances.
+If you make sales from a
+DuPage, Kane, Lake, McHenry, or Will County
+ location:
+The new NITA occupation and use tax rate is 1.00% for general merchandise, qualifying grocery, and qualifying drugs and medical appliances.
+        When will my Form ST-1 reflect the new occupation and use tax rate?
+When you file electronically using MyTax Illinois, the combined occupation and use tax rates will be populated for you according to your registered locations.
+If you receive a paper Form ST-1, and, if applicable, Form ST-2, the new occupation and use tax rate will be preprinted on Lines 4a, 5a, and 5c as the total general merchandise, qualifying drugs and medical appliances, and qualifying grocery rates.
+         What if a customer pays on or after August 1, 2026, for a sale that was delivered earlier and taxed at a different rate?
+If the original sale was subject to an occupation and use tax rate that was in effect prior to this rate change, you must report these receipts on Form ST-1, Line 8a and the tax on Line 8b.
+Note
+: Lines 8a and 8b are to be used only to report receivables subject to a previous rate. No other use of this line is permitted.
+          Filers of Form ST-556, Sales Tax Transaction Return or Form ST-556-LSE, Transaction return for Leases
+If you make sales from a
+Cook County
+ location:
+The new NITA occupation and use tax rate is 1.25% for items titled or registered.
+If you make sales from a
+DuPage, Kane, Lake, McHenry, or Will County
+ location:
+The new NITA occupation and use tax rate is 1.00% for items titled or registered.
+           Is NITA occupation and use tax due on titled or registered items?
+Yes. You must collect the NITA occupation and use tax on sales of items that will be titled or registered with a government agency of the state of Illinois.
+            When will my Form ST-556 and Form ST-556-LSE reflect the new occupation and use tax rate?
+When you file electronically using MyTax Illinois, the combined occupation and use tax rates will be populated for you according to your registered locations.
+If you receive paper a Form ST-556 or ST-556-LSE, those that are printed after August 1, 2026, will reflect the new combined occupation and use tax rate preprinted on Line 4.
+             For the forms that I have on hand, how do I show the new occupation and use tax rate?
+For the forms that you have on hand for sales made on or after August 1, 2026, you will need to add the additional 0.25% to the occupation and use tax rate that is preprinted on Line 4 of your Form ST-556 or Form ST-556-LSE.
+For more information, see
+ST-9, A Guide for Reporting Sales Using Form ST-556, Sales Tax Transaction Return
+ and
+ST-9-LSE, A Guide for Reporting Sales Using Form ST-556-LSE, Transaction Return for Leases
+.
+              Filers of Form RUT-25, Vehicle Use Tax Transaction Return or Form RUT-25-LSE, Use Tax return for Lease Transactions
+If you purchase items out of-State that will be titled or registered to a
+Cook County
+ address:
+The new NITA occupation and use tax rate is 1.25% for purchases titled or registered to a Cook County address.
+If you purchase items out of-State that will be titled or registered to a
+DuPage, Kane, Lake, McHenry, or Will County
+ address:
+The new NITA occupation and use tax rate is 1.00% for purchases titled or registered to an address in one of these counties.
+               Will Form RUT-25 and Form RUT-25-LSE reflect the new occupation and use tax rate?
+Tax rates are not preprinted on Form RUT-25 or Form RUT-25-LSE. The tax rate is determined by the purchaser’s address provided on Form RUT-25 or lessee’s address provided on Form RUT-25-LSE.
+For more information, see the
+Illinois Tax Requirements for Cars, Trucks, Vans, Motorcycles, ATVs, Trailers, and Mobile Homes
+ webpage.
+                Filers of Form CD-1, Cannabis Dispensary Tax Return, and Schedule CD-2, Sales and Use Tax Multiple Site Form for Cannabis Dispensaries
+                  Medical Cannabis
+If you make sales from a
+Cook County
+ location:
+The NITA new occupation tax rate on cannabis is 1.50% and the new use tax rate on cannabis is 1.25%.
+If you make sales from a
+DuPage, Kane, Lake, McHenry, or Will County
+ location:
+The new NITA occupation and use tax rate on cannabis is 1.00% for general merchandise.
+                   Adult Use Cannabis
+If you make sales from a
+Cook County
+ location:
+The new occupation and use tax rate on cannabis is 1.25% for general merchandise.
+If you make sales from a
+DuPage, Kane, Lake, McHenry, or Will County
+ location:
+The new occupation and use tax rate on cannabis is 1.00% for general merchandise.
+                 When will my Form CD-1 reflect the new occupation and use tax rate on cannabis?
+When you file electronically using MyTax Illinois, the combined occupation and use tax rates on cannabis will be populated for you according to your registered locations.
+For more information, see the
+Cannabis Taxes
+ information webpage.
+                  Filers of Form ST-70, Aviation Fuel Sales and Use Tax Return, and Form ST-71, Multiple Site Form
+If you make sales from a
+Cook County
+ location:
+The new occupation and use tax rate on aviation fuel is 1.25%.
+If you make sales from a
+DuPage, Kane, Lake, McHenry, or Will County
+ location:
+The new occupation and use tax rate on aviation fuel is 0.75%.
+                   When will my Form ST-70 reflect the new occupation and use tax rate on aviation fuel?
+When you file electronically using MyTax Illinois, the combined occupation and use tax rates on aviation fuel will be populated for you according to your registered locations.
+For more information, see the
+Aviation Fuel Sales and Use Tax
+ information webpage.
+1 
+86 Ill. Adm. Code 130.310 and 130.311; 70 ILCS 3615/4.03(e)-(g)
+2 
+86 Ill. Adm. Code 130.540 and 150.705
+3 
+86 Ill. Adm. Code Parts 130, 424, and 425
+4 
+70 ILCS 3615/4.03(e)-(f)
+Printed by authority of the State of Illinois

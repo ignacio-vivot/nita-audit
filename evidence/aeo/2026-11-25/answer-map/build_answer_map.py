@@ -113,8 +113,11 @@ R = [
     ("Q-NITA-29", "scattered", P + "/about-nita", "section (Leadership); Funding page; blog", "Leadership", 82,
      "The Northern Illinois Transit Authority is governed by the NITA Act and by-laws",
      "About NITA names the NITA Act only as a link to the Public Act 104-0457 PDF in the Leadership section; it does not say what the act does or when the RTA became NITA (2026-09-01). The Funding page and blog posts mention the act's passage and funding in separate places. (Corrected 2026-11-26: the first version said the page did not name the act.)"),
-    ("Q-NITA-30", "missing", "—", "—", "—", None, "(no answer)",
-     "No NITA page explains the taxes or revenue sources created by the NITA Act, although “What is the NITA tax in Illinois?” appears in “People also ask” and “nita transit tax” in autocomplete."),
+    ("Q-NITA-30", "conflicting", P + "/transit-funding/moving-the-system", "accordions (Sales tax; State 5.0% Sales Tax on Gasoline)",
+     "Where do operating funds come from? (accordions)", 129,
+     "*New* 2026 0.25% NITA Sales Tax: Authorized by the NITA Act in late 2025, an additional sales tax of 0.25% in all six counties of the NITA region.",
+     "The “Sales tax” accordion gives the rates as 1.25% in Cook County and .50% in the five collar counties, plus the new 0.25%; the Illinois Department of Revenue bulletin FY 2026-34 gives 1.25% (general merchandise) and 1.50% (qualifying food, drugs, and medical appliances) in Cook County and 1.00% in the collar counties from August 1, 2026. The gasoline tax is “Expected to be effective in July 2026”, and the same page still says the 0.25% increase is “pending approval by the RTA Board”. "
+     "Page text in ../../2026-11-26/step3b/page-text/moving-the-system.md. (Corrected 2026-11-26 in Step 3 part B: the first version recorded no answer because Moving the system was not in the answer-page sample.)"),
     ("Q-NITA-31", "outdated", P + "/transit-funding/2027-regional-transit-budget", "numbered list", "Three ways to get involved today", 109,
      "Submit comment using the comment box below by December 4, or email communications@nita.illinois.gov.",
      "Correct deadline, but the same list still invites readers to a November 12 hearing (SEO-NITA-027)."),

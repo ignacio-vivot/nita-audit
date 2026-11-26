@@ -43,9 +43,9 @@ Status values: **direct** (answered in one or two sentences on the expected page
 
 | Website | Questions | Direct | Partial | Scattered | Conflicting | Outdated | Link-only | Missing |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| nita.illinois.gov | 42 | 24 | 6 | 3 | 3 | 2 | 1 | 3 |
+| nita.illinois.gov | 42 | 24 | 6 | 3 | 4 | 2 | 1 | 2 |
 | mytransitbenefit.com | 15 | 4 | 5 | 0 | 0 | 1 | 1 | 4 |
-| **Total** | **57** | **28** | **11** | **3** | **3** | **3** | **2** | **7** |
+| **Total** | **57** | **28** | **11** | **3** | **4** | **3** | **2** | **6** |
 
 Of the 20 priority questions, 13 have a direct answer. The other seven are `Q-NITA-13` (seniors, scattered), `Q-NITA-21` (ADA Paratransit call hours, conflicting), `Q-NITA-24` (trip planning, partial), `Q-NITA-31` (2027 budget comments, outdated), `Q-MTB-06` (employee enrollment, missing), `Q-MTB-11` (employer requirement, outdated), and `Q-MTB-12` (covered employers, partial).
 
@@ -53,10 +53,10 @@ Of the 20 priority questions, 13 have a direct answer. The other seven are `Q-NI
 
 These are notes for Steps 2B to 3, not findings:
 
-- **Answers often sit in closed accordions or tab panels.** Of the 45 answers found on a page (direct, partial, conflicting, or outdated), 16 are wholly or partly inside accordions or tab panels. Some are far down the page: the ADA Paratransit application steps are about 1,100 words below the H1 in an accordion with no “How to apply” heading.
+- **Answers often sit in closed accordions or tab panels.** Of the 46 answers found on a page (direct, partial, conflicting, or outdated), 17 are wholly or partly inside accordions or tab panels (after the Step 3 part B correction of `Q-NITA-30`). Some are far down the page: the ADA Paratransit application steps are about 1,100 words below the H1 in an accordion with no “How to apply” heading.
 - **Strong answer pages exist.** Ride Safe and People Over Parking Act answer questions in plain-text FAQs, and Access has an accordion FAQ and question-style headings (“Who is eligible?”, “How do I get Access?”).
 - **Several answers conflict or are out of date.** Examples are the board meeting day (Board of Directors says the third Thursday; the listed meetings fall on second Thursdays), the 2027 budget page that still invites readers to the November 12 hearing, and the closed Riders Advisory Council application period. Several overlap SEO findings (`SEO-NITA-027`, `SEO-MTB-008`).
-- **Some questions have no answer.** NITA does not explain the NITA tax or revenue sources created by the NITA Act, whether ADA Paratransit can be used for any trip purpose, or how to apply to Access to Transit. My Transit Benefit does not explain employee enrollment, whether funds expire, the prepaid card, or fees, and three product headings on Behind the Benefits have no text.
+- **Some questions have no answer.** NITA does not say whether ADA Paratransit can be used for any trip purpose or how to apply to Access to Transit. (This note first also listed the NITA tax; Step 3 part B found it answered, with outdated rates, on Moving the system.) My Transit Benefit does not explain employee enrollment, whether funds expire, the prepaid card, or fees, and three product headings on Behind the Benefits have no text.
 - **Numbers differ within My Transit Benefit.** The homepage says “Up to 7.65% in savings” and the Employers calculator uses 8.45%. The homepage and Employers say “up to $340 each month” for transit and parking, while Behind the Benefits says $340 for each.
 - **The application PDFs still carry the RTA name.** Both PDFs say “Questions? Call 312-913-3110 or visit rtachicago.org” and “Apply online now at fares.rtachicago.org”. The Reduced Fare application is mailed to “Regional Transportation Authority, PO Box 301150, Chicago, IL 60630” and refers to the “RTA Reduced Fare Permit Program”.
 
@@ -106,7 +106,7 @@ These are notes for Step 3, not findings:
 - **The RTA name remains in current text.** Most of the 46 “RTA” mentions on 12 NITA pages are historical (“NITA's predecessor, the RTA”) or titles of older blog posts shown as related articles on program pages (for example “RTA begins exploring reduced fares for riders with low incomes” on Access). Two are written as current: “the RTA region” (How to ride) and “Use the RTA's trip planner” (Accessible transit).
 - **My Transit Benefit uses five names for the program:** “NITA Transit Benefit Fare Program” (11), “Transit Benefit Program” (5), “Transit Fare Benefit” (3, for the account), “RTA/NITA Transit Benefit” (1, the card), and “My Transit Benefit” (the domain; used once, on NITA's Riders page). The law is called the “Transit Benefits Program Act”; the official name, Transportation Benefits Program Act, does not appear (`SEO-MTB-008`). Every page goes from the H1 straight to another heading with no opening passage.
 
-Step 2 part C (answer-feature capture, 2026-11-26) is in [`../2026-11-26/answer-features/`](../2026-11-26/answer-features/README.md). It corrected the answer-map row for `Q-NITA-29` (About NITA names the NITA Act in its Leadership section). Step 3 part A (2026-11-26) corrected `Q-NITA-04`: the Regional Passes table does list zones 1-3 and 1-4, at the prices Metra gives, so the answer is direct, not conflicting; the counts above include this correction.
+Step 2 part C (answer-feature capture, 2026-11-26) is in [`../2026-11-26/answer-features/`](../2026-11-26/answer-features/README.md). It corrected the answer-map row for `Q-NITA-29` (About NITA names the NITA Act in its Leadership section). Step 3 part A (2026-11-26) corrected `Q-NITA-04`: the Regional Passes table does list zones 1-3 and 1-4, at the prices Metra gives, so the answer is direct, not conflicting. Step 3 part B (2026-11-26, [`../2026-11-26/step3b/`](../2026-11-26/step3b/README.md#correction-to-step-2-part-a)) corrected `Q-NITA-30`: Moving the system answers the NITA tax question, with rates that differ from the Illinois Department of Revenue, so the status is conflicting, not missing. The counts above include both corrections.
 
 ## Files
 

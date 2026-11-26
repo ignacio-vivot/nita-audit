@@ -4,13 +4,18 @@
 
 - **Website:** [mytransitbenefit.com](https://www.mytransitbenefit.com/)
 - **Review date:** 2026-11-25 to 2026-11-26 (in progress)
-- **Pages, templates, or journeys reviewed:** 15 inventoried questions for employees and employers ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); all four pages ([homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), [Employers](https://www.mytransitbenefit.com/employers)); Google result pages for 6 priority questions.
-- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
+- **Pages, templates, or journeys reviewed:** 15 inventoried questions for employees and employers ([inventory](../../../evidence/aeo/2026-11-25/question-inventory.csv)); all four pages ([homepage](https://www.mytransitbenefit.com/), [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), [Employers](https://www.mytransitbenefit.com/employers)); the employer Account Setup Guide (PDF); Google result pages for 6 priority questions and 3 questions with missing answers.
+- **Methods and tools:** Google autocomplete and “People also ask” captures ([Step 1 evidence](../../../evidence/aeo/2026-11-25/README.md)); answer map, structure inventory, and program-name counts built from the page HTML ([Step 2 parts A and B](../../../evidence/aeo/2026-11-25/README.md#step-2-part-a--answer-map)); Google answer-feature capture ([Step 2 part C](../../../evidence/aeo/2026-11-26/answer-features/README.md)); structured data check against Google's documentation ([Step 2 part D](../../../evidence/aeo/2026-11-26/structured-data/README.md)); priority answer assessment ([Step 3 part A](../../../evidence/aeo/2026-11-26/step3a/README.md)); assessment of missing answers with three further Google captures ([Step 3 part B](../../../evidence/aeo/2026-11-26/step3b/README.md)). SEO evidence is reused as listed in the [work plan](aeo-audit-plan.md#what-seo-already-collected-and-how-aeo-reuses-it). The review is AI-assisted: Claude collects and analyzes the evidence, and the team reviews each part.
 - **Control checklist:** [AEO review matrix](aeo-review-matrix.md#review-controls-and-current-status)
 
 ## Summary
 
-**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete, and Step 3 part A (direct answers and answer clarity) has produced two findings. The website has a direct answer passage for three of the six priority questions (the 2026 limits, parking, and whether employers must offer the benefit, although the last is outdated, `SEO-MTB-008`), but it states the monthly limit and the savings figures differently from page to page (`AEO-MTB-001`), and no page opens with a short statement of what the program is and who runs it (`AEO-MTB-002`). In Google on 2026-11-26, My Transit Benefit appeared only for enrollment and the employer law (ranks 5, 6, and 8) and was a listed source in two of six AI Overviews; national and federal sources answered the general benefit questions. The outdated description of the employer law is recorded in SEO (`SEO-MTB-008`). Steps 3B to 3D (missing answers and FAQ content, structure, structured data) are pending.
+**Draft.** Steps 1 and 2 of the [AEO work plan](aeo-audit-plan.md) are complete. Step 3 part A (direct answers and answer clarity) and part B (question-based content and FAQ opportunities) have produced three findings. The website has a direct answer passage for three of the six priority questions (the 2026 limits, parking, and whether employers must offer the benefit, although the last is outdated, `SEO-MTB-008`). The gaps are:
+- it states the monthly limit and the savings figures differently from page to page (`AEO-MTB-001`);
+- practical questions about enrolling, the card and Ventra loads, unused funds, and fees are answered only in an employer PDF or not at all, and the three product sections are empty (`AEO-MTB-003`);
+- no page opens with a short statement of what the program is and who runs it (`AEO-MTB-002`).
+
+In Google on 2026-11-26, My Transit Benefit appeared for enrollment, the employer law, and the “rta transit benefit card” search, and was a listed source in three of nine AI Overviews checked; national benefit providers and federal sources answered the general benefit questions. The outdated description of the employer law is recorded in SEO (`SEO-MTB-008`). Steps 3C and 3D (structure, structured data) are pending.
 
 ## Findings
 
@@ -31,6 +36,41 @@
 - **Recommendation:** Use one sentence for the limit on every page, for example “In 2026 you can set aside up to $340 a month for transit and a separate $340 a month for parking”, and update it each January. Explain the savings figures where they appear: label the 7.65% as the employer's payroll tax savings, explain the calculator's tax rate, and support “up to 40%” with a short worked example or replace it with the calculator result. Confirm the figures with the program team before publishing.
 - **Implementation complexity:** Low (content edits on four pages)
 - **Related standard:** [Google Search Central: creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+
+### Enrollment, card, unused-fund, and fee questions are answered only in an employer PDF or not at all
+
+- **Finding ID:** AEO-MTB-003
+- **Page or component:** The product sections of [Behind the Benefits](https://www.mytransitbenefit.com/behind-the-benefits), [Employees](https://www.mytransitbenefit.com/employees), [Employers](https://www.mytransitbenefit.com/employers), and the [Account Setup Guide](https://www.mytransitbenefit.com/uploads/files/general/NITA-TBP-Set-Up-Guide-mk-v2.pdf) (PDF) linked from Employers.
+- **Priority:** Medium
+- **Evidence:** Page text of 2026-11-25, unchanged on 2026-11-26 ([page text](../../../evidence/aeo/2026-11-25/answer-map/page-text/); [`live-recheck.txt`](../../../evidence/aeo/2026-11-26/step3b/live-recheck.txt)), and the Account Setup Guide fetched on 2026-11-26 ([PDF and text](../../../evidence/aeo/2026-11-26/step3b/mtb-docs/)):
+  - Behind the Benefits has three H2 headings, “The RTA/NITA Transit Benefit Prepaid Mastercard®”, “Ventra® Direct Loads”, and “Pace Vanpool”, each followed by an empty panel with no text in the HTML.
+  - Employees says only “If your employer doesn’t offer a transit benefit fare program, encourage them to enroll today.” and “Log into your Transit Fare Benefit account to check your balance, order a new card, add more money, and more.” No page says how an employee enrolls, where the card or a Ventra load can be used, when funds become available, or what happens to unused funds or when an employee leaves the job.
+  - Employers gives no fees and no sign-up steps; it links the Account Setup Guide.
+  - The six-page guide, written for employer administrators, answers most of these questions:
+    - the three products and where they work: the card “can only be used to purchase transit fares from qualified transit agencies where Debit Mastercard®, Maestro® cards and NYCE® cards are accepted”, and Ventra Direct Load funds are “for use on the CTA, Pace and Metra”;
+    - when funds arrive: “the funds are available for use on the 20th of each month”;
+    - balance limits: a $2,000 maximum card balance and a $500 limit for Ventra;
+    - fees: “$0.00 per month/order” by ACH debit and “4% of the total order” by credit card;
+    - credit-adjustment options for unused funds, including “Not Returned - Returned only upon employee termination”;
+    - the sign-up steps.
+  - The guide gives the phone number 312-913-5523; the four web pages give 888-782-1008.
+
+  Google result pages captured on 2026-11-26 through a US connection with a Chicago, Illinois IP address ([`question-gaps.csv`](../../../evidence/aeo/2026-11-26/step3b/question-gaps.csv)):
+
+  | Question | Google result page, 2026-11-26 |
+  | --- | --- |
+  | Do pre-tax transit benefit funds expire? (`Q-MTB-09`, “do pre-tax transit benefits expire”) | No My Transit Benefit page in the first nine results. The AI Overview answers from HealthEquity, ADP, NYC.gov, and a Reddit thread, and says unused funds generally roll over but may be forfeited after leaving a job, depending on the plan |
+  | Which transit services can I use it on? (`Q-MTB-08`, “what can you use transit benefits for”) | No My Transit Benefit page in the first seven results; sources are Optum, TRI-AD, Wikipedia, and Reddit |
+  | How do I use the card? (`Q-MTB-10`, “rta transit benefit card”) | The homepage ranks first and is cited. The overview's statement on where the card works (“such as CTA, Pace, Metra, South Shore, and Amtrak where supported”) is attributed to NITA. The NITA result is the RTA press release [“RTA to Offer Regional RTA Transit Benefit Prepaid MasterCard®”](https://nita.illinois.gov/about-rta/press-releases/rta-to-offer-regional-rta-transit-benefit-prepaid-mastercard) of November 14, 2013 (rank 4), which lists “CTA, Pace, Metra, South Shore, Amtrak, and Chicago Water Taxi” ([page text](../../../evidence/aeo/2026-11-26/step3b/page-text/press-rta-transit-benefit-prepaid-mastercard.md)) |
+  | How do I enroll? (`Q-MTB-06`, “how to enroll in transit benefits chicago”, Step 2 part C) | The homepage ranks fifth and is cited; the overview explains enrollment from CTA, City of Chicago, and Loyola University Chicago sources |
+- **Impact:** Employees deciding whether to enroll, and participants with a card or balance question, find empty sections and a login button. The answers they get from search come from national benefit providers, whose rules vary by plan, and from a 2013 press release whose list of agencies may no longer be current. The program's own rules, which are already written in the guide, are not on any web page. Two different support numbers add doubt about whom to call.
+- **Recommendation:** Fill the three product sections on Behind the Benefits with short descriptions based on the guide. Add a short block of common questions in plain text:
+  - on Employees: how to enroll (check whether your employer participates, then order through the employer or the Employee Login), where the card and Ventra loads work, when funds are available each month, what happens to unused funds and when leaving a job, and how to get help;
+  - on Employers: a three- or four-step sign-up summary with the guide as detail, and the fees.
+
+  Confirm every answer and one support phone number with the program team. Add a dated note to the 2013 press release that links to My Transit Benefit. FAQ markup is not needed, because Google stopped showing FAQ rich results on May 7, 2026.
+- **Implementation complexity:** Low (content edits on three pages; the content already exists in the guide)
+- **Related standard:** [Google Search Central: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 
 ### No page opens by saying what the program is and who runs it
 
