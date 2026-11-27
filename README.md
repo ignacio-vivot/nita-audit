@@ -38,6 +38,8 @@ Organize the audit **by section, with a separate subsection or file for each web
 │   └── audit/
 │       ├── 00-executive-summary.md
 │       ├── 01-accessibility-ada/
+│       │   ├── accessibility-audit-plan.md
+│       │   ├── accessibility-review-matrix.md
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 02-seo/
@@ -52,6 +54,7 @@ Organize the audit **by section, with a separate subsection or file for each web
 │       │   └── mytransitbenefit-com.md
 │       ├── 04-geo/
 │       │   ├── geo-audit-plan.md
+│       │   ├── geo-review-matrix.md
 │       │   ├── nita-illinois-gov.md
 │       │   └── mytransitbenefit-com.md
 │       ├── 05-ux/

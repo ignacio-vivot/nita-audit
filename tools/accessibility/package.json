@@ -1,0 +1,16 @@
+{
+  "name": "nita-accessibility-audit-tools",
+  "version": "1.0.0",
+  "description": "Scripts for the accessibility section of the NITA website audit (axe-core run through Playwright with the installed Chrome).",
+  "scripts": {
+    "axe": "node axe-scan.mjs"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@axe-core/playwright": "4.14.1",
+    "axe-core": "4.14.1",
+    "playwright": "1.65.1"
+  },
+  "private": true
+}
